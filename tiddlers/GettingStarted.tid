@@ -1,5 +1,22 @@
+created: 20170203102555159
+modified: 20170203104143942
 title: GettingStarted
+type: text/vnd.tiddlywiki
 
-The tiddler "Info-Session" plugin provides the ability to store the open/closed state for one browser session. So if you reload the page all "pop-ups" are closed again. 
+! Welcome
 
-{{$:/core/ui/ControlPanel/Plugins}}
+Welcome at ''wikilabs'' .. This is pmario playground with some ramblings about TiddlyWiki
+
+It basically is a "jump off" page to various ~TiddlyWiki editions, that show my themes and plugins
+
+! Editions
+
+<<list-links "[tag[edition]]">>
+
+! Themes
+
+<<list-links "[tag[theme]]">>
+
+! Plugins
+
+<<list-links "[tag[plugin]]">>

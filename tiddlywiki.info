@@ -4,14 +4,20 @@
 		"wikilabs/info-session",
 		"wikilabs/info-tagmap",
 		"wikilabs/multicol-dropdown",
-		"wikilabs/remove-states"
+		"wikilabs/remove-states",
+		"wikilabs/persistent-states"
 	],
 	"themes": [
 		"tiddlywiki/vanilla",
-		"tiddlywiki/snowwhite"
+		"tiddlywiki/snowwhite",
+		"wikilabs/slant-01"
 	],
 	"build": {
 		"index": [
+			"--rendertiddler", "$:/core/save/all", "index.html", "text/plain"
+		],
+		"github": [
+			"--output", "/git/tiddly/wikilabs/wikilabs.github.io",
 			"--rendertiddler", "$:/core/save/all", "index.html", "text/plain"
 		],
 		"externalimages": [
