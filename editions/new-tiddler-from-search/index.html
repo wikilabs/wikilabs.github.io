@@ -119,75 +119,21 @@ Error message and password prompt
 
 <p>This <a class="tc-tiddlylink-external" href="http://tiddlywiki.com" rel="noopener noreferrer" target="_blank">TiddlyWiki</a> contains the following tiddlers:</p><p><ul>
 
-<li>$:/config/ViewToolbarButtons/Visibility/$:/core/ui/Buttons/info</li>
-
 <li>$:/core</li>
 
 <li>$:/isEncrypted</li>
 
-<li>$:/plugins/wikilabs/info-session</li>
-
-<li>$:/plugins/wikilabs/info-tagmap</li>
-
-<li>$:/plugins/wikilabs/multicol-dropdown</li>
-
-<li>$:/plugins/wikilabs/persistent-states</li>
-
 <li>$:/plugins/wikilabs/remove-states</li>
-
-<li>$:/state/tab/sidebar--1835078512</li>
 
 <li>$:/StoryList</li>
 
 <li>$:/temp/info-plugin</li>
 
-<li>$:/theme</li>
-
 <li>$:/themes/tiddlywiki/snowwhite</li>
 
 <li>$:/themes/tiddlywiki/vanilla</li>
 
-<li>$:/themes/wikilabs/slant-01</li>
-
-<li>$:/wikilabs/template/theme</li>
-
-<li>advanced-search-plus</li>
-
-<li>all-plugins</li>
-
-<li>edition-slant-01-server</li>
-
-<li>edition-template</li>
-
-<li>edition-tocP</li>
-
-<li>edition-tocP-server</li>
-
 <li>GettingStarted</li>
-
-<li>info-session</li>
-
-<li>info-tagmap</li>
-
-<li>kitchen-sink</li>
-
-<li>link-to-tabs</li>
-
-<li>multicol-dropdown</li>
-
-<li>new-tiddler-from-search</li>
-
-<li>persistent-states</li>
-
-<li>plugin-template</li>
-
-<li>remove-states</li>
-
-<li>theme-slant-01</li>
-
-<li>TiddlyWiki</li>
-
-<li>wikilabs.github.io</li>
 
 </ul>
 </p>
@@ -199,9 +145,6 @@ Error message and password prompt
 <!--~~ Ordinary tiddlers ~~-->
 
 <div id="storeArea" style="display:none;">
-<div title="$:/config/ViewToolbarButtons/Visibility/$:/core/ui/Buttons/info">
-<pre>show</pre>
-</div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="TiddlyWiki5 core" list="readme" plugin-priority="0" plugin-type="plugin" title="$:/core" type="application/json" version="5.1.13">
 <pre>{
     &quot;tiddlers&quot;: {
@@ -7853,105 +7796,6 @@ Error message and password prompt
 <div title="$:/isEncrypted">
 <pre>no</pre>
 </div>
-<div author="Mario Pietsch" core-version="&gt;=5.1.6" dependents="" description="Info button, with session persistent open/closed status" list="readme license" plugin-type="plugin" title="$:/plugins/wikilabs/info-session" type="application/json" version="0.1.2">
-<pre>{
-    &quot;tiddlers&quot;: {
-        &quot;$:/plugins/wikilabs/info-session/license&quot;: {
-            &quot;title&quot;: &quot;$:/plugins/wikilabs/info-session/license&quot;,
-            &quot;text&quot;: &quot;Info-Session-Plugin (c) Mario Pietsch - 2016\n\nhttps://opensource.org/licenses/BSD-3-Clause&quot;
-        },
-        &quot;$:/plugins/wikilabs/info-session/readme&quot;: {
-            &quot;title&quot;: &quot;$:/plugins/wikilabs/info-session/readme&quot;,
-            &quot;text&quot;: &quot;* This plugin provides a tiddler info button, with a persistent open/close status ''for one browser session''.\n* The status is saved in a system \&quot;$:/state/popup\&quot; variable. \n** This means, if you reload the TW, the status is gone, sice they are not stored by default!\n\n''Important:''\n\n* This plugin changes the core tiddler: $:/core/ui/Buttons/info\n\n----\n\nIf you want persistent state variables, you need to ''add'' the \&quot;persistent-states\&quot; plugin ''and'' modify the ~ViewTemplate. The ''slant-01 theme\&quot; provides this functionality.\n&quot;
-        },
-        &quot;$:/core/ui/Buttons/info&quot;: {
-            &quot;title&quot;: &quot;$:/core/ui/Buttons/info&quot;,
-            &quot;tags&quot;: &quot;$:/tags/ViewToolbar&quot;,
-            &quot;caption&quot;: &quot;{{$:/core/images/info-button}} {{$:/language/Buttons/Info/Caption}}&quot;,
-            &quot;description&quot;: &quot;{{$:/language/Buttons/Info/Hint}}&quot;,
-            &quot;text&quot;: &quot;&lt;$reveal type=\&quot;match\&quot; text=\&quot;\&quot; default=\&quot;\&quot; state=&lt;&lt;tiddlerInfoState&gt;&gt; &gt;\n&lt;$button tooltip={{$:/language/Buttons/Info/Hint}} aria-label={{$:/language/Buttons/Info/Caption}} class=&lt;&lt;tv-config-toolbar-class&gt;&gt; selectedClass=\&quot;tc-selected\&quot;&gt;\n&lt;$action-setfield $tiddler=&lt;&lt;tiddlerInfoState&gt;&gt; text=\&quot;visible\&quot;/&gt;\n&lt;$list filter=\&quot;[&lt;tv-config-toolbar-icons&gt;prefix[yes]]\&quot;&gt;\n{{$:/core/images/info-button}}\n&lt;/$list&gt;\n&lt;$list filter=\&quot;[&lt;tv-config-toolbar-text&gt;prefix[yes]]\&quot;&gt;\n&lt;span class=\&quot;tc-btn-text\&quot;&gt;&lt;$text text={{$:/language/Buttons/Info/Caption}}/&gt;&lt;/span&gt;\n&lt;/$list&gt;\n&lt;/$button&gt;\n&lt;/$reveal&gt;\n&lt;$reveal type=\&quot;nomatch\&quot; text=\&quot;\&quot; default=\&quot;\&quot; state=&lt;&lt;tiddlerInfoState&gt;&gt; &gt;\n&lt;$button tooltip={{$:/language/Buttons/Info/Hint}} aria-label={{$:/language/Buttons/Info/Caption}} class=\&quot;tc-btn-invisible tc-selected\&quot; &gt;\n&lt;$action-deletetiddler $tiddler=&lt;&lt;tiddlerInfoState&gt;&gt;/&gt;\n&lt;$list filter=\&quot;[&lt;tv-config-toolbar-icons&gt;prefix[yes]]\&quot;&gt;\n{{$:/core/images/info-button}}\n&lt;/$list&gt;\n&lt;$list filter=\&quot;[&lt;tv-config-toolbar-text&gt;prefix[yes]]\&quot;&gt;\n&lt;span class=\&quot;tc-btn-text\&quot;&gt;&lt;$text text={{$:/language/Buttons/Info/Caption}}/&gt;&lt;/span&gt;\n&lt;/$list&gt;\n&lt;/$button&gt;\n&lt;/$reveal&gt;&quot;
-        }
-    }
-}</pre>
-</div>
-<div author="Mario Pietsch" core-version="&gt;=5.1.0" dependents="" description="Adds a Tag-Map tab to the tiddler info section" list="readme license" plugin-type="plugin" title="$:/plugins/wikilabs/info-tagmap" type="application/json" version="0.1.1">
-<pre>{
-    &quot;tiddlers&quot;: {
-        &quot;$:/wikilabs/ui/TiddlerInfo/TagMap&quot;: {
-            &quot;title&quot;: &quot;$:/wikilabs/ui/TiddlerInfo/TagMap&quot;,
-            &quot;tags&quot;: &quot;$:/tags/TiddlerInfo&quot;,
-            &quot;caption&quot;: &quot;Tag Map&quot;,
-            &quot;text&quot;: &quot;&lt;div class=\&quot;flexbox\&quot;&gt;\n&lt;$list filter=\&quot;[all[current]tags[]sort[title]]\&quot; emptyMessage=\&quot;This tiddler has no tags\&quot;&gt;\n&lt;div class=\&quot;col\&quot;&gt;\n&lt;span class=\&quot;tc-tag-label\&quot;&gt;\n&lt;$transclude tiddler=\&quot;$:/core/ui/ListItemTemplate\&quot;/&gt;\n&lt;/span&gt;\n&lt;hr&gt;\n&lt;$list filter=\&quot;[all[current]tagging[]sort[title]]\&quot; template=\&quot;$:/core/ui/ListItemTemplate\&quot; /&gt;\n&lt;/div&gt;\n&lt;/$list&gt;\n&lt;/div&gt;&quot;
-        },
-        &quot;$:/wikilabs/ui/TiddlerInfo/TagMap/Styles&quot;: {
-            &quot;title&quot;: &quot;$:/wikilabs/ui/TiddlerInfo/TagMap/Styles&quot;,
-            &quot;tags&quot;: &quot;$:/tags/Stylesheet&quot;,
-            &quot;type&quot;: &quot;text/plain&quot;,
-            &quot;text&quot;: &quot;.flexbox {\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  overflow: hidden;\n  flex-direction: row;\n  flex-flow: row wrap;\n}\n\n.flexbox .col {\n  flex: 1 1 33%;\n  margin-bottom: 1em;\n}&quot;
-        },
-        &quot;$:/plugins/wikilabs/info-tagmap/license&quot;: {
-            &quot;title&quot;: &quot;$:/plugins/wikilabs/info-tagmap/license&quot;,
-            &quot;text&quot;: &quot;Info-Tag-Map (c) Mario Pietsch - 2016\n\nhttps://opensource.org/licenses/BSD-3-Clause&quot;
-        },
-        &quot;$:/plugins/wikilabs/info-tagmap/readme&quot;: {
-            &quot;title&quot;: &quot;$:/plugins/wikilabs/info-tagmap/readme&quot;,
-            &quot;text&quot;: &quot;This plugin adds a new tab to the tiddler info section. It's a multi column list of all tiddler tags plus all tagged tiddlers.\n\nThis plugin doesn't change any core templates.\n\nThe code below can be copied into the tag tiddlers.\n\n```\nAll tiddlers tagged: {{!!title}}\n\n&lt;&lt;list-links filter:\&quot;[tag{!!title}]\&quot;&gt;&gt;\n```&quot;
-        }
-    }
-}</pre>
-</div>
-<div author="Mario Pietsch" core-version="&gt;=5.1.0" dependents="" description="MultiColumn Dropdown with flex-box CSS only" list="readme license" plugin-type="plugin" title="$:/plugins/wikilabs/multicol-dropdown" type="application/json" version="0.1.1">
-<pre>{
-    &quot;tiddlers&quot;: {
-        &quot;$:/plugins/wikilabs/multicol-dropdown/styles&quot;: {
-            &quot;title&quot;: &quot;$:/plugins/wikilabs/multicol-dropdown/styles&quot;,
-            &quot;tags&quot;: &quot;$:/tags/Stylesheet&quot;,
-            &quot;type&quot;: &quot;text/plain&quot;,
-            &quot;text&quot;: &quot;/* concept used from: http://fourkitchens.com/blog/article/responsive-multi-column-lists-flexbox */\n\n.tc-block-dropdown {\n  display: flex;\n  flex-wrap: wrap;\n  padding: 3px;\n}\n\n.tc-dropdown-item {\n  flex: 1 0 100%;\n  margin-left: 2px;\n  margin-top: 2px;\n}\n\n.tc-block-dropdown a{\n  flex: 1 0 calc(33% - 2px);\n  background: #eee;\n  margin-left: 2px;\n  margin-top: 2px;\n}\n\n.tc-search-results {\n  width: 100%;\n}\n\n/* TODO this is needed, since otherwise the search results show an artefact */\n/* This is already part of the reset.css .. but it has no effect .. bug? */\n\n[hidden] {\n  display: none;\n}\n&quot;
-        },
-        &quot;$:/plugins/wikilabs/multicol-dropdown/license&quot;: {
-            &quot;title&quot;: &quot;$:/plugins/wikilabs/multicol-dropdown/license&quot;,
-            &quot;text&quot;: &quot;Info-MultiCol-Dropdown-Plugin (c) Mario Pietsch - 2016\n\nhttps://opensource.org/licenses/BSD-3-Clause&quot;
-        },
-        &quot;$:/plugins/wikilabs/multicol-dropdown/readme&quot;: {
-            &quot;title&quot;: &quot;$:/plugins/wikilabs/multicol-dropdown/readme&quot;,
-            &quot;text&quot;: &quot;Some flex-box CSS the converts most dropdowns to multi column dropdowns.\n\nThis plugin doesn't change any core templates.&quot;
-        }
-    }
-}</pre>
-</div>
-<div author="Mario Pietsch" core-version="&gt;=5.1.0" dependents="" description="Makes all state tiddlers persistent" list="license readme" name="Persistent-States" plugin-type="plugin" title="$:/plugins/wikilabs/persistent-states" type="application/json" version="0.1.0">
-<pre>{
-    &quot;tiddlers&quot;: {
-        &quot;$:/config/SaverFilter&quot;: {
-            &quot;created&quot;: &quot;20160902131547270&quot;,
-            &quot;modified&quot;: &quot;20160902131552116&quot;,
-            &quot;title&quot;: &quot;$:/config/SaverFilter&quot;,
-            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
-            &quot;text&quot;: &quot;[all[]] -[[$:/HistoryList]] -[[$:/StoryList]] -[[$:/Import]] -[[$:/isEncrypted]] -[[$:/UploadName]] -[prefix[$:/temp/]]&quot;
-        },
-        &quot;$:/config/SyncFilter&quot;: {
-            &quot;created&quot;: &quot;20160902131452473&quot;,
-            &quot;modified&quot;: &quot;20160902131509079&quot;,
-            &quot;title&quot;: &quot;$:/config/SyncFilter&quot;,
-            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
-            &quot;text&quot;: &quot;[is[tiddler]] -[[$:/HistoryList]] -[[$:/Import]] -[[$:/isEncrypted]] -[prefix[$:/status/]] -[prefix[$:/temp/]] -[[$:/StoryList]]&quot;
-        },
-        &quot;$:/plugins/wikilabs/ui/persistent-states&quot;: {
-            &quot;title&quot;: &quot;$:/plugins/wikilabs/ui/persistent-states&quot;,
-            &quot;text&quot;: &quot;\\define theFilter()\n[prefix[$:/state/]]\n\\end\n\n&lt;$button&gt;\n&lt;$action-deletetiddler $filter=&lt;&lt;theFilter&gt;&gt; /&gt;\nDelete all: ''~$:/state/'' tiddlers\n&lt;/$button&gt;\n\n&lt;$list filter=&lt;&lt;theFilter&gt;&gt; &gt;\n&lt;$button&gt;\n&lt;$action-deletetiddler $tiddler=&lt;&lt;currentTiddler&gt;&gt;/&gt;\nx\n&lt;/$button&gt; - &lt;$text text=&lt;&lt;currentTiddler&gt;&gt; /&gt;&lt;br&gt;\n&lt;/$list&gt;&quot;
-        },
-        &quot;$:/plugins/wikilabs/persistent-states/license&quot;: {
-            &quot;title&quot;: &quot;$:/plugins/wikilabs/persistent-states/license&quot;,
-            &quot;text&quot;: &quot;Remove-States-Plugin (c) Mario Pietsch - 2016\n\nhttps://opensource.org/licenses/BSD-3-Clause&quot;
-        },
-        &quot;$:/plugins/wikilabs/persistent-states/readme&quot;: {
-            &quot;title&quot;: &quot;$:/plugins/wikilabs/persistent-states/readme&quot;,
-            &quot;text&quot;: &quot;This plugin saves all $:/state/ tiddlers and creates a simple UI, to remove them manually.\n\nsee: \n\n[[$:/plugins/wikilabs/ui/persistent-states]]\n\n{{$:/plugins/wikilabs/ui/persistent-states}}\n&quot;
-        }
-    }
-}</pre>
-</div>
 <div author="Mario Pietsch" core-version="&gt;=5.1.6" dependents="" deprecated="0.1.1" description="Remove all state tiddlers. Simple UI" list="readme license" plugin-type="plugin" title="$:/plugins/wikilabs/remove-states" type="application/json" version="0.1.1">
 <pre>{
     &quot;tiddlers&quot;: {
@@ -7965,13 +7809,10 @@ Error message and password prompt
         },
         &quot;$:/plugins/wikilabs/remove-states/readme&quot;: {
             &quot;title&quot;: &quot;$:/plugins/wikilabs/remove-states/readme&quot;,
-            &quot;text&quot;: &quot;This plugin creates a simple UI, to remove all state tiddlers.\n\n[[$:/plugins/wikilabs/ui/remove-states]]\n\n{{$:/plugins/wikilabs/ui/remove-states}}\n&quot;
+            &quot;text&quot;: &quot;! Overview\n\nThis plugin creates a simple UI, to remove all state tiddlers.\n\n! Simple UI\n\n[[$:/plugins/wikilabs/ui/remove-states]]\n\n{{$:/plugins/wikilabs/ui/remove-states}}\n&quot;
         }
     }
 }</pre>
-</div>
-<div created="20170206132338873" modified="20170206132340053" title="$:/state/tab/sidebar--1835078512" type="text/vnd.tiddlywiki">
-<pre>$:/core/ui/SideBar/Recent</pre>
 </div>
 <div list="GettingStarted" title="$:/StoryList">
 <pre></pre>
@@ -7989,9 +7830,6 @@ Error message and password prompt
         }
     }
 }</pre>
-</div>
-<div created="20170203102042031" modified="20170203102043676" title="$:/theme" type="text/vnd.tiddlywiki">
-<pre>$:/themes/wikilabs/slant-01</pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.13">
 <pre>{
@@ -8102,217 +7940,17 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div author="Mario Pietsch" core-version="&gt;=5.1.10" dependents="$:/themes/tiddlywiki/snowwhite $:/plugins/wikilabs/persistent-states" description="slant-01 - an opinionated theme" list="license readme" name="Slant 01" plugin-type="theme" title="$:/themes/wikilabs/slant-01" type="application/json" version="0.1.2">
-<pre>{
-    &quot;tiddlers&quot;: {
-        &quot;$:/config/ViewToolbarButtons/Visibility/$:/core/ui/Buttons/info&quot;: {
-            &quot;created&quot;: &quot;20160714085429897&quot;,
-            &quot;modified&quot;: &quot;20160714085430957&quot;,
-            &quot;title&quot;: &quot;$:/config/ViewToolbarButtons/Visibility/$:/core/ui/Buttons/info&quot;,
-            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
-            &quot;tags&quot;: &quot;$:/wikilabs/ui&quot;,
-            &quot;text&quot;: &quot;show&quot;
-        },
-        &quot;$:/core/ui/TagTemplate&quot;: {
-            &quot;created&quot;: &quot;20150409155917643&quot;,
-            &quot;creator&quot;: &quot;pmario&quot;,
-            &quot;modified&quot;: &quot;20160715043939642&quot;,
-            &quot;modifier&quot;: &quot;pmario&quot;,
-            &quot;tags&quot;: &quot;$:/wikilabs/ui todo&quot;,
-            &quot;title&quot;: &quot;$:/core/ui/TagTemplate&quot;,
-            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
-            &quot;text&quot;: &quot;\\define tag-styles()\nbackground-color:$(backgroundColor)$;\nfill:$(foregroundColor)$;\ncolor:$(foregroundColor)$;\n\\end\n\n\\define tag-body-innerXXX(colour,fallbackTarget,colourA,colourB)\n&lt;$set name=\&quot;foregroundColor\&quot; value=&lt;&lt;contrastcolour target:\&quot;\&quot;\&quot;$colour$\&quot;\&quot;\&quot; fallbackTarget:\&quot;\&quot;\&quot;$fallbackTarget$\&quot;\&quot;\&quot; colourA:\&quot;\&quot;\&quot;$colourA$\&quot;\&quot;\&quot; colourB:\&quot;\&quot;\&quot;$colourB$\&quot;\&quot;\&quot;&gt;&gt;&gt;\n&lt;$set name=\&quot;backgroundColor\&quot; value=\&quot;\&quot;\&quot;$colour$\&quot;\&quot;\&quot;&gt;\n&lt;$button popup=&lt;&lt;qualify \&quot;$:/state/popup/tag\&quot;&gt;&gt; class=\&quot;tc-btn-invisible tc-tag-label\&quot; style=&lt;&lt;tag-styles&gt;&gt;&gt;\n&lt;$transclude tiddler={{!!icon}}/&gt; &lt;$view field=\&quot;title\&quot; format=\&quot;text\&quot; /&gt;\n&lt;/$button&gt;\n&lt;$reveal state=&lt;&lt;qualify \&quot;$:/state/popup/tag\&quot;&gt;&gt; type=\&quot;popup\&quot; position=\&quot;below\&quot; animate=\&quot;yes\&quot;&gt;&lt;div class=\&quot;tc-drop-down\&quot;&gt;&lt;$transclude tiddler=\&quot;$:/core/ui/ListItemTemplate\&quot;/&gt;\n&lt;hr&gt;\n&lt;$list filter=\&quot;[all[current]tagging[]]\&quot; template=\&quot;$:/core/ui/ListItemTemplate\&quot;/&gt;\n&lt;/div&gt;\n&lt;/$reveal&gt;\n&lt;/$set&gt;\n&lt;/$set&gt;\n\\end\n\n\\define tag-body-inner(colour,fallbackTarget,colourA,colourB)\n&lt;$set name=\&quot;foregroundColor\&quot; value=&lt;&lt;contrastcolour target:\&quot;\&quot;\&quot;$colour$\&quot;\&quot;\&quot; fallbackTarget:\&quot;\&quot;\&quot;$fallbackTarget$\&quot;\&quot;\&quot; colourA:\&quot;\&quot;\&quot;$colourA$\&quot;\&quot;\&quot; colourB:\&quot;\&quot;\&quot;$colourB$\&quot;\&quot;\&quot;&gt;&gt;&gt;\n&lt;$set name=\&quot;backgroundColor\&quot; value=\&quot;\&quot;\&quot;$colour$\&quot;\&quot;\&quot;&gt;\n&lt;$button class=\&quot;tc-btn-invisible tc-tag-label\&quot; style=&lt;&lt;tag-styles&gt;&gt;&gt;\n&lt;$action-setfield $tiddler=&lt;&lt;tiddlerInfoState&gt;&gt; text=\&quot;visible\&quot;/&gt;\n&lt;$action-setfield $tiddler=&lt;&lt;tiddlerInfoTabState&gt;&gt; text=\&quot;$:/wikilabs/ui/TiddlerInfo/TagMap\&quot;/&gt;\n&lt;$transclude tiddler={{!!icon}}/&gt; &lt;$view field=\&quot;title\&quot; format=\&quot;text\&quot; /&gt;\n&lt;/$button&gt;\n&lt;/$set&gt;\n&lt;/$set&gt;\n\\end\n\n\\define tag-body(colour,palette)\n&lt;span class=\&quot;tc-tag-list-item\&quot;&gt;\n&lt;$macrocall $name=\&quot;tag-body-inner\&quot; colour=\&quot;\&quot;\&quot;$colour$\&quot;\&quot;\&quot; fallbackTarget={{$palette$##tag-background}} colourA={{$palette$##foreground}} colourB={{$palette$##background}}/&gt;\n&lt;/span&gt;\n\\end\n\n&lt;$macrocall $name=\&quot;tag-body\&quot; colour={{!!color}} palette={{$:/palette}}/&gt;\n&quot;
-        },
-        &quot;$:/core/ui/TiddlerInfo&quot;: {
-            &quot;created&quot;: &quot;20160715044326535&quot;,
-            &quot;modified&quot;: &quot;20160715044332225&quot;,
-            &quot;tags&quot;: &quot;$:/wikilabs/ui&quot;,
-            &quot;title&quot;: &quot;$:/core/ui/TiddlerInfo&quot;,
-            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
-            &quot;text&quot;: &quot;&lt;$macrocall $name=\&quot;tabs-state\&quot; tabsList=\&quot;[all[shadows+tiddlers]tag[$:/tags/TiddlerInfo]!has[draft.of]]\&quot; state=&lt;&lt;tiddlerInfoTabState&gt;&gt; default={{$:/config/TiddlerInfo/Default}}/&gt;&quot;
-        },
-        &quot;$:/core/ui/ViewTemplate&quot;: {
-            &quot;created&quot;: &quot;20150409114928087&quot;,
-            &quot;creator&quot;: &quot;pmario&quot;,
-            &quot;modified&quot;: &quot;20160715042927845&quot;,
-            &quot;modifier&quot;: &quot;pmario&quot;,
-            &quot;tags&quot;: &quot;$:/wikilabs/ui&quot;,
-            &quot;title&quot;: &quot;$:/core/ui/ViewTemplate&quot;,
-            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
-            &quot;text&quot;: &quot;\\define wikilabsInfo()\n$:/state/info/$(currentTiddler)$\n\\end\n\\define wikilabsInfoTabState()\n$:/state/infotab/$(currentTiddler)$\n\\end\n\\define frame-classes()\ntc-tiddler-frame tc-tiddler-view-frame $(missingTiddlerClass)$ $(shadowTiddlerClass)$ $(systemTiddlerClass)$ $(tiddlerTagClasses)$\n\\end\n\\define folded-state()\n$:/state/folded/$(currentTiddler)$\n\\end\n&lt;$set name=\&quot;storyTiddler\&quot; value=&lt;&lt;currentTiddler&gt;&gt;&gt;&lt;$set name=\&quot;tiddlerInfoState\&quot; value=&lt;&lt;wikilabsInfo&gt;&gt; &gt;&lt;$set name=\&quot;tiddlerInfoTabState\&quot; value=&lt;&lt;wikilabsInfoTabState&gt;&gt; &gt;&lt;$tiddler tiddler=&lt;&lt;currentTiddler&gt;&gt;&gt;&lt;div class=&lt;&lt;frame-classes&gt;&gt;&gt;&lt;$list filter=\&quot;[all[shadows+tiddlers]tag[$:/tags/ViewTemplate]!has[draft.of]]\&quot; variable=\&quot;listItem\&quot;&gt;&lt;$transclude tiddler=&lt;&lt;listItem&gt;&gt;/&gt;&lt;/$list&gt;\n&lt;/div&gt;\n&lt;/$tiddler&gt;&lt;/$set&gt;&lt;/$set&gt;&lt;/$set&gt;\n&quot;
-        },
-        &quot;$:/core/ui/ViewTemplate/controls&quot;: {
-            &quot;created&quot;: &quot;20150409111025527&quot;,
-            &quot;creator&quot;: &quot;pmario&quot;,
-            &quot;modified&quot;: &quot;20160715043114993&quot;,
-            &quot;modifier&quot;: &quot;pmario&quot;,
-            &quot;tags&quot;: &quot;$:/wikilabs/ui&quot;,
-            &quot;title&quot;: &quot;$:/core/ui/ViewTemplate/controls&quot;,
-            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
-            &quot;text&quot;: &quot;\\define config-title()\n$:/config/ViewToolbarButtons/Visibility/$(listItem)$\n\\end\n&lt;div class=\&quot;tc-tiddler-controls\&quot;&gt;\n  &lt;$list filter=\&quot;[all[shadows+tiddlers]tag[$:/tags/ViewToolbar]!has[draft.of]]\&quot; variable=\&quot;listItem\&quot;&gt;&lt;$reveal type=\&quot;nomatch\&quot; state=&lt;&lt;config-title&gt;&gt; text=\&quot;hide\&quot;&gt;&lt;$transclude tiddler=&lt;&lt;listItem&gt;&gt;/&gt;&lt;/$reveal&gt;&lt;/$list&gt;\n&lt;/div&gt;\n&quot;
-        },
-        &quot;$:/core/ui/ViewTemplate/info&quot;: {
-            &quot;created&quot;: &quot;20150409112822850&quot;,
-            &quot;creator&quot;: &quot;pmario&quot;,
-            &quot;modified&quot;: &quot;20160715043115035&quot;,
-            &quot;modifier&quot;: &quot;pmario&quot;,
-            &quot;tags&quot;: &quot;$:/tags/ViewTemplate $:/wikilabs/ui&quot;,
-            &quot;title&quot;: &quot;$:/core/ui/ViewTemplate/info&quot;,
-            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
-            &quot;text&quot;: &quot;&lt;$reveal type=\&quot;nomatch\&quot; text=\&quot;\&quot; default=\&quot;\&quot; state=&lt;&lt;tiddlerInfoState&gt;&gt; class=\&quot;tc-tiddler-info tc-popup-handle\&quot; animate=\&quot;yes\&quot; retain=\&quot;yes\&quot;&gt;\n\n&lt;$transclude tiddler=\&quot;$:/core/ui/TiddlerInfo\&quot;/&gt;\n\n&lt;/$reveal&gt;\n&quot;
-        },
-        &quot;$:/core/ui/ViewTemplate/subtitle&quot;: {
-            &quot;created&quot;: &quot;20150409110006642&quot;,
-            &quot;creator&quot;: &quot;pmario&quot;,
-            &quot;modified&quot;: &quot;20160715043115032&quot;,
-            &quot;modifier&quot;: &quot;pmario&quot;,
-            &quot;tags&quot;: &quot;$:/wikilabs/ui&quot;,
-            &quot;title&quot;: &quot;$:/core/ui/ViewTemplate/subtitle&quot;,
-            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
-            &quot;text&quot;: &quot;&lt;span class=\&quot;tc-subtitle\&quot;&gt;\n&lt;$link to={{!!modifier}}&gt;\n&lt;$view field=\&quot;modifier\&quot;/&gt;\n&lt;/$link&gt; &lt;$view field=\&quot;modified\&quot; format=\&quot;relativedate\&quot;/&gt;\n&lt;/span&gt;\n&quot;
-        },
-        &quot;$:/core/ui/ViewTemplate/tags&quot;: {
-            &quot;created&quot;: &quot;20150409111725996&quot;,
-            &quot;creator&quot;: &quot;pmario&quot;,
-            &quot;modified&quot;: &quot;20160715043115028&quot;,
-            &quot;modifier&quot;: &quot;pmario&quot;,
-            &quot;tags&quot;: &quot;$:/tags/ViewTemplate $:/wikilabs/ui&quot;,
-            &quot;title&quot;: &quot;$:/core/ui/ViewTemplate/tags&quot;,
-            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
-            &quot;text&quot;: &quot;&lt;div class=\&quot;tc-tags-wrapper\&quot;&gt;&lt;$list filter=\&quot;[all[current]tags[]sort[title]]\&quot; template=\&quot;$:/core/ui/TagTemplate\&quot; storyview=\&quot;pop\&quot;/&gt;&lt;/div&gt;\n&quot;
-        },
-        &quot;$:/core/ui/ViewTemplate/title&quot;: {
-            &quot;created&quot;: &quot;20150409104855705&quot;,
-            &quot;creator&quot;: &quot;pmario&quot;,
-            &quot;modified&quot;: &quot;20160715043115022&quot;,
-            &quot;modifier&quot;: &quot;pmario&quot;,
-            &quot;tags&quot;: &quot;$:/tags/ViewTemplate $:/wikilabs/ui&quot;,
-            &quot;title&quot;: &quot;$:/core/ui/ViewTemplate/title&quot;,
-            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
-            &quot;text&quot;: &quot;\\define title-styles()\nfill:$(foregroundColor)$;\n\\end\n&lt;div class=\&quot;clearfix wltc-tiddler-title\&quot;&gt;\n  &lt;div class=\&quot;tc-titlebar\&quot;&gt;\n    &lt;$set name=\&quot;foregroundColor\&quot; value={{!!color}}&gt;\n      &lt;span class=\&quot;tc-tiddler-title-icon\&quot; style=&lt;&lt;title-styles&gt;&gt;&gt;\n        &lt;$transclude tiddler={{!!icon}}/&gt;\n      &lt;/span&gt;\n    &lt;/$set&gt;\n    &lt;span class=\&quot;tc-title\&quot;&gt;\n      &lt;$view field=\&quot;title\&quot;/&gt;\n    &lt;/span&gt;\n    {{$:/core/ui/ViewTemplate/subtitle}}\n  &lt;/div&gt;\n  {{||$:/core/ui/ViewTemplate/controls}}\n&lt;/div&gt;&quot;
-        },
-        &quot;$:/tags/ViewTemplate&quot;: {
-            &quot;created&quot;: &quot;20150409110757827&quot;,
-            &quot;creator&quot;: &quot;pmario&quot;,
-            &quot;list&quot;: &quot;$:/core/ui/ViewTemplate/title $:/core/ui/ViewTemplate/tags $:/core/ui/ViewTemplate/info $:/core/ui/ViewTemplate/classic $:/core/ui/ViewTemplate/body&quot;,
-            &quot;modified&quot;: &quot;20160715043115016&quot;,
-            &quot;modifier&quot;: &quot;pmario&quot;,
-            &quot;tags&quot;: &quot;$:/wikilabs/ui&quot;,
-            &quot;title&quot;: &quot;$:/tags/ViewTemplate&quot;,
-            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
-            &quot;text&quot;: &quot;&quot;
-        },
-        &quot;$:/themes/wikilabs/slant-01/Stylesheet&quot;: {
-            &quot;tags&quot;: &quot;$:/tags/Stylesheet $:/wikilabs/ui&quot;,
-            &quot;title&quot;: &quot;$:/themes/wikilabs/slant-01/Stylesheet&quot;,
-            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
-            &quot;text&quot;: &quot;.wltc-tiddler-title .tc-titlebar{\n  position: absolute;\n  font-size: 1.1em;\n}\n\n.wltc-tiddler-title {\n    overflow: hidden;\n}\n\n.wltc-tiddler-title .tc-subtitle {\n    font-size: 0.7em;\n}\n\n.tc-tiddler-controls {\n  font-size: 2.5em\n}\n\n.tc-tiddler-controls button svg {\n vertical-align: top;\n}\n\n.tc-tags-wrapper {\n    padding-top: 2px;\n    margin-top: -1em;\n}\n\n.tc-tiddler-body {\n    border-top: thin solid lightgray;\n}\n\n.tc-tiddler-info {\n    padding-right: 12px;\n}\n\n.clearfix:after {\n  content: \&quot;\&quot;;\n  display: table;\n  clear: both;\n}&quot;
-        },
-        &quot;$:/wikilabs/macros/tabs-state&quot;: {
-            &quot;created&quot;: &quot;20150410121547232&quot;,
-            &quot;creator&quot;: &quot;pmario&quot;,
-            &quot;modified&quot;: &quot;20160715043722780&quot;,
-            &quot;modifier&quot;: &quot;pmario&quot;,
-            &quot;tags&quot;: &quot;$:/tags/Macro $:/wikilabs/ui&quot;,
-            &quot;title&quot;: &quot;$:/wikilabs/macros/tabs-state&quot;,
-            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
-            &quot;text&quot;: &quot;\\define tabs-state(tabsList,default,state:\&quot;$:/state/tab\&quot;,class,template)\n&lt;div class=\&quot;tc-tab-set $class$\&quot;&gt;\n&lt;div class=\&quot;tc-tab-buttons $class$\&quot;&gt;\n&lt;$list filter=\&quot;$tabsList$\&quot; variable=\&quot;currentTab\&quot;&gt;\n&lt;$button set=&lt;&lt;tiddlerInfoTabState&gt;&gt; setTo=&lt;&lt;currentTab&gt;&gt; default=\&quot;$default$\&quot; selectedClass=\&quot;tc-tab-selected\&quot;&gt;\n&lt;$transclude tiddler=&lt;&lt;currentTab&gt;&gt; field=\&quot;caption\&quot;&gt;\n&lt;$macrocall $name=\&quot;currentTab\&quot; $type=\&quot;text/plain\&quot; $output=\&quot;text/plain\&quot;/&gt;\n&lt;/$transclude&gt;\n&lt;/$button&gt;\n&lt;/$list&gt;\n&lt;/div&gt;&lt;div class=\&quot;tc-tab-divider $class$\&quot;/&gt;&lt;div class=\&quot;tc-tab-content $class$\&quot;&gt;\n&lt;$list filter=\&quot;$tabsList$\&quot; variable=\&quot;currentTab\&quot;&gt;\n\n&lt;$reveal type=\&quot;match\&quot; state=&lt;&lt;tiddlerInfoTabState&gt;&gt; text=&lt;&lt;currentTab&gt;&gt; default=\&quot;$default$\&quot;&gt;\n\n&lt;$transclude tiddler=\&quot;$template$\&quot; mode=\&quot;block\&quot;&gt;\n\n&lt;$transclude tiddler=&lt;&lt;currentTab&gt;&gt; mode=\&quot;block\&quot;/&gt;\n\n&lt;/$transclude&gt;\n\n&lt;/$reveal&gt;\n\n&lt;/$list&gt;\n&lt;/div&gt;\n&lt;/div&gt;\n\\end\n&quot;
-        },
-        &quot;$:/themes/wikilabs/slant-01/license&quot;: {
-            &quot;title&quot;: &quot;$:/themes/wikilabs/slant-01/license&quot;,
-            &quot;text&quot;: &quot;Slant-01 Theme (c) Mario Pietsch - 2016 - 2017\n\nhttps://creativecommons.org/licenses/by-nc-sa/4.0/&quot;
-        },
-        &quot;$:/themes/wikilabs/slant-01/readme&quot;: {
-            &quot;title&quot;: &quot;$:/themes/wikilabs/slant-01/readme&quot;,
-            &quot;text&quot;: &quot;! Overview\n\nThis is an opinonated theme, used by pmario.\n\n!!! License\n\nCC-BY-NC-SA - {{$:/themes/wikilabs/slant-01/license}}&quot;
-        }
-    }
-}</pre>
-</div>
-<div created="20170203113552821" modified="20170203113702841" tags="" title="$:/wikilabs/template/theme" type="text/vnd.tiddlywiki">
-<pre>! Demo
-see: {{!!demo-url}}
-
-! Repository 
-see: {{!!git-repo}}</pre>
-</div>
-<div created="20170203102703314" demo-url="https://wikilabs.github.io/editions/advanced-search-plus" git-repo="https://github.com/wikilabs/plugins/tree/master/wikilabs/advanced-search-plus" modified="20170206130308473" tags="plugin edition" title="advanced-search-plus" type="text/vnd.tiddlywiki">
-<pre>{{||$:/wikilabs/template/theme}}</pre>
-</div>
-<div created="20170203104213958" modified="20170203104229783" tags="edition" title="all-plugins" type="text/vnd.tiddlywiki">
-<pre></pre>
-</div>
-<div created="20170203104650713" git-repo="" modified="20170206195453950" tags="dev" title="edition-slant-01-server" type="text/vnd.tiddlywiki">
-<pre></pre>
-</div>
-<div created="20170203104234369" modified="20170203104244970" tags="edition" title="edition-template" type="text/vnd.tiddlywiki">
-<pre></pre>
-</div>
-<div caption="tocP" created="20170203104721932" demo-url="https://wikilabs.github.io/editions/tocP" git-repo="https://github.com/wikilabs/plugins/tree/master/wikilabs/tocP" modified="20170206130527491" tags="edition plugin" title="edition-tocP" type="text/vnd.tiddlywiki">
-<pre>{{||$:/wikilabs/template/theme}}</pre>
-</div>
-<div created="20170203104735544" modified="20170206195508335" tags="dev" title="edition-tocP-server" type="text/vnd.tiddlywiki">
-<pre></pre>
-</div>
-<div created="20170203102555159" modified="20170206130735619" title="GettingStarted" type="text/vnd.tiddlywiki">
-<pre>! Welcome
-
-Welcome at [[wikilabs|wikilabs.github.io]] .. This is pmario playground with some ramblings about TiddlyWiki
-
-It basically is a &quot;jump off&quot; page to various ~TiddlyWiki editions, that show my themes and plugins
-
-! Editions
-
-&lt;&lt;list-links &quot;[tag[edition]]&quot;&gt;&gt;
-
-! Themes
-
-&lt;&lt;list-links &quot;[tag[theme]]&quot;&gt;&gt;
+<div title="GettingStarted">
+<pre>{{$:/plugins/wikilabs/remove-states/readme}}
 
 ! Plugins
 
-&lt;&lt;list-links &quot;[tag[plugin]]&quot;&gt;&gt;
-</pre>
-</div>
-<div created="20170203102751368" demo-url="https://wikilabs.github.io/editions/info-session" git-repo="https://github.com/wikilabs/plugins/tree/master/wikilabs/info-session" modified="20170206130452323" tags="plugin edition" title="info-session" type="text/vnd.tiddlywiki">
-<pre>{{||$:/wikilabs/template/theme}}</pre>
-</div>
-<div created="20170203102805644" modified="20170203102818815" tags="plugin" title="info-tagmap" type="text/vnd.tiddlywiki">
-<pre></pre>
-</div>
-<div created="20170206195517847" modified="20170206195531517" tags="edition" title="kitchen-sink" type="text/vnd.tiddlywiki">
-<pre></pre>
-</div>
-<div created="20170203103021609" modified="20170203103031940" tags="plugin" title="link-to-tabs" type="text/vnd.tiddlywiki">
-<pre></pre>
-</div>
-<div created="20170203102828029" modified="20170203102845576" tags="plugin" title="multicol-dropdown" type="text/vnd.tiddlywiki">
-<pre></pre>
-</div>
-<div created="20170203102848440" modified="20170203102859219" tags="plugin" title="new-tiddler-from-search" type="text/vnd.tiddlywiki">
-<pre></pre>
-</div>
-<div created="20170203102859229" modified="20170203102911493" tags="plugin" title="persistent-states" type="text/vnd.tiddlywiki">
-<pre></pre>
-</div>
-<div created="20170203104249167" modified="20170203104259762" tags="edition" title="plugin-template" type="text/vnd.tiddlywiki">
-<pre></pre>
-</div>
-<div created="20170203102912765" modified="20170203102921459" tags="plugin" title="remove-states" type="text/vnd.tiddlywiki">
-<pre></pre>
-</div>
-<div caption="slant-01" created="20170203113430786" demo-url="https://wikilabs.github.io/editions/slant-01" git-repo="https://github.com/wikilabs/themes/tree/master/wikilabs/slant-01" modified="20170206121502722" tags="theme edition" title="theme-slant-01" type="text/vnd.tiddlywiki">
-<pre>{{||$:/wikilabs/template/theme}}</pre>
-</div>
-<div created="20170203102523927" modified="20170203102533399" title="TiddlyWiki" type="text/vnd.tiddlywiki">
-<pre>see: http://tiddlyiki.com</pre>
-</div>
-<div created="20170203104800549" modified="20170206130654696" tags="main" title="wikilabs.github.io" type="text/vnd.tiddlywiki">
-<pre>! Main Page
+{{$:/core/ui/ControlPanel/Plugins}}
 
-Work in progress!
-
-see: https://wikilabs.github.io/</pre>
+&quot;&quot;&quot;
+have fun!
+mario
+&quot;&quot;&quot;</pre>
 </div>
 
 </div>

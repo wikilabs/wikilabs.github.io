@@ -44,7 +44,7 @@ ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF S
 DAMAGE.
 " />
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
-<title>My TiddlyWiki — a non-linear personal web notebook</title>
+<title>theme: slant-01 — an opinionated theme by pmario</title>
 <!--~~ This is a Tiddlywiki file. The points of interest in the file are marked with this pattern ~~--><!--~~ Raw markup ~~-->
 
 </head>
@@ -134,6 +134,10 @@ Error message and password prompt
 <li>$:/plugins/wikilabs/new-tiddler-from-search</li>
 
 <li>$:/plugins/wikilabs/persistent-states</li>
+
+<li>$:/SiteSubtitle</li>
+
+<li>$:/SiteTitle</li>
 
 <li>$:/state/plugin-info--1124947659-$:/themes/wikilabs/slant-01</li>
 
@@ -7834,7 +7838,7 @@ Error message and password prompt
         },
         &quot;$:/plugins/wikilabs/info-session/readme&quot;: {
             &quot;title&quot;: &quot;$:/plugins/wikilabs/info-session/readme&quot;,
-            &quot;text&quot;: &quot;This plugin provides a tiddler info button, with a persistent open/close status ''for one browser session''. The status is saved in a system \&quot;$:/state/popup\&quot; variable. This means, if you reload the TW, the status is gone, sice they are not stored by default!\n\n''Important:'' This plugin doesn't change any core templates.\n\n----\n\nIf you want persistent state variables, you need to ''add'' the \&quot;persistent-states\&quot; plugin ''and'' modify the ~ViewTemplate. The ''slant-01 theme\&quot; provides this functionality.\n&quot;
+            &quot;text&quot;: &quot;* This plugin provides a tiddler info button, with a persistent open/close status ''for one browser session''.\n* The status is saved in a system \&quot;$:/state/popup\&quot; variable. \n** This means, if you reload the TW, the status is gone, sice they are not stored by default!\n\n''Important:''\n\n* This plugin changes the core tiddler: $:/core/ui/Buttons/info\n\n----\n\nIf you want persistent state variables, you need to ''add'' the \&quot;persistent-states\&quot; plugin ''and'' modify the ~ViewTemplate. The ''slant-01 theme\&quot; provides this functionality.\n&quot;
         },
         &quot;$:/core/ui/Buttons/info&quot;: {
             &quot;title&quot;: &quot;$:/core/ui/Buttons/info&quot;,
@@ -7957,6 +7961,12 @@ Error message and password prompt
     }
 }</pre>
 </div>
+<div created="20170206143435538" modified="20170206143511914" title="$:/SiteSubtitle" type="text/vnd.tiddlywiki">
+<pre>an opinionated theme by pmario</pre>
+</div>
+<div created="20170206143336143" modified="20170206143340341" title="$:/SiteTitle" type="text/vnd.tiddlywiki">
+<pre>theme: slant-01</pre>
+</div>
 <div created="20170203215408117" modified="20170203215409193" title="$:/state/plugin-info--1124947659-$:/themes/wikilabs/slant-01" type="text/vnd.tiddlywiki">
 <pre>yes</pre>
 </div>
@@ -7980,7 +7990,7 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div created="20160902130153838" modified="20160903201739126" title="$:/theme" type="text/vnd.tiddlywiki">
+<div created="20160902130153838" modified="20170206150338538" title="$:/theme" type="text/vnd.tiddlywiki">
 <pre>$:/themes/wikilabs/slant-01</pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.13">
@@ -8224,7 +8234,10 @@ Error message and password prompt
 
 ''Important: This theme is - BETA!''
 
-''Important: This theme heavily modifies core templates''
+''Important:'' 
+
+* This theme modifies core templates! 
+* Switching back and forth between core themes and this one should be possible, without breaking stuff. 
 
 &lt;$list filter=&quot;[all[shadows]tag[$:/wikilabs/ui]]&quot;/&gt;
 </pre>

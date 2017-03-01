@@ -1,8 +1,9 @@
+caption: tocP
 created: 20170203104721932
-demo-url: https://wikilabs.github.io/tocP
+demo-url: https://wikilabs.github.io/editions/tocP
 git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/tocP
-modified: 20170203113836365
-tags: edition
+modified: 20170206130527491
+tags: edition plugin
 title: edition-tocP
 type: text/vnd.tiddlywiki
 

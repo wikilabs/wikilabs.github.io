@@ -1,6 +1,9 @@
 created: 20170203102751368
-modified: 20170203102801363
-tags: plugin
+demo-url: https://wikilabs.github.io/editions/info-session
+git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/info-session
+modified: 20170206130452323
+tags: plugin edition
 title: info-session
 type: text/vnd.tiddlywiki
 
+{{||$:/wikilabs/template/theme}}

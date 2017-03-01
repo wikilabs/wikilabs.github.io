@@ -1,6 +1,9 @@
 created: 20170203102703314
-modified: 20170203102720240
-tags: plugin
+demo-url: https://wikilabs.github.io/editions/advanced-search-plus
+git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/advanced-search-plus
+modified: 20170206130308473
+tags: plugin edition
 title: advanced-search-plus
 type: text/vnd.tiddlywiki
 
+{{||$:/wikilabs/template/theme}}
