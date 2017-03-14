@@ -1,6 +1,9 @@
 created: 20170203103021609
-modified: 20170203103031940
+demo-url: https://wikilabs.github.io/editions/link-to-tabs
+git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/link-to-tabs
+modified: 20170314150447995
 tags: plugin
 title: link-to-tabs
 type: text/vnd.tiddlywiki
 
+{{||$:/wikilabs/template/theme}}

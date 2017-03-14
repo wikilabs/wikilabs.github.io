@@ -143,6 +143,8 @@ Error message and password prompt
 
 <li>$:/state/tab-1065816707</li>
 
+<li>$:/state/tab-1749438307</li>
+
 <li>$:/StoryList</li>
 
 <li>$:/temp/info-plugin</li>
@@ -7891,7 +7893,7 @@ Error message and password prompt
         },
         &quot;$:/plugins/wikilabs/multicol-dropdown/readme&quot;: {
             &quot;title&quot;: &quot;$:/plugins/wikilabs/multicol-dropdown/readme&quot;,
-            &quot;text&quot;: &quot;Some flex-box CSS the converts most dropdowns to multi column dropdowns.\n\nThis plugin doesn't change any core templates.&quot;
+            &quot;text&quot;: &quot;! Overview\n\n* This plugin changes most dropdown dialogs into multi column dialogs, with CSS only.\n* This plugin is handy, if you have eg: ''a lot of tags''\n\n! Important\n\nThis plugin does ''not'' change any core templates!&quot;
         }
     }
 }</pre>
@@ -7912,7 +7914,7 @@ Error message and password prompt
         },
         &quot;$:/plugins/wikilabs/new-tiddler-from-search/template&quot;: {
             &quot;title&quot;: &quot;$:/plugins/wikilabs/new-tiddler-from-search/template&quot;,
-            &quot;text&quot;: &quot;\\define new-tiddler-temp()\n$:/temp/new-tiddler-from-search\n\\end\n\\define new-tiddler-from-search-template()\n&lt;$button tooltip={{$:/language/Buttons/Clear/Caption}} &gt;\n  &lt;$action-deletetiddler $tiddler=&lt;&lt;new-tiddler-temp&gt;&gt;/&gt;\n  &lt;$transclude tiddler=\&quot;$:/core/images/cancel-button\&quot; /&gt;\n&lt;/$button&gt;&lt;!--\n--&gt;&lt;$button tooltip={{$:/language/Buttons/NewTiddler/Caption}} &gt;\n  &lt;$action-setfield $tiddler={{$(searchTiddler)$!!text}}\n  tags= {{$(new-tiddler-temp)$!!tags}}\n  text= {{$(new-tiddler-temp)$}}\n  /&gt;\n  &lt;$transclude tiddler=\&quot;$:/core/images/done-button\&quot; /&gt; : &lt;$transclude tiddler=\&quot;$(searchTiddler)$\&quot; /&gt;\n&lt;/$button&gt;\n&lt;p&gt;\n&lt;$edit-text field=\&quot;tags\&quot; class=\&quot;wikilabs-full-width\&quot; tiddler=&lt;&lt;new-tiddler-temp&gt;&gt; placeholder={{$:/language/EditTemplate/Tags/Add/Placeholder}} /&gt;&lt;br&gt;\n&lt;$edit-text field=\&quot;text\&quot; class=\&quot;wikilabs-full-width\&quot; tiddler=&lt;&lt;new-tiddler-temp&gt;&gt; placeholder={{$:/language/EditTemplate/Body/Placeholder}} default=\&quot;\&quot;/&gt;\n&lt;/p&gt;\n\\end\n&lt;&lt;new-tiddler-from-search-template&gt;&gt;&quot;
+            &quot;text&quot;: &quot;\\define createTiddler()\n&lt;$action-setfield $tiddler={{$(searchTiddler)$!!text}}\n  tags= {{$(new-tiddler-temp)$!!tags}}\n  text= {{$(new-tiddler-temp)$}}\n/&gt;\n\\end\n\\define new-tiddler-temp()\n$:/temp/new-tiddler-from-search\n\\end\n\\define new-tiddler-from-search-template()\n&lt;$button tooltip={{$:/language/Buttons/Clear/Caption}} &gt;\n  &lt;$action-deletetiddler $tiddler=&lt;&lt;new-tiddler-temp&gt;&gt;/&gt;\n  &lt;$transclude tiddler=\&quot;$:/core/images/cancel-button\&quot; /&gt;\n&lt;/$button&gt;&lt;!--\n--&gt;&lt;$button tooltip={{$:/language/Buttons/NewTiddler/Caption}} actions=&lt;&lt;createTiddler&gt;&gt; &gt;\n  &lt;$transclude tiddler=\&quot;$:/core/images/done-button\&quot; /&gt; : &lt;$transclude tiddler=\&quot;$(searchTiddler)$\&quot; /&gt;\n&lt;/$button&gt;\n&lt;p&gt;\n&lt;$edit-text field=\&quot;tags\&quot; class=\&quot;wikilabs-full-width\&quot; tiddler=&lt;&lt;new-tiddler-temp&gt;&gt; placeholder={{$:/language/EditTemplate/Tags/Add/Placeholder}} /&gt;&lt;br&gt;\n&lt;$edit-text field=\&quot;text\&quot; class=\&quot;wikilabs-full-width\&quot; tiddler=&lt;&lt;new-tiddler-temp&gt;&gt; placeholder={{$:/language/EditTemplate/Body/Placeholder}} default=\&quot;\&quot;/&gt;\n&lt;/p&gt;\n\\end\n&lt;&lt;new-tiddler-from-search-template&gt;&gt;&quot;
         },
         &quot;$:/plugins/wikilabs/new-tiddler-from-search/templateX&quot;: {
             &quot;title&quot;: &quot;$:/plugins/wikilabs/new-tiddler-from-search/templateX&quot;,
@@ -7956,7 +7958,7 @@ Error message and password prompt
         },
         &quot;$:/plugins/wikilabs/persistent-states/readme&quot;: {
             &quot;title&quot;: &quot;$:/plugins/wikilabs/persistent-states/readme&quot;,
-            &quot;text&quot;: &quot;This plugin saves all $:/state/ tiddlers and creates a simple UI, to remove them manually.\n\nsee: \n\n[[$:/plugins/wikilabs/ui/persistent-states]]\n\n{{$:/plugins/wikilabs/ui/persistent-states}}\n&quot;
+            &quot;text&quot;: &quot;! Important\n\nWORK IN PROGRESS -&gt; DOESN'T WORK ATM !!!!!\n\n! Overview\n\nThis plugin saves all $:/state/ tiddlers and creates a simple UI, to remove them manually.\n\n! Simple UI\n\n[[$:/plugins/wikilabs/ui/persistent-states]]\n\n{{$:/plugins/wikilabs/ui/persistent-states}}\n&quot;
         }
     }
 }</pre>
@@ -7970,8 +7972,11 @@ Error message and password prompt
 <div created="20170203215408117" modified="20170203215409193" title="$:/state/plugin-info--1124947659-$:/themes/wikilabs/slant-01" type="text/vnd.tiddlywiki">
 <pre>yes</pre>
 </div>
-<div created="20170203215405529" modified="20170203215406591" title="$:/state/tab-1065816707" type="text/vnd.tiddlywiki">
-<pre>$:/core/ui/ControlPanel/Plugins/Installed/Themes</pre>
+<div created="20170203215405529" modified="20170209160943690" title="$:/state/tab-1065816707" type="text/vnd.tiddlywiki">
+<pre>$:/core/ui/ControlPanel/Plugins/Installed/Plugins</pre>
+</div>
+<div created="20170209162618584" modified="20170209164622363" title="$:/state/tab-1749438307" type="text/vnd.tiddlywiki">
+<pre>$:/core/ui/ControlPanel/Plugins</pre>
 </div>
 <div list="GettingStarted" title="$:/StoryList">
 <pre></pre>

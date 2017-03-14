@@ -1,6 +1,9 @@
 created: 20170203102848440
-modified: 20170203102859219
+demo-url: https://wikilabs.github.io/editions/new-tiddler-from-search
+git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/new-tiddler-from-search
+modified: 20170314150708544
 tags: plugin
 title: new-tiddler-from-search
 type: text/vnd.tiddlywiki
 
+{{||$:/wikilabs/template/theme}}

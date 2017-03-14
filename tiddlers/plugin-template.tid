@@ -1,6 +1,9 @@
-created: 20170203104249167
-modified: 20170203104259762
+created: 20170314150049582
+demo-url: n/a
+git-repo: https://github.com/wikilabs/editions/tree/master/plugin-template
+modified: 20170314150130970
 tags: edition
 title: plugin-template
 type: text/vnd.tiddlywiki
 
+{{||$:/wikilabs/template/theme}}

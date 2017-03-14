@@ -1,6 +1,9 @@
 created: 20170203102912765
-modified: 20170203102921459
+demo-url: https://wikilabs.github.io/editions/remove-states
+git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/remove-states
+modified: 20170314151139179
 tags: plugin
 title: remove-states
 type: text/vnd.tiddlywiki
 
+{{||$:/wikilabs/template/theme}}
