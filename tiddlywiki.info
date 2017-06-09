@@ -17,7 +17,7 @@
 			"--rendertiddler", "$:/core/save/all", "index.html", "text/plain"
 		],
 		"github": [
-			"--output", "/git/tiddly/wikilabs/wikilabs.github.io",
+			"--output", "/home/mario/git/wikilabs/wikilabs.github.io",
 			"--rendertiddler", "$:/core/save/all", "index.html", "text/plain"
 		],
 		"externalimages": [
