@@ -44,7 +44,7 @@ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE." />
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
-<title>plugin: bundles — provide basic bundling functions and UI</title>
+<title>plugin: bundler — provide basic bundling functions and UI</title>
 <!--~~ This is a Tiddlywiki file. The points of interest in the file are marked with this pattern ~~--><!--~~ Raw markup ~~-->
 
 
@@ -122,11 +122,13 @@ Error message and password prompt
 
 <li>$:/config/ViewToolbarButtons/Visibility/$:/core/ui/Buttons/info</li>
 
+<li>$:/config/wikilabs/enableOverwriteCheck</li>
+
 <li>$:/core</li>
 
 <li>$:/isEncrypted</li>
 
-<li>$:/plugins/wikilabs/bundles</li>
+<li>$:/plugins/wikilabs/bundler</li>
 
 <li>$:/SiteSubtitle</li>
 
@@ -184,6 +186,9 @@ Error message and password prompt
 <div id="storeArea" style="display:none;">
 <div created="20170206153736219" modified="20170206153738292" title="$:/config/ViewToolbarButtons/Visibility/$:/core/ui/Buttons/info" type="text/vnd.tiddlywiki">
 <pre>show</pre>
+</div>
+<div created="20170612095654463" modified="20170612105810427" title="$:/config/wikilabs/enableOverwriteCheck" type="text/vnd.tiddlywiki">
+<pre>no</pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="TiddlyWiki5 core" list="readme" plugin-priority="0" plugin-type="plugin" title="$:/core" type="application/json" version="5.1.14">
 <pre>{
@@ -8385,95 +8390,99 @@ Error message and password prompt
 <div title="$:/isEncrypted">
 <pre>no</pre>
 </div>
-<div author="pmario" core-version="&gt;=5.1.14" dependents="" description="Bundles - Simple UI to create tiddler bundles" list="readme license" plugin-type="plugin" title="$:/plugins/wikilabs/bundles" type="application/json" version="0.1.0">
+<div author="pmario" core-version="&gt;=5.1.14" dependents="" description="Bundler - Simple UI to create tiddler bundles" list="history readme license" plugin-type="plugin" title="$:/plugins/wikilabs/bundler" type="application/json" version="0.1.0">
 <pre>{
     &quot;tiddlers&quot;: {
-        &quot;$:/plugins/wikilabs/bundles/doc/table-all-filters&quot;: {
+        &quot;$:/plugins/wikilabs/bundler/doc/table-all-filters&quot;: {
             &quot;created&quot;: &quot;20170602150722531&quot;,
             &quot;modified&quot;: &quot;20170609084521849&quot;,
             &quot;tags&quot;: &quot;&quot;,
-            &quot;title&quot;: &quot;$:/plugins/wikilabs/bundles/doc/table-all-filters&quot;,
+            &quot;title&quot;: &quot;$:/plugins/wikilabs/bundler/doc/table-all-filters&quot;,
             &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
-            &quot;text&quot;: &quot;!! Default Filters\n\n&lt;table&gt;\n&lt;tbody&gt;\n&lt;th&gt;Description&lt;/th&gt;&lt;th&gt;Filter&lt;/th&gt;&lt;th&gt;Test&lt;/th&gt;\n&lt;$list filter=\&quot;[all[shadows]tag[$:/tags/Filter]]\&quot;&gt;\n  &lt;tr&gt;\n    &lt;td&gt;{{!!description}}&lt;/td&gt;\n    &lt;td&gt;&lt;$view field=filter/&gt;&lt;/td&gt;\n    &lt;td&gt;{{||$:/plugins/wikilabs/bundles/ui/Buttons/test-filter}}&lt;/td&gt;\n  &lt;/tr&gt;\n&lt;/$list&gt;\n&lt;/tbody&gt;\n&lt;/table&gt;\n\n!! This Wiki\n\n&lt;table&gt;\n&lt;tbody&gt;\n&lt;th&gt;Description&lt;/th&gt;&lt;th&gt;Filter&lt;/th&gt;&lt;th&gt;Test&lt;/th&gt;\n&lt;$list filter=\&quot;[all[tiddlers]tag[$:/tags/Filter]]\&quot;&gt;\n  &lt;tr&gt;\n    &lt;td&gt;{{!!description}}&lt;/td&gt;\n    &lt;td&gt;&lt;$view field=filter/&gt;&lt;/td&gt;\n    &lt;td&gt;{{||$:/plugins/wikilabs/bundles/ui/Buttons/test-filter}}&lt;/td&gt;\n  &lt;/tr&gt;\n&lt;/$list&gt;\n&lt;/tbody&gt;\n&lt;/table&gt;\n\n&quot;
+            &quot;text&quot;: &quot;!! Default Filters\n\n&lt;table&gt;\n&lt;tbody&gt;\n&lt;th&gt;Description&lt;/th&gt;&lt;th&gt;Filter&lt;/th&gt;&lt;th&gt;Test&lt;/th&gt;\n&lt;$list filter=\&quot;[all[shadows]tag[$:/tags/Filter]]\&quot;&gt;\n  &lt;tr&gt;\n    &lt;td&gt;{{!!description}}&lt;/td&gt;\n    &lt;td&gt;&lt;$view field=filter/&gt;&lt;/td&gt;\n    &lt;td&gt;{{||$:/plugins/wikilabs/bundler/ui/Buttons/test-filter}}&lt;/td&gt;\n  &lt;/tr&gt;\n&lt;/$list&gt;\n&lt;/tbody&gt;\n&lt;/table&gt;\n\n!! This Wiki\n\n&lt;table&gt;\n&lt;tbody&gt;\n&lt;th&gt;Description&lt;/th&gt;&lt;th&gt;Filter&lt;/th&gt;&lt;th&gt;Test&lt;/th&gt;\n&lt;$list filter=\&quot;[all[tiddlers]tag[$:/tags/Filter]]\&quot;&gt;\n  &lt;tr&gt;\n    &lt;td&gt;{{!!description}}&lt;/td&gt;\n    &lt;td&gt;&lt;$view field=filter/&gt;&lt;/td&gt;\n    &lt;td&gt;{{||$:/plugins/wikilabs/bundler/ui/Buttons/test-filter}}&lt;/td&gt;\n  &lt;/tr&gt;\n&lt;/$list&gt;\n&lt;/tbody&gt;\n&lt;/table&gt;\n\n&quot;
         },
-        &quot;$:/plugins/wikilabs/bundles/ui/Bundles&quot;: {
+        &quot;$:/plugins/wikilabs/bundler/ui/Bundles&quot;: {
             &quot;caption&quot;: &quot;Bundles&quot;,
             &quot;created&quot;: &quot;20170601134806876&quot;,
             &quot;modified&quot;: &quot;20170609084521847&quot;,
             &quot;tags&quot;: &quot;$:/tags/SideBar&quot;,
-            &quot;title&quot;: &quot;$:/plugins/wikilabs/bundles/ui/Bundles&quot;,
+            &quot;title&quot;: &quot;$:/plugins/wikilabs/bundler/ui/Bundles&quot;,
             &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
-            &quot;text&quot;: &quot;{{$:/plugins/wikilabs/bundles/ui/BundlesList}}\n\n---\n\n&lt;$reveal type=\&quot;match\&quot; state=\&quot;$:/state/enableBundles\&quot; text=\&quot;enabled\&quot;&gt;\n\n{{$:/plugins/wikilabs/bundles/ui/BundlesFiltered}}\n\n&lt;/$reveal&gt;\n\n&lt;$reveal type=\&quot;nomatch\&quot; state=\&quot;$:/state/enableBundles\&quot; text=\&quot;enabled\&quot;&gt;\n\n[[Enable Filtered Bundles|$:/plugins/wikilabs/bundles/ui/ControlPanel/bundles-config]]\n\n&lt;/$reveal&gt;\n&quot;
+            &quot;text&quot;: &quot;{{$:/plugins/wikilabs/bundler/ui/BundlesList}}\n\n---\n\n&lt;$reveal type=\&quot;match\&quot; state=\&quot;$:/config/wikilabs/enableBundles\&quot; text=\&quot;enabled\&quot;&gt;\n\n{{$:/plugins/wikilabs/bundler/ui/BundlesFiltered}}\n\n&lt;/$reveal&gt;\n\n&lt;$reveal type=\&quot;nomatch\&quot; state=\&quot;$:/config/wikilabs/enableBundles\&quot; text=\&quot;enabled\&quot;&gt;\n\n[[Enable Filtered Bundles|$:/plugins/wikilabs/bundler/ui/ControlPanel/bundler-config]]\n\n&lt;/$reveal&gt;\n&quot;
         },
-        &quot;$:/plugins/wikilabs/bundles/ui/BundlesFiltered&quot;: {
+        &quot;$:/plugins/wikilabs/bundler/ui/BundlesFiltered&quot;: {
             &quot;created&quot;: &quot;20170604154246985&quot;,
             &quot;modified&quot;: &quot;20170609084521844&quot;,
-            &quot;title&quot;: &quot;$:/plugins/wikilabs/bundles/ui/BundlesFiltered&quot;,
+            &quot;title&quot;: &quot;$:/plugins/wikilabs/bundler/ui/BundlesFiltered&quot;,
             &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
-            &quot;text&quot;: &quot;\\define filter-exist() [enlist{$(currentTiddler)$}] +[has[title]]\n\\define filter-list() [enlist{$(currentTiddler)$}]\n\\define get-info() &lt;$count filter=&lt;&lt;filter-exist&gt;&gt; /&gt;/&lt;$count filter=&lt;&lt;filter-list&gt;&gt; /&gt;\n\\define get-tooltip() &lt;$count filter=&lt;&lt;filter-exist&gt;&gt; /&gt;, out of &lt;$count filter=&lt;&lt;filter-list&gt;&gt; /&gt; tiddlers will be exported. Check for typos!\n\\define count-filter() &lt;$count filter={{$(currentTiddler)$!!filter}} /&gt; \n\\define get-filter-tooltip() &lt;&lt;count-filter&gt;&gt; tiddlers will be exported\n\n\\define go-advanced-search-filter()\n&lt;$action-setfield $tiddler=\&quot;$:/state/tab--1498284803\&quot; $value=\&quot;$:/core/ui/AdvancedSearch/Filter\&quot;/&gt;\n&lt;$action-setfield $tiddler=\&quot;$:/temp/advancedsearch\&quot; $value={{$(currentTiddler)$!!filter}}/&gt;\n\\end\n\\define test-filter()\n&lt;$button to=\&quot;$:/AdvancedSearch\&quot; actions=&lt;&lt;go-advanced-search-filter&gt;&gt; class=\&quot;tc-btn-invisible\&quot; tooltip=\&quot;Test the filter\&quot; style=\&quot;cursor:help\&quot;&gt;\n &lt;&lt;count-filter&gt;&gt; \n&lt;/$button&gt;\n\\end\n\n&lt;$button&gt;\n&lt;$action-sendmessage $message=\&quot;tm-new-tiddler\&quot; \ntitle=\&quot;new-filtered.bundle\&quot; \ntags=\&quot;$:/tags/Filter\&quot; \ndescription=\&quot;provide a meaningful description to display in AdvancedSearch: Filter!\&quot;\nfilter=\&quot;adjust this filter: [list[$:/StoryList]]\&quot; \ntext=\&quot;&lt;pre&gt;{{!!filter}}&lt;/pre&gt;\&quot;/&gt;\nFilter Bundle\n&lt;/$button&gt;&lt;$list\nfilter=\&quot;[tag[$:/tags/Filter]]\&quot;&gt;\n&lt;$link to=&lt;&lt;currentTiddler&gt;&gt; tooltip=&lt;&lt;get-filter-tooltip&gt;&gt; &gt;\n\n{{||$:/plugins/wikilabs/bundles/ui/Buttons/export-bundle-filter}} &lt;&lt;test-filter&gt;&gt; &lt;&lt;currentTiddler&gt;&gt;\n&lt;/$link&gt; &lt;/$list&gt;\n&quot;
+            &quot;text&quot;: &quot;\\define filter-exist() [enlist{$(currentTiddler)$}] +[has[title]]\n\\define filter-list() [enlist{$(currentTiddler)$}]\n\\define get-info() &lt;$count filter=&lt;&lt;filter-exist&gt;&gt; /&gt;/&lt;$count filter=&lt;&lt;filter-list&gt;&gt; /&gt;\n\\define get-tooltip() &lt;$count filter=&lt;&lt;filter-exist&gt;&gt; /&gt;, out of &lt;$count filter=&lt;&lt;filter-list&gt;&gt; /&gt; tiddlers will be exported. Check for typos!\n\\define count-filter() &lt;$count filter={{$(currentTiddler)$!!filter}} /&gt; \n\\define get-filter-tooltip() &lt;&lt;count-filter&gt;&gt; tiddlers will be exported\n\n\\define go-advanced-search-filter()\n&lt;$action-setfield $tiddler=\&quot;$:/state/tab--1498284803\&quot; $value=\&quot;$:/core/ui/AdvancedSearch/Filter\&quot;/&gt;\n&lt;$action-setfield $tiddler=\&quot;$:/temp/advancedsearch\&quot; $value={{$(currentTiddler)$!!filter}}/&gt;\n\\end\n\\define test-filter()\n&lt;$button to=\&quot;$:/AdvancedSearch\&quot; actions=&lt;&lt;go-advanced-search-filter&gt;&gt; class=\&quot;tc-btn-invisible\&quot; tooltip=\&quot;Test the filter\&quot; style=\&quot;cursor:help\&quot;&gt;\n &lt;&lt;count-filter&gt;&gt; \n&lt;/$button&gt;\n\\end\n\n&lt;$button&gt;\n&lt;$action-sendmessage $message=\&quot;tm-new-tiddler\&quot; \ntitle=\&quot;new-filtered.bundle\&quot; \ntags=\&quot;$:/tags/Filter\&quot; \ndescription=\&quot;provide a meaningful description to display in AdvancedSearch: Filter!\&quot;\nfilter=\&quot;adjust this filter: [list[$:/StoryList]]\&quot; \ntext=\&quot;&lt;pre&gt;{{!!filter}}&lt;/pre&gt;\&quot;/&gt;\nFilter Bundle\n&lt;/$button&gt;&lt;$list\nfilter=\&quot;[tag[$:/tags/Filter]]\&quot;&gt;\n&lt;$link to=&lt;&lt;currentTiddler&gt;&gt; tooltip=&lt;&lt;get-filter-tooltip&gt;&gt; &gt;\n\n{{||$:/plugins/wikilabs/bundler/ui/Buttons/export-bundle-filter}} &lt;&lt;test-filter&gt;&gt; &lt;&lt;currentTiddler&gt;&gt;\n&lt;/$link&gt; &lt;/$list&gt;\n&quot;
         },
-        &quot;$:/plugins/wikilabs/bundles/ui/BundlesList&quot;: {
+        &quot;$:/plugins/wikilabs/bundler/ui/BundlesList&quot;: {
             &quot;created&quot;: &quot;20170604154146106&quot;,
             &quot;modified&quot;: &quot;20170609084521841&quot;,
-            &quot;title&quot;: &quot;$:/plugins/wikilabs/bundles/ui/BundlesList&quot;,
+            &quot;title&quot;: &quot;$:/plugins/wikilabs/bundler/ui/BundlesList&quot;,
             &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
-            &quot;text&quot;: &quot;\\define filter-exist() [enlist{$(currentTiddler)$}] +[has[title]]\n\\define filter-list() [enlist{$(currentTiddler)$}]\n\\define get-info() &lt;$count filter=&lt;&lt;filter-exist&gt;&gt; /&gt;/&lt;$count filter=&lt;&lt;filter-list&gt;&gt; /&gt;\n\\define get-tooltip() &lt;$count filter=&lt;&lt;filter-exist&gt;&gt; /&gt;, out of &lt;$count filter=&lt;&lt;filter-list&gt;&gt; /&gt; tiddlers will be exported. Check for typos!\n\\define count-filter() &lt;$count filter={{$(currentTiddler)$!!filter}} /&gt; \n\\define get-filter-tooltip() &lt;&lt;count-filter&gt;&gt; tiddlers will be exported\n\n\\define go-advanced-search-filter()\n&lt;$action-setfield $tiddler=\&quot;$:/state/tab--1498284803\&quot; $value=\&quot;$:/core/ui/AdvancedSearch/Filter\&quot;/&gt;\n&lt;$action-setfield $tiddler=\&quot;$:/temp/advancedsearch\&quot; $value={{$(currentTiddler)$!!filter}}/&gt;\n\\end\n\\define test-filter()\n&lt;$button to=\&quot;$:/AdvancedSearch\&quot; actions=&lt;&lt;go-advanced-search-filter&gt;&gt; class=\&quot;tc-btn-invisible\&quot; tooltip=\&quot;Test the filter\&quot; style=\&quot;cursor:help\&quot;&gt;\n &lt;&lt;count-filter&gt;&gt; \n&lt;/$button&gt;\n\\end\n\n&lt;$button&gt;\n&lt;$action-sendmessage $message=\&quot;tm-new-tiddler\&quot; \ntitle=\&quot;new.bundle\&quot; \ntags=\&quot;$:/tags/Bundle\&quot; \ntype=\&quot;text/plain\&quot; \ntext=\&quot;tiddlerName\n[[tiddler with spaces]]\&quot;/&gt;\nNew Bundle List\n&lt;/$button&gt;\n&lt;$list filter=\&quot;[tag[$:/tags/Bundle]]\&quot;&gt;\n\n&lt;$link to=&lt;&lt;currentTiddler&gt;&gt; tooltip=&lt;&lt;get-tooltip&gt;&gt; &gt;\n{{||$:/plugins/wikilabs/bundles/ui/Buttons/export-bundle}} &lt;&lt;get-info&gt;&gt; &lt;&lt;currentTiddler&gt;&gt;\n&lt;/$link&gt;\n&lt;/$list&gt;\n&quot;
+            &quot;text&quot;: &quot;\\define filter-exist() [enlist{$(currentTiddler)$}] +[has[title]]\n\\define filter-list() [enlist{$(currentTiddler)$}]\n\\define get-info() &lt;$count filter=&lt;&lt;filter-exist&gt;&gt; /&gt;/&lt;$count filter=&lt;&lt;filter-list&gt;&gt; /&gt;\n\\define get-tooltip() &lt;$count filter=&lt;&lt;filter-exist&gt;&gt; /&gt;, out of &lt;$count filter=&lt;&lt;filter-list&gt;&gt; /&gt; tiddlers will be exported. Check for typos!\n\\define count-filter() &lt;$count filter={{$(currentTiddler)$!!filter}} /&gt; \n\\define get-filter-tooltip() &lt;&lt;count-filter&gt;&gt; tiddlers will be exported\n\n\\define go-advanced-search-filter()\n&lt;$action-setfield $tiddler=\&quot;$:/state/tab--1498284803\&quot; $value=\&quot;$:/core/ui/AdvancedSearch/Filter\&quot;/&gt;\n&lt;$action-setfield $tiddler=\&quot;$:/temp/advancedsearch\&quot; $value={{$(currentTiddler)$!!filter}}/&gt;\n\\end\n\\define test-filter()\n&lt;$button to=\&quot;$:/AdvancedSearch\&quot; actions=&lt;&lt;go-advanced-search-filter&gt;&gt; class=\&quot;tc-btn-invisible\&quot; tooltip=\&quot;Test the filter\&quot; style=\&quot;cursor:help\&quot;&gt;\n &lt;&lt;count-filter&gt;&gt; \n&lt;/$button&gt;\n\\end\n\n&lt;$button&gt;\n&lt;$action-sendmessage $message=\&quot;tm-new-tiddler\&quot; \ntitle=\&quot;new.bundle\&quot; \ntags=\&quot;$:/tags/Bundle\&quot; \ntype=\&quot;text/plain\&quot; \ntext=\&quot;tiddlerName\n[[tiddler with spaces]]\&quot;/&gt;\nNew Bundle List\n&lt;/$button&gt;\n&lt;$list filter=\&quot;[tag[$:/tags/Bundle]]\&quot;&gt;\n\n&lt;$link to=&lt;&lt;currentTiddler&gt;&gt; tooltip=&lt;&lt;get-tooltip&gt;&gt; &gt;\n{{||$:/plugins/wikilabs/bundler/ui/Buttons/export-bundle}} &lt;&lt;get-info&gt;&gt; &lt;&lt;currentTiddler&gt;&gt;\n&lt;/$link&gt;\n&lt;/$list&gt;\n&quot;
         },
-        &quot;$:/plugins/wikilabs/bundles/ui/Buttons/export-bundle-filter&quot;: {
+        &quot;$:/plugins/wikilabs/bundler/ui/Buttons/export-bundle-filter&quot;: {
             &quot;caption&quot;: &quot;{{$:/core/images/export-button}} {{$:/language/Buttons/ExportTiddler/Caption}}&quot;,
             &quot;created&quot;: &quot;20170602112538007&quot;,
             &quot;description&quot;: &quot;export bundle&quot;,
             &quot;modified&quot;: &quot;20170609084521879&quot;,
             &quot;tags&quot;: &quot;&quot;,
-            &quot;title&quot;: &quot;$:/plugins/wikilabs/bundles/ui/Buttons/export-bundle-filter&quot;,
+            &quot;title&quot;: &quot;$:/plugins/wikilabs/bundler/ui/Buttons/export-bundle-filter&quot;,
             &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
             &quot;text&quot;: &quot;&lt;$macrocall $name=\&quot;exportButton\&quot; exportFilter={{!!filter}} lingoBase=\&quot;$:/language/Buttons/ExportTiddlers/\&quot; baseFilename=&lt;&lt;currentTiddler&gt;&gt;/&gt;&quot;
         },
-        &quot;$:/plugins/wikilabs/bundles/ui/Buttons/export-bundle&quot;: {
+        &quot;$:/plugins/wikilabs/bundler/ui/Buttons/export-bundle&quot;: {
             &quot;caption&quot;: &quot;{{$:/core/images/export-button}} {{$:/language/Buttons/ExportTiddler/Caption}}&quot;,
             &quot;created&quot;: &quot;20170601135455476&quot;,
             &quot;description&quot;: &quot;export bundle&quot;,
             &quot;modified&quot;: &quot;20170609084521882&quot;,
-            &quot;title&quot;: &quot;$:/plugins/wikilabs/bundles/ui/Buttons/export-bundle&quot;,
+            &quot;title&quot;: &quot;$:/plugins/wikilabs/bundler/ui/Buttons/export-bundle&quot;,
             &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
             &quot;text&quot;: &quot;\\define makeExportFilter()\n[enlist{$(currentTiddler)$}]\n\\end\n&lt;$macrocall $name=\&quot;exportButton\&quot; exportFilter=&lt;&lt;makeExportFilter&gt;&gt; lingoBase=\&quot;$:/language/Buttons/ExportTiddler/\&quot; baseFilename=&lt;&lt;currentTiddler&gt;&gt;/&gt;\n&quot;
         },
-        &quot;$:/plugins/wikilabs/bundles/ui/Buttons/test-filter&quot;: {
+        &quot;$:/plugins/wikilabs/bundler/ui/Buttons/test-filter&quot;: {
             &quot;created&quot;: &quot;20170602135926983&quot;,
             &quot;modified&quot;: &quot;20170609084521834&quot;,
             &quot;tags&quot;: &quot;&quot;,
-            &quot;title&quot;: &quot;$:/plugins/wikilabs/bundles/ui/Buttons/test-filter&quot;,
+            &quot;title&quot;: &quot;$:/plugins/wikilabs/bundler/ui/Buttons/test-filter&quot;,
             &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
             &quot;text&quot;: &quot;\\define go-advanced-search-filter()\n&lt;$action-setfield $tiddler=\&quot;$:/state/tab--1498284803\&quot; $value=\&quot;$:/core/ui/AdvancedSearch/Filter\&quot;/&gt;\n&lt;$action-setfield $tiddler=\&quot;$:/temp/advancedsearch\&quot; $value={{$(currentTiddler)$!!filter}}/&gt;\n\\end\n\\define test-filter()\n&lt;$button to=\&quot;$:/AdvancedSearch\&quot; actions=&lt;&lt;go-advanced-search-filter&gt;&gt; class=\&quot;tc-btn-invisible\&quot; tooltip=\&quot;Test the filter\&quot;&gt;\n{{$:/core/images/info-button}}\n&lt;/$button&gt;\n\\end\n\n&lt;&lt;test-filter&gt;&gt;&quot;
         },
-        &quot;$:/plugins/wikilabs/bundles/ui/ControlPanel/bundles-config&quot;: {
+        &quot;$:/plugins/wikilabs/bundler/ui/ControlPanel/bundler-config&quot;: {
             &quot;caption&quot;: &quot;Bundles&quot;,
             &quot;created&quot;: &quot;20170602132707785&quot;,
-            &quot;modified&quot;: &quot;20170609084521876&quot;,
+            &quot;modified&quot;: &quot;20170612095528115&quot;,
             &quot;tags&quot;: &quot;$:/tags/ControlPanel&quot;,
-            &quot;title&quot;: &quot;$:/plugins/wikilabs/bundles/ui/ControlPanel/bundles-config&quot;,
+            &quot;title&quot;: &quot;$:/plugins/wikilabs/bundler/ui/ControlPanel/bundler-config&quot;,
             &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
-            &quot;text&quot;: &quot;!! Wikilabs [[Bundle Settings|$:/plugins/wikilabs/bundles/ui/ControlPanel/bundles-config]]\n\n&lt;&lt;&lt;\n\nSelect the position of the bundle tab:\n\n&lt;$tiddler tiddler=\&quot;$:/plugins/wikilabs/bundles/ui/Bundles\&quot;&gt;\n&lt;$radio field=tags value=\&quot;$:/tags/MoreSideBar\&quot;&gt; \&quot;$:/tags/MoreSideBar\&quot;&lt;/$radio&gt;&lt;br&gt;\n&lt;$radio field=tags value=\&quot;$:/tags/SideBar\&quot;&gt; \&quot;$:/tags/SideBar\&quot;&lt;/$radio&gt;\n&lt;/$tiddler&gt;\n\n&lt;&lt;&lt;\n\n!! Enable Import Bundle\n\n&lt;&lt;&lt;\n\n&lt;$checkbox tiddler=\&quot;$:/state/wikilabs/EnableImportBundle\&quot; field=\&quot;text\&quot; checked=\&quot;yes\&quot; unchecked=\&quot;no\&quot; default=\&quot;no\&quot;&gt; Enable Import Bundle&lt;/$checkbox&gt;\n\nEverytime you import content, an [[import.bundle]] tiddler will be created. If the tiddler already exists, the new imported titles will be appended. \n\nYou can rename or delete the tiddler, to store the setting or get rid of it. \n\n&lt;&lt;&lt;\n\n!! Enable Filtered Bundles\n\n&lt;&lt;&lt;\n\n&lt;$checkbox tiddler=\&quot;$:/state/enableBundles\&quot; field=\&quot;text\&quot; checked=\&quot;enabled\&quot; unchecked=\&quot;disabled\&quot; default=\&quot;disabled\&quot;&gt; Enable Filtered Bundles&lt;/$checkbox&gt;\n\nBundle filters are already used by the \&quot;More\&quot; dropdown in the $:/AdvancedSearch - Filter tab. The filtered bundle settings provide a slightly different UI to export sets of tiddlers, configured by the user. \n\nThe \&quot;Filter Bundle\&quot; button creates compatible configurations. So user created filtered bundles show up in the advanced search panel too! Existing filters can be seen here: $:/plugins/wikilabs/bundles/doc/table-all-filters\n\n&lt;&lt;&lt;\n\n!! Filter Format\n\n&lt;&lt;&lt;\n\n;text\n:contains the documentation text if needed\n\n;filter\n:filter to use eg: `[tag[test]]`\n\n;description\n:descriptive text, that shows up in the AdvancedSearch: Filter: More dropdown\n\n&lt;&lt;&lt;\n&quot;
+            &quot;text&quot;: &quot;!! Wikilabs [[Bundle Settings|$:/plugins/wikilabs/bundler/ui/ControlPanel/bundler-config]]\n\n&lt;&lt;&lt;\n\nSelect the position of the bundle tab:\n\n&lt;$tiddler tiddler=\&quot;$:/plugins/wikilabs/bundler/ui/Bundles\&quot;&gt;\n&lt;$radio field=tags value=\&quot;$:/tags/MoreSideBar\&quot;&gt; \&quot;$:/tags/MoreSideBar\&quot;&lt;/$radio&gt;&lt;br&gt;\n&lt;$radio field=tags value=\&quot;$:/tags/SideBar\&quot;&gt; \&quot;$:/tags/SideBar\&quot;&lt;/$radio&gt;\n&lt;/$tiddler&gt;\n\n&lt;&lt;&lt;\n\n!! Enable Overwrite Check\n\n&lt;&lt;&lt;\n&lt;$checkbox tiddler=\&quot;$:/config/wikilabs/enableOverwriteCheck\&quot; field=\&quot;text\&quot; checked=\&quot;yes\&quot; unchecked=\&quot;no\&quot; default=\&quot;no\&quot;&gt; Enable Overwrite Check&lt;/$checkbox&gt;\n\nBy default, the import mechanism overwrites existing tiddlers. By enabling this option, you can activate a mechanism, that creates a new tiddler name. By default this option is off.\n&lt;&lt;&lt;\n\n!! Enable Import Bundle\n\n&lt;&lt;&lt;\n\n&lt;$checkbox tiddler=\&quot;$:/config/wikilabs/enableImportBundle\&quot; field=\&quot;text\&quot; checked=\&quot;yes\&quot; unchecked=\&quot;no\&quot; default=\&quot;no\&quot;&gt; Enable Import Bundle&lt;/$checkbox&gt;\n\nEverytime you import content, an [[import.bundle]] tiddler will be created. If the tiddler already exists, the new imported titles will be appended. \n\nYou can rename or delete the tiddler, to store the setting or get rid of it. \n\n&lt;&lt;&lt;\n\n!! Enable Filtered Bundles\n\n&lt;&lt;&lt;\n\n&lt;$checkbox tiddler=\&quot;$:/config/wikilabs/enableBundles\&quot; field=\&quot;text\&quot; checked=\&quot;enabled\&quot; unchecked=\&quot;disabled\&quot; default=\&quot;disabled\&quot;&gt; Enable Filtered Bundles&lt;/$checkbox&gt;\n\nBundle filters are already used by the \&quot;More\&quot; dropdown in the $:/AdvancedSearch - Filter tab. The filtered bundle settings provide a slightly different UI to export sets of tiddlers, configured by the user. \n\nThe \&quot;Filter Bundle\&quot; button creates compatible configurations. So user created filtered bundles show up in the advanced search panel too! Existing filters can be seen here: $:/plugins/wikilabs/bundler/doc/table-all-filters\n\n&lt;&lt;&lt;\n\n!! Filter Format\n\n&lt;&lt;&lt;\n\n;text\n:contains the documentation text if needed\n\n;filter\n:filter to use eg: `[tag[test]]`\n\n;description\n:descriptive text, that shows up in the AdvancedSearch: Filter: More dropdown\n\n&lt;&lt;&lt;&quot;
         },
-        &quot;$:/plugins/wikilabs/bundles/importhook.js&quot;: {
-            &quot;text&quot;: &quot;/*\\\ntitle: $:/plugins/wikilabs/bundles/importhook.js\ntype: application/javascript\nmodule-type: startup\n\nA startup module to log imported tiddlers to the import.bundle tiddler.\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\n// Export name and synchronous status\nexports.name = \&quot;bundlesimporthook\&quot;;\nexports.platforms = [\&quot;browser\&quot;];\nexports.after = [\&quot;startup\&quot;];\nexports.synchronous = true;\n\n// Favicon tiddler\nvar ENABLE_LOG_TITLE = \&quot;$:/state/wikilabs/EnableImportBundle\&quot;,\n\tIMPORT_LOG_TITLE = \&quot;import.bundle\&quot;;\n\nexports.startup = function() {\n\t$tw.hooks.addHook(\&quot;th-importing-tiddler\&quot;,function(tiddler) {\n\t\tvar logTiddler,\n\t\t\ttidTitle = tiddler.fields.title;\n\n\t\tif($tw.wiki.checkTiddlerText(ENABLE_LOG_TITLE,\&quot;yes\&quot;)) {\n\t\t\tlogTiddler = $tw.wiki.getTiddler(IMPORT_LOG_TITLE) || new $tw.Tiddler($tw.wiki.getCreationFields(), $tw.wiki.getModificationFields(), {title: IMPORT_LOG_TITLE, text: \&quot;\&quot;, type: \&quot;text/plain\&quot;, tags: [\&quot;$:/tags/Bundle\&quot;]});\n\n\t\t\tif (tidTitle.indexOf(\&quot; \&quot;) !== -1) {\n\t\t\t\t$tw.wiki.addTiddler( new $tw.Tiddler( logTiddler, {text: logTiddler.fields.text + \&quot;[[\&quot; + tidTitle + \&quot;]]\\n\&quot;}));\n\t\t\t} else {\n\t\t\t\t$tw.wiki.addTiddler( new $tw.Tiddler( logTiddler, {text: logTiddler.fields.text + tidTitle + \&quot;\\n\&quot;}));\n\t\t\t}\n\t\t}\n\t\treturn tiddler;\n\t});\n};\n\n})();\n&quot;,
-            &quot;title&quot;: &quot;$:/plugins/wikilabs/bundles/importhook.js&quot;,
+        &quot;$:/plugins/wikilabs/bundler/importhook.js&quot;: {
+            &quot;text&quot;: &quot;/*\\\ntitle: $:/plugins/wikilabs/bundler/importhook.js\ntype: application/javascript\nmodule-type: startup\n\nA startup module to log imported tiddlers to the import.bundle tiddler.\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\n// Export name and synchronous status\nexports.name = \&quot;bundlerimporthook\&quot;;\nexports.platforms = [\&quot;browser\&quot;];\nexports.after = [\&quot;startup\&quot;];\nexports.synchronous = true;\n\n// Favicon tiddler\nvar ENABLE_LOG_TITLE = \&quot;$:/config/wikilabs/enableImportBundle\&quot;,\n\tIMPORT_LOG_TITLE = \&quot;import.bundle\&quot;;\n\nexports.startup = function() {\n\t$tw.hooks.addHook(\&quot;th-importing-tiddler\&quot;,function(tiddler) {\n\t\tvar logTiddler,\n\t\t\ttidTitle = tiddler.fields.title;\n\n\t\tif($tw.wiki.checkTiddlerText(ENABLE_LOG_TITLE,\&quot;yes\&quot;)) {\n\t\t\tlogTiddler = $tw.wiki.getTiddler(IMPORT_LOG_TITLE) || new $tw.Tiddler($tw.wiki.getCreationFields(), $tw.wiki.getModificationFields(), {title: IMPORT_LOG_TITLE, text: \&quot;\&quot;, type: \&quot;text/plain\&quot;, tags: [\&quot;$:/tags/Bundle\&quot;]});\n\n\t\t\tif (tidTitle.indexOf(\&quot; \&quot;) !== -1) {\n\t\t\t\t$tw.wiki.addTiddler( new $tw.Tiddler( logTiddler, {text: logTiddler.fields.text + \&quot;[[\&quot; + tidTitle + \&quot;]]\\n\&quot;}));\n\t\t\t} else {\n\t\t\t\t$tw.wiki.addTiddler( new $tw.Tiddler( logTiddler, {text: logTiddler.fields.text + tidTitle + \&quot;\\n\&quot;}));\n\t\t\t}\n\t\t}\n\t\treturn tiddler;\n\t});\n};\n\n})();\n&quot;,
+            &quot;title&quot;: &quot;$:/plugins/wikilabs/bundler/importhook.js&quot;,
             &quot;type&quot;: &quot;application/javascript&quot;,
             &quot;module-type&quot;: &quot;startup&quot;
         },
-        &quot;title: $:/plugins/wikilabs/bundles/upgrade.js&quot;: {
-            &quot;text&quot;: &quot;/*\\\ntitle: title: $:/plugins/wikilabs/bundles/upgrade.js\ntype: application/javascript\nmodule-type: upgrader\n\nThis module checks, if tiddlers, that are imported already exist. If they do, they are disabled and a tiddler with a new name will be created. ge: \&quot;New Tiddler (1)\&quot;.\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\nexports.upgrade = function(wiki,titles,tiddlers) {\n\tvar self = this,\n\t\tmessages = {};\n\n\t$tw.utils.each(titles,function(title) {\n\t\tvar tiddler = {},\n\t\t\ttiddlerData = wiki.getTiddler(title);\n\t\t// Check for tiddlers on our list. Atm, we check for names only, since 5.1.14 allows modification date to be supressed.\n\t\t// Creating a hash, would be a better option. ToDo\n\t\tif (wiki.tiddlerExists(title)) {\n\t\t\tmessages[title] = \&quot;A tiddler with that name exists. A new name will be used!\&quot;;\n\t\t\t// create new tiddler with a new name\n\t\t\ttiddler = new $tw.Tiddler(tiddlers[title], {\&quot;title\&quot;: wiki.generateNewTitle(title) });\n\t\t\ttiddlers[tiddler.fields.title] = tiddler.fields;\n\t\t\t// remove the original tiddler\n\t\t\ttiddlers[title] = Object.create(null);\n\t\t}\n\t});\n\treturn messages;\n};\n\n})();\n&quot;,
-            &quot;title&quot;: &quot;title: $:/plugins/wikilabs/bundles/upgrade.js&quot;,
+        &quot;title: $:/plugins/wikilabs/bundler/upgrade.js&quot;: {
+            &quot;text&quot;: &quot;/*\\\ntitle: title: $:/plugins/wikilabs/bundler/upgrade.js\ntype: application/javascript\nmodule-type: upgrader\n\nThis module checks, if tiddlers, that are imported already exist. If they do, they are disabled and a tiddler with a new name will be created. ge: \&quot;New Tiddler (1)\&quot;. This option is configurable.\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\nvar ENABLE_OVERWRITE_CHECK = \&quot;$:/config/wikilabs/enableOverwriteCheck\&quot;;\n\nexports.upgrade = function(wiki,titles,tiddlers) {\n\tvar self = this,\n\t\tmessages = {},\n\t\toverwriteCheck = $tw.wiki.checkTiddlerText(ENABLE_OVERWRITE_CHECK,\&quot;yes\&quot;);\n\n\t$tw.utils.each(titles,function(title) {\n\t\tvar tiddler = {},\n\t\t\ttiddlerData = wiki.getTiddler(title);\n\t\t// Check for tiddlers on our list. Atm, we check for names only, since 5.1.14 allows modification date to be supressed.\n\t\t// Creating a hash, would be a better option. ToDo\n\t\tif (wiki.tiddlerExists(title)) {\n\t\t\tmessages[title] = \&quot;Existing tiddler will be overwritten!\&quot;;\n\t\t\t// create new tiddler with a new name\n\t\t\tif (overwriteCheck) {\n\t\t\t\tmessages[title] = \&quot;A tiddler with that name exists. A new name will be used!\&quot;;\n\t\t\t\ttiddler = new $tw.Tiddler(tiddlers[title], {\&quot;title\&quot;: wiki.generateNewTitle(title) });\n\t\t\t\ttiddlers[tiddler.fields.title] = tiddler.fields;\n\t\t\t\t// remove the original tiddler\n\t\t\t\ttiddlers[title] = Object.create(null);\n\t\t\t}\n\t\t}\n\t});\n\treturn messages;\n\t}\n\n})();\n&quot;,
+            &quot;title&quot;: &quot;title: $:/plugins/wikilabs/bundler/upgrade.js&quot;,
             &quot;type&quot;: &quot;application/javascript&quot;,
             &quot;module-type&quot;: &quot;upgrader&quot;
         },
-        &quot;$:/plugins/wikilabs/bundles/license&quot;: {
-            &quot;title&quot;: &quot;$:/plugins/wikilabs/bundles/license&quot;,
-            &quot;text&quot;: &quot;Bundles-Plugin (c) Mario Pietsch - 2017\n\nhttps://opensource.org/licenses/BSD-3-Clause\n\n&quot;
+        &quot;$:/plugins/wikilabs/bundler/history&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/wikilabs/bundler/history&quot;,
+            &quot;text&quot;: &quot;* V0.1.0 - beta\n** new name: bundler\n** this name change makes it incompatible to older settings!\n\n** new \&quot;Enable Overwrite Check\&quot; option. default = no\n\n* V0.0.1 - beta\n** initial release\n** name: bundles\n&quot;
         },
-        &quot;$:/plugins/wikilabs/bundles/readme&quot;: {
-            &quot;title&quot;: &quot;$:/plugins/wikilabs/bundles/readme&quot;,
-            &quot;text&quot;: &quot;\n* The position of the \&quot;Bundles\&quot; tab can be selected in the $:/ControlPanel\n* There are 2 version of bundles\n** Bundle lists\n** Filtered Bundles ... which have to be activated by the user\n* The filter examples can be live tested, clicking on the number besides the \&quot;export button\&quot;\n* The Bundler can bundle itself into a bundle :-).\n* You can create several \&quot;selections\&quot;. Those combinations are persistently stored for reuse. \n* Bundle lists can be built up, over time. Just as the TW evolves. \n* The \&quot;Enable Import Bundle\&quot; option lets you collect / log imported tiddlers and create a new bundle, for future use.\n* This plugin only works with TW &gt;= 5.1.14 since we use the \&quot;enlist\&quot; operator which has been added in 5.1.14\n* It's easy to add the bundle configuration to the bundle itself eg: \n** If the bundle is named: `tagged-test.bundle`, the filter can look like this: `[tag[test]] tagged-test.bundle`\n* Have a closer look at the $:/ControlPanel: Bundles tab for more [[settings|$:/plugins/wikilabs/bundles/ui/ControlPanel/bundles-config]]. \n&quot;
+        &quot;$:/plugins/wikilabs/bundler/license&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/wikilabs/bundler/license&quot;,
+            &quot;text&quot;: &quot;Bundler-Plugin (c) Mario Pietsch - 2017\n\nhttps://opensource.org/licenses/BSD-3-Clause\n\n&quot;
+        },
+        &quot;$:/plugins/wikilabs/bundler/readme&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/wikilabs/bundler/readme&quot;,
+            &quot;text&quot;: &quot;\n* The position of the \&quot;Bundles\&quot; tab can be selected in the $:/ControlPanel\n* There are 2 version of bundles\n** Bundle lists\n** Filtered Bundles ... which have to be activated by the user\n* The filter examples can be live tested, clicking on the number besides the \&quot;export button\&quot;\n* The Bundler can bundle itself into a bundle :-).\n* You can create several \&quot;selections\&quot;. Those combinations are persistently stored for reuse. \n* Bundle lists can be built up, over time. Just as the TW evolves. \n* The \&quot;Enable Import Bundle\&quot; option lets you collect / log imported tiddlers and create a new bundle, for future use.\n* This plugin only works with TW &gt;= 5.1.14 since we use the \&quot;enlist\&quot; operator which has been added in 5.1.14\n* It's easy to add the bundle configuration to the bundle itself eg: \n** If the bundle is named: `tagged-test.bundle`, the filter can look like this: `[tag[test]] tagged-test.bundle`\n* Have a closer look at the $:/ControlPanel: Bundles tab for more [[settings|$:/plugins/wikilabs/bundler/ui/ControlPanel/bundler-config]]. \n&quot;
         }
     }
 }</pre>
@@ -8482,7 +8491,7 @@ Error message and password prompt
 <pre>provide basic bundling functions and UI</pre>
 </div>
 <div created="20170206143336143" modified="20170609084439139" title="$:/SiteTitle" type="text/vnd.tiddlywiki">
-<pre>plugin: bundles</pre>
+<pre>plugin: bundler</pre>
 </div>
 <div list="GettingStarted" title="$:/StoryList">
 <pre></pre>
@@ -8613,8 +8622,8 @@ Error message and password prompt
 <div created="20170609093426240" modified="20170609093427409" title="$:/themes/tiddlywiki/vanilla/options/sidebarlayout" type="text/vnd.tiddlywiki">
 <pre>fluid-fixed</pre>
 </div>
-<div created="20170602113834059" modified="20170609084521776" tags="test" title="a" type="text/vnd.tiddlywiki">
-<pre>a</pre>
+<div created="20170206152700040" modified="20170612105235331" title="a" type="text/vnd.tiddlywiki">
+<pre>aaa</pre>
 </div>
 <div created="20170608190840283" description="All bundle configuration tiddlers" filter="[tag[$:/tags/Filter]] [tag[$:/tags/Bundle]]" modified="20170609094122335" tags="$:/tags/Filter" title="all-bundle-configs.bundle" type="text/vnd.tiddlywiki">
 <pre>&lt;pre&gt;{{!!filter}}&lt;/pre&gt;</pre>
@@ -8635,8 +8644,9 @@ Error message and password prompt
 <pre>Features
 Languages</pre>
 </div>
-<div created="20170601134910443" modified="20170609133540654" tags="$:/tags/Bundle" title="example.bundle" type="text/plain">
+<div created="20170601134910443" modified="20170612110441363" tags="$:/tags/Bundle" title="example.bundle" type="text/plain">
 <pre>HelloThere
+// asdf
 GettingStarted
 </pre>
 </div>
@@ -8652,7 +8662,7 @@ GettingStarted
 
 </pre>
 </div>
-<div created="20170609134146756" description="Export this bundle to get the whole thing including examples" filter="[tag[$:/tags/Filter]] [tag[$:/tags/Bundle]] a b $:/plugins/wikilabs/bundles" modified="20170609134540629" tags="$:/tags/Filter" title="export-this-to-get-it-all.bundle" type="text/vnd.tiddlywiki">
+<div created="20170609134146756" description="Export this bundle to get the whole thing including examples" filter="[tag[$:/tags/Filter]] [tag[$:/tags/Bundle]] a b $:/plugins/wikilabs/bundler" modified="20170609134540629" tags="$:/tags/Filter" title="export-this-to-get-it-all.bundle" type="text/vnd.tiddlywiki">
 <pre>!! Info
 
 If you export this bundle, you'll get all the example configurations, the test tiddlers and the plugin. Have fun!
@@ -8661,10 +8671,10 @@ If you export this bundle, you'll get all the example configurations, the test t
 &lt;pre&gt;{{!!filter}}&lt;/pre&gt;</pre>
 </div>
 <div created="20170206152700040" modified="20170609133408010" title="GettingStarted" type="text/vnd.tiddlywiki">
-<pre>This edition shows, how the &quot;bundles&quot; plugin works. 
+<pre>This edition shows, how the &quot;bundler&quot; plugin works.
 
 ! Readme
-{{$:/plugins/wikilabs/bundles/readme}}
+{{$:/plugins/wikilabs/bundler/readme}}
 
 ! Plugins
 
@@ -8687,7 +8697,7 @@ mario
 <div created="20170605184745393" modified="20170609133832709" tags="$:/tags/Bundle" title="tiddlerlist-plus-plugin.bundle" type="text/plain">
 <pre>a
 b
-$:/plugins/wikilabs/bundles</pre>
+$:/plugins/wikilabs/bundler</pre>
 </div>
 
 </div>

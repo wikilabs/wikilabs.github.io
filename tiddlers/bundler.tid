@@ -1,8 +1,9 @@
-created: 20170609142903765
+created: 20170612083932764
 demo-url: https://wikilabs.github.io/editions/bundler
 git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/bundler
-modified: 20170612084033454
-title: bundles
+modified: 20170612084014153
+tags: plugin edition
+title: bundler
 type: text/vnd.tiddlywiki
 
 {{||$:/wikilabs/template/theme}}
