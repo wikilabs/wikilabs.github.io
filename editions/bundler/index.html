@@ -8390,7 +8390,7 @@ Error message and password prompt
 <div title="$:/isEncrypted">
 <pre>no</pre>
 </div>
-<div author="pmario" core-version="&gt;=5.1.14" dependents="" description="Bundler - Simple UI to create tiddler bundles" list="history readme license" plugin-type="plugin" title="$:/plugins/wikilabs/bundler" type="application/json" version="0.1.0">
+<div author="pmario" core-version="&gt;=5.1.14" dependents="" description="Bundler - Simple UI to create tiddler bundles" list="readme license history" plugin-type="plugin" title="$:/plugins/wikilabs/bundler" type="application/json" version="0.1.1">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/plugins/wikilabs/bundler/doc/table-all-filters&quot;: {
@@ -8466,23 +8466,23 @@ Error message and password prompt
             &quot;type&quot;: &quot;application/javascript&quot;,
             &quot;module-type&quot;: &quot;startup&quot;
         },
-        &quot;title: $:/plugins/wikilabs/bundler/upgrade.js&quot;: {
-            &quot;text&quot;: &quot;/*\\\ntitle: title: $:/plugins/wikilabs/bundler/upgrade.js\ntype: application/javascript\nmodule-type: upgrader\n\nThis module checks, if tiddlers, that are imported already exist. If they do, they are disabled and a tiddler with a new name will be created. ge: \&quot;New Tiddler (1)\&quot;. This option is configurable.\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\nvar ENABLE_OVERWRITE_CHECK = \&quot;$:/config/wikilabs/enableOverwriteCheck\&quot;;\n\nexports.upgrade = function(wiki,titles,tiddlers) {\n\tvar self = this,\n\t\tmessages = {},\n\t\toverwriteCheck = $tw.wiki.checkTiddlerText(ENABLE_OVERWRITE_CHECK,\&quot;yes\&quot;);\n\n\t$tw.utils.each(titles,function(title) {\n\t\tvar tiddler = {},\n\t\t\ttiddlerData = wiki.getTiddler(title);\n\t\t// Check for tiddlers on our list. Atm, we check for names only, since 5.1.14 allows modification date to be supressed.\n\t\t// Creating a hash, would be a better option. ToDo\n\t\tif (wiki.tiddlerExists(title)) {\n\t\t\tmessages[title] = \&quot;Existing tiddler will be overwritten!\&quot;;\n\t\t\t// create new tiddler with a new name\n\t\t\tif (overwriteCheck) {\n\t\t\t\tmessages[title] = \&quot;A tiddler with that name exists. A new name will be used!\&quot;;\n\t\t\t\ttiddler = new $tw.Tiddler(tiddlers[title], {\&quot;title\&quot;: wiki.generateNewTitle(title) });\n\t\t\t\ttiddlers[tiddler.fields.title] = tiddler.fields;\n\t\t\t\t// remove the original tiddler\n\t\t\t\ttiddlers[title] = Object.create(null);\n\t\t\t}\n\t\t}\n\t});\n\treturn messages;\n\t}\n\n})();\n&quot;,
-            &quot;title&quot;: &quot;title: $:/plugins/wikilabs/bundler/upgrade.js&quot;,
+        &quot;$:/plugins/wikilabs/bundler/upgrade.js&quot;: {
+            &quot;text&quot;: &quot;/*\\\ntitle: $:/plugins/wikilabs/bundler/upgrade.js\ntype: application/javascript\nmodule-type: upgrader\n\nThis module checks, if tiddlers, that are imported already exist. If they do, they are disabled and a tiddler with a new name will be created. ge: \&quot;New Tiddler (1)\&quot;. This option is configurable.\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\nvar ENABLE_OVERWRITE_CHECK = \&quot;$:/config/wikilabs/enableOverwriteCheck\&quot;;\n\nexports.upgrade = function(wiki,titles,tiddlers) {\n\tvar self = this,\n\t\tmessages = {},\n\t\toverwriteCheck = $tw.wiki.checkTiddlerText(ENABLE_OVERWRITE_CHECK,\&quot;yes\&quot;);\n\n\t$tw.utils.each(titles,function(title) {\n\t\tvar tiddler = {},\n\t\t\ttiddlerData = wiki.getTiddler(title);\n\t\t// Check for tiddlers on our list. Atm, we check for names only, since 5.1.14 allows modification date to be supressed.\n\t\t// Creating a hash, would be a better option. ToDo\n\t\tif (wiki.tiddlerExists(title)) {\n\t\t\tmessages[title] = \&quot;Existing tiddler will be overwritten!\&quot;;\n\t\t\t// create new tiddler with a new name\n\t\t\tif (overwriteCheck) {\n\t\t\t\tmessages[title] = \&quot;A tiddler with that name exists. A new name will be used!\&quot;;\n\t\t\t\ttiddler = new $tw.Tiddler(tiddlers[title], {\&quot;title\&quot;: wiki.generateNewTitle(title) });\n\t\t\t\ttiddlers[tiddler.fields.title] = tiddler.fields;\n\t\t\t\t// remove the original tiddler\n\t\t\t\ttiddlers[title] = Object.create(null);\n\t\t\t}\n\t\t}\n\t});\n\treturn messages;\n\t}\n\n})();\n&quot;,
+            &quot;title&quot;: &quot;$:/plugins/wikilabs/bundler/upgrade.js&quot;,
             &quot;type&quot;: &quot;application/javascript&quot;,
             &quot;module-type&quot;: &quot;upgrader&quot;
         },
         &quot;$:/plugins/wikilabs/bundler/history&quot;: {
             &quot;title&quot;: &quot;$:/plugins/wikilabs/bundler/history&quot;,
-            &quot;text&quot;: &quot;* V0.1.0 - beta\n** new name: bundler\n** this name change makes it incompatible to older settings!\n\n** new \&quot;Enable Overwrite Check\&quot; option. default = no\n\n* V0.0.1 - beta\n** initial release\n** name: bundles\n&quot;
+            &quot;text&quot;: &quot;* V0.1.1 - beta 2017.06.18\n** improve license links and readme\n** fix upgrade.js title\n\n* V0.1.0 - beta\n** new name: bundler\n** this name change makes it incompatible to older settings!\n\n** new \&quot;Enable Overwrite Check\&quot; option. default = no\n\n* V0.0.1 - beta\n** initial release\n** name: bundles\n&quot;
         },
         &quot;$:/plugins/wikilabs/bundler/license&quot;: {
             &quot;title&quot;: &quot;$:/plugins/wikilabs/bundler/license&quot;,
-            &quot;text&quot;: &quot;Bundler-Plugin (c) Mario Pietsch - 2017\n\nhttps://opensource.org/licenses/BSD-3-Clause\n\n&quot;
+            &quot;text&quot;: &quot;[[Bundler-Plugin|https://wikilabs.github.io/#bundler]] (c) Mario Pietsch - 2017\n\nhttps://opensource.org/licenses/BSD-3-Clause\n&quot;
         },
         &quot;$:/plugins/wikilabs/bundler/readme&quot;: {
             &quot;title&quot;: &quot;$:/plugins/wikilabs/bundler/readme&quot;,
-            &quot;text&quot;: &quot;\n* The position of the \&quot;Bundles\&quot; tab can be selected in the $:/ControlPanel\n* There are 2 version of bundles\n** Bundle lists\n** Filtered Bundles ... which have to be activated by the user\n* The filter examples can be live tested, clicking on the number besides the \&quot;export button\&quot;\n* The Bundler can bundle itself into a bundle :-).\n* You can create several \&quot;selections\&quot;. Those combinations are persistently stored for reuse. \n* Bundle lists can be built up, over time. Just as the TW evolves. \n* The \&quot;Enable Import Bundle\&quot; option lets you collect / log imported tiddlers and create a new bundle, for future use.\n* This plugin only works with TW &gt;= 5.1.14 since we use the \&quot;enlist\&quot; operator which has been added in 5.1.14\n* It's easy to add the bundle configuration to the bundle itself eg: \n** If the bundle is named: `tagged-test.bundle`, the filter can look like this: `[tag[test]] tagged-test.bundle`\n* Have a closer look at the $:/ControlPanel: Bundles tab for more [[settings|$:/plugins/wikilabs/bundler/ui/ControlPanel/bundler-config]]. \n&quot;
+            &quot;text&quot;: &quot;\n* Documentation and more can be found at: https://wikilabs.github.io/#bundler\n* The position of the \&quot;Bundles\&quot; tab can be selected in the $:/ControlPanel\n* There are 2 version of bundles\n** Bundle lists\n** Filtered Bundles ... which have to be activated by the user\n* The filter examples can be live tested, clicking on the number besides the \&quot;export button\&quot;\n* The Bundler can bundle itself into a bundle :-).\n* You can create several \&quot;selections\&quot;. Those combinations are persistently stored for reuse. \n* Bundle lists can be built up, over time. Just as the TW evolves. \n* The \&quot;Enable Import Bundle\&quot; option lets you collect / log imported tiddlers and create a new bundle, for future use.\n* This plugin only works with TW &gt;= 5.1.14 since we use the \&quot;enlist\&quot; operator which has been added in 5.1.14\n* It's easy to add the bundle configuration to the bundle itself eg: \n** If the bundle is named: `tagged-test.bundle`, the filter can look like this: `[tag[test]] tagged-test.bundle`\n* Have a closer look at the ~$:/ControlPanel: Bundles tab for more [[settings|$:/plugins/wikilabs/bundler/ui/ControlPanel/bundler-config]]. \n&quot;
         }
     }
 }</pre>
@@ -8644,9 +8644,8 @@ Error message and password prompt
 <pre>Features
 Languages</pre>
 </div>
-<div created="20170601134910443" modified="20170612110441363" tags="$:/tags/Bundle" title="example.bundle" type="text/plain">
+<div created="20170601134910443" modified="20170618112849813" tags="$:/tags/Bundle" title="example.bundle" type="text/plain">
 <pre>HelloThere
-// asdf
 GettingStarted
 </pre>
 </div>
@@ -8671,7 +8670,7 @@ If you export this bundle, you'll get all the example configurations, the test t
 &lt;pre&gt;{{!!filter}}&lt;/pre&gt;</pre>
 </div>
 <div created="20170206152700040" modified="20170609133408010" title="GettingStarted" type="text/vnd.tiddlywiki">
-<pre>This edition shows, how the &quot;bundler&quot; plugin works.
+<pre>This edition shows, how the &quot;bundler&quot; plugin works. 
 
 ! Readme
 {{$:/plugins/wikilabs/bundler/readme}}
