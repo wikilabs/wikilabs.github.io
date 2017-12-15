@@ -44,7 +44,7 @@ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE." />
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
-<title>plugin: info-session — session persistent info-button</title>
+<title>My TiddlyWiki — a non-linear personal web notebook</title>
 <!--~~ This is a Tiddlywiki file. The points of interest in the file are marked with this pattern ~~--><!--~~ Raw markup ~~-->
 
 
@@ -120,15 +120,79 @@ Error message and password prompt
 
 <p>This <a class="tc-tiddlylink-external" href="https://tiddlywiki.com" rel="noopener noreferrer" target="_blank">TiddlyWiki</a> contains the following tiddlers:</p><p><ul>
 
+<li>---</li>
+
+<li>$:/_bundle/wikilabs/script-manager/grid-todo-template</li>
+
+<li>$:/_bundle/wikilabs/script-manager/info</li>
+
+<li>$:/_bundle/wikilabs/script-manager/link-edit-template</li>
+
+<li>$:/_bundle/wikilabs/script-manager/list-all-links</li>
+
+<li>$:/_bundle/wikilabs/script-manager/list-description-template</li>
+
+<li>$:/_bundle/wikilabs/script-manager/new-script-button</li>
+
+<li>$:/_bundle/wikilabs/script-manager/script-footer-macros</li>
+
+<li>$:/_bundle/wikilabs/script-manager/script-list-template</li>
+
+<li>$:/_bundle/wikilabs/script-manager/scriptFooter/description</li>
+
+<li>$:/_bundle/wikilabs/script-manager/scriptFooter/done</li>
+
+<li>$:/_bundle/wikilabs/script-manager/scriptFooter/links</li>
+
+<li>$:/_bundle/wikilabs/script-manager/scriptFooter/todo</li>
+
+<li>$:/_bundle/wikilabs/script-manager/style/fold/svg/fill</li>
+
+<li>$:/_bundle/wikilabs/script-manager/style/pre/max-height</li>
+
+<li>$:/_bundle/wikilabs/script-manager/style/unfold/svg/fill</li>
+
+<li>$:/_bundle/wikilabs/script-manager/styles</li>
+
+<li>$:/_bundle/wikilabs/script-manager/styles-config</li>
+
+<li>$:/_bundle/wikilabs/script-manager/tags/scriptFooter</li>
+
+<li>$:/_bundle/wikilabs/script-manager/tags/todoFooter</li>
+
+<li>$:/_bundle/wikilabs/script-manager/todoFooter/info</li>
+
+<li>$:/_bundle/wikilabs/script-manager/toggleMe-macro</li>
+
+<li>$:/_bundle/wikilabs/script-manager/ui/ControlPanel/styles-config</li>
+
+<li>$:/_new-description</li>
+
+<li>$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/fold-all</li>
+
+<li>$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/unfold-all</li>
+
+<li>$:/config/RelinkOnRename</li>
+
+<li>$:/config/ViewToolbarButtons/Visibility/$:/core/ui/Buttons/fold</li>
+
+<li>$:/config/ViewToolbarButtons/Visibility/$:/core/ui/Buttons/fold-bar</li>
+
+<li>$:/config/wikilabs/enableBundles</li>
+
+<li>$:/config/wikilabs/enableImportBundle</li>
+
 <li>$:/core</li>
+
+<li>$:/DefaultTiddlers</li>
 
 <li>$:/isEncrypted</li>
 
-<li>$:/plugins/wikilabs/info-session</li>
+<li>$:/plugins/wikilabs/remove-states</li>
 
-<li>$:/SiteSubtitle</li>
+<li>$:/search-sdw/inp/view-toolbar</li>
 
-<li>$:/SiteTitle</li>
+<li>$:/search-sdw/view-toolbar</li>
 
 <li>$:/StoryList</li>
 
@@ -138,7 +202,41 @@ Error message and password prompt
 
 <li>$:/themes/tiddlywiki/vanilla</li>
 
-<li>GettingStarted</li>
+<li>aaa</li>
+
+<li>aaaa</li>
+
+<li>aassddff</li>
+
+<li>asdf</li>
+
+<li>asdfaa</li>
+
+<li>import.bundle</li>
+
+<li>my new todo</li>
+
+<li>myNewScript</li>
+
+<li>myNewScript.links</li>
+
+<li>New Tiddler</li>
+
+<li>New Tiddler 1</li>
+
+<li>New Tiddler 2</li>
+
+<li>New Tiddler 2.links</li>
+
+<li>next todo</li>
+
+<li>Overview Scripts</li>
+
+<li>Overview ToDo's</li>
+
+<li>script-manager-dev.bundle</li>
+
+<li>script-manager.bundle</li>
 
 </ul>
 </p>
@@ -150,6 +248,705 @@ Error message and password prompt
 <!--~~ Ordinary tiddlers ~~-->
 
 <div id="storeArea" style="display:none;">
+<div created="20170918134454944" description="No script selected!" modified="20171215213449100" tags="script" title="---" type="text/vnd.tiddlywiki">
+<pre></pre>
+</div>
+<div created="20170918161250372" modified="20171215213449084" title="$:/_bundle/wikilabs/script-manager/grid-todo-template" type="text/vnd.tiddlywiki">
+<pre>\define empty-button()
+&lt;$button class=&quot;tc-btn-invisible tc-btn-dropdown&quot; tooltip=&quot;Enter a new ToDo title!&quot; &gt;{{$:/core/images/save-button}}&lt;/$button&gt;
+\end
+
+\define show-create-button()
+  &lt;$list filter=&quot;[[$:/_new-todo]] +[has[new-title]]&quot; emptyMessage=&lt;&lt;empty-button&gt;&gt; variable=newTitle&gt;
+     &lt;$button class=&quot;tc-btn-invisible&quot; actions=&lt;&lt;record-todo&gt;&gt; &gt;{{$:/core/images/save-button}}&lt;/$button&gt;
+  &lt;/$list&gt;
+\end
+
+\define create-todo()
+  &lt;$list filter=&quot;[{$:/_new-todo!!new-title}is[tiddler]]&quot; emptyMessage=&lt;&lt;show-create-button&gt;&gt; variable=newTitle&gt;
+        &lt;$link to=&lt;&lt;newTitle&gt;&gt; &gt;open: &lt;&lt;newTitle&gt;&gt;&lt;/$link&gt;
+  &lt;/$list&gt;
+\end
+
+\define clear-todo()
+&lt;$button class=&quot;tc-btn-invisible&quot; actions=&lt;&lt;clear-todo-form&gt;&gt; &gt;{{$:/core/images/cancel-button}}&lt;/$button&gt;
+\end
+
+\define record-todo()
+&lt;$action-setfield $tiddler={{!!new-title}} $field=comment $value={{!!comment}}/&gt;
+&lt;$action-setfield $tiddler={{!!new-title}} $field=tags $value=&quot;todo&quot;/&gt;
+&lt;$action-setfield $tiddler={{!!new-title}} $field=script $value={{!!script}}/&gt;
+&lt;$action-deletefieldXXX $tiddler={{!!new-title}} $field=&quot;new-title&quot;/&gt;
+&lt;$action-deletetiddler $tiddler=&quot;$:/_new-todo&quot;/&gt;
+&lt;$action-deletetiddler $tiddler=&quot;$:/state/newTodo&quot;/&gt;
+&lt;$action-setfield $tiddler=&quot;$:/_new-todo&quot; $field=&quot;text&quot; $value=&quot;&quot;/&gt;
+&lt;$action-setfield $tiddler=&quot;$:/_new-todo&quot; $field=&quot;script&quot; $value=&lt;&lt;defaultScript&gt;&gt;/&gt;
+\end
+
+\define clear-todo-form()
+&lt;$action-deletetiddler $tiddler=&quot;$:/_new-todo&quot;/&gt;
+&lt;$action-setfield $tiddler=&quot;$:/_new-todo&quot; $field=&quot;text&quot; $value=&quot;&quot;/&gt;
+&lt;$action-setfield $tiddler=&quot;$:/_new-todo&quot; $field=&quot;script&quot; $value=&lt;&lt;defaultScript&gt;&gt;/&gt;
+\end
+
+\define getInfo()
+&lt;$macrocall $name=&quot;toggleMe&quot; state=&lt;&lt;qualifyTitle &quot;$:/state/todo/&quot;&gt;&gt; /&gt;
+\end
+
+\define getScript(default:&quot;---&quot;)
+&lt;$select tiddler=&lt;&lt;currentTiddler&gt;&gt; field=&quot;script&quot; default=&quot;&quot;&quot;$default$&quot;&quot;&quot;&gt;
+  &lt;$list filter='[tag[script]sort[title]]' listItem=selectedList&gt;
+    &lt;option value=&lt;&lt;selectedList&gt;&gt;&gt;&lt;$view field='title'/&gt;&lt;/option&gt;
+  &lt;/$list&gt;
+&lt;/$select&gt;
+\end
+
+\define getTitle()
+&lt;$edit-text class=&quot;wltc-todo-input&quot; tiddler=&lt;&lt;currentTiddler&gt;&gt; field=&quot;new-title&quot; tag=input placeholder=&quot;Title&quot;/&gt;
+\end
+
+\define getComment()
+&lt;$edit-text class=&quot;wltc-todo-input&quot; tiddler=&lt;&lt;currentTiddler&gt;&gt; field=&quot;comment&quot; tag=input placeholder=&quot;Comment&quot;/&gt;
+\end
+
+\define new-todo()
+&lt;div class=&quot;table todo-grid&quot;&gt;
+&lt;span class=&quot;header titleH&quot;&gt;Title&lt;/span&gt;
+&lt;span class=&quot;header scriptH&quot;&gt;Script&lt;/span&gt;
+&lt;span class=&quot;header infoH center&quot;&gt;Info&lt;/span&gt;
+&lt;span class=&quot;header clearH center&quot;&gt;Init&lt;/span&gt;
+&lt;span class=&quot;header actionH center&quot;&gt;Action&lt;/span&gt;
+
+&lt;span class=&quot;box title&quot;&gt;&lt;&lt;getTitle&gt;&gt;&lt;/span&gt;
+&lt;span class=&quot;box script&quot;&gt;&lt;&lt;getScript&gt;&gt;&lt;/span&gt;
+&lt;span class=&quot;box info center&quot;&gt;&lt;&lt;getInfo&gt;&gt;&lt;/span&gt;
+&lt;span class=&quot;box clear center&quot;&gt;&lt;&lt;clear-todo&gt;&gt;&lt;/span&gt;
+&lt;span class=&quot;box action center&quot;&gt;&lt;&lt;create-todo&gt;&gt;&lt;/span&gt;
+
+&lt;$reveal state=&lt;&lt;qualifyTitle &quot;$:/state/todo/&quot;&gt;&gt; tag=div class=&quot;comment-grid&quot; type=&quot;match&quot; text=&quot;open&quot; &gt;
+&lt;span class=&quot;box header&quot;&gt;Comment&lt;/span&gt;
+&lt;span class=&quot;box &quot;&gt;&lt;&lt;getComment&gt;&gt;&lt;/span&gt;
+&lt;/$reveal&gt;
+&lt;/div&gt;
+\end
+
+&lt;$tiddler tiddler=&quot;$:/_new-todo&quot;&gt;
+&lt;$macrocall $name=&quot;new-todo&quot; /&gt;
+&lt;/$tiddler&gt;</pre>
+</div>
+<div created="20171024095946958" modified="20171215213449084" tags="" title="$:/_bundle/wikilabs/script-manager/info" type="application/json">
+<pre>{
+  &quot;version&quot;: &quot;0.0.3&quot;,
+  &quot;0.0.1&quot;: &quot;initial release&quot;,
+  &quot;0.0.2&quot;: &quot;not published&quot;,
+  &quot;0.0.3&quot;: &quot;enable editing of link array, all at the same time&quot;,
+  &quot;filter&quot;: &quot;[is[system]prefix[$:/_bundle/wikilabs/script-manager/]] [[Overview Scripts]] [[Overview ToDo's]] $:/DefaultTiddlers [[---]]&quot;
+}</pre>
+</div>
+<div created="20170116124408358" modified="20171215213449084" tags="link-journal" title="$:/_bundle/wikilabs/script-manager/link-edit-template" type="text/vnd.tiddlywiki">
+<pre>&lt;span class=&quot;box&quot;&gt;&lt;&lt;getIndex&gt;&gt;&lt;/span&gt;
+&lt;span class=&quot;box&quot;&gt;&lt;$edit-text class=&quot;wltc-edit-input&quot; tiddler=&lt;&lt;currentTiddler&gt;&gt; field=link tag=input placeholder=&quot;link&quot;/&gt;&lt;/span&gt;
+&lt;span class=&quot;box center&quot;&gt;&lt;$button actions=&lt;&lt;record-comment&gt;&gt; &gt;{{$:/core/images/link}}&lt;/$button&gt;
+&lt;/span&gt;
+
+</pre>
+</div>
+<div created="20170116110117643" modified="20171215213449069" title="$:/_bundle/wikilabs/script-manager/list-all-links" type="text/vnd.tiddlywiki">
+<pre>\define record-link()
+&lt;$action-setfield $tiddler=&lt;&lt;currentTiddler&gt;&gt; $index=&lt;&lt;now &quot;YYYY/0MM/0DD, 0hh-0mm-0ss&quot;&gt;&gt; $value={{$(tempTiddler)$##link}}/&gt;
+\end
+
+\define set-link()
+&lt;$action-setfield $tiddler=&lt;&lt;currentTiddler&gt;&gt; $index=&lt;&lt;listItem&gt;&gt; $value={{$(tempTiddler)$##$(listItem)$}}/&gt;
+\end
+
+\define delete-link()
+&lt;$action-setfield $tiddler=&lt;&lt;currentTiddler&gt;&gt; $index=&lt;&lt;listItem&gt;&gt;/&gt;
+\end
+
+\define tempTiddler()
+$:/temp/$(currentTiddler)$.list
+\end
+
+\define init-link-editor()
+&lt;$action-setfield $tiddler=&lt;&lt;tempTiddler&gt;&gt; $index=&quot;$(listItem)$&quot; $value={{$(currentTiddler)$##$(listItem)$}}/&gt;
+\end
+
+\define getLink()
+{{$(currentTiddler)$##$(listItem)$}}
+\end
+
+\define new-link-button()
+&lt;$macrocall $name=&quot;toggleMe&quot; state=&lt;&lt;qualifyTitle &quot;$:/state/newLink/&quot;&gt;&gt; openText=&quot;New&quot; closeText=&quot;Close&quot; class=&quot;wltc-btn-big-green tc-btn-big-green&quot;/&gt;
+\end
+
+\define new-link-ok()
+&lt;$macrocall $name=&quot;toggleOkCancel&quot; state=&lt;&lt;qualifyTitle &quot;$:/state/newLink/&quot;&gt;&gt; openText=&quot; &quot; okText=&quot; &quot; closeText=&quot; &quot; okActions=&lt;&lt;record-link&gt;&gt; okIcon={{$:/core/images/save-button}} /&gt;
+\end
+
+\define edit-link-button()
+&lt;$macrocall $name=&quot;toggleOkCancelDelete&quot; state=&lt;&lt;qualifyTitleList &quot;$:/state/editLink/&quot;&gt;&gt; openText=&quot; &quot; okText=&quot; &quot; closeText=&quot; &quot; deleteText=&quot; &quot; openIcon={{$:/core/images/edit-button}} okIcon={{$:/core/images/save-button}} okActions=&lt;&lt;set-link&gt;&gt; openActions=&lt;&lt;init-link-editor&gt;&gt; deleteActions=&lt;&lt;delete-link&gt;&gt; /&gt;
+\end
+
+\define new-link-input()
+&lt;$edit-text class=&quot;wltc-edit-input&quot; tiddler=&lt;&lt;tempTiddler&gt;&gt; index=&quot;link&quot; tag=input placeholder=&quot;link&quot;/&gt;
+\end
+
+\define edit-link-input()
+&lt;$edit-text class=&quot;wltc-edit-input&quot; tiddler=&lt;&lt;tempTiddler&gt;&gt; index=&quot;$(listItem)$&quot; tag=input placeholder=&quot;link&quot;/&gt;
+\end
+
+\define table-header()
+&lt;span class=&quot;header&quot;&gt;Index&lt;/span&gt;
+&lt;span class=&quot;header&quot;&gt;Link&lt;/span&gt;
+&lt;span class=&quot;header center&quot;&gt;Action&lt;/span&gt;
+\end
+
+\define index-text-template()
+&lt;span class=&quot;box script-index&quot;&gt;&lt;&lt;listItem&gt;&gt;&lt;/span&gt;
+&lt;$reveal state=&lt;&lt;qualifyTitleList &quot;$:/state/editLink/&quot;&gt;&gt; tag=span class=&quot;box&quot; type=&quot;match&quot; text=&quot;closed&quot; default=closed &gt;
+&lt;&lt;getLink&gt;&gt;
+&lt;/$reveal&gt;
+&lt;$reveal state=&lt;&lt;qualifyTitleList &quot;$:/state/editLink/&quot;&gt;&gt; tag=span class=&quot;box&quot; type=&quot;match&quot; text=&quot;open&quot; &gt;
+&lt;&lt;edit-link-input&gt;&gt;
+&lt;/$reveal&gt;
+&lt;span class=&quot;box center&quot;&gt;&lt;&lt;edit-link-button&gt;&gt;&lt;/span&gt;
+\end
+
+\define new-link-row()
+&lt;$reveal state=&lt;&lt;qualifyTitle &quot;$:/state/newLink/&quot;&gt;&gt; tag=div class=&quot;table script-link-grid&quot; type=&quot;match&quot; text=&quot;open&quot; &gt;
+&lt;&lt;table-header&gt;&gt;
+&lt;span class=&quot;box&quot;&gt;auto&lt;/span&gt;
+&lt;span class=&quot;box&quot;&gt;&lt;&lt;new-link-input&gt;&gt;&lt;/span&gt;
+&lt;span class=&quot;box center&quot;&gt;&lt;&lt;new-link-ok&gt;&gt;&lt;/span&gt;
+&lt;/$reveal&gt;
+\end
+
+\define link-list()
+&lt;p&gt;
+&lt;$link&gt;&lt;&lt;currentTiddler&gt;&gt;&lt;/$link&gt;
+&lt;/p&gt;
+&lt;div class=&quot;table script-link-grid&quot;&gt;
+&lt;&lt;table-header&gt;&gt;
+
+&lt;$list filter=&quot;[&lt;currentTiddler&gt;indexes[]]&quot; variable=listItem&gt;
+&lt;&lt;index-text-template&gt;&gt;
+&lt;/$list&gt;
+&lt;/div&gt;
+&lt;&lt;new-link-button&gt;&gt;
+&lt;&lt;new-link-row&gt;&gt;
+\end
+
+\define createName()$(currentTiddler)$.links
+\define createTags()[[$(currentTiddler)$]] links
+\define createContainerAction()
+&lt;$action-setfield $tiddler=&lt;&lt;createName&gt;&gt; tags=&lt;&lt;createTags&gt;&gt; type=&quot;application/json&quot;/&gt;
+\end
+\define createLinksTiddler()
+&lt;$button actions=&lt;&lt;createContainerAction&gt;&gt; tooltip=&quot;Create List&quot; class=&quot;wltc-btn-big-green tc-btn-big-green&quot;&gt;Create Links Container!
+&lt;/$button&gt;
+\end
+
+&lt;$list filter=&quot;[tag&lt;currentTiddler&gt;tag[links]]&quot;  emptyMessage=&lt;&lt;createLinksTiddler&gt;&gt;&gt;
+&lt;&lt;link-list&gt;&gt;
+&lt;/$list&gt;
+</pre>
+</div>
+<div created="20170927191707548" description="" modified="20171215213449069" tags="" title="$:/_bundle/wikilabs/script-manager/list-description-template" type="text/vnd.tiddlywiki">
+<pre>\define set-link()
+&lt;$action-setfield $tiddler=&lt;&lt;currentTiddler&gt;&gt; $field=description $value={{$:/_new-description}}/&gt;
+\end
+
+\define init-link-editor()
+&lt;$action-setfield $tiddler=&quot;$:/_new-description&quot; $value={{$(currentTiddler)$!!description}}/&gt;
+\end
+
+\define getLink()
+&lt;$transclude field=description&gt;No description defined yet! Click: &lt;&lt;edit-link-button&gt;&gt; to define it!&lt;/$transclude&gt;
+\end
+
+\define edit-link-button()
+&lt;$macrocall $name=&quot;toggleOkCancel&quot; state=&lt;&lt;qualifyTitle &quot;$:/state/editDescription/&quot;&gt;&gt; openText=&quot; &quot; okText=&quot; &quot; closeText=&quot; &quot; deleteText=&quot; &quot; openIcon={{$:/core/images/edit-button}} okIcon={{$:/core/images/save-button}} okActions=&lt;&lt;set-link&gt;&gt; openActions=&lt;&lt;init-link-editor&gt;&gt;/&gt;
+\end
+
+\define edit-link-input()
+&lt;$edit-text class=&quot;wltc-edit-input&quot; tiddler=&quot;$:/_new-description&quot; tag=input placeholder=&quot;description&quot;/&gt;
+\end
+
+\define table-header()
+&lt;span class=&quot;header&quot;&gt;Description&lt;/span&gt;
+&lt;span class=&quot;header center&quot;&gt;Action&lt;/span&gt;
+\end
+
+\define index-text-template()
+&lt;$reveal state=&lt;&lt;qualifyTitle &quot;$:/state/editDescription/&quot;&gt;&gt; tag=span class=&quot;box&quot; type=&quot;match&quot; text=&quot;closed&quot; default=closed &gt;
+&lt;&lt;getLink&gt;&gt;
+&lt;/$reveal&gt;
+&lt;$reveal state=&lt;&lt;qualifyTitle &quot;$:/state/editDescription/&quot;&gt;&gt; tag=span class=&quot;box&quot; type=&quot;match&quot; text=&quot;open&quot; &gt;
+&lt;&lt;edit-link-input&gt;&gt;
+&lt;/$reveal&gt;
+&lt;span class=&quot;box center&quot;&gt;&lt;&lt;edit-link-button&gt;&gt;&lt;/span&gt;
+\end
+
+\define new-link-row()
+&lt;&lt;table-header&gt;&gt;
+&lt;&lt;index-text-template&gt;&gt;
+\end
+
+&lt;div class=&quot;script-description-grid&quot;&gt;
+&lt;&lt;new-link-row&gt;&gt;
+&lt;/div&gt;</pre>
+</div>
+<div caption="New Script" created="20171023101611736" description="This action creates a new script tiddler" modified="20171215213449069" tags="$:/tags/PageControls" title="$:/_bundle/wikilabs/script-manager/new-script-button" type="text/vnd.tiddlywiki">
+<pre>\define x()
+&lt;$action-sendmessage $message=&quot;tm-new-tiddler&quot;
+tags=&quot;script&quot;
+description=&quot;CHANGE-ME! - Description will be shown in the overview&quot;
+text=&quot;```
+your script comes here
+```&quot;/&gt;
+\end
+\define scriptNewButton()
+&lt;$button actions=&lt;&lt;x&gt;&gt; tooltip=&quot;New Script&quot; tags=&quot;script&quot; aria-label=&quot;New Script&quot; class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt;
+&lt;$list filter=&quot;[&lt;tv-config-toolbar-icons&gt;prefix[yes]]&quot;&gt;
+{{$:/core/images/file}}
+&lt;/$list&gt;
+&lt;$list filter=&quot;[&lt;tv-config-toolbar-text&gt;prefix[yes]]&quot;&gt;
+&lt;span class=&quot;tc-btn-text&quot;&gt;&lt;$text text=&quot;New Script&quot;/&gt;&lt;/span&gt;
+&lt;/$list&gt;
+&lt;/$button&gt;
+\end
+&lt;&lt;scriptNewButton&gt;&gt;
+</pre>
+</div>
+<div created="20170918195846568" modified="20171215213449053" tags="$:/tags/Macro" title="$:/_bundle/wikilabs/script-manager/script-footer-macros" type="text/vnd.tiddlywiki">
+<pre>\define getComment()
+&lt;$view field=&quot;comment&quot; format=text/&gt;
+\end
+
+\define getScript()
+&lt;$view field=&quot;script&quot; format=text/&gt;
+\end
+
+\define getDone()
+&lt;$checkbox tag=&quot;done&quot;&gt;&lt;/$checkbox&gt;
+\end
+
+\define getLink()
+&lt;$list filter=&quot;&quot;&quot;[{!!title}] +[tag[done]]&quot;&quot;&quot; emptyMessage=&quot;&quot;&quot;&lt;$link to={{!!title}}&gt;&lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;&quot;&quot;&quot;&gt;
+~~&lt;$link to={{!!title}}&gt;&lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;~~
+&lt;/$list&gt;
+\end
+
+\define createFilter(tag:&quot;todo&quot; prefix:&quot;&quot;)
+[!has[draft.of]tag[$tag$]$prefix$tag[done]sort[created]]
+\end
+
+\define todo-body(tag:&quot;todo&quot; prefix:&quot;&quot;)
+&lt;div class=&quot;table view-todo-grid&quot;&gt;
+&lt;span class=&quot;header center&quot; &gt;Done&lt;/span&gt;
+&lt;span class=&quot;header&quot;&gt;Title&lt;/span&gt;
+&lt;span class=&quot;header&quot;&gt;Comment&lt;/span&gt;
+
+&lt;$list filter=&lt;&lt;createFilter &quot;&quot;&quot;$tag$&quot;&quot;&quot; &quot;$prefix$&quot;&gt;&gt; &gt;
+&lt;span class=&quot;box center&quot;&gt;&lt;&lt;getDone&gt;&gt;&lt;/span&gt;
+&lt;span class=&quot;box&quot;&gt;&lt;&lt;getLink&gt;&gt;&lt;/span&gt;
+&lt;span class=&quot;box&quot;&gt;&lt;&lt;getComment&gt;&gt;&lt;/span&gt;
+&lt;/$list&gt;
+&lt;/div&gt;
+\end
+
+\define checklist(tag:&quot;todo&quot;)
+&lt;&lt;todo-body tag:&quot;&quot;&quot;$tag$&quot;&quot;&quot; prefix:&quot;!&quot;&gt;&gt;
+\end
+
+\define checklist-done(tag:&quot;todo&quot;)
+&lt;&lt;todo-body tag:&quot;&quot;&quot;$tag$&quot;&quot;&quot;&gt;&gt;
+\end
+
+\define createScriptFilter(tag:&quot;todo&quot; script:&quot;&quot; prefix:&quot;&quot;)
+[!has[draft.of]tag[$tag$]field:script[$script$]$prefix$tag[done]sort[created]]
+\end
+
+\define script-body(tag:&quot;todo&quot; script:&quot;&quot; prefix:&quot;&quot;)
+&lt;div class=&quot;table view-todo-grid&quot;&gt;
+&lt;span class=&quot;header center&quot; &gt;Done&lt;/span&gt;
+&lt;span class=&quot;header&quot;&gt;Title&lt;/span&gt;
+&lt;span class=&quot;header&quot;&gt;Comment&lt;/span&gt;
+
+&lt;$list filter=&lt;&lt;createScriptFilter tag:&quot;&quot;&quot;$tag$&quot;&quot;&quot; script:&quot;&quot;&quot;$script$&quot;&quot;&quot; prefix:&quot;$prefix$&quot;&gt;&gt; &gt;
+&lt;span class=&quot;box center&quot;&gt;&lt;&lt;getDone&gt;&gt;&lt;/span&gt;
+&lt;span class=&quot;box&quot;&gt;&lt;&lt;getLink&gt;&gt;&lt;/span&gt;
+&lt;span class=&quot;box&quot;&gt;&lt;&lt;getComment&gt;&gt;&lt;/span&gt;
+&lt;/$list&gt;
+&lt;/div&gt;
+\end
+
+\define todo-overview(tag:&quot;todo&quot; script:&quot;&quot;)
+&lt;&lt;script-body tag:&quot;&quot;&quot;$tag$&quot;&quot;&quot; script:&quot;&quot;&quot;$script$&quot;&quot;&quot; prefix:&quot;!&quot;&gt;&gt;
+\end
+
+\define todo-overview-done(tag:&quot;todo&quot; script:&quot;&quot;)
+&lt;&lt;script-body tag:&quot;&quot;&quot;$tag$&quot;&quot;&quot; script:&quot;&quot;&quot;$script$&quot;&quot;&quot;&gt;&gt;
+\end
+
+&lt;pre&gt;&lt;$view field=&quot;text&quot;/&gt;&lt;/pre&gt;</pre>
+</div>
+<div created="20171023112913634" modified="20171215213449180" tags="" title="$:/_bundle/wikilabs/script-manager/script-list-template" type="text/vnd.tiddlywiki">
+<pre>\define getDescription()
+&lt;$view field=&quot;description&quot; format=text/&gt;
+\end
+
+\define getScript()
+&lt;$view field=&quot;script&quot; format=text/&gt;
+\end
+
+\define getLink()
+&lt;$link to={{!!title}}&gt;&lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;
+\end
+
+\define createScriptFilter(tag:&quot;script&quot; prefix:&quot;&quot;)
+[!has[draft.of]tag[$tag$]sort[created]]
+\end
+
+\define list-body(tag:&quot;script&quot; prefix:&quot;&quot;)
+&lt;div class=&quot;table view-script-grid&quot;&gt;
+&lt;span class=&quot;header&quot;&gt;Script&lt;/span&gt;
+&lt;span class=&quot;header&quot;&gt;Description&lt;/span&gt;
+
+&lt;$list filter=&lt;&lt;createScriptFilter tag:&quot;&quot;&quot;$tag$&quot;&quot;&quot; prefix:&quot;&quot;&gt;&gt; &gt;
+&lt;span class=&quot;box&quot;&gt;&lt;&lt;getLink&gt;&gt;&lt;/span&gt;
+&lt;span class=&quot;box&quot;&gt;&lt;&lt;getDescription&gt;&gt;&lt;/span&gt;
+&lt;/$list&gt;
+&lt;/div&gt;
+\end
+
+&lt;&lt;list-body tag:&quot;script&quot;&gt;&gt;
+</pre>
+</div>
+<div caption="Description" created="20170927191058421" list="" modified="20171215213449177" tags="$:/_bundle/wikilabs/script-manager/tags/scriptFooter" title="$:/_bundle/wikilabs/script-manager/scriptFooter/description" type="text/vnd.tiddlywiki">
+<pre>{{||$:/_bundle/wikilabs/script-manager/list-description-template}}</pre>
+</div>
+<div caption="ToDo-Done" created="20170921153626387" list="" modified="20171215213449173" tags="$:/_bundle/wikilabs/script-manager/tags/scriptFooter" title="$:/_bundle/wikilabs/script-manager/scriptFooter/done" type="text/vnd.tiddlywiki">
+<pre>!!! Awesome! - They are done
+
+&lt;$macrocall $name=&quot;todo-overview-done&quot; script=&lt;&lt;currentTiddler&gt;&gt; /&gt;
+</pre>
+</div>
+<div caption="LInks" created="20170922120535923" list="" modified="20171215213449169" tags="$:/_bundle/wikilabs/script-manager/tags/scriptFooter" title="$:/_bundle/wikilabs/script-manager/scriptFooter/links" type="text/vnd.tiddlywiki">
+<pre>{{||$:/_bundle/wikilabs/script-manager/list-all-links}}</pre>
+</div>
+<div caption="ToDo's" created="20170921122619065" list="" modified="20171215213449165" tags="$:/_bundle/wikilabs/script-manager/tags/scriptFooter" title="$:/_bundle/wikilabs/script-manager/scriptFooter/todo" type="text/vnd.tiddlywiki">
+<pre>\define toggleMeOpenActions()
+&lt;$action-setfield $tiddler=&quot;$:/_new-todo&quot; $field=&quot;script&quot; $value=&lt;&lt;currentTiddler&gt;&gt;/&gt;
+\end
+
+\define toggleMeCloseActions()
+&lt;$action-setfield $tiddler=&quot;$:/_new-todo&quot; $field=&quot;script&quot; $value=&quot;---&quot;/&gt;
+\end
+
+!!! All ~ToDo's for this script
+
+&lt;$macrocall $name=&quot;todo-overview&quot;  script=&lt;&lt;currentTiddler&gt;&gt; /&gt;
+
+&lt;span class=&quot;wltc-btn-big-green tc-btn-big-green&quot;&gt;
+&lt;$macrocall $name=&quot;toggleMe&quot; openActions=&lt;&lt;toggleMeOpenActions&gt;&gt; closeActions=&lt;&lt;toggleMeCloseActions&gt;&gt; state=&quot;$:/state/newTodo&quot; openText=&quot;New Todo&quot;/&gt;
+&lt;/span&gt;
+
+&lt;$reveal state=&quot;$:/state/newTodo&quot; type=&quot;match&quot; text=&quot;open&quot; default=&quot;closed&quot; &gt;
+&lt;$vars defaultScript=&lt;&lt;currentTiddler&gt;&gt; &gt;
+{{$:/_bundle/wikilabs/script-manager/grid-todo-template}}
+&lt;/$vars&gt;
+&lt;/$reveal&gt;</pre>
+</div>
+<div created="20171024092054473" modified="20171215213449161" title="$:/_bundle/wikilabs/script-manager/style/fold/svg/fill" type="text/vnd.tiddlywiki">
+<pre>#4a4ec1</pre>
+</div>
+<div created="20171024085920302" modified="20171215213907243" title="$:/_bundle/wikilabs/script-manager/style/pre/max-height" type="text/vnd.tiddlywiki">
+<pre>10em</pre>
+</div>
+<div created="20171024090436470" modified="20171215213449154" title="$:/_bundle/wikilabs/script-manager/style/unfold/svg/fill" type="text/vnd.tiddlywiki">
+<pre>#29a023</pre>
+</div>
+<div created="20171024074539678" modified="20171215213449149" tags="$:/tags/Stylesheet" title="$:/_bundle/wikilabs/script-manager/styles" type="text/css">
+<pre>/* script UI definitions */
+
+.script-link-grid {
+  display: grid;
+  grid-template-columns: auto 1fr 7em;
+  grid-auto-rows: minmax(auto, auto);
+}
+
+.script-description-grid {
+  display: grid;
+  grid-template-columns: auto 7em;
+  grid-auto-rows: minmax(auto, auto);
+}
+
+/* todo UI */
+
+.todo-grid {
+    display: grid;
+    grid-auto-rows: minmax(auto, auto);
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 5em 5em 5em;
+    grid-template-areas:
+      &quot;titleH titleH titleH scriptH scriptH infoH clearH actionH &quot;
+      &quot;title title title script script info  clear action &quot;
+      &quot;in    in    in    in     in     in    .     . &quot;;
+}
+
+.comment-grid {
+  margin-top: .5em;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-auto-rows: minmax(auto, auto);
+}
+
+.view-todo-grid {
+  display: grid;
+  grid-template-columns: 5em 1fr 2fr;
+  grid-auto-rows: minmax(auto, auto);
+}
+
+.view-script-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-auto-rows: minmax(auto, auto);
+}
+
+
+/* general definitions */
+
+.wltc-btn-big-green {
+    margin: 4px 8px 4px 0;
+}
+
+.wltc-todo-input {
+  width: 100%;
+}
+
+.wltc-edit-input {
+  width: 100%;
+}
+
+.table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 1px solid #dddddd;
+}
+
+.header {
+  background-color: #f0f0f0;
+  font-weight: bold;
+
+  padding: 0 7px 0 7px;
+  border-top: 1px solid #dddddd;
+  border-left: 1px solid #dddddd;
+}
+
+.box {
+  padding: 4px 7px 4px 7px;
+  border-top: 1px solid #dddddd;
+  border-left: 1px solid #dddddd;
+}
+
+.title {
+  grid-area: title;
+}
+
+.script {
+  grid-area: script;
+}
+
+.script select{
+  width: 100%;
+}
+
+.info {
+  grid-area: info;
+}
+
+.clear {
+  grid-area: clear;
+}
+
+.action {
+  grid-area: action;
+}
+
+.titleH {
+  grid-area: titleH;
+}
+
+.scriptH {
+  grid-area: scriptH;
+}
+
+.infoH {
+  grid-area: infoH;
+}
+
+.clearH {
+  grid-area: clearH;
+}
+
+.actionH {
+  grid-area: actionH;
+}
+
+.commentH {
+  grid-area: commentH;
+}
+
+.comment-grid {
+  grid-area: in;
+}
+
+.center {
+  text-align: center;
+}</pre>
+</div>
+<div created="20171024082944705" modified="20171215213449146" tags="$:/tags/Stylesheet" title="$:/_bundle/wikilabs/script-manager/styles-config" type="text/vnd.tiddlywiki">
+<pre>.tc-unfold-banner svg {
+    fill: {{$:/_bundle/wikilabs/script-manager/style/unfold/svg/fill}};
+}
+
+.tc-fold-banner svg {
+    fill: {{$:/_bundle/wikilabs/script-manager/style/fold/svg/fill}};
+}
+
+.tc-tiddler-body pre {
+max-height: {{$:/_bundle/wikilabs/script-manager/style/pre/max-height}};
+}</pre>
+</div>
+<div created="20160330113527612" list="$:/_bundle/wikilabs/script-manager/scriptFooter/links $:/_bundle/wikilabs/script-manager/scriptFooter/todo $:/_bundle/wikilabs/script-manager/scriptFooter/done $:/_bundle/wikilabs/script-manager/scriptFooter/description" modified="20171215213449141" tags="$:/tags/ViewTemplate" title="$:/_bundle/wikilabs/script-manager/tags/scriptFooter" type="text/vnd.tiddlywiki">
+<pre>&lt;$list filter=&quot;[all[current]tag[script]]&quot;&gt;
+&lt;hr&gt;
+
+{{!!description}}
+
+&lt;$macrocall $name=&quot;tabs&quot; tabsList=&quot;[all[shadows+tiddlers]tag[$:/_bundle/wikilabs/script-manager/tags/scriptFooter]!has[draft.of]]&quot; default=&quot;$:/_bundle/wikilabs/script-manager/scriptFooter/links&quot;/&gt;
+
+&lt;/$list&gt;</pre>
+</div>
+<div created="20170922115642092" list="$:/_bundle/wikilabs/script-manager/todoFooter/info" modified="20171215213449131" tags="$:/tags/ViewTemplate" title="$:/_bundle/wikilabs/script-manager/tags/todoFooter" type="text/vnd.tiddlywiki">
+<pre>&lt;$list filter=&quot;[all[current]tag[todo]]&quot;&gt;
+
+&lt;hr&gt;
+&lt;$macrocall $name=&quot;tabs&quot; tabsList=&quot;[all[shadows+tiddlers]tag[$:/_bundle/wikilabs/script-manager/tags/todoFooter]!has[draft.of]]&quot; default=&quot;$:/_bundle/wikilabs/script-manager/todoFooter/info&quot;/&gt;
+
+&lt;/$list&gt;</pre>
+</div>
+<div caption="Info" created="20170922115756725" list="" modified="20171215213449131" tags="$:/_bundle/wikilabs/script-manager/tags/todoFooter" title="$:/_bundle/wikilabs/script-manager/todoFooter/info" type="text/vnd.tiddlywiki">
+<pre>| Done |Assigned to |Comment |h
+| &lt;$checkbox tag=&quot;done&quot;&gt;&lt;/$checkbox&gt; |&lt;$link to={{!!script}}&gt;{{!!script}}&lt;/$link&gt; |{{!!comment}} |</pre>
+</div>
+<div created="20170918210521497" modified="20171215213449116" tags="$:/tags/Macro" title="$:/_bundle/wikilabs/script-manager/toggleMe-macro" type="text/vnd.tiddlywiki">
+<pre>\define qualifyTitle(title)
+$title$$(currentTiddler)$
+\end
+
+\define qualifyList(title)
+$title$$(listItem)$
+\end
+
+\define qualifyTitleList(title)
+$title$/$(currentTiddler)$/$(listItem)$
+\end
+
+\define toggleMe(state openText:&quot;Open&quot; closeText:&quot;Close&quot; openActions closeActions openIcon:{{$:/core/images/chevron-down}} closeIcon:{{$:/core/images/chevron-up}} class)
+&lt;$reveal state=&quot;$state$&quot; type=&quot;match&quot; text=&quot;closed&quot; default=&quot;closed&quot;&gt;
+&lt;$button set=&quot;$state$&quot; setTo=&quot;open&quot; class=&quot;$class$ tc-btn-invisible&quot; selectedClass=&quot;tc-selected&quot; actions=&quot;&quot;&quot;$openActions$&quot;&quot;&quot; &gt;
+$openIcon$  $openText$
+&lt;/$button&gt;
+&lt;/$reveal&gt;
+&lt;$reveal state=&quot;$state$&quot; type=&quot;match&quot; text=&quot;open&quot; default=&quot;closed&quot;&gt;
+&lt;$button set=&quot;$state$&quot; setTo=&quot;closed&quot; class=&quot;$class$ tc-btn-invisible&quot; selectedClass=&quot;tc-selected&quot; actions=&quot;&quot;&quot;$closeActions$&quot;&quot;&quot;&gt;
+$closeIcon$ $closeText$
+&lt;/$button&gt;
+&lt;/$reveal&gt;
+\end
+
+\define toggleOkCancel(state openText:&quot;Edit&quot; okText:&quot;OK&quot; closeText:&quot;Cancel&quot; openActions okActions cancelActions openIcon:{{$:/core/images/chevron-down}} okIcon:{{$:/core/images/chevron-up}} cancelIcon:{{$:/core/images/cancel-button}} class)
+&lt;$reveal state=&quot;$state$&quot; type=&quot;match&quot; text=&quot;closed&quot; default=&quot;closed&quot;&gt;
+&lt;$button set=&quot;$state$&quot; setTo=&quot;open&quot; class=&quot;$class$ tc-btn-invisible&quot; selectedClass=&quot;tc-selected&quot; actions=&quot;&quot;&quot;$openActions$&quot;&quot;&quot; &gt;
+$openIcon$  $openText$
+&lt;/$button&gt;
+&lt;/$reveal&gt;
+&lt;$reveal state=&quot;$state$&quot; type=&quot;match&quot; text=&quot;open&quot; default=&quot;closed&quot;&gt;
+&lt;$button set=&quot;$state$&quot; setTo=&quot;closed&quot; class=&quot;$class$ tc-btn-invisible&quot; selectedClass=&quot;tc-selected&quot; actions=&quot;&quot;&quot;$cancelActions$&quot;&quot;&quot;&gt;
+$cancelIcon$ $closeText$
+&lt;/$button&gt;&amp;nbsp;
+&lt;$button set=&quot;$state$&quot; setTo=&quot;closed&quot; class=&quot;$class$ tc-btn-invisible&quot; selectedClass=&quot;tc-selected&quot; actions=&quot;&quot;&quot;$okActions$&quot;&quot;&quot;&gt;
+$okIcon$ $okText$
+&lt;/$button&gt;
+&lt;/$reveal&gt;
+\end
+
+\define toggleOkCancelDelete(state openText:&quot;Edit&quot; okText:&quot;OK&quot; closeText:&quot;Cancel&quot; deleteText:&quot;Delete&quot; openActions okActions cancelActions deleteActions openIcon:{{$:/core/images/chevron-down}} okIcon:{{$:/core/images/chevron-up}} cancelIcon:{{$:/core/images/cancel-button}} deleteIcon:{{$:/core/images/delete-button}} class)
+&lt;$reveal state=&quot;$state$&quot; type=&quot;match&quot; text=&quot;closed&quot; default=&quot;closed&quot;&gt;
+&lt;$button set=&quot;$state$&quot; setTo=&quot;open&quot; class=&quot;$class$ tc-btn-invisible&quot; selectedClass=&quot;tc-selected&quot; actions=&quot;&quot;&quot;$openActions$&quot;&quot;&quot; &gt;
+$openIcon$  $openText$
+&lt;/$button&gt;
+&lt;/$reveal&gt;
+&lt;$reveal state=&quot;$state$&quot; type=&quot;match&quot; text=&quot;open&quot; default=&quot;closed&quot;&gt;
+&lt;$button set=&quot;$state$&quot; setTo=&quot;closed&quot; class=&quot;$class$ tc-btn-invisible&quot; selectedClass=&quot;tc-selected&quot; actions=&quot;&quot;&quot;$deleteActions$&quot;&quot;&quot;&gt;
+$deleteIcon$ $deleteText$
+&lt;/$button&gt;&amp;nbsp;&amp;nbsp;
+&lt;$button set=&quot;$state$&quot; setTo=&quot;closed&quot; class=&quot;$class$ tc-btn-invisible&quot; selectedClass=&quot;tc-selected&quot; actions=&quot;&quot;&quot;$cancelActions$&quot;&quot;&quot;&gt;
+$cancelIcon$ $closeText$
+&lt;/$button&gt;&amp;nbsp;&amp;nbsp;
+&lt;$button set=&quot;$state$&quot; setTo=&quot;closed&quot; class=&quot;$class$ tc-btn-invisible&quot; selectedClass=&quot;tc-selected&quot; actions=&quot;&quot;&quot;$okActions$&quot;&quot;&quot;&gt;
+$okIcon$ $okText$
+&lt;/$button&gt;
+&lt;/$reveal&gt;
+\end
+
+&lt;pre&gt;&lt;$view field=&quot;text&quot;/&gt;&lt;/pre&gt;</pre>
+</div>
+<div caption="Script Manager" created="20171024084650209" modified="20171215213449116" tags="$:/tags/ControlPanel" title="$:/_bundle/wikilabs/script-manager/ui/ControlPanel/styles-config" type="text/vnd.tiddlywiki">
+<pre>!! Script / Code Element
+
+|Element | Setting | Example |h
+|&lt;$link to=&quot;$:/_bundle/wikilabs/script-manager/style/pre/max-height&quot;&gt; pre max-height&lt;/$link&gt; |&lt;$edit-text tiddler=&quot;$:/_bundle/wikilabs/script-manager/style/pre/max-height&quot; default=&quot;&quot; tag=&quot;input&quot;/&gt; |eg: 10em|
+
+!! Tiddler Toolbar
+&lt;$checkbox tiddler=&quot;$:/config/ViewToolbarButtons/Visibility/$:/core/ui/Buttons/fold&quot; field=&quot;text&quot; checked=&quot;show&quot; unchecked=&quot;hide&quot; default=&quot;show&quot;/&gt; - Optional tiddler toolbar button to fold and unfold tiddlers.
+
+!! Tiddler Body
+
+&lt;$checkbox tiddler=&quot;$:/config/ViewToolbarButtons/Visibility/$:/core/ui/Buttons/fold-bar&quot; field=&quot;text&quot; checked=&quot;show&quot; unchecked=&quot;hide&quot; default=&quot;show&quot;/&gt; - Optional bars to fold and unfold tiddlers
+
+|Element | Setting | Example |h
+|&lt;$link to=&quot;$:/_bundle/wikilabs/script-manager/style/unfold/svg/fill&quot;&gt; unfold svg fill color&lt;/$link&gt; |&lt;$edit-text tiddler=&quot;$:/_bundle/wikilabs/script-manager/style/unfold/svg/fill&quot; default=&quot;&quot; tag=&quot;input&quot; type=&quot;color&quot;/&gt; |eg: green|
+|&lt;$link to=&quot;$:/_bundle/wikilabs/script-manager/style/fold/svg/fill&quot;&gt; fold svg fill color&lt;/$link&gt; |&lt;$edit-text tiddler=&quot;$:/_bundle/wikilabs/script-manager/style/fold/svg/fill&quot; default=&quot;&quot; tag=&quot;input&quot; type=&quot;color&quot;/&gt; |eg: gray|
+
+</pre>
+</div>
+<div created="20171024080602320" modified="20171215213626259" title="$:/_new-description" type="text/vnd.tiddlywiki">
+<pre> sadf asfas fsdaf sdaf sdafsd safsafas</pre>
+</div>
+<div created="20171024082426688" modified="20171024092838580" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/fold-all" type="text/vnd.tiddlywiki">
+<pre>hide</pre>
+</div>
+<div created="20171024082426126" modified="20171024092837548" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/unfold-all" type="text/vnd.tiddlywiki">
+<pre>hide</pre>
+</div>
+<div created="20171024094248664" modified="20171024094249762" title="$:/config/RelinkOnRename" type="text/vnd.tiddlywiki">
+<pre>yes</pre>
+</div>
+<div created="20171024082219073" modified="20171215213916236" title="$:/config/ViewToolbarButtons/Visibility/$:/core/ui/Buttons/fold" type="text/vnd.tiddlywiki">
+<pre>hide</pre>
+</div>
+<div created="20171024082307467" modified="20171215213921753" title="$:/config/ViewToolbarButtons/Visibility/$:/core/ui/Buttons/fold-bar" type="text/vnd.tiddlywiki">
+<pre>show</pre>
+</div>
+<div created="20171024073525686" modified="20171024073526784" title="$:/config/wikilabs/enableBundles" type="text/vnd.tiddlywiki">
+<pre>enabled</pre>
+</div>
+<div created="20171024073523359" modified="20171024073524414" title="$:/config/wikilabs/enableImportBundle" type="text/vnd.tiddlywiki">
+<pre>yes</pre>
+</div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="TiddlyWiki5 core" list="readme" plugin-priority="0" plugin-type="plugin" title="$:/core" type="application/json" version="5.1.15">
 <pre>{
     &quot;tiddlers&quot;: {
@@ -8414,37 +9211,69 @@ Error message and password prompt
     }
 }</pre>
 </div>
+<div created="20171024081058778" modified="20171215213449100" title="$:/DefaultTiddlers" type="text/vnd.tiddlywiki">
+<pre>[[Overview Scripts]]</pre>
+</div>
 <div title="$:/isEncrypted">
 <pre>no</pre>
 </div>
-<div author="Mario Pietsch" core-version="&gt;=5.1.6" dependents="" description="Info button, with session persistent open/closed status" list="readme license" plugin-type="plugin" title="$:/plugins/wikilabs/info-session" type="application/json" version="0.1.2">
+<div author="Mario Pietsch" core-version="&gt;=5.1.6" created="20171024073603722" dependents="" deprecated="0.1.1" description="Remove all state tiddlers. Simple UI" list="readme license" modified="20171024073603722" plugin-type="plugin" title="$:/plugins/wikilabs/remove-states" type="application/json" version="0.1.1">
 <pre>{
     &quot;tiddlers&quot;: {
-        &quot;$:/plugins/wikilabs/info-session/license&quot;: {
-            &quot;title&quot;: &quot;$:/plugins/wikilabs/info-session/license&quot;,
-            &quot;text&quot;: &quot;Info-Session-Plugin (c) Mario Pietsch - 2016\n\nhttps://opensource.org/licenses/BSD-3-Clause&quot;
+        &quot;$:/plugins/wikilabs/ui/remove-states&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/wikilabs/ui/remove-states&quot;,
+            &quot;text&quot;: &quot;\\define theFilter()\n[prefix[$:/state/]]\n\\end\n\n&lt;$button&gt;\n&lt;$action-deletetiddler $filter=&lt;&lt;theFilter&gt;&gt; /&gt;\nDelete all: &lt;&lt;theFilter&gt;&gt; tiddlers\n&lt;/$button&gt;\n\n&lt;$list filter=&lt;&lt;theFilter&gt;&gt; &gt;\n&lt;$button&gt;\n&lt;$action-deletetiddler $tiddler=&lt;&lt;currentTiddler&gt;&gt;/&gt;\nx\n&lt;/$button&gt; - &lt;&lt;currentTiddler&gt;&gt;&lt;br&gt;\n&lt;/$list&gt;&quot;
         },
-        &quot;$:/plugins/wikilabs/info-session/readme&quot;: {
-            &quot;title&quot;: &quot;$:/plugins/wikilabs/info-session/readme&quot;,
-            &quot;text&quot;: &quot;* This plugin provides a tiddler info button, with a persistent open/close status ''for one browser session''.\n* The status is saved in a system \&quot;$:/state/popup\&quot; variable. \n** This means, if you reload the TW, the status is gone, sice they are not stored by default!\n\n''Important:''\n\n* This plugin changes the core tiddler: $:/core/ui/Buttons/info\n\n----\n\nIf you want persistent state variables, you need to ''add'' the \&quot;persistent-states\&quot; plugin ''and'' modify the ~ViewTemplate. The ''slant-01 theme\&quot; provides this functionality.\n&quot;
+        &quot;$:/plugins/wikilabs/remove-states/license&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/wikilabs/remove-states/license&quot;,
+            &quot;text&quot;: &quot;Remove-States-Plugin (c) Mario Pietsch - 2016\n\nhttps://opensource.org/licenses/BSD-3-Clause&quot;
         },
-        &quot;$:/core/ui/Buttons/info&quot;: {
-            &quot;title&quot;: &quot;$:/core/ui/Buttons/info&quot;,
-            &quot;tags&quot;: &quot;$:/tags/ViewToolbar&quot;,
-            &quot;caption&quot;: &quot;{{$:/core/images/info-button}} {{$:/language/Buttons/Info/Caption}}&quot;,
-            &quot;description&quot;: &quot;{{$:/language/Buttons/Info/Hint}}&quot;,
-            &quot;text&quot;: &quot;&lt;$reveal type=\&quot;match\&quot; text=\&quot;\&quot; default=\&quot;\&quot; state=&lt;&lt;tiddlerInfoState&gt;&gt; &gt;\n&lt;$button tooltip={{$:/language/Buttons/Info/Hint}} aria-label={{$:/language/Buttons/Info/Caption}} class=&lt;&lt;tv-config-toolbar-class&gt;&gt; selectedClass=\&quot;tc-selected\&quot;&gt;\n&lt;$action-setfield $tiddler=&lt;&lt;tiddlerInfoState&gt;&gt; text=\&quot;visible\&quot;/&gt;\n&lt;$list filter=\&quot;[&lt;tv-config-toolbar-icons&gt;prefix[yes]]\&quot;&gt;\n{{$:/core/images/info-button}}\n&lt;/$list&gt;\n&lt;$list filter=\&quot;[&lt;tv-config-toolbar-text&gt;prefix[yes]]\&quot;&gt;\n&lt;span class=\&quot;tc-btn-text\&quot;&gt;&lt;$text text={{$:/language/Buttons/Info/Caption}}/&gt;&lt;/span&gt;\n&lt;/$list&gt;\n&lt;/$button&gt;\n&lt;/$reveal&gt;\n&lt;$reveal type=\&quot;nomatch\&quot; text=\&quot;\&quot; default=\&quot;\&quot; state=&lt;&lt;tiddlerInfoState&gt;&gt; &gt;\n&lt;$button tooltip={{$:/language/Buttons/Info/Hint}} aria-label={{$:/language/Buttons/Info/Caption}} class=\&quot;tc-btn-invisible tc-selected\&quot; &gt;\n&lt;$action-deletetiddler $tiddler=&lt;&lt;tiddlerInfoState&gt;&gt;/&gt;\n&lt;$list filter=\&quot;[&lt;tv-config-toolbar-icons&gt;prefix[yes]]\&quot;&gt;\n{{$:/core/images/info-button}}\n&lt;/$list&gt;\n&lt;$list filter=\&quot;[&lt;tv-config-toolbar-text&gt;prefix[yes]]\&quot;&gt;\n&lt;span class=\&quot;tc-btn-text\&quot;&gt;&lt;$text text={{$:/language/Buttons/Info/Caption}}/&gt;&lt;/span&gt;\n&lt;/$list&gt;\n&lt;/$button&gt;\n&lt;/$reveal&gt;&quot;
+        &quot;$:/plugins/wikilabs/remove-states/readme&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/wikilabs/remove-states/readme&quot;,
+            &quot;text&quot;: &quot;! Overview\n\nThis plugin creates a simple UI, to remove all state tiddlers.\n\n! Simple UI\n\n[[$:/plugins/wikilabs/ui/remove-states]]\n\n{{$:/plugins/wikilabs/ui/remove-states}}\n&quot;
         }
     }
 }</pre>
 </div>
-<div created="20170206143435538" modified="20170206143511914" title="$:/SiteSubtitle" type="text/vnd.tiddlywiki">
-<pre>session persistent info-button</pre>
+<div created="20171024090852697" modified="20171024090853818" title="$:/search-sdw/inp/view-toolbar" type="text/vnd.tiddlywiki">
+<pre>$:/tags/ViewToolbar</pre>
 </div>
-<div created="20170206143336143" modified="20170206143340341" title="$:/SiteTitle" type="text/vnd.tiddlywiki">
-<pre>plugin: info-session</pre>
+<div caption="view-toolbar" created="20171024090852697" icon="$:/plugins/wikilabs/advanced-search-plus/shadow-search.svg" modified="20171024090853803" tags="$:/tags/AdvancedSearch" title="$:/search-sdw/view-toolbar" type="text/vnd.tiddlywiki">
+<pre>\define lingo-base() $:/language/Search/
+&lt;$linkcatcher to=&quot;$:/search-sdw/inp/view-toolbar&quot;&gt;
+
+&lt;$button tooltip={{$:/language/Buttons/Delete/Caption}} &gt;
+  &lt;$action-deletetiddler $tiddler=&quot;$:/search-sdw/inp/view-toolbar&quot;/&gt;
+  &lt;$action-deletetiddler $tiddler=&quot;$:/search-sdw/view-toolbar&quot;/&gt;
+  &lt;$transclude tiddler=&quot;$:/core/images/delete-button&quot; /&gt;
+&lt;/$button&gt;
+&lt;&lt;lingo Shadows/Hint&gt;&gt;
+
+&lt;div class=&quot;tc-search&quot;&gt;
+&lt;$edit-text tiddler=&quot;$:/search-sdw/inp/view-toolbar&quot; type=&quot;search&quot; tag=&quot;input&quot;/&gt;
+&lt;$reveal state=&quot;$:/search-sdw/inp/view-toolbar&quot; type=&quot;nomatch&quot; text=&quot;&quot;&gt;
+&lt;$button class=&quot;tc-btn-invisible&quot;&gt;
+&lt;$action-setfield $tiddler=&quot;$:/search-sdw/inp/view-toolbar&quot; $field=&quot;text&quot; $value=&quot;&quot;/&gt;
+{{$:/core/images/close-button}}
+&lt;/$button&gt;
+&lt;/$reveal&gt;
+&lt;/div&gt;
+
+&lt;/$linkcatcher&gt;
+
+&lt;$reveal state=&quot;$:/search-sdw/inp/view-toolbar&quot; type=&quot;nomatch&quot; text=&quot;&quot;&gt;
+&lt;$set name=&quot;resultCount&quot; value=&quot;&lt;$count filter='[all[shadows]search{$:/search-sdw/inp/view-toolbar}]'/&gt;&quot;&gt;
+&lt;div class=&quot;tc-search-results&quot;&gt;
+&lt;&lt;lingo Shadows/Matches&gt;&gt;
+&lt;$list filter=&quot;[all[shadows]search{$:/search-sdw/inp/view-toolbar}sort[title]limit[250]]&quot; template=&quot;$:/core/ui/ListItemTemplate&quot;/&gt;
+&lt;/div&gt;
+&lt;/$set&gt;
+&lt;/$reveal&gt;
+&lt;$reveal state=&quot;$:/search-sdw/inp/view-toolbar&quot; type=&quot;match&quot; text=&quot;&quot;&gt;
+&lt;/$reveal&gt;
+</pre>
 </div>
-<div list="GettingStarted" title="$:/StoryList">
+<div list="[[Overview Scripts]]" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -8570,20 +9399,148 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div title="GettingStarted">
-<pre>This edition shows, how the &quot;info-session&quot; plugin works.
-
-! Readme
-{{$:/plugins/wikilabs/info-session/readme}}
-
-! Plugins
-
-{{$:/core/ui/ControlPanel/Plugins}}
-
-have fun!&lt;br&gt;
-mario
-
+<div comment="aaa" created="20171024081258668" modified="20171024081259699" script="myNewScript" tags="todo" title="aaa" type="text/vnd.tiddlywiki">
+<pre></pre>
+</div>
+<div comment="aaaa comment" created="20171024074203107" modified="20171024074204215" script="New Tiddler" tags="todo" title="aaaa" type="text/vnd.tiddlywiki">
+<pre></pre>
+</div>
+<div comment="some comment" created="20171215213812676" modified="20171215213813792" script="myNewScript" tags="todo" title="aassddff" type="text/vnd.tiddlywiki">
+<pre></pre>
+</div>
+<div comment="comment test-script" created="20171024080749344" modified="20171024080750401" script="test-script" tags="todo" title="asdf" type="text/vnd.tiddlywiki">
+<pre></pre>
+</div>
+<div comment="asdf sadf sadf asdf" created="20171215213601924" modified="20171215213618898" script="New Tiddler 2" tags="todo" title="asdfaa" type="text/vnd.tiddlywiki">
+<pre></pre>
+</div>
+<div created="20171215213447742" modified="20171215213449084" tags="$:/tags/Bundle" title="import.bundle" type="text/plain">
+<pre>$:/_bundle/wikilabs/script-manager/grid-todo-template
+$:/_bundle/wikilabs/script-manager/info
+$:/_bundle/wikilabs/script-manager/link-edit-template
+$:/_bundle/wikilabs/script-manager/list-all-links
+$:/_bundle/wikilabs/script-manager/list-description-template
+$:/_bundle/wikilabs/script-manager/new-script-button
+$:/_bundle/wikilabs/script-manager/script-footer-macros
+$:/_bundle/wikilabs/script-manager/script-list-template
+$:/_bundle/wikilabs/script-manager/scriptFooter/description
+$:/_bundle/wikilabs/script-manager/scriptFooter/done
+$:/_bundle/wikilabs/script-manager/scriptFooter/links
+$:/_bundle/wikilabs/script-manager/scriptFooter/todo
+$:/_bundle/wikilabs/script-manager/style/fold/svg/fill
+$:/_bundle/wikilabs/script-manager/style/pre/max-height
+$:/_bundle/wikilabs/script-manager/style/unfold/svg/fill
+$:/_bundle/wikilabs/script-manager/styles
+$:/_bundle/wikilabs/script-manager/styles-config
+$:/_bundle/wikilabs/script-manager/tags/scriptFooter
+$:/_bundle/wikilabs/script-manager/tags/todoFooter
+$:/_bundle/wikilabs/script-manager/todoFooter/info
+$:/_bundle/wikilabs/script-manager/toggleMe-macro
+$:/_bundle/wikilabs/script-manager/ui/ControlPanel/styles-config
+[[Overview Scripts]]
+[[Overview ToDo's]]
+$:/DefaultTiddlers
+---
 </pre>
+</div>
+<div comment="todo comment" created="20171024081239450" modified="20171024081240542" script="myNewScript" tags="todo" title="my new todo" type="text/vnd.tiddlywiki">
+<pre></pre>
+</div>
+<div created="20171024081115041" description="short info about myNewScript" modified="20171024084906986" tags="script" title="myNewScript" type="text/vnd.tiddlywiki">
+<pre>```
+your script comes here
+your script comes here
+your script comes here
+your script comes here
+your script comes here
+your script comes here
+your script comes here
+your script comes here
+your script comes here
+your script comes here
+your script comes here
+your script comes here
+your script comes here
+your script comes here
+your script comes here
+your script comes here
+your script comes here
+your script comes here
+your script comes here
+your script comes here
+your script comes here
+```</pre>
+</div>
+<div created="20171024081150133" link="[[link to something]]" modified="20171024081510956" tags="myNewScript links" title="myNewScript.links" type="application/json">
+<pre>{
+    &quot;2017/10/24, 10-12-02&quot;: &quot;[[link to something]]&quot;
+}</pre>
+</div>
+<div created="20171024094005312" description="CHANGE-ME! - Description will be shown in the overview" modified="20171024094007861" tags="script" title="New Tiddler" type="text/vnd.tiddlywiki">
+<pre>```
+your script comes here
+```</pre>
+</div>
+<div created="20171024094454591" description="CHANGE-ME! - Description will be shown in the overview" modified="20171024094457013" tags="script" title="New Tiddler 1" type="text/vnd.tiddlywiki">
+<pre>```
+your script comes here
+```</pre>
+</div>
+<div created="20171215213108576" description="sadf asfas fsdaf sdaf sdafsd safsafas" modified="20171215213626275" tags="script" title="New Tiddler 2" type="text/vnd.tiddlywiki">
+<pre>```
+your script comes here
+```</pre>
+</div>
+<div created="20171215213119833" link="asdf asf sadf asf sa" modified="20171215213645068" tags="[[New Tiddler 2]] links" title="New Tiddler 2.links" type="application/json">
+<pre>{
+    &quot;2017/12/15, 22-31-23&quot;: &quot;asdf asf sadf asf sa &quot;,
+    &quot;2017/12/15, 22-31-28&quot;: &quot;a sdfa sfsa fsad &quot;,
+    &quot;2017/12/15, 22-36-43&quot;: &quot;as fasf asf as&quot;
+}</pre>
+</div>
+<div comment="asf saf as" created="20171024081251984" modified="20171024081332724" script="myNewScript" tags="todo" title="next todo" type="text/vnd.tiddlywiki">
+<pre></pre>
+</div>
+<div created="20170927201242098" modified="20171215213449116" tags="" title="Overview Scripts" type="text/vnd.tiddlywiki">
+<pre>!! All Tiddlers tagged &quot;script&quot;
+
+{{$:/_bundle/wikilabs/script-manager/script-list-template}}</pre>
+</div>
+<div created="20170918134833365" modified="20171215213449100" tags="" title="Overview ToDo's" type="text/vnd.tiddlywiki">
+<pre>!!! New ~ToDo
+
+{{$:/_bundle/wikilabs/script-manager/grid-todo-template}}
+
+!!! All ~ToDo's
+
+&lt;&lt;checklist&gt;&gt;
+
+!!! Done
+
+&lt;$macrocall $name=&quot;toggleMe&quot; state=&lt;&lt;qualifyTitle &quot;$:/state/showDone/&quot;&gt;&gt; /&gt;
+
+&lt;$reveal state=&lt;&lt;qualifyTitle &quot;$:/state/showDone/&quot;&gt;&gt; type=&quot;match&quot; text=&quot;open&quot;&gt;
+&lt;&lt;checklist-done&gt;&gt;
+&lt;/$reveal&gt;
+</pre>
+</div>
+<div created="20171024132249041" modified="20171024133122077" tags="$:/tags/Bundle" title="script-manager-dev.bundle" type="text/plain">
+<pre>$:/plugins/wikilabs/remove-states
+$:/plugins/wikilabs/link-to-tabs
+$:/plugins/wikilabs/bundler
+$:/plugins/wikilabs/advanced-search-plus
+script-manager-dev.bundle
+script-manager.bundle</pre>
+</div>
+<div created="20171024092845498" description="Script Manager - bundle" filter="[is[system]prefix[$:/_bundle/wikilabs/script-manager/]] [[Overview Scripts]] [[Overview ToDo's]] $:/DefaultTiddlers [[---]]" modified="20171215213750090" tags="$:/tags/Filter" title="script-manager.bundle" type="text/vnd.tiddlywiki">
+<pre>!! Filter used
+
+&lt;pre&gt;{{!!filter}}&lt;/pre&gt;
+
+!! Info
+
+* 0.0.3 .. used to create the Videos
+* 0.0.1 .. initial release</pre>
 </div>
 
 </div>

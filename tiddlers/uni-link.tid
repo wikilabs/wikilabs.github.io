@@ -1,0 +1,9 @@
+created: 20171215210623661
+demo-url: https://wikilabs.github.io/editions/uni-link
+git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/uni-links
+modified: 20171215210739997
+tags: edition plugin
+title: uni-link
+type: text/vnd.tiddlywiki
+
+{{||$:/wikilabs/template/theme}}
