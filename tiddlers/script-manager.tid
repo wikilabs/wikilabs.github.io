@@ -1,0 +1,9 @@
+created: 20171215212502872
+demo-url: https://wikilabs.github.io/editions/script-manager
+git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/script-manager
+modified: 20171215212850747
+tags: edition plugin
+title: script-manager
+type: text/vnd.tiddlywiki
+
+{{||$:/wikilabs/template/theme}}
