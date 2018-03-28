@@ -5,7 +5,11 @@
 		"wikilabs/info-tagmap",
 		"wikilabs/multicol-dropdown",
 		"wikilabs/remove-states",
-		"wikilabs/persistent-states"
+		"wikilabs/persistent-states",
+		"wikilabs/link-to-tabs",
+		"wikilabs/new-tiddler-from-search",
+		"wikilabs/uni-link",
+		"wikilabs/advanced-search-plus"
 	],
 	"themes": [
 		"tiddlywiki/vanilla",
@@ -17,7 +21,7 @@
 			"--rendertiddler", "$:/core/save/all", "index.html", "text/plain"
 		],
 		"github": [
-			"--output", "/home/mario/git/wikilabs/wikilabs.github.io",
+			"--output", "../../wikilabs.github.io",
 			"--rendertiddler", "$:/core/save/all", "index.html", "text/plain"
 		],
 		"externalimages": [
