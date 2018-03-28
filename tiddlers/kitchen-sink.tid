@@ -1,0 +1,21 @@
+created: 20170203104213958
+modified: 20180328090703602
+tags: edition
+title: kitchen-sink
+type: text/vnd.tiddlywiki
+
+\define lingo-base() $:/language/ControlPanel/Plugins/
+
+\define plugin-table(type)
+<$set name="plugin-type" value="""$type$""">
+<$set name="qualified-state" value=<<qualify "$:/state/plugin-info">>>
+<$list filter="[!has[draft.of]plugin-type[$type$]sort[description]]" emptyMessage=<<lingo "Empty/Hint">> template="$:/core/ui/Components/plugin-info"/>
+</$set>
+</$set>
+\end
+
+This page / edition contains most plugins.
+
+<<lingo Installed/Hint>>
+
+<<tabs "[[$:/core/ui/ControlPanel/Plugins/Installed/Plugins]] [[$:/core/ui/ControlPanel/Plugins/Installed/Themes]] [[$:/core/ui/ControlPanel/Plugins/Installed/Languages]]" "$:/core/ui/ControlPanel/Plugins/Installed/Plugins">>

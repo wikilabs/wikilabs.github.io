@@ -1,0 +1,9 @@
+created: 20180328090723502
+demo-url: https://wikilabs.github.io/editions/markdown-it
+git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/markdown-it
+modified: 20180328090748673
+tags: plugin
+title: markdown-it
+type: text/vnd.tiddlywiki
+
+{{||$:/wikilabs/template/theme}}
