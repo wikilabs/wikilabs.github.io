@@ -1,0 +1,9 @@
+created: 20180328073119156
+demo-url: https://wikilabs.github.io/editions/edit-tabs
+git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/edit-tabs
+modified: 20180328073149169
+tags: plugin
+title: edit-tabs
+type: text/vnd.tiddlywiki
+
+{{||$:/wikilabs/template/theme}}
