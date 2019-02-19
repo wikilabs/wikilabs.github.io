@@ -1,0 +1,9 @@
+created: 201902181200
+demo-url: https://wikilabs.github.io/editions/field-search
+git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/field-search
+modified: 201902181200
+tags: plugin
+title: field-search
+type: text/vnd.tiddlywiki
+
+{{||$:/wikilabs/template/theme}}
