@@ -9,6 +9,7 @@
 		"wikilabs/link-to-tabs",
 		"wikilabs/new-tiddler-from-search",
 		"wikilabs/uni-link",
+		"wikilabs/field-search",
 		"wikilabs/advanced-search-plus"
 	],
 	"themes": [
@@ -21,7 +22,7 @@
 			"--rendertiddler", "$:/core/save/all", "index.html", "text/plain"
 		],
 		"github": [
-			"--output", "../../wikilabs.github.io",
+			"--output", "../wikilabs.github.io",
 			"--rendertiddler", "$:/core/save/all", "index.html", "text/plain"
 		],
 		"externalimages": [
