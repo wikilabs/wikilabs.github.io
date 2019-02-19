@@ -9302,18 +9302,18 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div author="Mario Pietsch" core-version="&gt;=5.1.16" dependents="" description="'Field Search' tab is added to search results" list="readme license history" plugin-type="plugin" title="$:/plugins/wikilabs/field-search" type="application/json" version="0.0.1">
+<div author="Mario Pietsch" core-version="&gt;=5.1.16" dependents="" description="'Field Search' tab is added to search results" list="readme license history" plugin-type="plugin" title="$:/plugins/wikilabs/field-search" type="application/json" version="0.1.0">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/core/ui/ControlPanel/Settings/field-search&quot;: {
             &quot;title&quot;: &quot;$:/core/ui/ControlPanel/Settings/field-search&quot;,
             &quot;caption&quot;: &quot;Field-Search plugin&quot;,
             &quot;tags&quot;: &quot;$:/tags/ControlPanel/Settings&quot;,
-            &quot;text&quot;: &quot;\\define setDefault()\r\n&lt;$action-deletetiddler $tiddler=\&quot;$:/plugins/wikilabs/field-search/ui/FieldSearchResultList\&quot;/&gt;\r\n&lt;$action-deletetiddler $tiddler=\&quot;$:/plugins/wikilabs/field-search/ui/AliasSearchResultList\&quot;/&gt;\r\n&lt;$action-deletetiddler $tiddler=\&quot;$:/plugins/wikilabs/field-search/ui/CaptionSearchResultList\&quot;/&gt;\r\n&lt;$action-deletetiddler $tiddler=\&quot;$:/plugins/wikilabs/field-search/ui/TextSearchResultList\&quot;/&gt;\r\n&lt;$action-deletetiddler $tiddler=\&quot;$:/plugins/wikilabs/field-search/ui/TitleSearchResultList\&quot;/&gt;\r\n&lt;$action-deletetiddler $tiddler=\&quot;$:/core/ui/DefaultSearchResultList\&quot;/&gt;\r\n\\end\n\n!! Field Search Settings\n\n&lt;$checkbox tiddler=\&quot;$:/plugins/wikilabs/field-search/ui/FieldSearchResultList\&quot; tag=\&quot;$:/tags/SearchResults\&quot; checked=\&quot;$:/tags/SearchResults\&quot; unchecked=\&quot;\&quot; default=\&quot;$:/tags/SearchResults\&quot;&gt; Add \&quot;Fields Search\&quot; tab to the search dropdown!&lt;/$checkbox&gt;\n\n&lt;$checkbox tiddler=\&quot;$:/plugins/wikilabs/field-search/ui/AliasSearchResultList\&quot; tag=\&quot;$:/tags/SearchResults\&quot; checked=\&quot;$:/tags/SearchResults\&quot; unchecked=\&quot;\&quot; default=\&quot;\&quot;&gt; Add \&quot;Alias Search\&quot; tab to the search dropdown!&lt;/$checkbox&gt;\n\n&lt;$checkbox tiddler=\&quot;$:/plugins/wikilabs/field-search/ui/CaptionSearchResultList\&quot; tag=\&quot;$:/tags/SearchResults\&quot; checked=\&quot;$:/tags/SearchResults\&quot; unchecked=\&quot;\&quot; default=\&quot;\&quot;&gt; Add \&quot;Caption / Subtitle Search\&quot; tab to the search dropdown!&lt;/$checkbox&gt;\n\n&lt;$checkbox tiddler=\&quot;$:/plugins/wikilabs/field-search/ui/TextSearchResultList\&quot; tag=\&quot;$:/tags/SearchResults\&quot; checked=\&quot;$:/tags/SearchResults\&quot; unchecked=\&quot;\&quot; default=\&quot;\&quot;&gt; Add \&quot;Text only\&quot; tab to the search dropdown!&lt;/$checkbox&gt;\n\n&lt;$checkbox tiddler=\&quot;$:/plugins/wikilabs/field-search/ui/TitleSearchResultList\&quot; tag=\&quot;$:/tags/SearchResults\&quot; checked=\&quot;$:/tags/SearchResults\&quot; unchecked=\&quot;\&quot; default=\&quot;\&quot;&gt; Add \&quot;Title\&quot; tab to the search dropdown!&lt;/$checkbox&gt;\n\n&lt;$checkbox tiddler=\&quot;$:/core/ui/DefaultSearchResultList\&quot; tag=\&quot;$:/tags/SearchResults\&quot; checked=\&quot;$:/tags/SearchResults\&quot; unchecked=\&quot;\&quot; default=\&quot;$:/tags/SearchResults\&quot;&gt; Add \&quot;Default Search\&quot; tab to the search dropdown!&lt;/$checkbox&gt;\n\n!! Tab Order\n\nYou can use drag&amp;drop to sort the list:\n\n&gt;&lt;&lt;list-tagged-draggable tag:\&quot;$:/tags/SearchResults\&quot;&gt;&gt;\n\n!! Return to Default\n\nThe following shaddow tiddlers have been modified: \n\n&lt;&lt;list-links filter:\&quot;[tag[$:/tags/SearchResults]is[tiddler]is[shadow]sort[title]]\&quot;&gt;&gt;\n\n&lt;$button actions=&lt;&lt;setDefault&gt;&gt; &gt;\r\nReturn to: Default Settings!\r\n&lt;/$button&gt;\n\n&quot;
+            &quot;text&quot;: &quot;\\define setDefault()\r\n&lt;$action-deletetiddler $tiddler=\&quot;$:/plugins/wikilabs/field-search/ui/fieldWrapper\&quot;/&gt;\r\n&lt;$action-deletetiddler $tiddler=\&quot;$:/plugins/wikilabs/field-search/ui/aliasWrapper\&quot;/&gt;\r\n&lt;$action-deletetiddler $tiddler=\&quot;$:/plugins/wikilabs/field-search/ui/captionWrapper\&quot;/&gt;\r\n&lt;$action-deletetiddler $tiddler=\&quot;$:/plugins/wikilabs/field-search/ui/textWrapper\&quot;/&gt;\r\n&lt;$action-deletetiddler $tiddler=\&quot;$:/plugins/wikilabs/field-search/ui/titleWrapper\&quot;/&gt;\r\n&lt;$action-deletetiddler $tiddler=\&quot;$:/core/ui/DefaultSearchResultList\&quot;/&gt;\r\n\\end\n\n!! Field Search Settings\n\n&lt;$checkbox tiddler=\&quot;$:/plugins/wikilabs/field-search/ui/fieldWrapper\&quot; tag=\&quot;$:/tags/SearchResults\&quot; checked=\&quot;$:/tags/SearchResults\&quot; unchecked=\&quot;\&quot; default=\&quot;$:/tags/SearchResults\&quot;&gt; Add \&quot;Fields Search\&quot; tab to the search dropdown!&lt;/$checkbox&gt;\n\n&lt;$checkbox tiddler=\&quot;$:/plugins/wikilabs/field-search/ui/aliasWrapper\&quot; tag=\&quot;$:/tags/SearchResults\&quot; checked=\&quot;$:/tags/SearchResults\&quot; unchecked=\&quot;\&quot; default=\&quot;\&quot;&gt; Add \&quot;Alias Search\&quot; tab to the search dropdown!&lt;/$checkbox&gt;\n\n&lt;$checkbox tiddler=\&quot;$:/plugins/wikilabs/field-search/ui/captionWrapper\&quot; tag=\&quot;$:/tags/SearchResults\&quot; checked=\&quot;$:/tags/SearchResults\&quot; unchecked=\&quot;\&quot; default=\&quot;\&quot;&gt; Add \&quot;Caption / Subtitle Search\&quot; tab to the search dropdown!&lt;/$checkbox&gt;\n\n&lt;$checkbox tiddler=\&quot;$:/plugins/wikilabs/field-search/ui/textWrapper\&quot; tag=\&quot;$:/tags/SearchResults\&quot; checked=\&quot;$:/tags/SearchResults\&quot; unchecked=\&quot;\&quot; default=\&quot;\&quot;&gt; Add \&quot;Text only\&quot; tab to the search dropdown!&lt;/$checkbox&gt;\n\n&lt;$checkbox tiddler=\&quot;$:/plugins/wikilabs/field-search/ui/titleWrapper\&quot; tag=\&quot;$:/tags/SearchResults\&quot; checked=\&quot;$:/tags/SearchResults\&quot; unchecked=\&quot;\&quot; default=\&quot;\&quot;&gt; Add \&quot;Title\&quot; tab to the search dropdown!&lt;/$checkbox&gt;\n\n&lt;$checkbox tiddler=\&quot;$:/core/ui/DefaultSearchResultList\&quot; tag=\&quot;$:/tags/SearchResults\&quot; checked=\&quot;$:/tags/SearchResults\&quot; unchecked=\&quot;\&quot; default=\&quot;$:/tags/SearchResults\&quot;&gt; Add \&quot;Default Search\&quot; tab to the search dropdown!&lt;/$checkbox&gt;\n\n!! Tab Order\n\nYou can use drag&amp;drop to sort the list:\n\n&gt;&lt;&lt;list-tagged-draggable tag:\&quot;$:/tags/SearchResults\&quot;&gt;&gt;\n\n!! Return to Default\n\nThe following shaddow tiddlers have been modified: \n\n&lt;&lt;list-links filter:\&quot;[tag[$:/tags/SearchResults]is[tiddler]is[shadow]sort[title]]\&quot;&gt;&gt;\n\n&lt;$button actions=&lt;&lt;setDefault&gt;&gt; &gt;\r\nReturn to: Default Settings!\r\n&lt;/$button&gt;\n\n&quot;
         },
         &quot;$:/plugins/wikilabs/field-search/history&quot;: {
             &quot;title&quot;: &quot;$:/plugins/wikilabs/field-search/history&quot;,
-            &quot;text&quot;: &quot;V 0.0.1\n\n* Initial release\r\n* Add \&quot;Field Search\&quot; tab to search results\r\n* Basic configuration options\r\n&quot;
+            &quot;text&quot;: &quot;V 0.1.0 - 2019.02.19\n\n* Make it more \&quot;update-friendly\&quot;\r\n** wrappers are tagged instead of \&quot;search-list\&quot; tiddlers\n\nV 0.0.1 - 2019.02.19\n\n* Initial release\r\n* Add \&quot;Field Search\&quot; tab to search results\r\n* Basic configuration options\r\n&quot;
         },
         &quot;$:/plugins/wikilabs/field-search/license&quot;: {
             &quot;title&quot;: &quot;$:/plugins/wikilabs/field-search/license&quot;,
@@ -9321,33 +9321,53 @@ Error message and password prompt
         },
         &quot;$:/plugins/wikilabs/field-search/readme&quot;: {
             &quot;title&quot;: &quot;$:/plugins/wikilabs/field-search/readme&quot;,
-            &quot;text&quot;: &quot;! ALPHA - ALPHA - ALPHA - ALPHA - ALPHA - ALPHA - ALPHA - ALPHA\n\nThis plugin adds a \&quot;Field Search\&quot; tab to the search results\n\n{{$:/core/ui/ControlPanel/Settings/field-search}}&quot;
+            &quot;text&quot;: &quot;! BETA - BETA - BETA - BETA - BETA\n\nThis plugin adds a \&quot;Field Search\&quot; tab to the search results\n\n{{$:/core/ui/ControlPanel/Settings/field-search}}&quot;
         },
         &quot;$:/plugins/wikilabs/field-search/ui/AliasSearchResultList&quot;: {
             &quot;title&quot;: &quot;$:/plugins/wikilabs/field-search/ui/AliasSearchResultList&quot;,
+            &quot;text&quot;: &quot;\\define searchResultList()\r\n//&lt;small&gt;Search all ''aliases'' fields&lt;/small&gt;//\n\n&lt;$list filter=\&quot;[!is[system]search:aliases{$(searchTiddler)$}sort[title]limit[250]]\&quot; template=\&quot;$:/core/ui/ListItemTemplate\&quot;/&gt;\n\n\\end\r\n&lt;&lt;searchResultList&gt;&gt;&quot;
+        },
+        &quot;$:/plugins/wikilabs/field-search/ui/aliasWrapper&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/wikilabs/field-search/ui/aliasWrapper&quot;,
             &quot;caption&quot;: &quot;Aliases&quot;,
-            &quot;text&quot;: &quot;\\define searchResultList()\r\n//&lt;small&gt;Search all ''aliases'' fields&lt;/small&gt;//\n\n&lt;$list filter=\&quot;[!is[system]search:aliases{$(searchTiddler)$}sort[title]limit[250]]\&quot; template=\&quot;$:/core/ui/ListItemTemplate\&quot;/&gt;\n\n\\end\r\n&lt;&lt;searchResultList&gt;&gt;\r\n&quot;
+            &quot;text&quot;: &quot;{{$:/plugins/wikilabs/field-search/ui/AliasSearchResultList}}&quot;
         },
         &quot;$:/plugins/wikilabs/field-search/ui/CaptionSearchResultList&quot;: {
             &quot;title&quot;: &quot;$:/plugins/wikilabs/field-search/ui/CaptionSearchResultList&quot;,
+            &quot;text&quot;: &quot;\\define searchResultList()\r\n//&lt;small&gt;Search all ''captions &amp; subtitle'' fields&lt;/small&gt;//\n\n&lt;$list filter=\&quot;[!is[system]search:caption,subtitle{$(searchTiddler)$}sort[title]limit[250]]\&quot; template=\&quot;$:/core/ui/ListItemTemplate\&quot;/&gt;\n\n\\end\r\n&lt;&lt;searchResultList&gt;&gt;&quot;
+        },
+        &quot;$:/plugins/wikilabs/field-search/ui/captionWrapper&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/wikilabs/field-search/ui/captionWrapper&quot;,
             &quot;caption&quot;: &quot;Caption / Subtitle&quot;,
-            &quot;text&quot;: &quot;\\define searchResultList()\r\n//&lt;small&gt;Search all ''captions &amp; subtitle'' fields&lt;/small&gt;//\n\n&lt;$list filter=\&quot;[!is[system]search:caption,subtitle{$(searchTiddler)$}sort[title]limit[250]]\&quot; template=\&quot;$:/core/ui/ListItemTemplate\&quot;/&gt;\n\n\\end\r\n&lt;&lt;searchResultList&gt;&gt;\r\n&quot;
+            &quot;text&quot;: &quot;{{$:/plugins/wikilabs/field-search/ui/CaptionSearchResultList}}&quot;
         },
         &quot;$:/plugins/wikilabs/field-search/ui/FieldSearchResultList&quot;: {
             &quot;title&quot;: &quot;$:/plugins/wikilabs/field-search/ui/FieldSearchResultList&quot;,
+            &quot;text&quot;: &quot;\\define searchResultList()\r\n//&lt;small&gt;Search all fields, except title and text&lt;/small&gt;//\n\n&lt;$list filter=\&quot;[!is[system]search:-title,text{$(searchTiddler)$}sort[title]limit[250]]\&quot; template=\&quot;$:/core/ui/ListItemTemplate\&quot;/&gt;\n\n\\end\r\n&lt;&lt;searchResultList&gt;&gt;&quot;
+        },
+        &quot;$:/plugins/wikilabs/field-search/ui/fieldWrapper&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/wikilabs/field-search/ui/fieldWrapper&quot;,
             &quot;tags&quot;: &quot;$:/tags/SearchResults&quot;,
             &quot;caption&quot;: &quot;Fields&quot;,
-            &quot;text&quot;: &quot;\\define searchResultList()\r\n//&lt;small&gt;Search all fields, except title and text&lt;/small&gt;//\n\n&lt;$list filter=\&quot;[!is[system]search:-title,text{$(searchTiddler)$}sort[title]limit[250]]\&quot; template=\&quot;$:/core/ui/ListItemTemplate\&quot;/&gt;\n\n\\end\r\n&lt;&lt;searchResultList&gt;&gt;\r\n&quot;
+            &quot;text&quot;: &quot;{{$:/plugins/wikilabs/field-search/ui/FieldSearchResultList}}&quot;
         },
         &quot;$:/plugins/wikilabs/field-search/ui/TextSearchResultList&quot;: {
             &quot;title&quot;: &quot;$:/plugins/wikilabs/field-search/ui/TextSearchResultList&quot;,
-            &quot;caption&quot;: &quot;Text&quot;,
             &quot;text&quot;: &quot;\\define searchResultList()\r\n//&lt;small&gt;Search all ''text'' fields&lt;/small&gt;//\n\n&lt;$list filter=\&quot;[!is[system]search:text{$(searchTiddler)$}sort[title]limit[250]]\&quot; template=\&quot;$:/core/ui/ListItemTemplate\&quot;/&gt;\n\n\\end\r\n&lt;&lt;searchResultList&gt;&gt;\r\n&quot;
+        },
+        &quot;$:/plugins/wikilabs/field-search/ui/textWrapper&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/wikilabs/field-search/ui/textWrapper&quot;,
+            &quot;caption&quot;: &quot;Text&quot;,
+            &quot;text&quot;: &quot;{{$:/plugins/wikilabs/field-search/ui/TextSearchResultList}}&quot;
         },
         &quot;$:/plugins/wikilabs/field-search/ui/TitleSearchResultList&quot;: {
             &quot;title&quot;: &quot;$:/plugins/wikilabs/field-search/ui/TitleSearchResultList&quot;,
-            &quot;caption&quot;: &quot;Title&quot;,
             &quot;text&quot;: &quot;\\define searchResultList()\r\n//&lt;small&gt;Search all ''title'' fields&lt;/small&gt;//\n\n&lt;$list filter=\&quot;[!is[system]search:title{$(searchTiddler)$}sort[title]limit[250]]\&quot; template=\&quot;$:/core/ui/ListItemTemplate\&quot;/&gt;\n\n\\end\r\n&lt;&lt;searchResultList&gt;&gt;\r\n&quot;
+        },
+        &quot;$:/plugins/wikilabs/field-search/ui/titleWrapper&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/wikilabs/field-search/ui/titleWrapper&quot;,
+            &quot;caption&quot;: &quot;Title&quot;,
+            &quot;text&quot;: &quot;{{$:/plugins/wikilabs/field-search/ui/TitleSearchResultList}}&quot;
         }
     }
 }</pre>
