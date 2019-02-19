@@ -155,10 +155,6 @@ Error message and password prompt
 
 <li>$:/plugins/wikilabs/uni-link</li>
 
-<li>$:/search-sdw/inp/plugins</li>
-
-<li>$:/search-sdw/plugins</li>
-
 <li>$:/SiteSubtitle</li>
 
 <li>$:/SiteTitle</li>
@@ -9216,7 +9212,7 @@ toolbar-done-button:
 untagged-background: #999999
 very-muted-foreground: #888888</pre>
 </div>
-<div author="Mario Pietsch" core-version="&gt;=5.1.0" dependents="" description="uni-link: Enhances the prettylink-parser" list="license readme history" name="uni-link" plugin-type="plugin" title="$:/plugins/wikilabs/uni-link" type="application/json" version="1.0.0">
+<div author="Mario Pietsch" core-version="&gt;=5.1.0" dependents="" description="uni-link: Enhances the prettylink-parser" list="license readme history" name="uni-link" plugin-type="plugin" title="$:/plugins/wikilabs/uni-link" type="application/json" version="1.0.1">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/plugins/wikilabs/uni-link/aka-footer/template&quot;: {
@@ -9272,7 +9268,7 @@ very-muted-foreground: #888888</pre>
         &quot;$:/plugins/wikilabs/uni-link/readme&quot;: {
             &quot;title&quot;: &quot;$:/plugins/wikilabs/uni-link/readme&quot;,
             &quot;subtitle&quot;: &quot;\&quot;uni-link\&quot; readme&quot;,
-            &quot;text&quot;: &quot;\\define createExampleTiddlers()\n&lt;$button&gt;\n&lt;$action-sendmessage $message=\&quot;tm-new-tiddler\&quot;  title=\&quot;tiddler-with-caption\&quot;  caption=\&quot;Short Caption\&quot;/&gt;\n&lt;$action-sendmessage $message=\&quot;tm-new-tiddler\&quot;  title=\&quot;tiddler-with-subtitle\&quot;  subtitle=\&quot;Tiddler With Subtitle Only Defined\&quot;/&gt;\n&lt;$action-sendmessage $message=\&quot;tm-new-tiddler\&quot;  title=\&quot;tiddler-with-subtitle-and-caption\&quot;  subtitle=\&quot;Tiddler With Subtitle And Caption - using subtitle\&quot; caption=\&quot;capt.ion\&quot;/&gt;\n&lt;$action-sendmessage $message=\&quot;tm-new-tiddler\&quot;  title=\&quot;tiddler-with-alias\&quot;  aliases=\&quot;alias\&quot; caption=\&quot;alias-caption\&quot; subtitle=\&quot;alias-subtitle\&quot; my-field=\&quot;alias my-field\&quot;/&gt;\n&lt;$action-sendmessage $message=\&quot;tm-new-tiddler\&quot;  title=\&quot;test-links\&quot; text={{$:/plugins/wikilabs/uni-link/backlinks-template!!text}}/&gt;\nCreate \&quot;uni-link\&quot; example tiddlers!\n&lt;/$button&gt;\n\\end\n\\define deleteExampleTiddlers()\n&lt;$button&gt;\n&lt;$action-deletetiddler $tiddler=\&quot;tiddler-with-caption\&quot;/&gt;\n&lt;$action-deletetiddler $tiddler=\&quot;tiddler-with-subtitle\&quot;/&gt;\n&lt;$action-deletetiddler $tiddler=\&quot;tiddler-with-subtitle-and-caption\&quot;/&gt;\n&lt;$action-deletetiddler $tiddler=\&quot;tiddler-with-alias\&quot;/&gt;\n&lt;$action-deletetiddler $tiddler=\&quot;test-links\&quot;/&gt;\nDelete example tiddlers!\n&lt;/$button&gt;\n\\end\n\n!! Important\n\nThis plugin overwrites the core tiddler: $:/core/ui/TiddlerInfo/References\n\n!! Video\n\n* https://youtu.be/V9l-vipAoNw\n\n!! Uni-link\n\n* A new wikitext parsing rule, that calls the global [[\&quot;uni-link\&quot; macro|$:/plugins/wikilabs/uni-link/uni-link-macro]], instead of referencing the tiddler name. \n\n* It substitues the following tiddler fields: ''subtitle'', ''caption'' and ''title''. The $:/ControlPanel contains a new tab, that lets you define the behaviour of the uni-link macro. Default is ''title''. So there is no difference between the default setting of the plugin and the default behaviour in unmodified ~TiddlyWiki.\n\n!! Alias\n\n* Alias Link Syntax\n** `[[anything|?]]` ... link to the tiddler that contains the alias: `anything`\n** `[[anything|?t]]` ... link to alias anything, but display the tiddler ''title''\n** `[[anything|?c]]` ... link to alias anything, but display the tiddler ''caption''\n** `[[anything|?s]]` ... link to alias anything, but display the tiddler ''subtitle''\n** `[[anything|?my-field]]` ... link to alias anything, but display the tiddler-field named ''my-field''\n** If a field doesn't exist, it shows the \&quot;alias-text\&quot; as used with `[[anything|?]]`\n** using [[aka-makros|$:/plugins/wikilabs/uni-link/aka-macros]] for tiddler alias handling\n\n* Alias Backlinks\n** open the tiddler (i)nfo area: References\n\n* Filter Operators:\n** `is[alias]` ... extends the core `is` operator see: [[https://tiddlywiki.com/#is Operator]]\n** `all[aliases]` ... extends the core `all` operator see: [ext[https://tiddlywiki.com/#all Operator]]\n** `[aliasbacklinks[]]` ... shows a list of all tiddlers that contain alias links\n** `[[?]aliasbacklinks[]sort[title]]` ... shows a list of tiddlers that contain undefined alias links\n\n* Right-Sidebar: More tab: [[Aliases|$:/plugins/wikilabs/uni-link/ui/MoreSideBar/Aliases]]\n** [[Sorted by Alias|$:/plugins/wikilabs/uni-link/ui/MoreSideBar/Aliases/byAlias]]\n** [[Sorted by Tiddler Title|$:/plugins/wikilabs/uni-link/ui/MoreSideBar/Aliases/byTitle]]\n** [[Undefined Aliases|$:/plugins/wikilabs/uni-link/ui/MoreSideBar/Aliases/undefined]]\n\n* uni-link $:/ControlPanel setting\n\n* [[uni-fields|$:/plugins/wikilabs/uni-link/uni-fields.js]] widget, that allows us to assign CSS classes based on tiddler fields existence.\n\n!! Installation\n\n* You can drag &amp; drop import this link: $:/plugins/wikilabs/uni-link&lt;br&gt;\n\n!! Link Styling\n\n* Uni-links are styled like this: $:/plugins/wikilabs/uni-link/styles\n\n!! Examples\n\nYou can use the following buttons to create example tiddlers!\n\n&lt;&lt;createExampleTiddlers&gt;&gt; -- &lt;&lt;deleteExampleTiddlers&gt;&gt;\n\n\n&quot;
+            &quot;text&quot;: &quot;\\define createExampleTiddlers()\n&lt;$button&gt;\n&lt;$action-sendmessage $message=\&quot;tm-new-tiddler\&quot;  title=\&quot;tiddler-with-caption\&quot;  caption=\&quot;Short Caption\&quot;/&gt;\n&lt;$action-sendmessage $message=\&quot;tm-new-tiddler\&quot;  title=\&quot;tiddler-with-subtitle\&quot;  subtitle=\&quot;Tiddler With Subtitle Only Defined\&quot;/&gt;\n&lt;$action-sendmessage $message=\&quot;tm-new-tiddler\&quot;  title=\&quot;tiddler-with-subtitle-and-caption\&quot;  subtitle=\&quot;Tiddler With Subtitle And Caption - using subtitle\&quot; caption=\&quot;capt.ion\&quot;/&gt;\n&lt;$action-sendmessage $message=\&quot;tm-new-tiddler\&quot;  title=\&quot;tiddler-with-alias\&quot;  aliases=\&quot;alias\&quot; caption=\&quot;alias-caption\&quot; subtitle=\&quot;alias-subtitle\&quot; my-field=\&quot;alias my-field\&quot;/&gt;\n&lt;$action-sendmessage $message=\&quot;tm-new-tiddler\&quot;  title=\&quot;test-links\&quot; text={{$:/plugins/wikilabs/uni-link/backlinks-template!!text}}/&gt;\nCreate \&quot;uni-link\&quot; example tiddlers!\n&lt;/$button&gt;\n\\end\n\\define deleteExampleTiddlers()\n&lt;$button&gt;\n&lt;$action-deletetiddler $tiddler=\&quot;tiddler-with-caption\&quot;/&gt;\n&lt;$action-deletetiddler $tiddler=\&quot;tiddler-with-subtitle\&quot;/&gt;\n&lt;$action-deletetiddler $tiddler=\&quot;tiddler-with-subtitle-and-caption\&quot;/&gt;\n&lt;$action-deletetiddler $tiddler=\&quot;tiddler-with-alias\&quot;/&gt;\n&lt;$action-deletetiddler $tiddler=\&quot;test-links\&quot;/&gt;\nDelete example tiddlers!\n&lt;/$button&gt;\n\\end\n\n!! Important\n\nThis plugin overwrites the core tiddler: $:/core/ui/TiddlerInfo/References\n\n!! Video\n\n* https://youtu.be/IelDdM7iXrA\n\n!! Uni-link\n\n* A new wikitext parsing rule, that calls the global [[\&quot;uni-link\&quot; macro|$:/plugins/wikilabs/uni-link/uni-link-macro]], instead of referencing the tiddler name. \n\n* It substitues the following tiddler fields: ''subtitle'', ''caption'' and ''title''. The $:/ControlPanel contains a new tab, that lets you define the behaviour of the uni-link macro. Default is ''title''. So there is no difference between the default setting of the plugin and the default behaviour in unmodified ~TiddlyWiki.\n\n!! Alias\n\n* Alias Link Syntax\n** `[[anything|?]]` ... link to the tiddler that contains the alias: `anything`\n** `[[anything|?t]]` ... link to alias anything, but display the tiddler ''title''\n** `[[anything|?c]]` ... link to alias anything, but display the tiddler ''caption''\n** `[[anything|?s]]` ... link to alias anything, but display the tiddler ''subtitle''\n** `[[anything|?my-field]]` ... link to alias anything, but display the tiddler-field named ''my-field''\n** If a field doesn't exist, it shows the \&quot;alias-text\&quot; as used with `[[anything|?]]`\n** using [[aka-makros|$:/plugins/wikilabs/uni-link/aka-macros]] for tiddler alias handling\n\n* Alias Backlinks\n** open the tiddler (i)nfo area: References\n\n* Filter Operators:\n** `is[alias]` ... extends the core `is` operator see: [[https://tiddlywiki.com/#is Operator]]\n** `all[aliases]` ... extends the core `all` operator see: [ext[https://tiddlywiki.com/#all Operator]]\n** `[aliasbacklinks[]]` ... shows a list of all tiddlers that contain alias links\n** `[[?]aliasbacklinks[]sort[title]]` ... shows a list of tiddlers that contain undefined alias links\n\n* Right-Sidebar: More tab: [[Aliases|$:/plugins/wikilabs/uni-link/ui/MoreSideBar/Aliases]]\n** [[Sorted by Alias|$:/plugins/wikilabs/uni-link/ui/MoreSideBar/Aliases/byAlias]]\n** [[Sorted by Tiddler Title|$:/plugins/wikilabs/uni-link/ui/MoreSideBar/Aliases/byTitle]]\n** [[Undefined Aliases|$:/plugins/wikilabs/uni-link/ui/MoreSideBar/Aliases/undefined]]\n\n* uni-link $:/ControlPanel setting\n\n* [[uni-fields|$:/plugins/wikilabs/uni-link/uni-fields.js]] widget, that allows us to assign CSS classes based on tiddler fields existence.\n\n!! Installation\n\n* You can drag &amp; drop import this link: $:/plugins/wikilabs/uni-link&lt;br&gt;\n\n!! Link Styling\n\n* Uni-links are styled like this: $:/plugins/wikilabs/uni-link/styles\n\n!! Examples\n\nYou can use the following buttons to create example tiddlers!\n\n&lt;&lt;createExampleTiddlers&gt;&gt; -- &lt;&lt;deleteExampleTiddlers&gt;&gt;\n\n\n&quot;
         },
         &quot;$:/plugins/wikilabs/uni-link/filters/aliasbacklinks.js&quot;: {
             &quot;title&quot;: &quot;$:/plugins/wikilabs/uni-link/filters/aliasbacklinks.js&quot;,
@@ -9365,7 +9361,7 @@ very-muted-foreground: #888888</pre>
             &quot;caption&quot;: &quot;{{$:/language/TiddlerInfo/References/Caption}}&quot;,
             &quot;tags&quot;: &quot;$:/tags/TiddlerInfo&quot;,
             &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
-            &quot;text&quot;: &quot;\\define lingo-base() $:/language/TiddlerInfo/\n&lt;$list filter=\&quot;[all[current]backlinks[]sort[title]]\&quot; emptyMessage=&lt;&lt;lingo References/Empty&gt;&gt; template=\&quot;$:/core/ui/ListItemTemplate\&quot;&gt;&lt;/$list&gt;\n&lt;hr&gt;\n&lt;$list filter=\&quot;[all[current]aliasbacklinks[]sort[title]]\&quot; emptyMessage=&lt;&lt;lingo References/Empty&gt;&gt; template=\&quot;$:/core/ui/ListItemTemplate\&quot;&gt;&lt;/$list&gt;\n&quot;
+            &quot;text&quot;: &quot;\\define lingo-base() $:/language/TiddlerInfo/\n&lt;$list filter=\&quot;[all[current]backlinks[]sort[title]]\&quot; emptyMessage=&lt;&lt;lingo References/Empty&gt;&gt; template=\&quot;$:/core/ui/ListItemTemplate\&quot;&gt;&lt;/$list&gt;\n&lt;hr&gt;\n&lt;$list filter=\&quot;[all[current]aliasbacklinks[]sort[title]]\&quot; emptyMessage=\&quot;No tiddlers alias to this one\&quot; template=\&quot;$:/core/ui/ListItemTemplate\&quot;&gt;&lt;/$list&gt;\n&quot;
         },
         &quot;$:/plugins/wikilabs/uni-link/ui/ControlPanel/settings&quot;: {
             &quot;title&quot;: &quot;$:/plugins/wikilabs/uni-link/ui/ControlPanel/settings&quot;,
@@ -9471,44 +9467,6 @@ very-muted-foreground: #888888</pre>
         }
     }
 }</pre>
-</div>
-<div created="20181219144949471" modified="20181219144950632" title="$:/search-sdw/inp/plugins" type="text/vnd.tiddlywiki">
-<pre>$:/plugins/wikilabs/uni-link</pre>
-</div>
-<div caption="plugins" created="20181219144949471" icon="$:/plugins/wikilabs/advanced-search-plus/shadow-search.svg" modified="20181219144950601" tags="$:/tags/AdvancedSearch" title="$:/search-sdw/plugins" type="text/vnd.tiddlywiki">
-<pre>\define lingo-base() $:/language/Search/
-&lt;$linkcatcher to=&quot;$:/search-sdw/inp/plugins&quot;&gt;
-
-&lt;$button tooltip={{$:/language/Buttons/Delete/Caption}} &gt;
-  &lt;$action-deletetiddler $tiddler=&quot;$:/search-sdw/inp/plugins&quot;/&gt;
-  &lt;$action-deletetiddler $tiddler=&quot;$:/search-sdw/plugins&quot;/&gt;
-  &lt;$transclude tiddler=&quot;$:/core/images/delete-button&quot; /&gt;
-&lt;/$button&gt;
-&lt;&lt;lingo Shadows/Hint&gt;&gt;
-
-&lt;div class=&quot;tc-search&quot;&gt;
-&lt;$edit-text tiddler=&quot;$:/search-sdw/inp/plugins&quot; type=&quot;search&quot; tag=&quot;input&quot;/&gt;
-&lt;$reveal state=&quot;$:/search-sdw/inp/plugins&quot; type=&quot;nomatch&quot; text=&quot;&quot;&gt;
-&lt;$button class=&quot;tc-btn-invisible&quot;&gt;
-&lt;$action-setfield $tiddler=&quot;$:/search-sdw/inp/plugins&quot; $field=&quot;text&quot; $value=&quot;&quot;/&gt;
-{{$:/core/images/close-button}}
-&lt;/$button&gt;
-&lt;/$reveal&gt;
-&lt;/div&gt;
-
-&lt;/$linkcatcher&gt;
-
-&lt;$reveal state=&quot;$:/search-sdw/inp/plugins&quot; type=&quot;nomatch&quot; text=&quot;&quot;&gt;
-&lt;$set name=&quot;resultCount&quot; value=&quot;&lt;$count filter='[all[shadows]search{$:/search-sdw/inp/plugins}]'/&gt;&quot;&gt;
-&lt;div class=&quot;tc-search-results&quot;&gt;
-&lt;&lt;lingo Shadows/Matches&gt;&gt;
-&lt;$list filter=&quot;[all[shadows]search{$:/search-sdw/inp/plugins}sort[title]limit[250]]&quot; template=&quot;$:/core/ui/ListItemTemplate&quot;/&gt;
-&lt;/div&gt;
-&lt;/$set&gt;
-&lt;/$reveal&gt;
-&lt;$reveal state=&quot;$:/search-sdw/inp/plugins&quot; type=&quot;match&quot; text=&quot;&quot;&gt;
-&lt;/$reveal&gt;
-</pre>
 </div>
 <div created="20170622133128310" modified="20170622133141589" title="$:/SiteSubtitle" type="text/vnd.tiddlywiki">
 <pre>extend the prettylink functionality</pre>
