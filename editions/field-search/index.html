@@ -143,13 +143,19 @@ Error message and password prompt
 
 <li>$:/plugins/wikilabs/field-search</li>
 
+<li>$:/plugins/wikilabs/field-search/ui/aliasWrapper</li>
+
+<li>$:/plugins/wikilabs/field-search/ui/captionWrapper</li>
+
+<li>$:/plugins/wikilabs/field-search/ui/textWrapper</li>
+
+<li>$:/plugins/wikilabs/field-search/ui/titleWrapper</li>
+
 <li>$:/StoryList</li>
 
 <li>$:/tags/SearchResults</li>
 
 <li>$:/temp/info-plugin</li>
-
-<li>$:/test</li>
 
 <li>$:/themes/tiddlywiki/snowwhite</li>
 
@@ -158,10 +164,6 @@ Error message and password prompt
 <li>$:/themes/tiddlywiki/vanilla/options/sidebarlayout</li>
 
 <li>GettingStarted</li>
-
-<li>New Tiddler</li>
-
-<li>New Tiddler 2</li>
 
 </ul>
 </p>
@@ -9049,7 +9051,7 @@ Error message and password prompt
 <div title="$:/isEncrypted">
 <pre>no</pre>
 </div>
-<div author="Mario Pietsch" core-version="&gt;=5.1.18" dependents="" description="'Field Search' tab is added to search results" list="readme license history" plugin-type="plugin" title="$:/plugins/wikilabs/field-search" type="application/json" version="0.2.1">
+<div author="Mario Pietsch" core-version="&gt;=5.1.18" dependents="" description="'Field Search' tab is added to search results" list="readme license history" plugin-type="plugin" title="$:/plugins/wikilabs/field-search" type="application/json" version="0.2.2">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/core/ui/ControlPanel/Settings/field-search&quot;: {
@@ -9060,7 +9062,7 @@ Error message and password prompt
         },
         &quot;$:/plugins/wikilabs/field-search/history&quot;: {
             &quot;title&quot;: &quot;$:/plugins/wikilabs/field-search/history&quot;,
-            &quot;text&quot;: &quot;V 0.2.1 - 2019.02.27\n\n* add \&quot;include system tiddlers\&quot; option per tab\n* work with a single template instead of duplicated code\n* Adjust minimum TW version to V5.1.18 because of \&quot;subfilter\&quot; usage\n\nV 0.1.0 - 2019.02.19\n\n* Make it more \&quot;update-friendly\&quot;\n** wrappers are tagged instead of \&quot;search-list\&quot; tiddlers\n\nV 0.0.1 - 2019.02.19\n\n* Initial release\n* Add \&quot;Field Search\&quot; tab to search results\n* Basic configuration options\n&quot;
+            &quot;text&quot;: &quot;V 0.2.2 - 2019.02.27\n\n* add \&quot;include system tiddlers\&quot; option per tab\n* work with a single template instead of duplicated code\n* Adjust minimum TW version to V5.1.18 because of \&quot;subfilter\&quot; usage\n\nV 0.1.0 - 2019.02.19\n\n* Make it more \&quot;update-friendly\&quot;\n** wrappers are tagged instead of \&quot;search-list\&quot; tiddlers\n\nV 0.0.1 - 2019.02.19\n\n* Initial release\n* Add \&quot;Field Search\&quot; tab to search results\n* Basic configuration options\n&quot;
         },
         &quot;$:/plugins/wikilabs/field-search/license&quot;: {
             &quot;title&quot;: &quot;$:/plugins/wikilabs/field-search/license&quot;,
@@ -9073,7 +9075,7 @@ Error message and password prompt
         &quot;title: $:/plugins/wikilabs/field-search/styles&quot;: {
             &quot;title&quot;: &quot;title: $:/plugins/wikilabs/field-search/styles&quot;,
             &quot;tags&quot;: &quot;$:/tags/Stylesheet&quot;,
-            &quot;text&quot;: &quot;.wltc-show-system {\n  float: right;\n}\n\n.wltc-show-system input {\n  visibility: hidden;\n  margin-left: -1em;\n}\n\n.wltc-show-system  input[checked] + span{\n  color: blue;\n}&quot;
+            &quot;text&quot;: &quot;.wltc-show-system {\n  float: right;\n}\n\n.wltc-show-system input {\n  visibility: hidden;\n  margin-left: -1em;\n  width: initial;\n}\n\n.wltc-show-system  input[checked] + span{\n  color: blue;\n}&quot;
         },
         &quot;$:/plugins/wikilabs/field-search/ui/aliasWrapper&quot;: {
             &quot;title&quot;: &quot;$:/plugins/wikilabs/field-search/ui/aliasWrapper&quot;,
@@ -9128,6 +9130,26 @@ Error message and password prompt
     }
 }</pre>
 </div>
+<div caption="Aliases" created="20190227131942579" modified="20190227131944370" opt-checked="[has[aliases]]" opt-unchecked="[has[aliases]!is[system]]" search-set="[has[aliases]!is[system]]" search-sort="[sort[title]limit[250]]" tags="$:/tags/SearchResults" title="$:/plugins/wikilabs/field-search/ui/aliasWrapper" type="text/vnd.tiddlywiki">
+<pre>\define searchTerm() [search:aliases{$(searchTiddler)$}]
+
+{{||$:/plugins/wikilabs/field-search/ui/SearchResultTemplate}}</pre>
+</div>
+<div caption="Caption / Subtitle" created="20190227131941559" modified="20190227131942648" opt-checked="[all[]]" opt-unchecked="[!is[system]]" search-set="[!is[system]]" search-sort="[sort[title]limit[250]]" tags="$:/tags/SearchResults" title="$:/plugins/wikilabs/field-search/ui/captionWrapper" type="text/vnd.tiddlywiki">
+<pre>\define searchTerm() [search:caption,subtitle{$(searchTiddler)$}]
+
+{{||$:/plugins/wikilabs/field-search/ui/SearchResultTemplate}}</pre>
+</div>
+<div caption="Text" created="20190227131941025" modified="20190227131942364" opt-checked="[all[]]" opt-unchecked="[!is[system]]" search-set="[!is[system]]" search-sort="[sort[title]limit[250]]" tags="$:/tags/SearchResults" title="$:/plugins/wikilabs/field-search/ui/textWrapper" type="text/vnd.tiddlywiki">
+<pre>\define searchTerm() [search:text{$(searchTiddler)$}]
+
+{{||$:/plugins/wikilabs/field-search/ui/SearchResultTemplate}}</pre>
+</div>
+<div caption="Title" created="20190227131940276" modified="20190227132000608" opt-checked="[all[]]" opt-unchecked="[!is[system]]" search-set="[all[]]" search-sort="[sort[title]limit[250]]" tags="$:/tags/SearchResults" title="$:/plugins/wikilabs/field-search/ui/titleWrapper" type="text/vnd.tiddlywiki">
+<pre>\define searchTerm() [search:title{$(searchTiddler)$}]
+
+{{||$:/plugins/wikilabs/field-search/ui/SearchResultTemplate}}</pre>
+</div>
 <div list="GettingStarted" title="$:/StoryList">
 <pre></pre>
 </div>
@@ -9147,9 +9169,6 @@ Error message and password prompt
         }
     }
 }</pre>
-</div>
-<div aliases="ccc" created="20190226142238032" modified="20190226142251695" tags="" title="$:/test" type="text/vnd.tiddlywiki">
-<pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.19">
 <pre>{
@@ -9279,12 +9298,6 @@ This plugin &quot;Field Search&quot; adds several new tabs to the search dropdow
 
 {{$:/core/ui/ControlPanel/Plugins}}
 </pre>
-</div>
-<div aliases="aaa" created="20190226134456770" modified="20190226142145977" tags="" title="New Tiddler" type="text/vnd.tiddlywiki">
-<pre></pre>
-</div>
-<div aliases="bbb" created="20190226142146032" modified="20190226142156447" tags="" title="New Tiddler 2" type="text/vnd.tiddlywiki">
-<pre></pre>
 </div>
 
 </div>
