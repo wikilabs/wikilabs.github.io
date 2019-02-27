@@ -143,14 +143,6 @@ Error message and password prompt
 
 <li>$:/plugins/wikilabs/field-search</li>
 
-<li>$:/plugins/wikilabs/field-search/ui/aliasWrapper</li>
-
-<li>$:/plugins/wikilabs/field-search/ui/captionWrapper</li>
-
-<li>$:/plugins/wikilabs/field-search/ui/textWrapper</li>
-
-<li>$:/plugins/wikilabs/field-search/ui/titleWrapper</li>
-
 <li>$:/StoryList</li>
 
 <li>$:/tags/SearchResults</li>
@@ -9129,26 +9121,6 @@ Error message and password prompt
         }
     }
 }</pre>
-</div>
-<div caption="Aliases" created="20190227131942579" modified="20190227131944370" opt-checked="[has[aliases]]" opt-unchecked="[has[aliases]!is[system]]" search-set="[has[aliases]!is[system]]" search-sort="[sort[title]limit[250]]" tags="$:/tags/SearchResults" title="$:/plugins/wikilabs/field-search/ui/aliasWrapper" type="text/vnd.tiddlywiki">
-<pre>\define searchTerm() [search:aliases{$(searchTiddler)$}]
-
-{{||$:/plugins/wikilabs/field-search/ui/SearchResultTemplate}}</pre>
-</div>
-<div caption="Caption / Subtitle" created="20190227131941559" modified="20190227131942648" opt-checked="[all[]]" opt-unchecked="[!is[system]]" search-set="[!is[system]]" search-sort="[sort[title]limit[250]]" tags="$:/tags/SearchResults" title="$:/plugins/wikilabs/field-search/ui/captionWrapper" type="text/vnd.tiddlywiki">
-<pre>\define searchTerm() [search:caption,subtitle{$(searchTiddler)$}]
-
-{{||$:/plugins/wikilabs/field-search/ui/SearchResultTemplate}}</pre>
-</div>
-<div caption="Text" created="20190227131941025" modified="20190227131942364" opt-checked="[all[]]" opt-unchecked="[!is[system]]" search-set="[!is[system]]" search-sort="[sort[title]limit[250]]" tags="$:/tags/SearchResults" title="$:/plugins/wikilabs/field-search/ui/textWrapper" type="text/vnd.tiddlywiki">
-<pre>\define searchTerm() [search:text{$(searchTiddler)$}]
-
-{{||$:/plugins/wikilabs/field-search/ui/SearchResultTemplate}}</pre>
-</div>
-<div caption="Title" created="20190227131940276" modified="20190227132000608" opt-checked="[all[]]" opt-unchecked="[!is[system]]" search-set="[all[]]" search-sort="[sort[title]limit[250]]" tags="$:/tags/SearchResults" title="$:/plugins/wikilabs/field-search/ui/titleWrapper" type="text/vnd.tiddlywiki">
-<pre>\define searchTerm() [search:title{$(searchTiddler)$}]
-
-{{||$:/plugins/wikilabs/field-search/ui/SearchResultTemplate}}</pre>
 </div>
 <div list="GettingStarted" title="$:/StoryList">
 <pre></pre>
