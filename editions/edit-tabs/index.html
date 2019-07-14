@@ -145,10 +145,6 @@ Error message and password prompt
 
 <li>$:/plugins/wikilabs/edit-tabs</li>
 
-<li>$:/plugins/wikilabs/edit-tabs/config</li>
-
-<li>$:/plugins/wikilabs/link-to-tabs/config</li>
-
 <li>$:/StoryList</li>
 
 <li>$:/temp/info-plugin</li>
@@ -9048,31 +9044,33 @@ Error message and password prompt
 <div title="$:/isEncrypted">
 <pre>no</pre>
 </div>
-<div author="Mario Pietsch" core-version="&gt;=5.1.6" dependents="" description="Internal link- or edit-buttons are added to tabs if selected" list="readme history license" plugin-type="plugin" title="$:/plugins/wikilabs/edit-tabs" type="application/json" version="0.2.1">
+<div author="Mario Pietsch" core-version="&gt;=5.1.6" dependents="" description="Internal link- or edit-buttons are added to tabs if selected" list="readme history license" plugin-type="plugin" title="$:/plugins/wikilabs/edit-tabs" type="application/json" version="1.0.0">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/core/macros/tabs&quot;: {
             &quot;title&quot;: &quot;$:/core/macros/tabs&quot;,
             &quot;tags&quot;: &quot;$:/tags/Macro&quot;,
-            &quot;text&quot;: &quot;\\define link-action()\n&lt;$action-sendmessage $message=\&quot;$(message)$\&quot; $param=&lt;&lt;currentTiddler&gt;&gt; navigateTo=&lt;&lt;currentTiddler&gt;&gt;/&gt;\n\\end\n\\define tabs(tabsList,default,state:\&quot;$:/state/tab\&quot;,class,template)\n&lt;div class=\&quot;tc-tab-set $class$\&quot;&gt;\n&lt;div class=\&quot;tc-tab-buttons $class$\&quot;&gt;\n&lt;$list filter=\&quot;$tabsList$\&quot; variable=\&quot;currentTab\&quot;&gt;&lt;$set name=\&quot;save-currentTiddler\&quot; value=&lt;&lt;currentTiddler&gt;&gt;&gt;&lt;$tiddler tiddler=&lt;&lt;currentTab&gt;&gt;&gt;&lt;$button set=&lt;&lt;qualify \&quot;$state$\&quot;&gt;&gt; setTo=&lt;&lt;currentTab&gt;&gt; default=\&quot;$default$\&quot; selectedClass=\&quot;tc-tab-selected\&quot; tooltip={{!!tooltip}}&gt;\n&lt;$transclude tiddler={{!!icon}}/&gt;\n&lt;$tiddler tiddler=&lt;&lt;save-currentTiddler&gt;&gt;&gt;\n&lt;$set name=\&quot;tv-wikilinks\&quot; value=\&quot;no\&quot;&gt;\n&lt;$transclude tiddler=&lt;&lt;currentTab&gt;&gt; field=\&quot;caption\&quot;&gt;\n&lt;$macrocall $name=\&quot;currentTab\&quot; $type=\&quot;text/plain\&quot; $output=\&quot;text/plain\&quot;/&gt;\n&lt;/$transclude&gt;\n&lt;/$set&gt;&lt;/$tiddler&gt;&lt;/$button&gt;\n&lt;$set name=message value={{$:/plugins/wikilabs/edit-tabs/config!!link-action}}&gt;\n&lt;$list filter=\&quot;[&lt;currentTiddler&gt;]+[!is[shadow]]\&quot; emptyMessage=\&quot;\&quot;\&quot;&lt;$button tag=span class=\&quot;wltc-edit-tab\&quot; to=&lt;&lt;currentTiddler&gt;&gt; &gt;{{$:/core/images/link}}&lt;/$button&gt;\&quot;\&quot;\&quot; &gt;&lt;$button tag=span class=\&quot;wltc-edit-tab\&quot; actions=&lt;&lt;link-action&gt;&gt; &gt;{{$:/core/images/link}}&lt;/$button&gt;&lt;/$list&gt;&lt;/$set&gt;&lt;/$tiddler&gt;&lt;/$set&gt;&lt;/$list&gt;&lt;/div&gt;\n&lt;div class=\&quot;tc-tab-divider $class$\&quot;/&gt;\n&lt;div class=\&quot;tc-tab-content $class$\&quot;&gt;\n&lt;$list filter=\&quot;$tabsList$\&quot; variable=\&quot;currentTab\&quot;&gt;\n\n&lt;$reveal type=\&quot;match\&quot; state=&lt;&lt;qualify \&quot;$state$\&quot;&gt;&gt; text=&lt;&lt;currentTab&gt;&gt; default=\&quot;$default$\&quot;&gt;\n\n&lt;$transclude tiddler=\&quot;$template$\&quot; mode=\&quot;block\&quot;&gt;\n\n&lt;$transclude tiddler=&lt;&lt;currentTab&gt;&gt; mode=\&quot;block\&quot;/&gt;\n\n&lt;/$transclude&gt;\n\n&lt;/$reveal&gt;\n\n&lt;/$list&gt;\n&lt;/div&gt;\n&lt;/div&gt;\n\\end&quot;
+            &quot;text&quot;: &quot;\\define link-action()\n&lt;$action-sendmessage $message=\&quot;$(message)$\&quot; $param=&lt;&lt;currentTiddler&gt;&gt; navigateTo=&lt;&lt;currentTiddler&gt;&gt;/&gt;\n\\end\n\\define tabs(tabsList,default,state:\&quot;$:/state/tab\&quot;,class,template,buttonTemplate,retain)\n&lt;div class=\&quot;tc-tab-set $class$\&quot;&gt;\n&lt;div class=\&quot;tc-tab-buttons $class$\&quot;&gt;\n&lt;$list filter=\&quot;$tabsList$\&quot; variable=\&quot;currentTab\&quot;&gt;&lt;$set name=\&quot;save-currentTiddler\&quot; value=&lt;&lt;currentTiddler&gt;&gt;&gt;&lt;$tiddler tiddler=&lt;&lt;currentTab&gt;&gt;&gt;&lt;$button set=&lt;&lt;qualify \&quot;$state$\&quot;&gt;&gt; setTo=&lt;&lt;currentTab&gt;&gt; default=\&quot;$default$\&quot; selectedClass=\&quot;tc-tab-selected\&quot; tooltip={{!!tooltip}}&gt;\n&lt;$transclude tiddler={{!!icon}}/&gt;\n&lt;$tiddler tiddler=&lt;&lt;save-currentTiddler&gt;&gt;&gt;\n&lt;$set name=\&quot;tv-wikilinks\&quot; value=\&quot;no\&quot;&gt;\n&lt;$transclude tiddler=\&quot;\&quot;\&quot;$buttonTemplate$\&quot;\&quot;\&quot; mode=\&quot;inline\&quot;&gt;\n&lt;$transclude tiddler=&lt;&lt;currentTab&gt;&gt; field=\&quot;caption\&quot;&gt;\n&lt;$macrocall $name=\&quot;currentTab\&quot; $type=\&quot;text/plain\&quot; $output=\&quot;text/plain\&quot;/&gt;\n&lt;/$transclude&gt;\n&lt;/$transclude&gt;\n&lt;/$set&gt;&lt;/$tiddler&gt;&lt;/$button&gt;\n&lt;$set name=message value={{$:/plugins/wikilabs/edit-tabs/config!!link-action}}&gt;\n&lt;$list filter=\&quot;[&lt;currentTiddler&gt;]+[!is[shadow]]\&quot; emptyMessage=\&quot;\&quot;\&quot;&lt;$button tag=span class=\&quot;wltc-edit-tab\&quot; to=&lt;&lt;currentTiddler&gt;&gt; &gt;{{$:/core/images/link}}&lt;/$button&gt;\&quot;\&quot;\&quot; &gt;&lt;$button tag=span class=\&quot;wltc-edit-tab\&quot; actions=&lt;&lt;link-action&gt;&gt; &gt;&lt;$reveal type=match text=\&quot;tm-navigate\&quot; state=\&quot;$:/plugins/wikilabs/edit-tabs/config!!link-action\&quot;&gt;{{$:/core/images/link}}&lt;/$reveal&gt;&lt;$reveal type=match text=\&quot;tm-edit-tiddler\&quot; state=\&quot;$:/plugins/wikilabs/edit-tabs/config!!link-action\&quot;&gt;{{$:/core/images/edit-button}}&lt;/$reveal&gt;&lt;/$button&gt;&lt;/$list&gt;&lt;/$set&gt;&lt;/$tiddler&gt;&lt;/$set&gt;&lt;/$list&gt;&lt;/div&gt;\n&lt;div class=\&quot;tc-tab-divider $class$\&quot;/&gt;\n&lt;div class=\&quot;tc-tab-content $class$\&quot;&gt;\n&lt;$list filter=\&quot;$tabsList$\&quot; variable=\&quot;currentTab\&quot;&gt;\n\n&lt;$reveal type=\&quot;match\&quot; state=&lt;&lt;qualify \&quot;$state$\&quot;&gt;&gt; text=&lt;&lt;currentTab&gt;&gt; default=\&quot;$default$\&quot; retain=\&quot;\&quot;\&quot;$retain$\&quot;\&quot;\&quot;&gt;\n\n&lt;$transclude tiddler=\&quot;\&quot;\&quot;$template$\&quot;\&quot;\&quot; mode=\&quot;block\&quot;&gt;\n\n&lt;$transclude tiddler=&lt;&lt;currentTab&gt;&gt; mode=\&quot;block\&quot;/&gt;\n\n&lt;/$transclude&gt;\n\n&lt;/$reveal&gt;\n\n&lt;/$list&gt;\n&lt;/div&gt;\n&lt;/div&gt;\n\\end&quot;
         },
         &quot;$:/core/ui/ControlPanel/Settings/edit-tabs&quot;: {
             &quot;title&quot;: &quot;$:/core/ui/ControlPanel/Settings/edit-tabs&quot;,
             &quot;caption&quot;: &quot;Edit-Tabs plugin&quot;,
             &quot;tags&quot;: &quot;$:/tags/ControlPanel/Settings&quot;,
-            &quot;text&quot;: &quot;&lt;$checkbox tiddler=\&quot;$:/plugins/wikilabs/edit-tabs/config\&quot; field=\&quot;show-all-links\&quot; checked=\&quot;inline\&quot; unchecked=\&quot;none\&quot; default=\&quot;none\&quot;&gt; Show internal tab link for ''all tabs''&lt;/$checkbox&gt;\n\n&lt;$checkbox tiddler=\&quot;$:/plugins/wikilabs/edit-tabs/config\&quot; field=\&quot;show-single-link\&quot; checked=\&quot;inline\&quot; unchecked=\&quot;none\&quot; default=\&quot;inline\&quot;&gt; Show internal tab link for ''selected tab''&lt;/$checkbox&gt;\n\n&lt;$checkbox tiddler=\&quot;$:/plugins/wikilabs/edit-tabs/config\&quot; field=\&quot;link-action\&quot; checked=\&quot;tm-edit-tiddler\&quot; unchecked=\&quot;tm-navigate\&quot; default=\&quot;tm-navigate\&quot;&gt; Clicking a tab-link opens non-system tiddlers in ''edit mode''&lt;/$checkbox&gt;\n&quot;
+            &quot;text&quot;: &quot;&lt;$checkbox tiddler=\&quot;$:/plugins/wikilabs/edit-tabs/config\&quot; field=\&quot;show-all-links\&quot; checked=\&quot;inline\&quot; unchecked=\&quot;none\&quot; default=\&quot;none\&quot;&gt; Show internal tab link for ''all tabs''&lt;/$checkbox&gt;\n\n&lt;$checkbox tiddler=\&quot;$:/plugins/wikilabs/edit-tabs/config\&quot; field=\&quot;show-single-link\&quot; checked=\&quot;inline\&quot; unchecked=\&quot;none\&quot; default=\&quot;inline\&quot;&gt; Show internal tab link for ''selected tab''&lt;/$checkbox&gt;\n\n&lt;$checkbox tiddler=\&quot;$:/plugins/wikilabs/edit-tabs/config\&quot; field=\&quot;link-action\&quot; checked=\&quot;tm-edit-tiddler\&quot; unchecked=\&quot;tm-navigate\&quot; default=\&quot;tm-edit-tiddler\&quot;&gt; Clicking a tab-link opens non-system tiddlers in ''edit mode''&lt;/$checkbox&gt;\n\n&lt;$checkbox tiddler=\&quot;$:/plugins/wikilabs/edit-tabs/config\&quot; field=\&quot;initial-opacity\&quot; checked=\&quot;0\&quot; unchecked=\&quot;0.7\&quot; default=\&quot;0.7\&quot;&gt; Tab links are initially hidden and need mouse hover to become visible.&lt;/$checkbox&gt; The transition time in seconds is: &lt;$edit-text tiddler=\&quot;$:/plugins/wikilabs/edit-tabs/config\&quot; field=\&quot;transition\&quot; default=\&quot;0.3\&quot;/&gt;\n\n&lt;$button message=\&quot;tm-delete-tiddler\&quot; param=\&quot;$:/plugins/wikilabs/edit-tabs/config\&quot;&gt;\nReset to Default!&quot;
         },
         &quot;$:/plugins/wikilabs/edit-tabs/config&quot;: {
             &quot;title&quot;: &quot;$:/plugins/wikilabs/edit-tabs/config&quot;,
             &quot;show-all-links&quot;: &quot;none&quot;,
             &quot;show-single-link&quot;: &quot;inline&quot;,
-            &quot;link-action&quot;: &quot;tm-navigate&quot;,
-            &quot;text&quot;: &quot;This tiddler is used to configure the \&quot;Edit-tabs\&quot; plugin behaviour. \n\nThere are 2 fields, which are used by [[$:/plugins/wikilabs/edit-tabs/styles]] enable and disable the internal links. \n\n* show-all-links: {{!!show-all-links}}\n* show-single-link: {{!!show-single-link}}\n\nThe next field is used to define the behaviour of the link, if it's clicked.\n\n* link-action: {{!!link-action}}\n&quot;
+            &quot;link-action&quot;: &quot;tm-edit-tiddler&quot;,
+            &quot;initial-opacity&quot;: &quot;0.7&quot;,
+            &quot;transition&quot;: &quot;0.3&quot;,
+            &quot;text&quot;: &quot;This tiddler is used to configure the \&quot;Edit-tabs\&quot; plugin behaviour. \n\nThere are 4 fields, which are used by [[$:/plugins/wikilabs/edit-tabs/styles]] enable and disable the internal links. \n\n* show-all-links: {{!!show-all-links}}\n* show-single-link: {{!!show-single-link}}\n* initial-opacity: {{!!initial-opacity}}\n* transition time in seconds: {{!!transition}}\n\nThe next field is used to define the behaviour of the link, if it's clicked.\n\n* link-action: {{!!link-action}}\n&quot;
         },
         &quot;$:/plugins/wikilabs/edit-tabs/styles&quot;: {
             &quot;title&quot;: &quot;$:/plugins/wikilabs/edit-tabs/styles&quot;,
             &quot;tags&quot;: &quot;$:/tags/Stylesheet&quot;,
-            &quot;text&quot;: &quot;&lt;pre&gt;\n\n.wltc-edit-tab {\n  display: {{$:/plugins/wikilabs/edit-tabs/config!!show-all-links}};\n  position: relative;\n  top: -1em;\n  left: -1.3em;\n  font-size: 0.7em;\n  opacity: 0.7;\n  margin-right: -1em;\n}\n\n.wltc-edit-tab svg{\n  width: 1.4em;\n  height: 1.4em;\n}\n\n.wltc-edit-tab:hover {\n  opacity: 1;\n}\n\n.tc-tab-selected + .wltc-edit-tab {\n  display: {{$:/plugins/wikilabs/edit-tabs/config!!show-single-link}};\n}\n\n.tc-vertical &gt; .wltc-edit-tab {\n  top: -1.9em;\n  left: 0;\n  height: 0;\n  float: right;\n}\n\n&lt;/pre&gt;&quot;
+            &quot;text&quot;: &quot;&lt;pre&gt;\n\n.wltc-edit-tab {\n  display: {{$:/plugins/wikilabs/edit-tabs/config!!show-all-links}};\n  position: relative;\n  top: -1em;\n  left: -1.3em;\n  font-size: 0.7em;\n  opacity: {{$:/plugins/wikilabs/edit-tabs/config!!initial-opacity}};\n  margin-right: -1em;\n}\n\n.wltc-edit-tab svg{\n  width: 1.4em;\n  height: 1.4em;\n}\n\n.wltc-edit-tab:hover {\n  opacity: 1;\n  transition:opacity {{$:/plugins/wikilabs/edit-tabs/config!!transition}}s;\n  transition-timing-function: cubic-bezier(1,-0.06,.39,.89);\n}\n\n.tc-tab-selected + .wltc-edit-tab {\n  display: {{$:/plugins/wikilabs/edit-tabs/config!!show-single-link}};\n}\n\n.tc-vertical &gt; .wltc-edit-tab {\n  top: -1.9em;\n  left: 0;\n  height: 0;\n  float: right;\n}\n\n.tc-search-results .wltc-edit-tab a {\n  display: contents;\n  padding: 0;\n}\n\n&lt;/pre&gt;&quot;
         },
         &quot;$:/plugins/wikilabs/edit-tabs/fix-sendmessage.js&quot;: {
             &quot;title&quot;: &quot;$:/plugins/wikilabs/edit-tabs/fix-sendmessage.js&quot;,
@@ -9082,44 +9080,18 @@ Error message and password prompt
         },
         &quot;$:/plugins/wikilabs/edit-tabs/history&quot;: {
             &quot;title&quot;: &quot;$:/plugins/wikilabs/edit-tabs/history&quot;,
-            &quot;text&quot;: &quot;V0.2.0-experimental - 2019-01-17\n\n* remove the experimental flag\n\nV0.2.0-experimental - 2018-02-13\n\n* initial release\n* forked from link-to-tabs V0.1.1\n* add new \&quot;auto-edit\&quot; configuration for tab-links\n* auto-edit is only active for non-shadow tiddlers `[!is[shadow]]`\n* contains a temporary fix for a &lt;$action-sendmessage widget parameter passing problem\n** This fix should be deactivated in the future.\n\nalso see: https://wikilabs.github.io/editions/edit-tabs/#History\nalso see: https://wikilabs.github.io/editions/link-to-tabs/#History\n&quot;
+            &quot;text&quot;: &quot;V1.0.0 - 2019-07-14\n\n* Add new option: Initially hide link\n** Transition time from hidden to visible is adjustable\n* Added: \&quot;Reset to Default\&quot; button\n* Show Edit Button if edit mode is active\n\nThis version has feature parity with link-to-tabs plugin from same date!\n\nV0.2.0 - 2019-01-17\n\n* remove the experimental flag\n\nV0.2.0-experimental - 2018-02-13\n\n* initial release\n* forked from link-to-tabs V0.1.1\n* add new \&quot;auto-edit\&quot; configuration for tab-links\n* auto-edit is only active for non-shadow tiddlers `[!is[shadow]]`\n* contains a temporary fix for a &lt;$action-sendmessage widget parameter passing problem\n** This fix should be deactivated in the future.\n\nalso see: https://wikilabs.github.io/editions/edit-tabs/#History\nalso see: https://wikilabs.github.io/editions/link-to-tabs/#History\n&quot;
         },
         &quot;$:/plugins/wikilabs/edit-tabs/license&quot;: {
             &quot;title&quot;: &quot;$:/plugins/wikilabs/edit-tabs/license&quot;,
-            &quot;text&quot;: &quot;Link-to-Tabs-Macro (c) Mario Pietsch - 2016-2019\n\nhttps://opensource.org/licenses/BSD-3-Clause&quot;
+            &quot;text&quot;: &quot;Edit-Tabs-Macro (c) Mario Pietsch - 2018-2019\n\nhttps://opensource.org/licenses/BSD-3-Clause&quot;
         },
         &quot;$:/plugins/wikilabs/edit-tabs/readme&quot;: {
             &quot;title&quot;: &quot;$:/plugins/wikilabs/edit-tabs/readme&quot;,
-            &quot;text&quot;: &quot;This plugin adds a little link icon to every tab. \n\n''Important:'' This plugin changes the core tabs macro.\n\n! Link-to-Tabs Settings\n\n{{$:/core/ui/ControlPanel/Settings/edit-tabs}}&quot;
+            &quot;text&quot;: &quot;This plugin adds a little link icon to every tab.\n\n''Important:'' This plugin changes the core tabs macro.\n\n! Link-to-Tabs Settings\n\n{{$:/core/ui/ControlPanel/Settings/edit-tabs}}&quot;
         }
     }
 }</pre>
-</div>
-<div created="20180222153809097" link-action="tm-edit-tiddler" modified="20180328072723163" show-all-links="none" show-single-link="inline" title="$:/plugins/wikilabs/edit-tabs/config" type="text/vnd.tiddlywiki">
-<pre>This tiddler is used to configure the &quot;Edit-tabs&quot; plugin behaviour.
-
-There are 2 fields, which are used by [[$:/plugins/wikilabs/edit-tabs/styles]] enable and disable the internal links.
-
-* show-all-links: {{!!show-all-links}}
-* show-single-link: {{!!show-single-link}}
-
-The next field is used to define the behaviour of the link, if it's clicked.
-
-* link-action: {{!!link-action}}
-</pre>
-</div>
-<div created="20180213114904780" link-action="tm-edit-tiddler" modified="20180213142432862" show-all-links="none" show-single-link="inline" title="$:/plugins/wikilabs/link-to-tabs/config" type="text/vnd.tiddlywiki">
-<pre>This tiddler is used to configure the &quot;Link-to-tabs&quot; plugin behaviour.
-
-There are 2 fields, which are used by [[$:/plugins/wikilabs/link-to-tabs/styles]] enable and disable the internal links.
-
-* show-all-links: {{!!show-all-links}}
-* show-single-link: {{!!show-single-link}}
-
-The next field is used to define the behaviour of the link, if it's clicked.
-
-* link-action: {{!!link-action}}
-</pre>
 </div>
 <div list="GettingStarted" title="$:/StoryList">
 <pre></pre>
