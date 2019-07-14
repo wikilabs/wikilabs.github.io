@@ -9039,7 +9039,7 @@ Error message and password prompt
 <div title="$:/isEncrypted">
 <pre>no</pre>
 </div>
-<div author="Mario Pietsch" core-version="&gt;=5.1.15" dependents="" description="Internal links are added to tabs if selected" list="readme license history" plugin-type="plugin" title="$:/plugins/wikilabs/link-to-tabs" type="application/json" version="1.0.1">
+<div author="Mario Pietsch" core-version="&gt;=5.1.15" dependents="" description="Internal links are added to tabs if selected" list="readme license history" plugin-type="plugin" title="$:/plugins/wikilabs/link-to-tabs" type="application/json" version="1.1.0">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/core/macros/tabs&quot;: {
@@ -9050,18 +9050,26 @@ Error message and password prompt
         &quot;$:/core/ui/ControlPanel/Settings/link-to-tabs&quot;: {
             &quot;title&quot;: &quot;$:/core/ui/ControlPanel/Settings/link-to-tabs&quot;,
             &quot;caption&quot;: &quot;Link-to-Tabs plugin&quot;,
+            &quot;created&quot;: &quot;20190712133607244&quot;,
+            &quot;modified&quot;: &quot;20190714104631250&quot;,
             &quot;tags&quot;: &quot;$:/tags/ControlPanel/Settings&quot;,
-            &quot;text&quot;: &quot;&lt;$checkbox tiddler=\&quot;$:/plugins/wikilabs/link-to-tabs/config\&quot; field=\&quot;show-all-links\&quot; checked=\&quot;inline-block\&quot; unchecked=\&quot;none\&quot; default=\&quot;none\&quot;&gt; Show internal tab link for ''all tabs''&lt;/$checkbox&gt;\n\n&lt;$checkbox tiddler=\&quot;$:/plugins/wikilabs/link-to-tabs/config\&quot; field=\&quot;show-single-link\&quot; checked=\&quot;inline-block\&quot; unchecked=\&quot;none\&quot; default=\&quot;inline-block\&quot;&gt; Show internal tab link for ''selected tabs''&lt;/$checkbox&gt;\n&quot;
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;&lt;$checkbox tiddler=\&quot;$:/plugins/wikilabs/link-to-tabs/config\&quot; field=\&quot;show-all-links\&quot; checked=\&quot;inline-block\&quot; unchecked=\&quot;none\&quot; default=\&quot;none\&quot;&gt; Show internal tab link for ''all tabs''&lt;/$checkbox&gt;\n\n&lt;$checkbox tiddler=\&quot;$:/plugins/wikilabs/link-to-tabs/config\&quot; field=\&quot;show-single-link\&quot; checked=\&quot;inline-block\&quot; unchecked=\&quot;none\&quot; default=\&quot;inline-block\&quot;&gt; Show internal tab link for ''selected tabs''&lt;/$checkbox&gt;\n\n&lt;$checkbox tiddler=\&quot;$:/plugins/wikilabs/link-to-tabs/config\&quot; field=\&quot;initial-opacity\&quot; checked=\&quot;0\&quot; unchecked=\&quot;0.7\&quot; default=\&quot;0.7\&quot;&gt; Tab links are initially hidden and need mouse hover to become visible.&lt;/$checkbox&gt; The transition time in seconds is: &lt;$edit-text tiddler=\&quot;$:/plugins/wikilabs/link-to-tabs/config\&quot; field=\&quot;transition\&quot; default=\&quot;0.3s\&quot;/&gt;\n\n&lt;$button message=\&quot;tm-delete-tiddler\&quot; param=\&quot;$:/plugins/wikilabs/link-to-tabs/config\&quot;&gt;\nReset to Default!\n&lt;/$button&gt;&quot;
         },
         &quot;$:/plugins/wikilabs/link-to-tabs/config&quot;: {
             &quot;title&quot;: &quot;$:/plugins/wikilabs/link-to-tabs/config&quot;,
+            &quot;created&quot;: &quot;20190712133008077&quot;,
+            &quot;initial-opacity&quot;: &quot;0.7&quot;,
+            &quot;modified&quot;: &quot;20190714104541701&quot;,
             &quot;show-all-links&quot;: &quot;none&quot;,
             &quot;show-single-link&quot;: &quot;inline-block&quot;,
-            &quot;text&quot;: &quot;This tiddler is used to configure the \&quot;Link-to-tabs\&quot; plugin behaviour. \n\nThere are 2 fields, which are used by [[$:/plugins/wikilabs/link-to-tabs/styles]] enable and disable the internal links. \n\n* show-all-links: {{!!show-all-links}}\n* show-single-link: {{!!show-single-link}}\n&quot;
+            &quot;transition&quot;: &quot;0.3&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;This tiddler is used to configure the \&quot;Link-to-tabs\&quot; plugin behaviour. \n\nThere are 2 fields, which are used by [[$:/plugins/wikilabs/link-to-tabs/styles]] enable and disable the internal links. \n\n* show-all-links: {{!!show-all-links}}\n* show-single-link: {{!!show-single-link}}\n* initial-opacity: {{!!initial-opacity}}\n* transition time in seconds: {{!!transition}}\n&quot;
         },
         &quot;$:/plugins/wikilabs/link-to-tabs/history&quot;: {
             &quot;title&quot;: &quot;$:/plugins/wikilabs/link-to-tabs/history&quot;,
-            &quot;text&quot;: &quot;V 1.0.1 - 2019.02.18\n\n* link-to-tabs works in drop-down elements now.\n\nV 1.0.0 - 2019.02.14\n\n* Use core tabs-macro from TW 5.1.19\n\nV &lt;1.0.0\n\n* Use core tabs-macro from TW 5.1.15\r\n&quot;
+            &quot;text&quot;: &quot;V 1.1.0 - 2019.07.14\n\n* Add new option: Initially hide link\n** Transition time from hidden to visible is adjustable\n\nV 1.0.1 - 2019.02.18\n\n* link-to-tabs works in drop-down elements now.\n\nV 1.0.0 - 2019.02.14\n\n* Use core tabs-macro from TW 5.1.19\n\nV &lt;1.0.0\n\n* Use core tabs-macro from TW 5.1.15\n&quot;
         },
         &quot;$:/plugins/wikilabs/link-to-tabs/license&quot;: {
             &quot;title&quot;: &quot;$:/plugins/wikilabs/link-to-tabs/license&quot;,
@@ -9069,8 +9077,11 @@ Error message and password prompt
         },
         &quot;$:/plugins/wikilabs/link-to-tabs/styles&quot;: {
             &quot;title&quot;: &quot;$:/plugins/wikilabs/link-to-tabs/styles&quot;,
+            &quot;created&quot;: &quot;20190712133348541&quot;,
+            &quot;modified&quot;: &quot;20190714104306483&quot;,
             &quot;tags&quot;: &quot;$:/tags/Stylesheet&quot;,
-            &quot;text&quot;: &quot;&lt;pre&gt;\n\n.wltc-link-to-tab {\n  display: {{$:/plugins/wikilabs/link-to-tabs/config!!show-all-links}};\n  position: relative;\n  top: -1em;\n  left: -1.3em;\n  font-size: 0.7em;\n  opacity: 0.7;\n  margin-right: -1em;\n}\n\n.wltc-link-to-tab svg{\n  width: 1.4em;\n  height: 1.4em;\n}\n\n.wltc-link-to-tab:hover {\n  opacity: 1;\n}\n\n.tc-tab-selected + .wltc-link-to-tab {\n  display: {{$:/plugins/wikilabs/link-to-tabs/config!!show-single-link}};\n}\n\n.tc-vertical &gt; .wltc-link-to-tab {\n  top: -1.9em;\n  left: 0;\n  height: 0;\n  float: right;\n}\n\n.tc-search-results .wltc-link-to-tab a {\n  display: contents;\n  padding: 0;\n}\n\n&lt;/pre&gt;&quot;
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;&lt;pre&gt;\n\n.wltc-link-to-tab {\n  display: {{$:/plugins/wikilabs/link-to-tabs/config!!show-all-links}};\n  position: relative;\n  top: -1em;\n  left: -1.3em;\n  font-size: 0.7em;\n  opacity: {{$:/plugins/wikilabs/link-to-tabs/config!!initial-opacity}};\n  margin-right: -1em;\n}\n\n.wltc-link-to-tab svg{\n  width: 1.4em;\n  height: 1.4em;\n}\n\n.wltc-link-to-tab:hover {\n  opacity: 1;\n  transition:opacity {{$:/plugins/wikilabs/link-to-tabs/config!!transition}}s;\n  transition-timing-function: cubic-bezier(1,-0.06,.39,.89);\n}\n\n.tc-tab-selected + .wltc-link-to-tab {\n  display: {{$:/plugins/wikilabs/link-to-tabs/config!!show-single-link}};\n}\n\n.tc-vertical &gt; .wltc-link-to-tab {\n  top: -1.9em;\n  left: 0;\n  height: 0;\n  float: right;\n}\n\n.tc-search-results .wltc-link-to-tab a {\n  display: contents;\n  padding: 0;\n}\n\n&lt;/pre&gt;&quot;
         },
         &quot;$:/plugins/wikilabs/link-to-tabs/readme&quot;: {
             &quot;title&quot;: &quot;$:/plugins/wikilabs/link-to-tabs/readme&quot;,
