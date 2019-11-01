@@ -1,0 +1,9 @@
+created: 20191101121217314
+demo-url: https://wikilabs.github.io/editions/trigger
+git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/trigger
+modified: 20191101121257027
+tags: edition
+title: interactive-test-framework
+type: text/vnd.tiddlywiki
+
+{{||$:/wikilabs/template/theme}}

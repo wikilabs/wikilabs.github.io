@@ -1,0 +1,17 @@
+created: 20191101121318449
+demo-url: https://wikilabs.github.io/editions/trigger
+git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/trigger
+modified: 20191101121608438
+tags: plugin
+title: trigger
+type: text/vnd.tiddlywiki
+
+! ALPHA ALPHA ALPHA ALPHA ALPHA 
+
+!! Backup
+
+If you use the `<$trigger>` widget, with variables defined in the wrong way, it has the potential to break your wiki!
+
+So having ''backups'' is extremely important!
+
+{{||$:/wikilabs/template/theme}}
