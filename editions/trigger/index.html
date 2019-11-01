@@ -9660,13 +9660,13 @@ Error message and password prompt
 <pre>fluid-fixed</pre>
 </div>
 <div created="20191025131612280" modified="20191025131618621" title="a-expected" type="text/vnd.tiddlywiki">
-<pre>tags:
+<pre>tags: 
 title: a
 
 a</pre>
 </div>
 <div created="20191025131620482" modified="20191025131632965" title="b-expected" type="text/vnd.tiddlywiki">
-<pre>tags:
+<pre>tags: 
 title: b
 
 b</pre>
@@ -9705,7 +9705,7 @@ lorem ipsum dolor sit amet</pre>
 &lt;$button actions=&lt;&lt;clear-log&gt;&gt; &gt;Clear Log&lt;/$button&gt;
 &lt;/$set&gt;
 
-* Only use the &quot;Next&quot; button.
+* Only use the &quot;Next&quot; button. 
 ** &quot;Previous&quot; may cause errors, because the whole state may be out of sync
 
 
@@ -10009,7 +10009,7 @@ title: $:/StoryList
 
 ! Differences Indicate a Problem
 
-* The diff-text has nothing to show. It compares $:/StoryList list field with an empty string.
+* The diff-text has nothing to show. It compares $:/StoryList list field with an empty string. 
 
 !! Text differences
 
@@ -10089,7 +10089,7 @@ title: $:/StoryList
 
 ! Info
 
-* Open itself
+* Open itself 
 * Open a tiddler: new-test-tiddler
 * Close the new-test-tiddler with the tm-closer-tiddler message
 
@@ -10141,7 +10141,7 @@ title: $:/StoryList
 ! Info
 
 * Open tiddler a
-* This test should delete &quot;new-test&quot;, a and b
+* This test should delete &quot;new-test&quot;, a and b 
 
 &lt;$trigger actions=&lt;&lt;test&gt;&gt;/&gt;
 
@@ -10248,7 +10248,7 @@ title: $:/StoryList
 ! Info
 
 * Opens tiddler a and b
-* Open itself
+* Open itself 
 * Activate tm-fold-all-tiddlers
 
 &lt;$trigger actions=&lt;&lt;test&gt;&gt;/&gt;
@@ -10315,7 +10315,7 @@ title: $:/StoryList
 
 * Opens tiddler a and b
 * Activate `tm-unfold-all-tiddlers` with prefix: `$:/state/folded/`
-* Open itself
+* Open itself 
 * Activate `tm-fold-other-tiddlers` with param: b
 
 
@@ -10369,7 +10369,7 @@ title: $:/StoryList
 
 * Opens tiddler a and b
 * Open itself
-* Fold tiddler: a with tm-fold-tiddler with foldedState: `$:/state/folded/a`
+* Fold tiddler: a with tm-fold-tiddler with foldedState: `$:/state/folded/a` 
 * Show differences between of $:/state/folded/a and [[handleFoldTiddlerEvent-expected]]
 
 &lt;$trigger actions=&lt;&lt;test&gt;&gt;/&gt;
@@ -10405,7 +10405,7 @@ title: $:/StoryList
 
 ! Info
 
-* Open itself
+* Open itself 
 * Open the $:/Import tiddler with tm-import-tiddlers
 
 &lt;$trigger actions=&lt;&lt;test&gt;&gt;/&gt;
@@ -10534,7 +10534,7 @@ title: $:/StoryList
 
 ! Info
 
-* Open itself
+* Open itself 
 * Save the tiddler from the last test [[new-test-tiddler]]
 
 &lt;$trigger actions=&lt;&lt;test&gt;&gt;/&gt;
@@ -10600,7 +10600,7 @@ title: $:/StoryList
 ! Info
 
 * Opens tiddler a and b
-* Open itself
+* Open itself 
 * Activate tm-unfold-all-tiddlers
 
 &lt;$trigger actions=&lt;&lt;test&gt;&gt;/&gt;
@@ -10725,7 +10725,7 @@ NavigatorWidget.prototype.handleNavigateEvent = function(event) {
 ! Info
 
 * This test should clear the $:/HistoryList
-* Open ''itself''
+* Open ''itself'' 
 * Create a new tiddler window with [[test-interactive-click]]
 * You should move the window into a position, where you can see it
 * Click the button there
@@ -10773,7 +10773,7 @@ NavigatorWidget.prototype.handleNavigateEvent = function(event) {
 
 * This test should clear the story-river
 * Open ''itself'', the $:/StoryList tiddler
-** Open the info panel and select the &quot;list&quot; field.
+** Open the info panel and select the &quot;list&quot; field. 
 * Diff-text shows the differences between [[StoryList-expected]] and the real field value.
 
 &lt;$trigger actions=&lt;&lt;test&gt;&gt;/&gt;
@@ -12110,7 +12110,7 @@ $tw.Wiki = function(options) {
 				var index = tiddlerTitles.indexOf(title);
 				if(index !== -1) {
 					tiddlerTitles.splice(index,1);
-				}
+				}				
 			}
 			// Record the new tiddler state
 			updateDescriptor["new"] = {
@@ -13111,7 +13111,7 @@ $tw.loadTiddlersNode = function() {
 				type = parts[0];
 			if(parts.length  === 3 && ["plugins","themes","languages"].indexOf(type) !== -1) {
 				$tw.loadPlugins([parts[1] + "/" + parts[2]],$tw.config[type + "Path"],$tw.config[type + "EnvVar"]);
-			}
+			}			
 		}
 	});
 	// Load the tiddlers from the wiki directory
