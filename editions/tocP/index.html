@@ -9117,7 +9117,7 @@ Error message and password prompt
 <div title="$:/isEncrypted">
 <pre>no</pre>
 </div>
-<div author="Mario Pietsch" core-version="&gt;=5.1.13" dependents="" description="Table of Contents - parent field based" list="readme license" plugin-type="plugin" title="$:/plugins/wikilabs/tocP" type="application/json" version="0.1.0">
+<div author="Mario Pietsch" core-version="&gt;=5.1.13" dependents="" description="Table of Contents - parent field based" list="readme license history" plugin-type="plugin" title="$:/plugins/wikilabs/tocP" type="application/json" version="0.1.1">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/plugins/wikilabs/tocP/macros&quot;: {
@@ -9180,9 +9180,13 @@ Error message and password prompt
             &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
             &quot;text&quot;: &quot;\\define newHereValue()\n$(currentTiddler)$\n\\end\n\\define newChildButton()\n&lt;$button tooltip=\&quot;Create a new Child tiddler &amp; add 'parent' field\&quot; aria-label=\&quot;create a new child\&quot; class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt;\n&lt;$action-sendmessage $message=\&quot;tm-new-tiddler\&quot; parent=&lt;&lt;newHereValue&gt;&gt;/&gt;\n&lt;$list filter=\&quot;[&lt;tv-config-toolbar-icons&gt;prefix[yes]]\&quot;&gt;\n{{$:/wikilabs/images/new-child}}\n&lt;/$list&gt;\n&lt;$list filter=\&quot;[&lt;tv-config-toolbar-text&gt;prefix[yes]]\&quot;&gt;\n&lt;span class=\&quot;tc-btn-text\&quot;&gt;&lt;$text text=\&quot;New Child Here\&quot;/&gt;&lt;/span&gt;\n&lt;/$list&gt;\n&lt;/$button&gt;\n\\end\n&lt;&lt;newChildButton&gt;&gt;&quot;
         },
+        &quot;$:/plugins/wikilabs/tocP/history&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/wikilabs/tocP/history&quot;,
+            &quot;text&quot;: &quot;V 0.1.1 - 2020.01.19\n\n* Update license link/text\n\nV 0.1.0 - 2017\n\n* initial release\n** name: tocP\n&quot;
+        },
         &quot;$:/plugins/wikilabs/tocP/license&quot;: {
             &quot;title&quot;: &quot;$:/plugins/wikilabs/tocP/license&quot;,
-            &quot;text&quot;: &quot;Parent Based TOC Plugin (c) Mario Pietsch - 2017-2019\n\nhttps://opensource.org/licenses/BSD-3-Clause&quot;
+            &quot;text&quot;: &quot;[[Parent Based TOC Plugin|https://wikilabs.github.io/#edition-tocP]] (c) Mario Pietsch - 2017-2020\n\nhttps://opensource.org/licenses/BSD-3-Clause\n&quot;
         },
         &quot;$:/plugins/wikilabs/tocP/readme&quot;: {
             &quot;title&quot;: &quot;$:/plugins/wikilabs/tocP/readme&quot;,
@@ -9404,7 +9408,7 @@ TBD
 * new [[StyleSheet|$:/plugins/wikilabs/tocP/Stylesheet]] setting for `.tocp` class. It sets the default link color to green, which should set it apart from the standard toc.
 ** This is probably a temporary solution, because it doesn't work for tabbed tocPs.
 * The &quot;New Child&quot; buttons now show a more detailed tooltip.
-** The actual &quot;field-name: value&quot; pair which will be used to create the new child.
+** The actual &quot;field-name: value&quot; pair which will be used to create the new child. 
 * tocP now shows the tooltip field, if available in tiddlers. see [[examples|GettingStarted]] or open [[level-1]] in edit mode.
 &lt;&lt;&lt;
 
@@ -9437,7 +9441,7 @@ TBD
 <div created="20170201215541604" modified="20170505131539295" modifier="pmario" tags="" title="test-tocP" type="text/vnd.tiddlywiki">
 <pre>''Custom Link Color''
 
-If you use eg: `tocp` in the outer class, it will use green instead of blue for TW links. Setting can be changed using the [[plugin Stylesheet tiddler|$:/plugins/wikilabs/tocP/Stylesheet]] or you can create your own one.
+If you use eg: `tocp` in the outer class, it will use green instead of blue for TW links. Setting can be changed using the [[plugin Stylesheet tiddler|$:/plugins/wikilabs/tocP/Stylesheet]] or you can create your own one. 
 
 ```
 &lt;div class=&quot;tocp tc-table-of-contents&quot;&gt;
@@ -10727,7 +10731,7 @@ $tw.Wiki = function(options) {
 				var index = tiddlerTitles.indexOf(title);
 				if(index !== -1) {
 					tiddlerTitles.splice(index,1);
-				}
+				}				
 			}
 			this.clearCache(title);
 			this.clearGlobalCache();

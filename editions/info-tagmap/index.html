@@ -9048,7 +9048,7 @@ Error message and password prompt
 <div title="$:/isEncrypted">
 <pre>no</pre>
 </div>
-<div author="Mario Pietsch" core-version="&gt;=5.1.0" dependents="" description="Adds a Tag-Map tab to the tiddler info section" list="readme license" plugin-type="plugin" title="$:/plugins/wikilabs/info-tagmap" type="application/json" version="0.1.1">
+<div author="Mario Pietsch" core-version="&gt;=5.1.0" dependents="" description="Adds a Tag-Map tab to the tiddler info section" list="readme license history" plugin-type="plugin" title="$:/plugins/wikilabs/info-tagmap" type="application/json" version="0.1.2">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/wikilabs/ui/TiddlerInfo/TagMap&quot;: {
@@ -9063,9 +9063,13 @@ Error message and password prompt
             &quot;type&quot;: &quot;text/plain&quot;,
             &quot;text&quot;: &quot;.flexbox {\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  overflow: hidden;\n  flex-direction: row;\n  flex-flow: row wrap;\n}\n\n.flexbox .col {\n  flex: 1 1 33%;\n  margin-bottom: 1em;\n}&quot;
         },
+        &quot;$:/plugins/wikilabs/info-tagmap/history&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/wikilabs/info-tagmap/history&quot;,
+            &quot;text&quot;: &quot;V 0.1.2 - 2020.01.19\n\n* Update license link/text\n\nV 0.1.1 - 2016\n\n* initial release\n&quot;
+        },
         &quot;$:/plugins/wikilabs/info-tagmap/license&quot;: {
             &quot;title&quot;: &quot;$:/plugins/wikilabs/info-tagmap/license&quot;,
-            &quot;text&quot;: &quot;Info-Tag-Map (c) Mario Pietsch - 2016-2019\n\nhttps://opensource.org/licenses/BSD-3-Clause&quot;
+            &quot;text&quot;: &quot;[[Info-Tag-Map|https://wikilabs.github.io/#info-tagmap]] (c) Mario Pietsch - 2016-2020\n\nhttps://opensource.org/licenses/BSD-3-Clause\n&quot;
         },
         &quot;$:/plugins/wikilabs/info-tagmap/readme&quot;: {
             &quot;title&quot;: &quot;$:/plugins/wikilabs/info-tagmap/readme&quot;,
@@ -10375,7 +10379,7 @@ $tw.Wiki = function(options) {
 				var index = tiddlerTitles.indexOf(title);
 				if(index !== -1) {
 					tiddlerTitles.splice(index,1);
-				}
+				}				
 			}
 			this.clearCache(title);
 			this.clearGlobalCache();

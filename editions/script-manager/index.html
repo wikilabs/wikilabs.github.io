@@ -307,7 +307,7 @@ Error message and password prompt
 \end
 
 \define getInfo()
-&lt;$macrocall $name=&quot;toggleMe&quot; state=&lt;&lt;qualifyTitle &quot;$:/state/todo/&quot;&gt;&gt; /&gt;
+&lt;$macrocall $name=&quot;toggleMe&quot; state=&lt;&lt;qualifyTitle &quot;$:/state/todo/&quot;&gt;&gt; /&gt; 
 \end
 
 \define getScript(default:&quot;---&quot;)
@@ -348,7 +348,7 @@ Error message and password prompt
 \end
 
 &lt;$tiddler tiddler=&quot;$:/_new-todo&quot;&gt;
-&lt;$macrocall $name=&quot;new-todo&quot; /&gt;
+&lt;$macrocall $name=&quot;new-todo&quot; /&gt; 
 &lt;/$tiddler&gt;</pre>
 </div>
 <div created="20171024095946958" modified="20171215213449084" tags="" title="$:/_bundle/wikilabs/script-manager/info" type="application/json">
@@ -516,8 +516,8 @@ $:/temp/$(currentTiddler)$.list
 </div>
 <div caption="New Script" created="20171023101611736" description="This action creates a new script tiddler" modified="20171215213449069" tags="$:/tags/PageControls" title="$:/_bundle/wikilabs/script-manager/new-script-button" type="text/vnd.tiddlywiki">
 <pre>\define x()
-&lt;$action-sendmessage $message=&quot;tm-new-tiddler&quot;
-tags=&quot;script&quot;
+&lt;$action-sendmessage $message=&quot;tm-new-tiddler&quot; 
+tags=&quot;script&quot; 
 description=&quot;CHANGE-ME! - Description will be shown in the overview&quot;
 text=&quot;```
 your script comes here
@@ -647,7 +647,7 @@ your script comes here
 <div caption="ToDo-Done" created="20170921153626387" list="" modified="20171215213449173" tags="$:/_bundle/wikilabs/script-manager/tags/scriptFooter" title="$:/_bundle/wikilabs/script-manager/scriptFooter/done" type="text/vnd.tiddlywiki">
 <pre>!!! Awesome! - They are done
 
-&lt;$macrocall $name=&quot;todo-overview-done&quot; script=&lt;&lt;currentTiddler&gt;&gt; /&gt;
+&lt;$macrocall $name=&quot;todo-overview-done&quot; script=&lt;&lt;currentTiddler&gt;&gt; /&gt; 
 </pre>
 </div>
 <div caption="LInks" created="20170922120535923" list="" modified="20171215213449169" tags="$:/_bundle/wikilabs/script-manager/tags/scriptFooter" title="$:/_bundle/wikilabs/script-manager/scriptFooter/links" type="text/vnd.tiddlywiki">
@@ -664,7 +664,7 @@ your script comes here
 
 !!! All ~ToDo's for this script
 
-&lt;$macrocall $name=&quot;todo-overview&quot;  script=&lt;&lt;currentTiddler&gt;&gt; /&gt;
+&lt;$macrocall $name=&quot;todo-overview&quot;  script=&lt;&lt;currentTiddler&gt;&gt; /&gt; 
 
 &lt;span class=&quot;wltc-btn-big-green tc-btn-big-green&quot;&gt;
 &lt;$macrocall $name=&quot;toggleMe&quot; openActions=&lt;&lt;toggleMeOpenActions&gt;&gt; closeActions=&lt;&lt;toggleMeCloseActions&gt;&gt; state=&quot;$:/state/newTodo&quot; openText=&quot;New Todo&quot;/&gt;
@@ -706,7 +706,7 @@ your script comes here
     display: grid;
     grid-auto-rows: minmax(auto, auto);
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 5em 5em 5em;
-    grid-template-areas:
+    grid-template-areas: 
       &quot;titleH titleH titleH scriptH scriptH infoH clearH actionH &quot;
       &quot;title title title script script info  clear action &quot;
       &quot;in    in    in    in     in     in    .     . &quot;;
@@ -928,7 +928,7 @@ $okIcon$ $okText$
 |&lt;$link to=&quot;$:/_bundle/wikilabs/script-manager/style/pre/max-height&quot;&gt; pre max-height&lt;/$link&gt; |&lt;$edit-text tiddler=&quot;$:/_bundle/wikilabs/script-manager/style/pre/max-height&quot; default=&quot;&quot; tag=&quot;input&quot;/&gt; |eg: 10em|
 
 !! Tiddler Toolbar
-&lt;$checkbox tiddler=&quot;$:/config/ViewToolbarButtons/Visibility/$:/core/ui/Buttons/fold&quot; field=&quot;text&quot; checked=&quot;show&quot; unchecked=&quot;hide&quot; default=&quot;show&quot;/&gt; - Optional tiddler toolbar button to fold and unfold tiddlers.
+&lt;$checkbox tiddler=&quot;$:/config/ViewToolbarButtons/Visibility/$:/core/ui/Buttons/fold&quot; field=&quot;text&quot; checked=&quot;show&quot; unchecked=&quot;hide&quot; default=&quot;show&quot;/&gt; - Optional tiddler toolbar button to fold and unfold tiddlers. 
 
 !! Tiddler Body
 
@@ -10143,7 +10143,7 @@ your script comes here
 
 !!! Done
 
-&lt;$macrocall $name=&quot;toggleMe&quot; state=&lt;&lt;qualifyTitle &quot;$:/state/showDone/&quot;&gt;&gt; /&gt;
+&lt;$macrocall $name=&quot;toggleMe&quot; state=&lt;&lt;qualifyTitle &quot;$:/state/showDone/&quot;&gt;&gt; /&gt; 
 
 &lt;$reveal state=&lt;&lt;qualifyTitle &quot;$:/state/showDone/&quot;&gt;&gt; type=&quot;match&quot; text=&quot;open&quot;&gt;
 &lt;&lt;checklist-done&gt;&gt;
@@ -10154,7 +10154,7 @@ your script comes here
 <pre>$:/plugins/wikilabs/remove-states
 $:/plugins/wikilabs/link-to-tabs
 $:/plugins/wikilabs/bundler
-$:/plugins/wikilabs/advanced-search-plus
+$:/plugins/wikilabs/advanced-search-plus 
 script-manager-dev.bundle
 script-manager.bundle</pre>
 </div>
@@ -11315,7 +11315,7 @@ $tw.Wiki = function(options) {
 				var index = tiddlerTitles.indexOf(title);
 				if(index !== -1) {
 					tiddlerTitles.splice(index,1);
-				}
+				}				
 			}
 			this.clearCache(title);
 			this.clearGlobalCache();
