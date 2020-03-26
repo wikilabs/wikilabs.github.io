@@ -143,6 +143,8 @@ Error message and password prompt
 
 <li>&lt;&lt;listAliases&gt;&gt; - macro</li>
 
+<li>$:/config/RelinkOnRename</li>
+
 <li>$:/config/TiddlerInfo/Mode</li>
 
 <li>$:/config/ViewToolbarButtons/Visibility/$:/core/ui/Buttons/fold</li>
@@ -222,6 +224,9 @@ Error message and password prompt
 
 &lt;&lt;listAliases&gt;&gt;
 </pre>
+</div>
+<div created="20200318133748889" modified="20200318133750010" title="$:/config/RelinkOnRename" type="text/vnd.tiddlywiki">
+<pre>yes</pre>
 </div>
 <div created="20181219134924441" modified="20181219134925492" title="$:/config/TiddlerInfo/Mode" type="text/vnd.tiddlywiki">
 <pre>sticky</pre>
@@ -9543,7 +9548,7 @@ very-muted-foreground: #888888</pre>
 
 {{||$:/plugins/wikilabs/field-search/ui/SearchResultTemplate}}</pre>
 </div>
-<div author="Mario Pietsch" core-version="&gt;=5.1.0" dependents="" description="uni-link: Enhances the prettylink-parser" list="license readme history" name="uni-link" plugin-type="plugin" title="$:/plugins/wikilabs/uni-link" type="application/json" version="1.1.2">
+<div author="Mario Pietsch" core-version="&gt;=5.1.0" dependents="" description="uni-link: Enhances the prettylink-parser" list="license readme history" name="uni-link" plugin-type="plugin" title="$:/plugins/wikilabs/uni-link" type="application/json" version="1.2.0">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/plugins/wikilabs/uni-link/aka-footer/template&quot;: {
@@ -9590,7 +9595,7 @@ very-muted-foreground: #888888</pre>
         },
         &quot;$:/plugins/wikilabs/uni-link/history&quot;: {
             &quot;title&quot;: &quot;$:/plugins/wikilabs/uni-link/history&quot;,
-            &quot;text&quot;: &quot;V 1.1.2 - 2020.03.16\n\n* Fix issue #44 problem with backlink cases sensitivity\n\nV 1.1.1 - 2020.01.19\n\n* Update license link/text\n\nV 1.1.0 - 2019.08.13\n\n* Fixed problem introduced with TW V 5.1.20 link-widget core changes\n\nV 1.0.0 - 2019.02.09\n\n* Add `[[alias|?t]]`, `[[alias|?c]]` and `[[alias|?s]]`, that show the tiddler ''title'', ''caption'' and ''subtitle'' field as the link text\n* Add `[[alias|?my-field]]` shows the content of the field named: `my-filed` as the link text\n* Add a new editor toolbar button, which opens an alias search menue. \n** Default keyboard shortcut is to Ctrl-Space\n\n``Incompatible changes``\n\n* There is a new $:/ControlPanel setting, that defines the default behaviour of the uni-link macro ''globally''. \n* uni-link now only shows the tiddler title, ''or'' the caption ''or'' the subtitle field. \n* If you need different behaviour, you'll need to use the alias mechanism!\n\nV 0.3.4 - 2018.09.09\n\n* Add \&quot;aliasify\&quot; button to tiddler editor toolbar\n* Add ctrl-k to activate \&quot;aliasify\&quot;\n\nV 0.3.3 - 2018.08.06\n\n* fix [[issue 19|https://github.com/wikilabs/plugins/issues/19]] Alias References behaviour\n\nV 0.3.2 - 2018.02.02\n\n* new Undefined Aliases Sidebar tab under More: Aliases\n* `[[?]aliasbacklinks[]sort[title]]` shows a list of tiddlers that contain undefined alias links\n\nV 0.3.1 - 2018.01.31\n\n* fixed: [[CamelCase]] or [[$:/system]] tiddler \&quot;double linking\&quot;\n* [[NaturaL sElEcTiOn|?]] .. is a valid alias now. Same problem as above!\n\nV 0.3.0 - 2018.01.27\n\n* add: styling possibility for missing aliases\n* improve: history and copyright\n\nV 0.2.1 - 2018.01.27\n\n* fix: uni-link creates an unused a-element\n\nV 0.2.0 - 2017.12.15\n\n* added: [[alias|?]] link syntax\n** using aka-makros for tiddler alias handling\n\n* added: Alias backlinks\n** open the tiddler (i)nfo area: References\n\n* added filter operators:\n** is[alias] ... extends the core is operator see: https://tiddlywiki.com/#is Operator\n** all[aliases] ... extends the core all operator see: https://tiddlywiki.com/#all Operator\n\n* added: Right-Sidebar: More tab: \&quot;Aliases\&quot;\n** Sorted by Alias\n** Sorted by Tiddler Title\n\n* added: uni-link $:/ControlPanel setting\n* added: different colors for title, caption, subtitle and alias links\n\nV0.1.0 - 2017.07.25\n\n* fix \&quot;backlink\&quot; and \&quot;missing\&quot; issue\n\nV0.0.1 - 2017.07.23\n\n* initial release\n\nalso see: https://wikilabs.github.io/editions/uni-link/#History\n&quot;
+            &quot;text&quot;: &quot;V 1.2.0 - 2020.03.26\n\n* Make uni-link plugin compatible with relink-plugin from flibbles\n** see: https://github.com/flibbles/tw5-relink\n\nV 1.1.2 - 2020.03.16\n\n* Fix issue #44 problem with backlink cases sensitivity\n\nV 1.1.1 - 2020.01.19\n\n* Update license link/text\n\nV 1.1.0 - 2019.08.13\n\n* Fixed problem introduced with TW V 5.1.20 link-widget core changes\n\nV 1.0.0 - 2019.02.09\n\n* Add `[[alias|?t]]`, `[[alias|?c]]` and `[[alias|?s]]`, that show the tiddler ''title'', ''caption'' and ''subtitle'' field as the link text\n* Add `[[alias|?my-field]]` shows the content of the field named: `my-filed` as the link text\n* Add a new editor toolbar button, which opens an alias search menue. \n** Default keyboard shortcut is to Ctrl-Space\n\n``Incompatible changes``\n\n* There is a new $:/ControlPanel setting, that defines the default behaviour of the uni-link macro ''globally''. \n* uni-link now only shows the tiddler title, ''or'' the caption ''or'' the subtitle field. \n* If you need different behaviour, you'll need to use the alias mechanism!\n\nV 0.3.4 - 2018.09.09\n\n* Add \&quot;aliasify\&quot; button to tiddler editor toolbar\n* Add ctrl-k to activate \&quot;aliasify\&quot;\n\nV 0.3.3 - 2018.08.06\n\n* fix [[issue 19|https://github.com/wikilabs/plugins/issues/19]] Alias References behaviour\n\nV 0.3.2 - 2018.02.02\n\n* new Undefined Aliases Sidebar tab under More: Aliases\n* `[[?]aliasbacklinks[]sort[title]]` shows a list of tiddlers that contain undefined alias links\n\nV 0.3.1 - 2018.01.31\n\n* fixed: [[CamelCase]] or [[$:/system]] tiddler \&quot;double linking\&quot;\n* [[NaturaL sElEcTiOn|?]] .. is a valid alias now. Same problem as above!\n\nV 0.3.0 - 2018.01.27\n\n* add: styling possibility for missing aliases\n* improve: history and copyright\n\nV 0.2.1 - 2018.01.27\n\n* fix: uni-link creates an unused a-element\n\nV 0.2.0 - 2017.12.15\n\n* added: [[alias|?]] link syntax\n** using aka-makros for tiddler alias handling\n\n* added: Alias backlinks\n** open the tiddler (i)nfo area: References\n\n* added filter operators:\n** is[alias] ... extends the core is operator see: https://tiddlywiki.com/#is Operator\n** all[aliases] ... extends the core all operator see: https://tiddlywiki.com/#all Operator\n\n* added: Right-Sidebar: More tab: \&quot;Aliases\&quot;\n** Sorted by Alias\n** Sorted by Tiddler Title\n\n* added: uni-link $:/ControlPanel setting\n* added: different colors for title, caption, subtitle and alias links\n\nV0.1.0 - 2017.07.25\n\n* fix \&quot;backlink\&quot; and \&quot;missing\&quot; issue\n\nV0.0.1 - 2017.07.23\n\n* initial release\n\nalso see: https://wikilabs.github.io/editions/uni-link/#History\n&quot;
         },
         &quot;$:/plugins/wikilabs/uni-link/license&quot;: {
             &quot;title&quot;: &quot;$:/plugins/wikilabs/uni-link/license&quot;,
@@ -9624,6 +9629,12 @@ very-muted-foreground: #888888</pre>
             &quot;text&quot;: &quot;/*\\\ntitle: $:/plugins/wikilabs/uni-link/make-alias-link.js\ntype: application/javascript\nmodule-type: texteditoroperation\n\nText editor operation to make an alias-link\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\nexports[\&quot;make-alias-link\&quot;] = function(event,operation) {\n\tif(operation.selection) {\n\t\toperation.replacement = \&quot;[[\&quot; + operation.selection + \&quot;|?\&quot; + event.paramObject.text + \&quot;]] \&quot;;\n\t\toperation.cutStart = operation.selStart;\n\t\toperation.cutEnd = operation.selEnd;\n\t} else {\n\t\toperation.replacement = \&quot;[[\&quot; + event.paramObject.text + \&quot;|?]] \&quot;;\n\t\toperation.cutStart = operation.selStart;\n\t\toperation.cutEnd = operation.selEnd;\n\t}\n\toperation.newSelStart = operation.selStart + operation.replacement.length;\n\toperation.newSelEnd = operation.newSelStart;\n};\n\n})();\n&quot;,
             &quot;type&quot;: &quot;application/javascript&quot;,
             &quot;module-type&quot;: &quot;texteditoroperation&quot;
+        },
+        &quot;$:/plugins/wikilabs/uni-link/relinkoperations/text/wikitext/unilink.js&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/wikilabs/uni-link/relinkoperations/text/wikitext/unilink.js&quot;,
+            &quot;text&quot;: &quot;/*\\\r\ntitle: $:/plugins/wikilabs/uni-link/relinkoperations/text/wikitext/unilink.js\r\ntype: application/javascript\r\nmodule-type: relinkwikitextrule\r\n\r\nHandles replacement in wiki text inline rules, like,\r\n\r\n[[Introduction]]\r\n\r\n[[link description|TiddlerTitle]]\r\n\r\n\\*/\r\n\r\n// var prettylink = require('$:/plugins/flibbles/relink/js/relinkoperations/text/wikitext/prettylink.js');\r\n\r\nexports.name = \&quot;unilink\&quot;;\r\nexports.relink = require('$:/plugins/flibbles/relink/js/relinkoperations/text/wikitext/prettylink.js').relink;\r\n&quot;,
+            &quot;type&quot;: &quot;application/javascript&quot;,
+            &quot;module-type&quot;: &quot;relinkwikitextrule&quot;
         },
         &quot;$:/plugins/wikilabs/uni-link/uni-fields.js&quot;: {
             &quot;title&quot;: &quot;$:/plugins/wikilabs/uni-link/uni-fields.js&quot;,
