@@ -1,0 +1,20 @@
+created: 20200611163410374
+modified: 20200611172311268
+tags: 
+title: Details
+type: text/vnd.tiddlywiki
+
+The ''~WikiLabs Pluginlibrary Configuration'' tiddlers can be found at: GettingStarted
+
+! Editions
+
+<<list-links "[tag[edition]]">>
+
+! Themes
+
+<<list-links "[tag[theme]]">>
+
+! Plugins
+
+<<list-links "[tag[plugin]]">>
+
