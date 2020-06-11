@@ -155,23 +155,9 @@ Error message and password prompt
 
 <li>$:/plugins/wikilabs/new-tiddler-from-search</li>
 
-<li>$:/plugins/wikilabs/persistent-states</li>
-
 <li>$:/SiteSubtitle</li>
 
 <li>$:/SiteTitle</li>
-
-<li>$:/state/infotab/New Tiddler</li>
-
-<li>$:/state/plugin-info--1124947659-$:/themes/wikilabs/slant-01</li>
-
-<li>$:/state/tab--1498284803</li>
-
-<li>$:/state/tab-1065816707</li>
-
-<li>$:/state/tab-1749438307</li>
-
-<li>$:/state/tab/sidebar--595412856</li>
 
 <li>$:/status/RequireReloadDueToPluginChange</li>
 
@@ -9728,65 +9714,11 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div author="Mario Pietsch" core-version="&gt;=5.1.0" dependents="" description="Makes all state tiddlers persistent" list="license readme history" name="Persistent-States" plugin-type="plugin" title="$:/plugins/wikilabs/persistent-states" type="application/json" version="0.1.1">
-<pre>{
-    &quot;tiddlers&quot;: {
-        &quot;$:/config/SaverFilter&quot;: {
-            &quot;title&quot;: &quot;$:/config/SaverFilter&quot;,
-            &quot;created&quot;: &quot;20160902131547270&quot;,
-            &quot;modified&quot;: &quot;20160902131552116&quot;,
-            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
-            &quot;text&quot;: &quot;[all[]] -[[$:/HistoryList]] -[[$:/StoryList]] -[[$:/Import]] -[[$:/isEncrypted]] -[[$:/UploadName]] -[prefix[$:/temp/]]&quot;
-        },
-        &quot;$:/config/SyncFilter&quot;: {
-            &quot;title&quot;: &quot;$:/config/SyncFilter&quot;,
-            &quot;created&quot;: &quot;20160902131452473&quot;,
-            &quot;modified&quot;: &quot;20160902131509079&quot;,
-            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
-            &quot;text&quot;: &quot;[is[tiddler]] -[[$:/HistoryList]] -[[$:/Import]] -[[$:/isEncrypted]] -[prefix[$:/status/]] -[prefix[$:/temp/]] -[[$:/StoryList]]&quot;
-        },
-        &quot;$:/plugins/wikilabs/ui/persistent-states&quot;: {
-            &quot;title&quot;: &quot;$:/plugins/wikilabs/ui/persistent-states&quot;,
-            &quot;text&quot;: &quot;\\define theFilter()\n[prefix[$:/state/]]\n\\end\n\n&lt;$button&gt;\n&lt;$action-deletetiddler $filter=&lt;&lt;theFilter&gt;&gt; /&gt;\nDelete all: ''~$:/state/'' tiddlers\n&lt;/$button&gt;\n\n&lt;$list filter=&lt;&lt;theFilter&gt;&gt; &gt;\n&lt;$button&gt;\n&lt;$action-deletetiddler $tiddler=&lt;&lt;currentTiddler&gt;&gt;/&gt;\nx\n&lt;/$button&gt; - &lt;$text text=&lt;&lt;currentTiddler&gt;&gt; /&gt;&lt;br&gt;\n&lt;/$list&gt;&quot;
-        },
-        &quot;$:/plugins/wikilabs/persistent-states/history&quot;: {
-            &quot;title&quot;: &quot;$:/plugins/wikilabs/persistent-states/history&quot;,
-            &quot;text&quot;: &quot;V 0.1.1 - 2020.01.19\n\n* Update license link/text\n\nV 0.1.0 - 2016\n\n* initial release\n&quot;
-        },
-        &quot;$:/plugins/wikilabs/persistent-states/license&quot;: {
-            &quot;title&quot;: &quot;$:/plugins/wikilabs/persistent-states/license&quot;,
-            &quot;text&quot;: &quot;[[Persistent-States-Plugin|https://wikilabs.github.io/#persistent-states]] (c) Mario Pietsch - 2016-2020\n\nhttps://opensource.org/licenses/BSD-3-Clause\n&quot;
-        },
-        &quot;$:/plugins/wikilabs/persistent-states/readme&quot;: {
-            &quot;title&quot;: &quot;$:/plugins/wikilabs/persistent-states/readme&quot;,
-            &quot;text&quot;: &quot;! Important\n\nWORK IN PROGRESS -&gt; DOESN'T WORK ATM !!!!!\n\n! Overview\n\nThis plugin saves all $:/state/ tiddlers and creates a simple UI, to remove them manually.\n\n! Simple UI\n\n[[$:/plugins/wikilabs/ui/persistent-states]]\n\n{{$:/plugins/wikilabs/ui/persistent-states}}\n&quot;
-        }
-    }
-}</pre>
-</div>
 <div created="20170206143435538" modified="20170206143511914" title="$:/SiteSubtitle" type="text/vnd.tiddlywiki">
 <pre>an opinionated theme by pmario</pre>
 </div>
 <div created="20170206143336143" modified="20170206143340341" title="$:/SiteTitle" type="text/vnd.tiddlywiki">
 <pre>theme: slant-01</pre>
-</div>
-<div created="20200611171013156" modified="20200611171013242" title="$:/state/infotab/New Tiddler" type="text/vnd.tiddlywiki">
-<pre>$:/wikilabs/ui/TiddlerInfo/TagMap</pre>
-</div>
-<div created="20170203215408117" modified="20170203215409193" title="$:/state/plugin-info--1124947659-$:/themes/wikilabs/slant-01" type="text/vnd.tiddlywiki">
-<pre>yes</pre>
-</div>
-<div created="20200611164645897" modified="20200611164645971" title="$:/state/tab--1498284803" type="text/vnd.tiddlywiki">
-<pre>$:/core/ui/AdvancedSearch/Filter</pre>
-</div>
-<div created="20170203215405529" modified="20170209160943690" title="$:/state/tab-1065816707" type="text/vnd.tiddlywiki">
-<pre>$:/core/ui/ControlPanel/Plugins/Installed/Plugins</pre>
-</div>
-<div created="20170209162618584" modified="20200611164642718" title="$:/state/tab-1749438307" type="text/vnd.tiddlywiki">
-<pre>$:/core/ui/ControlPanel/Info</pre>
-</div>
-<div created="20200611164634068" modified="20200611170741048" title="$:/state/tab/sidebar--595412856" type="text/vnd.tiddlywiki">
-<pre>$:/core/ui/SideBar/Recent</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
@@ -9807,7 +9739,7 @@ Error message and password prompt
         },
         &quot;$:/info/startup-timestamp&quot;: {
             &quot;title&quot;: &quot;$:/info/startup-timestamp&quot;,
-            &quot;text&quot;: &quot;20200611172706630&quot;
+            &quot;text&quot;: &quot;20200611175423569&quot;
         }
     }
 }</pre>
@@ -9924,7 +9856,7 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div author="Mario Pietsch" core-version="&gt;=5.1.10" dependents="$:/themes/tiddlywiki/snowwhite $:/plugins/wikilabs/persistent-states $:/plugins/wikilabs/info-session $:/plugins/wikilabs/info-tagmap $:/plugins/wikilabs/multicol-dropdown" description="slant-01 - an opinionated theme" list="license readme history" name="Slant 01" plugin-type="theme" title="$:/themes/wikilabs/slant-01" type="application/json" version="0.3.0">
+<div author="Mario Pietsch" core-version="&gt;=5.1.10" dependents="$:/themes/tiddlywiki/snowwhite $:/plugins/wikilabs/info-session $:/plugins/wikilabs/info-tagmap $:/plugins/wikilabs/multicol-dropdown" description="slant-01 - an opinionated theme" list="license readme history" name="Slant 01" plugin-type="theme" title="$:/themes/wikilabs/slant-01" type="application/json" version="0.3.0">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/config/ViewToolbarButtons/Visibility/$:/core/ui/Buttons/info&quot;: {
