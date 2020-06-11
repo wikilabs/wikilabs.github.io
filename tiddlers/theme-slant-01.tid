@@ -2,9 +2,17 @@ caption: slant-01
 created: 20170203113430786
 demo-url: https://wikilabs.github.io/editions/slant-01
 git-repo: https://github.com/wikilabs/themes/tree/master/wikilabs/slant-01
-modified: 20180328090326209
+modified: 20200611163108849
 tags: theme
 title: theme-slant-01
 type: text/vnd.tiddlywiki
+
+Slant is a theme, that also includes several plugins. So if you want to use the theme, you should import it, using the ~TiddlyWiki plugin-library import mechanism. 
+
+''Drag the following link into your wiki, to import the configuration tiddler!''
+
+<span class="tc-btn-big-green">
+[[WikiLabs Plugin Configuration|$:/config/wikilabs/PluginLibraryWL/latest]]
+</span>
 
 {{||$:/wikilabs/template/theme}}
