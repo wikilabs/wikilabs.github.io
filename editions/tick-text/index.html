@@ -153,6 +153,8 @@ Error message and password prompt
 
 <li>$:/isEncrypted</li>
 
+<li>$:/plugins/tiddlywiki/internals</li>
+
 <li>$:/plugins/wikilabs/tick-text</li>
 
 <li>$:/search-sys/inp/plug</li>
@@ -175,6 +177,8 @@ Error message and password prompt
 
 <li>column-styles</li>
 
+<li>details-css</li>
+
 <li>EXPERIMENTAL</li>
 
 <li>GettingStarted</li>
@@ -183,15 +187,25 @@ Error message and password prompt
 
 <li>lorem-ipsum-200</li>
 
-<li>nl-is-hard-linebreak</li>
+<li>New Tiddler 1</li>
+
+<li>nl-is-hard-linebreak-css</li>
+
+<li>planned</li>
 
 <li>test</li>
 
 <li>test-angel-brackets</li>
 
+<li>test-details</li>
+
+<li>test-endString</li>
+
 <li>test-hard-linebreak-and-transclusion</li>
 
 <li>test-kitchen</li>
+
+<li>test-tic-hr-mode</li>
 
 </ul>
 </p>
@@ -207,7 +221,7 @@ Error message and password prompt
 <!--~~ Ordinary tiddlers ~~-->
 
 <div id="storeArea" style="display:none;">
-<div created="20200827100914489" modified="20200830145255596" tags="$:/tags/Stylesheet" title=":/plugins/wikilabs/tick-text/styles" type="text/css">
+<div created="20200827100914489" modified="20200902112831203" tags="$:/tags/Stylesheet" title=":/plugins/wikilabs/tick-text/styles" type="text/css">
 <pre>/* WikiLabs tiddler classes defined by js code */
 .wltc {
   margin-top: 1em;
@@ -259,6 +273,10 @@ ul .star{
   margin-bottom: -.5em;
 }
 
+.-mth {
+  margin-bottom: -.5em;
+}
+
 /* Undo some default definitions to get more variations */
 
 .-m {
@@ -272,7 +290,11 @@ ul .star{
 .-mb {
   margin-bottom: initial;
 }
-</pre>
+
+
+.c h1, .c h2, .c h3, .c h4, .c h5, .c h6  {
+  margin-top: initial;
+}</pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="TiddlyWiki5 core" list="readme" name="Core" plugin-priority="0" plugin-type="plugin" title="$:/core" type="application/json" version="5.1.22">
 <pre>{
@@ -9671,6 +9693,46 @@ ul .star{
 <div title="$:/isEncrypted">
 <pre>no</pre>
 </div>
+<div dependents="" description="Tools for exploring the internals of TiddlyWiki" list="readme" name="Internals" plugin-type="plugin" title="$:/plugins/tiddlywiki/internals" type="application/json" version="5.1.22">
+<pre>{
+    &quot;tiddlers&quot;: {
+        &quot;$:/plugins/tiddlywiki/internals/EditTemplate/body/preview/parse-tree&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/internals/EditTemplate/body/preview/parse-tree&quot;,
+            &quot;tags&quot;: &quot;$:/tags/EditPreview&quot;,
+            &quot;list-after&quot;: &quot;$:/core/ui/EditTemplate/body/preview/output&quot;,
+            &quot;caption&quot;: &quot;parse tree&quot;,
+            &quot;text&quot;: &quot;\\define preview(mode)\n&lt;$wikify name=\&quot;preview-text\&quot; text={{!!text}} type={{!!type}} mode=\&quot;$mode$\&quot; output=\&quot;parsetree\&quot;&gt;\n&lt;pre&gt;\n&lt;code&gt;\n&lt;$text text=&lt;&lt;preview-text&gt;&gt;/&gt;\n&lt;/code&gt;\n&lt;/pre&gt;\n&lt;/$wikify&gt;\n\\end\n\n{{||$:/plugins/tiddlywiki/internals/EditTemplate/body/preview/shared}}\n&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/internals/EditTemplate/body/preview/raw&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/internals/EditTemplate/body/preview/raw&quot;,
+            &quot;tags&quot;: &quot;$:/tags/EditPreview&quot;,
+            &quot;caption&quot;: &quot;raw HTML&quot;,
+            &quot;list-after&quot;: &quot;$:/plugins/tiddlywiki/internals/EditTemplate/body/preview/widget-tree&quot;,
+            &quot;text&quot;: &quot;&lt;pre&gt;&lt;code&gt;&lt;$view field=\&quot;text\&quot; format=\&quot;htmlwikified\&quot; /&gt;&lt;/code&gt;&lt;/pre&gt;\n&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/internals/EditTemplate/body/preview/shared&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/internals/EditTemplate/body/preview/shared&quot;,
+            &quot;text&quot;: &quot;\\define body()\n\nMode: &lt;$select tiddler=\&quot;$(tv-mode-configuration)$\&quot; default=\&quot;block\&quot;&gt;\n&lt;option value=\&quot;inline\&quot;&gt;Inline&lt;/option&gt;\n&lt;option value=\&quot;block\&quot;&gt;Block&lt;/option&gt;\n&lt;/$select&gt;\n\n&lt;$macrocall $name=\&quot;preview\&quot; mode={{$(tv-mode-configuration)$}}/&gt;\n\\end\n\n&lt;div class=\&quot;tc-internal-tree-preview-wrapper\&quot;&gt;\n\n&lt;div class=\&quot;tc-internal-tree-preview\&quot;&gt;\n\n&lt;$vars tv-mode-configuration=&lt;&lt;qualify \&quot;$:/state/internals/preview/mode\&quot;&gt;&gt;&gt;\n\n&lt;&lt;body&gt;&gt;\n\n&lt;/$vars&gt;\n\n&lt;/div&gt;\n\n&lt;/div&gt;\n&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/internals/EditTemplate/body/preview/widget-tree&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/internals/EditTemplate/body/preview/widget-tree&quot;,
+            &quot;tags&quot;: &quot;$:/tags/EditPreview&quot;,
+            &quot;caption&quot;: &quot;widget tree&quot;,
+            &quot;list-after&quot;: &quot;$:/plugins/tiddlywiki/internals/EditTemplate/body/preview/parse-tree&quot;,
+            &quot;text&quot;: &quot;\\define preview(mode)\n&lt;$wikify name=\&quot;preview-text\&quot; text={{!!text}} type={{!!type}} mode=\&quot;$mode$\&quot; output=\&quot;widgettree\&quot;&gt;\n&lt;pre&gt;\n&lt;code&gt;\n&lt;$text text=&lt;&lt;preview-text&gt;&gt;/&gt;\n&lt;/code&gt;\n&lt;/pre&gt;\n&lt;/$wikify&gt;\n\\end\n\n{{||$:/plugins/tiddlywiki/internals/EditTemplate/body/preview/shared}}\n&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/internals/readme&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/internals/readme&quot;,
+            &quot;text&quot;: &quot;This plugin adds features to help explore the internals of TiddlyWiki:\n\n* New preview panes showing:\n** the parse tree\n** the widget tree\n** the raw HTML output\n\nThe first two include a dropdown for choosing block vs. inline parsing mode.\n&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/internals/styles&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/internals/styles&quot;,
+            &quot;tags&quot;: &quot;$:/tags/Stylesheet&quot;,
+            &quot;text&quot;: &quot;\\rules only filteredtranscludeinline transcludeinline macrodef macrocallinline macrocallblock\n&quot;
+        }
+    }
+}</pre>
+</div>
 <div dependents="" description="Adds a possibilty to style text content with wikitext syntax" list="readme license history" name="Tick Paragraph" plugin-type="plugin" title="$:/plugins/wikilabs/tick-text" type="application/json" version="5.1.22">
 <pre>{
     &quot;tiddlers&quot;: {
@@ -9822,7 +9884,7 @@ ul .star{
         },
         &quot;$:/plugins/wikilabs/tick-text/editor/operations/text/add-newline.js&quot;: {
             &quot;title&quot;: &quot;$:/plugins/wikilabs/tick-text/editor/operations/text/add-newline.js&quot;,
-            &quot;text&quot;: &quot;/*\\\r\ntitle: $:/plugins/wikilabs/tick-text/editor/operations/text/add-newline.js\r\ntype: application/javascript\r\nmodule-type: texteditoroperation\r\n\r\nText editor operation to add a prefix to the selected lines\r\n\r\n\\*/\r\n(function(){\r\n\r\n/*jslint node: true, browser: true */\r\n/*global $tw: false */\r\n\&quot;use strict\&quot;;\r\n\r\nexports[\&quot;add-newline\&quot;] = function(event,operation) {\r\n\tvar x = \&quot;\&quot;;\r\n\tvar targetCount = parseInt(event.paramObject.count + \&quot;\&quot;,10);\r\n\t// Cut just past the preceding line break, or the start of the text\r\n\toperation.cutStart = $tw.utils.findPrecedingLineBreak(operation.text,operation.selStart);\r\n\t// Cut to just past the following line break, or to the end of the text\r\n\toperation.cutEnd = $tw.utils.findFollowingLineBreak(operation.text,operation.selEnd);\r\n\t// Compose the required prefix\r\n\tvar prefix = $tw.utils.repeat(event.paramObject.character,targetCount);\r\n\t// Process each line\r\n\tvar lines = operation.text.substring(operation.cutStart,operation.cutEnd).split(/\\r?\\n/mg);\r\n\t$tw.utils.each(lines,function(line,index) {\r\n\t\t// Remove and count any existing prefix characters\r\n\t\tvar count = 0;\r\n//\t\twhile(line.charAt(0) === event.paramObject.character) {\r\n//\t\t\tline = line.substring(1);\r\n//\t\t\tcount++;\r\n//\t\t\tx += prefix;\r\n//\t\t}\r\n\t\t// Remove any whitespace\r\n\t\twhile(line.charAt(0) === \&quot; \&quot;) {\r\n\t\t\tline = line.substring(1);\r\n\t\t}\r\n\t\t// We're done if we removed the exact required prefix, otherwise add it\r\n\t\t// Apply the prefix\r\n\t\tline =  line + prefix;\r\n//\t\t}\r\n\t\t// Save the modified line\r\n\t\tlines[index] = line;\r\n\t});\r\n\t// Stitch the replacement text together and set the selection\r\n\toperation.replacement = lines.join(\&quot;\\n\&quot;);\r\n\tif(lines.length === 1) {\r\n\t\toperation.newSelStart = operation.cutStart + operation.replacement.length;\r\n\t\toperation.newSelEnd = operation.newSelStart;\r\n\t} else {\r\n\t\toperation.newSelStart = operation.cutStart;\r\n\t\toperation.newSelEnd = operation.newSelStart + operation.replacement.length;\r\n\t}\r\n};\r\n\r\n})();\r\n&quot;,
+            &quot;text&quot;: &quot;/*\\\ntitle: $:/plugins/wikilabs/tick-text/editor/operations/text/add-newline.js\ntype: application/javascript\nmodule-type: texteditoroperation\n\nText editor operation to add a prefix to the selected lines\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\nexports[\&quot;add-newline\&quot;] = function(event,operation) {\n\tvar x = \&quot;\&quot;;\n\tvar targetCount = parseInt(event.paramObject.count + \&quot;\&quot;,10);\n\t// Cut just past the preceding line break, or the start of the text\n\toperation.cutStart = $tw.utils.findPrecedingLineBreak(operation.text,operation.selStart);\n\t// Cut to just past the following line break, or to the end of the text\n\toperation.cutEnd = $tw.utils.findFollowingLineBreak(operation.text,operation.selEnd);\n\t// Compose the required prefix\n\tvar prefix = $tw.utils.repeat(event.paramObject.character,targetCount);\n\t// Process each line\n\tvar lines = operation.text.substring(operation.cutStart,operation.cutEnd).split(/\\r?\\n/mg);\n\t$tw.utils.each(lines,function(line,index) {\n\t\t// Remove and count any existing prefix characters\n\t\tvar count = 0;\n//\t\twhile(line.charAt(0) === event.paramObject.character) {\n//\t\t\tline = line.substring(1);\n//\t\t\tcount++;\n//\t\t\tx += prefix;\n//\t\t}\n\t\t// Remove any whitespace\n\t\twhile(line.charAt(0) === \&quot; \&quot;) {\n\t\t\tline = line.substring(1);\n\t\t}\n\t\t// We're done if we removed the exact required prefix, otherwise add it\n\t\t// Apply the prefix\n\t\tline =  line + prefix;\n//\t\t}\n\t\t// Save the modified line\n\t\tlines[index] = line;\n\t});\n\t// Stitch the replacement text together and set the selection\n\toperation.replacement = lines.join(\&quot;\\n\&quot;);\n\tif(lines.length === 1) {\n\t\toperation.newSelStart = operation.cutStart + operation.replacement.length;\n\t\toperation.newSelEnd = operation.newSelStart;\n\t} else {\n\t\toperation.newSelStart = operation.cutStart;\n\t\toperation.newSelEnd = operation.newSelStart + operation.replacement.length;\n\t}\n};\n\n})();\n&quot;,
             &quot;type&quot;: &quot;application/javascript&quot;,
             &quot;module-type&quot;: &quot;texteditoroperation&quot;
         },
@@ -9842,15 +9904,21 @@ ul .star{
             &quot;title&quot;: &quot;$:/plugins/wikilabs/tick-text/readme&quot;,
             &quot;text&quot;: &quot;Adds a possibilty to style text content with wikitext syntax\n\nIt's possible to manipulate the rules behaviour with: \n\n`\\rules only ticktext`\n`\\rules excpet ticktext`\n&quot;
         },
-        &quot;$:/plugins/wikilabs/tick-text/angel-paragraph.js&quot;: {
-            &quot;title&quot;: &quot;$:/plugins/wikilabs/tick-text/angel-paragraph.js&quot;,
-            &quot;text&quot;: &quot;/*\\\r\ntitle: $:/plugins/wikilabs/tick-text/angel-paragraph.js\r\ntype: application/javascript\r\nmodule-type: wikirule\r\n\r\nWiki text block rule for ticktexts\r\n\r\n\\*/\r\n(function(){\r\n\r\n/*jslint node: true, browser: true */\r\n/*global exports: false */\r\n\&quot;use strict\&quot;;\r\n\r\nvar CLASS_GROUP = \&quot;wltc\&quot;;\r\nvar CLASS_PREFIX = CLASS_GROUP + \&quot;-l\&quot;; // l .. level\r\n\r\nexports.name = \&quot;angelparagraph\&quot;;\r\nexports.types = {block: true};\r\n\r\nexports.init = function(parser) {\r\n\tthis.parser = parser;\r\n\t// Regexp to match\r\n//\tthis.matchRegExp = /(\\´{1,3})/mg; //a  OK\r\n//\tthis.matchRegExp = /(\\.{1,3})/mg; //b  CSS interference\r\n//\tthis.matchRegExp = /(\\. )/mg;     //y  OK see: dot-space!\r\n//\tthis.matchRegExp = /(\\´)(\\t{1,2})?/mg; //x  OK\r\n\tthis.matchRegExp = /(»)(»{1,3})?/mg; //x  OK\r\n//\tthis.matchRegExp = /(\\. )|(\\.{2,4} )/mg; //y  OK\r\n};\r\n\r\n/*\r\nParse the most recent match\r\n*/\r\nexports.parse = function() {\r\n\t// Get all the details of the match\r\n//\tvar level = this.match[1].length; //abc\r\n\tvar level = (this.match[2]) ? this.match[2].length + 1 : 1; //x\r\n//\tvar level = (this.match[2]) ? this.match[2].length - 1 : 1; //y\r\n\t// Move past the !s\r\n\tthis.parser.pos = this.matchRegExp.lastIndex;\r\n\t// Parse any classes, whitespace and then the heading itself\r\n\tvar classes = this.parser.parseClasses();\r\n\tclasses.push(CLASS_PREFIX + level + \&quot; \&quot; + CLASS_GROUP);\r\n\tthis.parser.skipWhitespace({treatNewlinesAsNonWhitespace: true});\r\n\tvar tree = this.parser.parseInlineRun(/(\\r?\\n\\r?\\n)/mg);\r\n\t// Return the paragraph\r\n\treturn [{\r\n\t\ttype: \&quot;element\&quot;,\r\n\t\ttag: \&quot;p\&quot;,\r\n\t\tattributes: {\r\n\t\t\t\&quot;class\&quot;: {type: \&quot;string\&quot;, value: classes.join(\&quot; \&quot;)}\r\n\t\t},\r\n\t\tchildren: tree\r\n\t}];\r\n};\r\n})();\r\n&quot;,
+        &quot;$:/plugins/wikilabs/tick-text/wikirules/angel-paragraph.js&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/wikilabs/tick-text/wikirules/angel-paragraph.js&quot;,
+            &quot;text&quot;: &quot;/*\\\ntitle: $:/plugins/wikilabs/tick-text/wikirules/angel-paragraph.js\ntype: application/javascript\nmodule-type: wikirule\n\nWiki text block rule for ticktexts\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global exports: false */\n\&quot;use strict\&quot;;\n\nvar CLASS_GROUP = \&quot;wltc\&quot;;\nvar CLASS_PREFIX = CLASS_GROUP + \&quot;-l\&quot;; // l .. level\n\nexports.name = \&quot;angelparagraph\&quot;;\nexports.types = {block: true};\n\nexports.init = function(parser) {\n\tthis.parser = parser;\n\t// Regexp to match\n//\tthis.matchRegExp = /(\\´{1,3})/mg; //a  OK\n//\tthis.matchRegExp = /(\\.{1,3})/mg; //b  CSS interference\n//\tthis.matchRegExp = /(\\. )/mg;     //y  OK see: dot-space!\n//\tthis.matchRegExp = /(\\´)(\\t{1,2})?/mg; //x  OK\n\tthis.matchRegExp = /(»)(»{1,3})?/mg; //x  OK\n//\tthis.matchRegExp = /(\\. )|(\\.{2,4} )/mg; //y  OK\n};\n\n/*\nParse the most recent match\n*/\nexports.parse = function() {\n\t// Get all the details of the match\n//\tvar level = this.match[1].length; //abc\n\tvar level = (this.match[2]) ? this.match[2].length + 1 : 1; //x\n//\tvar level = (this.match[2]) ? this.match[2].length - 1 : 1; //y\n\t// Move past the !s\n\tthis.parser.pos = this.matchRegExp.lastIndex;\n\t// Parse any classes, whitespace and then the heading itself\n\tvar classes = this.parser.parseClasses();\n\tclasses.push(CLASS_PREFIX + level + \&quot; \&quot; + CLASS_GROUP);\n\tthis.parser.skipWhitespace({treatNewlinesAsNonWhitespace: true});\n\tvar tree = this.parser.parseInlineRun(/(\\r?\\n\\r?\\n)/mg);\n\t// Return the paragraph\n\treturn [{\n\t\ttype: \&quot;element\&quot;,\n\t\ttag: \&quot;p\&quot;,\n\t\tattributes: {\n\t\t\t\&quot;class\&quot;: {type: \&quot;string\&quot;, value: classes.join(\&quot; \&quot;)}\n\t\t},\n\t\tchildren: tree\n\t}];\n};\n})();\n&quot;,
             &quot;type&quot;: &quot;application/javascript&quot;,
             &quot;module-type&quot;: &quot;wikirule&quot;
         },
-        &quot;$:/plugins/wikilabs/tick-text/ticktext.js&quot;: {
-            &quot;title&quot;: &quot;$:/plugins/wikilabs/tick-text/ticktext.js&quot;,
-            &quot;text&quot;: &quot;/*\\\ntitle: $:/plugins/wikilabs/tick-text/ticktext.js\ntype: application/javascript\nmodule-type: wikirule\n\nWiki text block rule for ticktexts\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global exports: false */\n\&quot;use strict\&quot;;\n\nvar CLASS_GROUP = \&quot;wltc\&quot;;\nvar CLASS_PREFIX = CLASS_GROUP + \&quot;-l\&quot;; // l .. level\n\nexports.name = \&quot;ticktext\&quot;;\nexports.types = {block: true};\n\nexports.init = function(parser) {\n\tthis.parser = parser;\n\t// Regexp to match\n//\tthis.matchRegExp = /(\\´{1,3})/mg; //a  OK\n//\tthis.matchRegExp = /(\\.{1,3})/mg; //b  CSS interference\n//\tthis.matchRegExp = /(\\. )/mg;     //y  OK see: dot-space!\n//\tthis.matchRegExp = /(\\´)(\\t{1,2})?/mg; //x  OK\n\tthis.matchRegExp = /(\\´)(\\´{1,3})?/mg; //x  OK\n//\tthis.matchRegExp = /(\\. )|(\\.{2,4} )/mg; //y  OK\n};\n\n/*\nParse the most recent match\n*/\nexports.parse = function() {\n\t// Get all the details of the match\n//\tvar level = this.match[1].length; //abc\n\tvar level = (this.match[2]) ? this.match[2].length + 1 : 1; //x\n//\tvar level = (this.match[2]) ? this.match[2].length - 1 : 1; //y\n\t// Move past the !s\n\tthis.parser.pos = this.matchRegExp.lastIndex;\n\t// Parse any classes, whitespace and then the heading itself\n\tvar classes = this.parser.parseClasses();\n\tclasses.push(CLASS_PREFIX + level + \&quot; \&quot; + CLASS_GROUP);\n\tthis.parser.skipWhitespace({treatNewlinesAsNonWhitespace: true});\n\tvar tree = this.parser.parseInlineRun(/(\\r?\\n)/mg);\n\t// Return the paragraph\n\treturn [{\n\t\ttype: \&quot;element\&quot;,\n\t\ttag: \&quot;div\&quot;,\n\t\tattributes: {\n\t\t\t\&quot;class\&quot;: {type: \&quot;string\&quot;, value: classes.join(\&quot; \&quot;)}\n\t\t},\n\t\tchildren: tree\n\t}];\n};\n})();\n&quot;,
+        &quot;$:/plugins/wikilabs/tick-text/wikirules/aaaaaaa.js&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/wikilabs/tick-text/wikirules/aaaaaaa.js&quot;,
+            &quot;text&quot;: &quot;/*\\\r\ntitle: $:/plugins/wikilabs/tick-text/wikirules/aaaaaaa.js\r\ntype: application/javascript\r\nmodule-type: wikirule\r\n\r\nWiki pragma rule for whitespace specifications\r\n\r\n```\r\n\\ticktext tick tag=div name=§ end=---\r\n\r\n\\ticktext tick name=x tag=span params=.i.j.c.cp end=eee\r\n\r\n\\ticktext tick name=det tag=\&quot;details\&quot; params=\&quot;\&quot; end=\&quot;—\&quot;\r\n\r\n\\ticktext angel name=sum tag=\&quot;summary\&quot; \r\n\r\n\\ticktext angel tag=span\r\n```\r\n\r\n\\*/\r\n(function(){\r\n\r\n/*jslint node: true, browser: true */\r\n/*global $tw:false, exports:false*/\r\n\&quot;use strict\&quot;;\r\n\r\nexports.name = \&quot;ticktext\&quot;;\r\nexports.types = {pragma: true};\r\n\r\n/*\r\nInstantiate parse rule\r\n*/\r\nexports.init = function(parser) {\r\n\tthis.parser = parser;\r\n\t// Regexp to match\r\n\tthis.matchRegExp = /^\\\\ticktext[^\\S\\n]/mg;\r\n};\r\n\r\n/*\r\nreturns an object array with::\r\nstart, end .. regexp numbers\r\ntype: string .. should be always string\r\nname: .. parameter name // \r\nvalue: .. parameter value as string\r\n\r\nexample tick name=x tag=div params=\&quot;.i.j.c.cp\&quot; end=\&quot;eee\&quot;\r\n*/\r\nfunction parseAttributes(source) {\r\nvar pos = 0,\r\n    attributes= [];\r\n\r\n\t// Process attributes\r\n\tvar attribute = $tw.utils.parseAttribute(source,pos);\r\n\twhile(attribute) {\r\n\t\tattributes.push(attribute);\r\n\t\tpos = attribute.end;\r\n\t\t// Get the next attribute\r\n\t\tattribute = $tw.utils.parseAttribute(source,pos);\r\n\t}\r\n  return attributes;\r\n}\r\n\r\n/*\r\nParse the most recent match\r\n*/\r\nexports.parse = function() {\r\n\tvar self = this;\r\n\tvar sp = self.parser;\r\n\tsp.configTickText = sp.configTickText  || {};\r\n\t\r\n\tvar spc = sp.configTickText;\r\n\tspc.tick = spc.tick || {};\r\n\tspc.angel = spc.angel || {};\r\n\t\r\n\t// Move past the pragma invocation\r\n\tthis.parser.pos = this.matchRegExp.lastIndex;\r\n\t// Parse line terminated by a line break\r\n\tvar reMatch = /([^\\n]*\\S)|(\\r?\\n)/mg,\r\n\t\tline = \&quot;\&quot;;\r\n\treMatch.lastIndex = this.parser.pos;\r\n\tvar match = reMatch.exec(this.parser.source);\r\n\twhile(match &amp;&amp; match.index === this.parser.pos) {\r\n\t\tthis.parser.pos = reMatch.lastIndex;\r\n\t\t// Exit if we've got the line break\r\n\t\tif(match[2]) {\r\n\t\t\tbreak;\r\n\t\t}\r\n\t\t// Process the token\r\n\t\tif(match[1]) {\r\n\t\t\tline = (match[1]);\r\n\t\t}\r\n\t\t// Match the next token\r\n\t\tmatch = reMatch.exec(this.parser.source);\r\n\t}\r\n\t\r\n\tvar attributes = parseAttributes(line);\r\n\r\n\t// \\ticktext tick name=x tag=div params=\&quot;.i.j.c.cp\&quot; end=\&quot;eee\&quot;\r\n\tvar isTick = false,\r\n\t\tisAngel = false,\r\n\t\tconfigTickText = {mode:\&quot;\&quot;, tag:\&quot;\&quot;, params:\&quot;\&quot;, ensString:\&quot;\&quot;};\r\n\t\r\n\t$tw.utils.each(attributes,function(token) {\r\n\t\tswitch(token.name) {\r\n\t\t\tcase \&quot;tick\&quot;:\r\n\t\t\t\tisTick  = true;\r\n\t\t\t\tconfigTickText.symbol = token.value;\r\n\t\t\t\tbreak;\r\n\t\t\tcase \&quot;angel\&quot;:\r\n\t\t\t\tisAngel = true;\r\n\t\t\t\tconfigTickText.symbol = token.value;\r\n\t\t\t\tbreak;\r\n\t\t\tcase \&quot;mode\&quot;:\r\n\t\t\t\tconfigTickText.mode = token.value;\r\n\t\t\t\tbreak;\r\n\t\t\tcase \&quot;tag\&quot;:\r\n\t\t\t\tconfigTickText.tag = token.value;\r\n\t\t\t\tbreak;\r\n\t\t\tcase \&quot;params\&quot;:\r\n\t\t\t\tconfigTickText.params = token.value;\r\n\t\t\t\tbreak;\r\n\t\t\tcase \&quot;endString\&quot;:\r\n\t\t\t\tconfigTickText.endString = token.value;\r\n\t\t\t\tbreak;\r\n\t\t\tdefault:\r\n\t\t\t\tconfigTickText[token.name] = token.value || \&quot;\&quot;;\r\n\t\t}\r\n\t});\r\n\t\r\n\tif (isAngel === true) {\r\n\t\tspc.angel[configTickText.symbol] = configTickText;\r\n\t} else {\r\n\t\tspc.tick[configTickText.symbol] = configTickText;\r\n\t}\r\n\t// No parse tree nodes to return\r\n\treturn [];\r\n};\r\n\r\n})();\r\n&quot;,
+            &quot;type&quot;: &quot;application/javascript&quot;,
+            &quot;module-type&quot;: &quot;wikirule&quot;
+        },
+        &quot;$:/plugins/wikilabs/tick-text/wikirules/ticktext.js&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/wikilabs/tick-text/wikirules/ticktext.js&quot;,
+            &quot;text&quot;: &quot;/*\\\ntitle: $:/plugins/wikilabs/tick-text/wikirules/ticktext.js\ntype: application/javascript\nmodule-type: wikirule\n\nWiki text block rule for ticktexts\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw:false exports:false */\n\&quot;use strict\&quot;;\n\nvar CLASS_GROUP = \&quot;wltc\&quot;;\nvar CLASS_PREFIX = CLASS_GROUP + \&quot;-l\&quot;; // l .. level\n\nexports.name = \&quot;ticktext\&quot;;\nexports.types = {block: true};\n\nexports.init = function(parser) {\n\tthis.parser = parser;\n\t// Regexp to match\n\tthis.matchRegExp = /(\\´{1,4})/mg; //a  OK\n//\tthis.matchRegExp = /(\\.{1,3})/mg; //b  CSS interference\n//\tthis.matchRegExp = /(\\. )/mg;     //y  OK see: dot-space!\n//\tthis.matchRegExp = /(\\´)(\\t{1,2})?/mg; //x  OK\n//\tthis.matchRegExp = /(\\´)(\\´{1,3})?/mg; //x  OK\n//\tthis.matchRegExp = /(\\. )|(\\.{2,4} )/mg; //y  OK\n};\n\n/*\nParse the most recent match\n*/\nexports.parse = function() {\n\tvar self = this;\n\t/*\n\tSkip any whitespace at the current position. Options are:\n\t\ttreatNewlinesAsNonWhitespace: true if newlines are NOT to be treated as whitespace\n\t*/\n\tvar skipEndString = function(endString) {\n\t\tvar endRegExp = new RegExp(\&quot;(\&quot; + $tw.utils.escapeRegExp(endString) + \&quot;)\&quot;,\&quot;mg\&quot;)\n\t\tendRegExp.lastIndex = self.parser.pos;\n\t\tvar endMatch = endRegExp.exec(self.parser.source);\n\t\tif(endMatch &amp;&amp; endMatch.index === self.parser.pos) {\n\t\t\tself.parser.pos = endRegExp.lastIndex;\n\t\t}\n\t};\n\t\n\tvar tree,\n\t\toptions = {symbol: \&quot;¤\&quot;, mode : \&quot;inline\&quot;, tag : \&quot;div\&quot;, params : \&quot;\&quot;, endString : \&quot;\&quot;};\n\t\n\t// Get all the details of the match\n\tvar level = this.match[1].length; //abc\n//\tvar level = (this.match[2]) ? this.match[2].length + 1 : 1; //x\n//\tvar level = (this.match[2]) ? this.match[2].length - 1 : 1; //y\n\t// Move past the !s\n\tthis.parser.pos = this.matchRegExp.lastIndex;\n\t// Parse any classes, whitespace and then the heading itself\n\tvar classes = this.parser.parseClasses();\n\tvar pc = this.parser.configTickText;\n\tvar x = classes[0];\n\t\n\tif (pc &amp;&amp; pc.tick &amp;&amp; pc.tick[x]) {\n\t\toptions.symbol = pc.tick[x].symbol || options.mode;\n\t\toptions.endString = pc.tick[x].endString || options.endString;\n\t\t// if there is an endString block mode is forced\n//\t\toptions.mode = (options.endString !== \&quot;\&quot;) ? \&quot;block\&quot; : pc.tick[x].mode || options.mode;\n\t\toptions.mode = pc.tick[x].mode || options.mode;\n\t\toptions.tag = pc.tick[x].tag || options.tag;\n\t\toptions.params = pc.tick[x].params.split(\&quot;.\&quot;).join(\&quot; \&quot;).trim() || options.params;\n\t\tclasses[0] = options.params // remove the name element\n\t}\n\t\n\tthis.parser.skipWhitespace();\n//\tthis.parser.skipWhitespace({treatNewlinesAsNonWhitespace: true});\n\tif (options.mode === \&quot;block\&quot;) {\n\t\t// no GROUP in block mode\n\t\tclasses.push(CLASS_PREFIX + level);\n\t\t\n\t\ttree = this.parser.parseBlocks(\&quot;^\&quot; + $tw.utils.escapeRegExp(options.endString) + \&quot;$\&quot;);  // wip OK\n\t} else {\n\t\t// apply CLASS_GROUP only if in inline mode. \n\t\tclasses.push(CLASS_PREFIX + level + \&quot; \&quot; + CLASS_GROUP);\n\t\t\n//\t\ttree = this.parser.parseInlineRun(new RegExp(\&quot;(\&quot; + options.endString + \&quot;)\&quot;,\&quot;mg\&quot;)); // OK for single new-line\n//\t\ttree = this.parser.parseInlineRun(/(\\r?\\n)/mg); // OK for single new-line\n\n\t\tif (options.endString === \&quot;\&quot;) {\n\t\t\ttree = this.parser.parseInlineRun(/(\\r?\\n)/mg); // OK for single new-line\n\t\t} else {\n//\t\t\ttree = this.parser.parseInlineRun(new RegExp(\&quot;(^\&quot; + options.endString + \&quot;|\\\\r?\\\\n)\&quot;,\&quot;mg\&quot;)); // OK for single new-line\n\t\t\ttree = this.parser.parseInlineRun(new RegExp(\&quot;(^\&quot; + $tw.utils.escapeRegExp(options.endString) + \&quot;$)\&quot;,\&quot;mg\&quot;)); // OK for single new-line\n\t\t}\n\t}\n\tskipEndString(options.endString);\n\t\n\t// Return the paragraph\n\treturn [{\n\t\ttype: \&quot;element\&quot;,\n\t\ttag: options.tag,\n\t\tattributes: {\n\t\t\t\&quot;class\&quot;: {type: \&quot;string\&quot;, value: classes.join(\&quot; \&quot;)}\n\t\t},\n\t\tchildren: tree\n\t}];\n};\n})();\n&quot;,
             &quot;type&quot;: &quot;application/javascript&quot;,
             &quot;module-type&quot;: &quot;wikirule&quot;
         }
@@ -9897,7 +9965,7 @@ ul .star{
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div list="test-kitchen test-angel-brackets :/plugins/wikilabs/tick-text/styles column-styles nl-is-hard-linebreak" title="$:/StoryList">
+<div list="test-endString test-details" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -10113,8 +10181,16 @@ ul .star{
 .-cr { column-rule: initial;}
 </pre>
 </div>
-<div created="20200831074005709" modified="20200831074336384" tags="$:/tags/AboveStory" title="EXPERIMENTAL" type="text/vnd.tiddlywiki">
+<div created="20200902112515326" modified="20200902113029424" tags="$:/tags/Stylesheet" title="details-css" type="text/vnd.tiddlywiki">
+<pre>.notop p {
+  margin-top: .2em;
+}
+</pre>
+</div>
+<div created="20200831074005709" modified="20200902120542955" tags="$:/tags/AboveStory" title="EXPERIMENTAL" type="text/vnd.tiddlywiki">
 <pre>! This PAGE and PLUGINS are EXPERIMENTAL
+
+!! Version 0.0.2 --- Sept. 2, 14:05
 
 Everything is subject to change! There is no docs yet! Some tiddler names are weired! ... but have fun! Mario </pre>
 </div>
@@ -10148,12 +10224,46 @@ Mel ad etiam labore mediocrem, quot ullum ad mel. Has ei odio iusto persecuti, e
 
 Mei quaeque veritus suavitate id, ius diam eius at. Suas labores expetendis vim ex, affert accusata omittantur quo et. Movet virtute liberavisse sea te, dicit possim convenire.</pre>
 </div>
-<div created="20200830185211090" modified="20200830190928970" tags="$:/tags/Stylesheet" title="nl-is-hard-linebreak" type="text/css">
-<pre>.h {
+<div created="20200831162433546" modified="20200831180441832" tags="" title="New Tiddler 1" type="text/vnd.tiddlywiki">
+<pre>&lt;&lt;&lt;
+s föjsdf
+&lt;&lt;&lt;
+
+</pre>
+</div>
+<div created="20200830185211090" modified="20200902114735184" tags="$:/tags/Stylesheet" title="nl-is-hard-linebreak-css" type="text/css">
+<pre>.hl {
   word-break: normal;
   word-wrap: break-word;
   white-space: pre-wrap;
-}</pre>
+}
+</pre>
+</div>
+<div created="20200831182852976" modified="20200901083613095" tags="" title="planned" type="text/vnd.tiddlywiki">
+<pre>\ticktext tick tag=div name=§ end=---
+
+\ticktext tick name=x tag=span params=.i.j.c.cp end=eee
+
+\ticktext tick name=det tag=&quot;details&quot; params=&quot;&quot; end=&quot;—&quot;
+
+\ticktext angel name=sum tag=&quot;summary&quot;
+
+\ticktext angel tag=span
+
+```
+&lt;details&gt;
+    &lt;summary&gt;Details&lt;/summary&gt;
+    Something small enough to escape casual notice.
+&lt;/details&gt;
+```
+
+´.det
+´.sum Details
+line 1
+line 2
+adsf
+---
+</pre>
 </div>
 <div created="20200830185321183" modified="20200830190326595" tags="" title="test" type="text/vnd.tiddlywiki">
 <pre>transcluded  line 1
@@ -10176,6 +10286,27 @@ sdfsafsda fsd
 
 
 </pre>
+</div>
+<div created="20200902111614401" modified="20200902120259444" tags="" title="test-details" type="text/vnd.tiddlywiki">
+<pre>\ticktext tick=&quot;d&quot; tag=&quot;details&quot; params=&quot;.notop.c.cl&quot; endString=&quot;---&quot; open  mode=block
+\ticktext tick=&quot;s&quot; tag=&quot;summary&quot; params=&quot;.-m&quot;
+
+´.d ´.s Details - Summay
+line 1
+line 2
+adsf
+
+---</pre>
+</div>
+<div created="20200901083625967" modified="20200902120325940" tags="" title="test-endString" type="text/vnd.tiddlywiki">
+<pre>\ticktext tick=&quot;§&quot; tag=&quot;aside&quot; params=&quot;c.cw.h&quot; endString=&quot;---&quot;
+
+´.§ asdfsk
+sdf test
+asdjfö las
+---
+
+fsadf sad   </pre>
 </div>
 <div created="20200830185128634" modified="20200830190633832" tags="" title="test-hard-linebreak-and-transclusion" type="text/vnd.tiddlywiki">
 <pre>
@@ -10244,6 +10375,20 @@ alsködf lsdjöf saöfsa
 asj fsadföl ashfsda fkshkfsaa
 
 ´ fsa fsd fsda fsdafsa
+</pre>
+</div>
+<div created="20200831124108775" modified="20200901082153186" tags="" title="test-tic-hr-mode" type="text/vnd.tiddlywiki">
+<pre>´.c.cp !! heading 2
+fds fasdf asdf
+
+* asdf
+----
+
+´.c2.c.cw ! asdf
+hja sdö lfh sdal j fsadkl hjas dölfh sdalj fsad klhj asdöl fh sda ljfsadk hja sdölfh hja sdö lfh sdal j fsadkl hjas dölfh sdalj fsad klhj asdöl fh sda ljfsadk lhja dölfh hja sdö lfh sdal j fsadkl hjas dölfh sdalj fsad klhj asdöl fh sda ljfsadk lhja sdölfh hja sdö lfh sdal j fsadkl hjas dölfh sdalj fsad klhj asdöl fh sda ljfsadk lhja dölfh hja sdö lfh sdal j fsadkl hjas dölfh sdalj fsad klhj asdöl fh sda ljfsadk lhja sdölfh hja sdö lfh sdal j fsadkl hjas dölfh sdalj fsad klhj asdöl fh sda ljfsadk lhja dölfh hja sdö lfh sdal j fsadkl hjas dölfh sdalj fsad klhj asdöl fh sda ljfsadk lhja sdölfh
+
+---
+
 </pre>
 </div>
 
