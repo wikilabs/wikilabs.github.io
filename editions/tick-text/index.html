@@ -143,6 +143,8 @@ Error message and password prompt
 
 <li>:/plugins/wikilabs/tick-text/styles</li>
 
+<li>$:/config/ColourPicker/Recent</li>
+
 <li>$:/core</li>
 
 <li>$:/core/ui/EditorToolbar/linkify</li>
@@ -217,17 +219,21 @@ Error message and password prompt
 
 <li>test-importpragmas</li>
 
+<li>test-importpragmas-debug</li>
+
 <li>test-kitchen</li>
 
 <li>test-table-1</li>
 
 <li>test-table-multiline-cells</li>
 
+<li>test-table-use-degree-as-tick</li>
+
 <li>test-transclude-table</li>
 
 <li>test-transclusion-modes</li>
 
-<li>tick-inline</li>
+<li>tick-inline-simple</li>
 
 <li>why</li>
 
@@ -319,6 +325,9 @@ ul .star{
 .c h1, .c h2, .c h3, .c h4, .c h5, .c h6  {
   margin-top: initial;
 }</pre>
+</div>
+<div created="20200907202432859" list="Pink LavenderBlush MediumVioletRed" modified="20200907202437095" title="$:/config/ColourPicker/Recent" type="text/vnd.tiddlywiki">
+<pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="TiddlyWiki5 core" list="readme" name="Core" plugin-priority="0" plugin-type="plugin" title="$:/core" type="application/json" version="5.1.22">
 <pre>{
@@ -9976,15 +9985,15 @@ ul .star{
             &quot;type&quot;: &quot;application/javascript&quot;,
             &quot;module-type&quot;: &quot;wikirule&quot;
         },
-        &quot;$:/plugins/wikilabs/tick-text/wikirules/styleinline.js&quot;: {
-            &quot;title&quot;: &quot;$:/plugins/wikilabs/tick-text/wikirules/styleinline.js&quot;,
-            &quot;text&quot;: &quot;/*\\\r\ntitle: $:/plugins/wikilabs/tick-text/wikirules/styleinline.js\r\ntype: application/javascript\r\nmodule-type: wikirule\r\n\r\nWiki text inline rule for assigning styles and classes to inline runs. For example:\r\n\r\n```\r\n´´name.my.Class This is some text with a class´´\r\n```\r\n\r\n\r\n\\*/\r\n(function(){\r\n\r\n/*jslint node: true, browser: true */\r\n/*global $tw: false */\r\n\&quot;use strict\&quot;;\r\n\r\nexports.name = \&quot;tickinline\&quot;;\r\nexports.types = {inline: true};\r\n\r\nexports.init = function(parser) {\r\n\tthis.parser = parser;\r\n\t// Regexp to match\r\n\tthis.matchRegExp = /´´(\\.(?:[^\\r\\n\\s]+))?/mg;\r\n//\tthis.matchRegExp = /´´((?:[^\\.\\r\\n\\s]+))?(\\.(?:[^\\r\\n\\s]+))?/mg;\r\n//\tthis.matchRegExp = /´´((?:[^\\.\\r\\n\\s:]+:[^\\r\\n;]+;)+)?(\\.(?:[^\\r\\n\\s]+)\\s+)?/mg;\r\n};\r\n\r\nexports.parse = function() {\r\n\tvar reEnd = /´´/g;\r\n\t// Get the styles and class\r\n\tvar stylesString = this.match[1],\r\n\t\tclassString = this.match[1] ? this.match[1].split(\&quot;.\&quot;).join(\&quot; \&quot;) : undefined;\r\n\t// Move past the match\r\n\tthis.parser.pos = this.matchRegExp.lastIndex;\r\n\t// Parse the run up to the terminator\r\n\tvar tree = this.parser.parseInlineRun(reEnd,{eatTerminator: true});\r\n\t// Return the classed span\r\n\tvar node = {\r\n\t\ttype: \&quot;element\&quot;,\r\n\t\ttag: \&quot;span\&quot;,\r\n\t\tattributes: {\r\n\t\t\t\&quot;class\&quot;: {type: \&quot;string\&quot;, value: \&quot;wltc wltc-inline\&quot;}\r\n\t\t},\r\n\t\tchildren: tree\r\n\t};\r\n\tif(classString) {\r\n\t\t$tw.utils.addClassToParseTreeNode(node,classString);\r\n\t}\r\n//\tif(stylesString) {\r\n//\t\t$tw.utils.addAttributeToParseTreeNode(node,\&quot;style\&quot;,stylesString);\r\n//\t}\r\n\treturn [node];\r\n};\r\n\r\n})();\r\n&quot;,
+        &quot;$:/plugins/wikilabs/tick-text/wikirules/tickinline.js&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/wikilabs/tick-text/wikirules/tickinline.js&quot;,
+            &quot;text&quot;: &quot;/*\\\r\ntitle: $:/plugins/wikilabs/tick-text/wikirules/tickinline.js\r\ntype: application/javascript\r\nmodule-type: wikirule\r\n\r\nWiki text inline rule for assigning styles and classes to inline runs. For example:\r\n\r\n```\r\n´´name.my.Class This is some text with a class´´\r\n```\r\n\r\n\r\n\\*/\r\n(function(){\r\n\r\n/*jslint node: true, browser: true */\r\n/*global $tw:false exports:false */\r\n\&quot;use strict\&quot;;\r\n\r\nexports.name = \&quot;tickinline\&quot;;\r\nexports.types = {inline: true};\r\n\r\nexports.init = function(parser) {\r\n\tthis.parser = parser;\r\n\t// Regexp to match\r\n\tthis.matchRegExp = /´´(\\.(?:[^\\r\\n\\s]+))?/mg; // OK\r\n//\tthis.matchRegExp = /´´((?:[^\\.\\r\\n\\s]+))?(\\.(?:[^\\r\\n\\s]+))?/mg;\r\n//\tthis.matchRegExp = /´´((?:[^\\.\\r\\n\\s:]+:[^\\r\\n;]+;)+)?(\\.(?:[^\\r\\n\\s]+)\\s+)?/mg;\r\n};\r\n\r\nexports.parse = function() {\r\n\tvar reEnd = /´´/g;\r\n\t// Get the styles and class\r\n\tvar stylesString = this.match[1],\r\n\t\tclassString = this.match[1] ? this.match[1].split(\&quot;.\&quot;).join(\&quot; \&quot;) : undefined;\r\n\t// Move past the match\r\n\tthis.parser.pos = this.matchRegExp.lastIndex;\r\n\t// Parse the run up to the terminator\r\n\tvar tree = this.parser.parseInlineRun(reEnd,{eatTerminator: true});\r\n\t// Return the classed span\r\n\tvar node = {\r\n\t\ttype: \&quot;element\&quot;,\r\n\t\ttag: \&quot;span\&quot;,\r\n\t\tattributes: {\r\n\t\t\t\&quot;class\&quot;: {type: \&quot;string\&quot;, value: \&quot;wltc wltc-inline\&quot;}\r\n\t\t},\r\n\t\tchildren: tree\r\n\t};\r\n\tif(classString) {\r\n\t\t$tw.utils.addClassToParseTreeNode(node,classString);\r\n\t}\r\n//\tif(stylesString) {\r\n//\t\t$tw.utils.addAttributeToParseTreeNode(node,\&quot;style\&quot;,stylesString);\r\n//\t}\r\n\treturn [node];\r\n};\r\n\r\n})();\r\n&quot;,
             &quot;type&quot;: &quot;application/javascript&quot;,
             &quot;module-type&quot;: &quot;wikirule&quot;
         },
         &quot;$:/plugins/wikilabs/tick-text/wikirules/ticktext.js&quot;: {
             &quot;title&quot;: &quot;$:/plugins/wikilabs/tick-text/wikirules/ticktext.js&quot;,
-            &quot;text&quot;: &quot;/*\\\ntitle: $:/plugins/wikilabs/tick-text/wikirules/ticktext.js\ntype: application/javascript\nmodule-type: wikirule\n\nWiki text block rule for ticktext and angeltext\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw:false exports:false */\n\&quot;use strict\&quot;;\n\nvar CLASS_GROUP = \&quot;wltc\&quot;;\nvar CLASS_PREFIX = CLASS_GROUP + \&quot;-l\&quot;; // l .. level\n\nexports.name = \&quot;ticktext\&quot;;\nexports.types = {block: true};\n\nexports.init = function(parser) {\n\tthis.parser = parser;\n\t// Regexp to match\n\tthis.matchRegExp = /(^\\´{1,4}|^»{1,4})/mg; //a  OK\n\n\tthis.p = this.parser;\n\tthis.p.configTickText = this.p.configTickText  || {};\n\t\n\tthis.pc = this.p.configTickText;\n\tthis.pc.tick = this.pc.tick || {};\n\tthis.pc.angel = this.pc.angel || {};\n};\n\n/*\nParse the most recent match\n*/\nexports.parse = function() {\n\tvar self = this,\n\t\ttree;\n\t\n\t// Get all the details of the match\n\tvar level = this.match[1].length; //abc\n\tvar id = (this.match[1][0] === \&quot;´\&quot;) ? \&quot;tick\&quot; : (this.match[1][0] === \&quot;»\&quot;) ? \&quot;angel\&quot; : \&quot;x\&quot;;\n\n\t/*\n\tSkip the endstring at the current position. Options are:\n\ttreatNewlinesAsNonWhitespace: true if newlines are NOT to be treated as whitespace\n\t*/\n\tvar skipEndString = function(endString) {\n\t\tvar endRegExp = new RegExp(\&quot;(\&quot; + $tw.utils.escapeRegExp(endString) + \&quot;)\&quot;,\&quot;mg\&quot;)\n\t\tendRegExp.lastIndex = self.parser.pos;\n\t\tvar endMatch = endRegExp.exec(self.parser.source);\n\t\tif(endMatch &amp;&amp; endMatch.index === self.parser.pos) {\n\t\t\tself.parser.pos = endRegExp.lastIndex;\n\t\t}\n\t};\n\t\n\tvar options = {symbol: \&quot;¤\&quot;, mode : \&quot;inline\&quot;, tag : (id===\&quot;tick\&quot;) ? \&quot;div\&quot; : \&quot;p\&quot;, params : \&quot;\&quot;, endString : \&quot;\&quot;, use: \&quot;\&quot;};\n\t\n\t// Move past the !s\n\tthis.parser.pos = this.matchRegExp.lastIndex;\n\t// Parse any classes, whitespace and then the heading itself\n\tvar classes = this.parser.parseClasses();\n\tvar sym = classes[0];\n\n\tif (!sym &amp;&amp; this.pc[id][\&quot;true\&quot;]) {\n\t\tsym = this.pc[id][\&quot;true\&quot;].use;\n\t} else if (sym &amp;&amp; this.pc[id][sym] &amp;&amp; this.pc[id][sym].use) {\n\t\tsym = this.pc[id][sym].use;\n\t}\n\t\n\tif (this.pc[id][sym]) {\n\t\toptions.symbol = this.pc[id][sym].symbol || options.symbol;\n\t\toptions.endString = this.pc[id][sym].endString || options.endString;\n\t\toptions.mode = this.pc[id][sym].mode || options.mode;\n\t\toptions.tag = this.pc[id][sym].tag || options.tag;\n\t\toptions.params = this.pc[id][sym].params.split(\&quot;.\&quot;).join(\&quot; \&quot;).trim() || options.params;\n\t\tclasses[0] = options.params // replace the name element\n\t}\n\t\n//\tif (id === \&quot;tick\&quot;) {\n\t\tthis.parser.skipWhitespace();\n//\t} else {\n//\t\tthis.parser.skipWhitespace({treatNewlinesAsNonWhitespace: true});\n//\t}\n\t\n\tif (options.mode === \&quot;block\&quot;) {\n\t\t// no GROUP in block mode\n\t\tclasses.push(CLASS_PREFIX + level);\n\t\t\n\t\ttree = this.parser.parseBlocks(\&quot;^\&quot; + $tw.utils.escapeRegExp(options.endString) + \&quot;$\&quot;);  // wip OK\n\t} else {\n\t\t// apply CLASS_GROUP only if in inline mode. \n\t\tclasses.push(CLASS_PREFIX + level + \&quot; \&quot; + CLASS_GROUP);\n\n\t\tif (options.endString === \&quot;\&quot;) {\n\t\t\ttree = this.parser.parseInlineRun((id===\&quot;tick\&quot;) ? /(\\r?\\n)/mg : /(\\r?\\n\\r?\\n)/mg); // OK for single new-line\n\t\t} else {\n\t\t\ttree = this.parser.parseInlineRun(new RegExp(\&quot;(^\&quot; + $tw.utils.escapeRegExp(options.endString) + \&quot;$)\&quot;,\&quot;mg\&quot;)); // OK for single new-line\n\t\t}\n\t}\n\tskipEndString(options.endString);\n\n\t\n\tvar fixAttributes = [\&quot;tick\&quot;, \&quot;angel\&quot;, \&quot;symbol\&quot;, \&quot;endString\&quot;, \&quot;mode\&quot;, \&quot;tag\&quot;, \&quot;params\&quot;, \&quot;use\&quot;];\n\t\n\tvar attributes = {\n\t\t\t\&quot;class\&quot;: {type: \&quot;string\&quot;, value: classes.join(\&quot; \&quot;)}\n\t\t}\n\t// Callback is invoked with (element,title,object)\n\t$tw.utils.each(this.pc[id][sym], function(val,title,ob) {\n\t\tif (fixAttributes.indexOf(title) === -1) {\n\t\t\tattributes[title] = {type:\&quot;string\&quot;, value: val}\n\t\t\t}\n\t});\n\n\t// Return the paragraph\n\treturn [{\n\t\ttype: \&quot;element\&quot;,\n\t\ttag: options.tag,\n\t\tattributes: attributes,\n\t\tchildren: tree\n\t}];\n};\n})();\n&quot;,
+            &quot;text&quot;: &quot;/*\\\ntitle: $:/plugins/wikilabs/tick-text/wikirules/ticktext.js\ntype: application/javascript\nmodule-type: wikirule\n\nWiki text block rule for ticktext and angeltext\n\nDetect\n\n´´´asdf.my.Class This is some text with a name and class\n´.a.b.c.d This is some text with class\n»»»asdf.my.Class This is some text with a name and class\n».a.b.c.d This is some text with class\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw:false exports:false */\n\&quot;use strict\&quot;;\n\nvar CLASS_GROUP = \&quot;wltc\&quot;;\nvar CLASS_PREFIX = CLASS_GROUP + \&quot;-l\&quot;; // l .. level\n\nexports.name = \&quot;ticktext\&quot;;\nexports.types = {block: true};\n\nexports.init = function(parser) {\n\tthis.parser = parser;\n\t// Regexp to match \n//\tthis.matchRegExp = /(^´{1,4}|^»{1,4})/mg; //a  OK\n\t\n\t// match[1] ... all symbols 1-4 ´ or »\n\t// match[2] ... tagName .... HTML tag default DIV\n\t// match[3] ... classString\n//\tthis.matchRegExp = /(^´{1,4}|^»{1,4})((?:[^\\.\\r\\n\\s]+))?(\\.(?:[^\\r\\n\\s]+))?/mg; //a  \n//\tthis.matchRegExp = /((?=´[^´])´|»{1,4})((?:[^\\.\\r\\n\\s´]+))?(\\.(?:[^\\r\\n\\s]+))?/mg; //a  OK\n\tthis.matchRegExp = /((?=°[^°])°|(?=´[^´])´|»{1,4})((?:[^\\.\\r\\n\\s´°]+))?(\\.(?:[^\\r\\n\\s]+))?/mg; //a  OK\n\n\tthis.p = this.parser;\n\tthis.p.configTickText = this.p.configTickText || {};\n\t\n\tthis.pc = this.p.configTickText;\n\tthis.pc.tick = this.pc.tick || {};\n\tthis.pc.angel = this.pc.angel || {};\n};\n\n/*\nParse the most recent match\n*/\nexports.parse = function() {\n\t/*\n\tSkip the endstring at the current position. Options are:\n\ttreatNewlinesAsNonWhitespace: true if newlines are NOT to be treated as whitespace\n\t*/\n\tfunction skipEndString (endString) {\n\t\tvar endRegExp = new RegExp(\&quot;(\&quot; + $tw.utils.escapeRegExp(endString) + \&quot;)\&quot;,\&quot;mg\&quot;)\n\t\tendRegExp.lastIndex = self.parser.pos;\n\t\tvar endMatch = endRegExp.exec(self.parser.source);\n\t\tif(endMatch &amp;&amp; endMatch.index === self.parser.pos) {\n\t\t\tself.parser.pos = endRegExp.lastIndex;\n\t\t}\n\t}\n\n//---------------------\n\tvar self = this,\n\t\ttree;\n\n\t// Get all the details of the match\n\tvar level   = this.match[1].length; //abc\n\tvar id      = (this.match[1][0] === \&quot;°\&quot; || this.match[1][0] === \&quot;´\&quot;) ? \&quot;tick\&quot; : (this.match[1][0] === \&quot;»\&quot;) ? \&quot;angel\&quot; : null;\n//\tvar id      = (this.match[1][0] === \&quot;´\&quot;) ? \&quot;tick\&quot; : (this.match[1][0] === \&quot;»\&quot;) ? \&quot;angel\&quot; : null;\n\tvar sym     = this.match[2]; // needs to be undefined if no match\n\tvar params  = (this.match[3]) ? this.match[3] : \&quot;\&quot;;\n\n\tvar options = {symbol: sym, mode : \&quot;inline\&quot;, tag : (id===\&quot;tick\&quot;) ? \&quot;div\&quot; : \&quot;p\&quot;, params : params, endString : \&quot;\&quot;, use: \&quot;\&quot;};\n\t\n\t// Move past the start symbol\n\tthis.parser.pos = this.matchRegExp.lastIndex;\n\t// Parse any classes, whitespace and then the heading itself\n\tvar classes = params.split(\&quot;.\&quot;);\n\n\tif (!sym &amp;&amp; this.pc[id][\&quot;true\&quot;]) {\n\t\tsym = this.pc[id][\&quot;true\&quot;].use;\n\t} else if (sym &amp;&amp; this.pc[id][sym] &amp;&amp; this.pc[id][sym].use) {\n\t\tsym = this.pc[id][sym].use;\n\t}\n\t\n\tif (this.pc[id][sym]) {\n\t\toptions.symbol = this.pc[id][sym].symbol || options.symbol;\n\t\toptions.endString = this.pc[id][sym].endString || options.endString;\n\t\toptions.mode = this.pc[id][sym].mode || options.mode;\n\t\toptions.tag = this.pc[id][sym].tag || options.tag;\n\t\toptions.params = this.pc[id][sym].params || options.params;\n\t\tclasses = options.params.split(\&quot;.\&quot;) // pragma options win????????????????????\n//\t\tclasses[0] = options.params.split(\&quot;.\&quot;).join(\&quot; \&quot;).trim() // replace the name element\n\t}\n\t\n//\tif (id === \&quot;tick\&quot;) {\n\t\tthis.parser.skipWhitespace();\n//\t} else {\n//\t\tthis.parser.skipWhitespace({treatNewlinesAsNonWhitespace: true});\n//\t}\n\t\n\tif (options.mode === \&quot;block\&quot;) {\n\t\t// no GROUP in block mode\n\t\tclasses.push(CLASS_PREFIX + level);\n\t\t\n\t\ttree = this.parser.parseBlocks(\&quot;^\&quot; + $tw.utils.escapeRegExp(options.endString) + \&quot;$\&quot;);  // wip OK\n\t} else {\n\t\t// apply CLASS_GROUP only if in inline mode. \n\t\tclasses.push(CLASS_PREFIX + level + \&quot; \&quot; + CLASS_GROUP);\n\n\t\tif (options.endString === \&quot;\&quot;) {\n\t\t\ttree = this.parser.parseInlineRun((id===\&quot;tick\&quot;) ? /(\\r?\\n)/mg : /(\\r?\\n\\r?\\n)/mg); // OK for single new-line\n\t\t} else {\n\t\t\ttree = this.parser.parseInlineRun(new RegExp(\&quot;(^\&quot; + $tw.utils.escapeRegExp(options.endString) + \&quot;$)\&quot;,\&quot;mg\&quot;)); // OK for single new-line\n\t\t}\n\t}\n\tskipEndString(options.endString);\n\n\t\n\tvar fixAttributes = [\&quot;tick\&quot;, \&quot;angel\&quot;, \&quot;symbol\&quot;, \&quot;endString\&quot;, \&quot;mode\&quot;, \&quot;tag\&quot;, \&quot;params\&quot;, \&quot;use\&quot;];\n\t\n\tvar attributes = {\n\t\t\t\&quot;class\&quot;: {type: \&quot;string\&quot;, value: classes.join(\&quot; \&quot;).trim()}\n\t\t}\n\t// Callback is invoked with (element,title,object)\n\t$tw.utils.each(this.pc[id][sym], function(val,title,ob) {\n\t\tif (fixAttributes.indexOf(title) === -1) {\n\t\t\tattributes[title] = {type:\&quot;string\&quot;, value: val}\n\t\t\t}\n\t});\n\n\t// Return the paragraph\n\treturn [{\n\t\ttype: \&quot;element\&quot;,\n\t\ttag: options.tag,\n\t\tattributes: attributes,\n\t\tchildren: tree\n\t}];\n};\n})();\n&quot;,
             &quot;type&quot;: &quot;application/javascript&quot;,
             &quot;module-type&quot;: &quot;wikirule&quot;
         }
@@ -10031,7 +10040,7 @@ ul .star{
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div list="tick-inline inline-css" title="$:/StoryList">
+<div list="test-table-use-degree-as-tick" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -10272,10 +10281,10 @@ line 2
 <div title="E:\git\tiddly\wikilabs\editions\tick-text\tiddlers\Draft of 'test-importpragmas'.tid">
 <pre></pre>
 </div>
-<div created="20200831074005709" modified="20200906212037786" tags="$:/tags/AboveStory" title="EXPERIMENTAL" type="text/vnd.tiddlywiki">
+<div created="20200831074005709" modified="20200908103729167" tags="$:/tags/AboveStory" title="EXPERIMENTAL" type="text/vnd.tiddlywiki">
 <pre>! This PAGE and PLUGINS are EXPERIMENTAL
 
-!! Version 0.0.8 --- Sept. 6, 23:20
+!! Version 0.0.10 --- Sept. 8, 12:45
 
 Everything is subject to change! There is no docs yet! Some tiddler names are weired! ... but have fun! Mario </pre>
 </div>
@@ -10340,7 +10349,7 @@ transcluded  line 2
 
 This tiddler is used to be transcluded in other tiddlers. </pre>
 </div>
-<div created="20200830151138828" modified="20200906180535350" tags="" title="test-angel-brackets" type="text/vnd.tiddlywiki">
+<div created="20200830151138828" modified="20200907135921308" tags="" title="test-angel-brackets" type="text/vnd.tiddlywiki">
 <pre>Ullum labore sensibus no vix. Id pro solum molestiae, ea mea omittam postulant deseruisse, sonet putent propriae et pri. No vidisse definitiones his, te dolore blandit placerat cum. At vel nisl nobis, ne sea
 
 ».i.r.j.c.cs.lbar  Eum te periculis consulatu adipiscing. Laoreet detraxit ut vix. Mel ferri verear rationibus no, falli vituperata eu nam. Prompta vivendo liberavisse mea et, pri.
@@ -10355,20 +10364,20 @@ vituperatoribus no, pro te vivendo quaerendum, ne enim abhorreant usu. Et eos si
 
 </pre>
 </div>
-<div created="20200906114326359" modified="20200906140732953" tags="" title="test-angel-quote" type="text/vnd.tiddlywiki">
+<div created="20200906114326359" modified="20200907135607970" tags="" title="test-angel-quote" type="text/vnd.tiddlywiki">
 <pre>\ticktext tick=&quot;d&quot; tag=&quot;details&quot; params=&quot;.notop.c.cl.hl&quot; open  mode=block endString=&quot;---&quot;
 
 \ticktext tick=&quot;s&quot; tag=&quot;summary&quot; params=&quot;.-m&quot;
 
 \ticktext angel=&quot;d&quot; tag=&quot;details&quot; params=&quot;.notop.c.cl.hl&quot; open  mode=block endString=&quot;---&quot;
 
-´.d ´.s Details - Summay
+´d ´s Details - Summay
 ------
 line 1
 line 2
 adsf
 ---
-
+ 
 ''Important!''
 
 »» &quot;angel&quot; and &quot;tick&quot; do the same thing if `mode=block` 
@@ -10377,7 +10386,7 @@ adsf
 
   </pre>
 </div>
-<div created="20200902111614401" modified="20200906180304280" title="test-details-open" type="text/vnd.tiddlywiki">
+<div created="20200902111614401" modified="20200907133158184" title="test-details-open" type="text/vnd.tiddlywiki">
 <pre>\ticktext tick=&quot;d&quot; tag=&quot;details&quot; params=&quot;.notop.c.cl.hl&quot; endString=&quot;---&quot; open  mode=block
 \ticktext tick=&quot;s&quot; tag=&quot;summary&quot; params=&quot;.-m&quot;
 
@@ -10387,38 +10396,38 @@ adsf
 
 \define tv-adjust-heading-level() 2
 
-´.d ´.s Details - Summay
+´d ´s Details - Summay
 line 1  
 line 2  
 adsf 
 ---
 
-´.x ´.s Details - Summay
+´x ´s Details - Summay
 -----
 {{test}}
 ---
 
-´.y  {{test}}
+´y  {{test}}
 
 
 
 </pre>
 </div>
-<div created="20200901083625967" modified="20200906180822908" tags="" title="test-endString-aside" type="text/vnd.tiddlywiki">
+<div created="20200901083625967" modified="20200907133220489" tags="" title="test-endString-aside" type="text/vnd.tiddlywiki">
 <pre>\ticktext tick=&quot;§&quot; tag=&quot;aside&quot; params=&quot;c.cw.h&quot; endString=&quot;---&quot; 
 
-´.§ asdfsk   
+´§ asdfsk   
 sdf test 
 asdjfö las 
 ---
 
 fsadf sad   </pre>
 </div>
-<div created="20200904213906708" modified="20200906185109909" tags="" title="test-extra-attributes" type="text/vnd.tiddlywiki">
+<div created="20200904213906708" modified="20200907133317678" tags="" title="test-extra-attributes" type="text/vnd.tiddlywiki">
 <pre>\ticktext tick=&quot;d&quot; tag=&quot;details&quot; params=&quot;.notop.c.cl.hl&quot; endString=&quot;---&quot; mode=block open
 \ticktext tick=&quot;s&quot; tag=&quot;summary&quot; params=&quot;.-m&quot;
 
-´.d ´.s Summay Text
+´d ´s Summay Text
 -------
 Open this example in edit mode, to see the definitions. Especially the `open` parameter in the `\ticktext` pragma.
 
@@ -10444,7 +10453,7 @@ line 3
 
 </pre>
 </div>
-<div created="20200902144451840" modified="20200906121336555" title="test-importpragmas" type="text/vnd.tiddlywiki">
+<div created="20200902144451840" modified="20200907134621787" title="test-importpragmas" type="text/vnd.tiddlywiki">
 <pre>\importpragmas [tag[pragmas]]
 
 \ticktext tick use=&quot;success&quot;  
@@ -10455,9 +10464,18 @@ line 3
 
 ´ {{test}}
 
-</pre>
+   </pre>
 </div>
-<div created="20200829192549728" modified="20200906185246704" tags="" title="test-kitchen" type="text/vnd.tiddlywiki">
+<div created="20200907142957601" modified="20200907143023485" tags="" title="test-importpragmas-debug" type="text/vnd.tiddlywiki">
+<pre>\importpragmas [tag[pragmas]]
+
+\ticktext tick use=&quot;success&quot;  
+
+\tickdebug all
+
+   </pre>
+</div>
+<div created="20200829192549728" modified="20200907133400537" tags="" title="test-kitchen" type="text/vnd.tiddlywiki">
 <pre>Ullum labore sensibus no vix. Id pro solum molestiae, ea mea omittam postulant eseruisse, sonet putent propriae et pri. No vidisse definitiones his, te dolore blandit lacerat cum. At vel nisl nobis, ne sea nulla corpora. At pri saperet nominati scriptorem, ei sale sanctus ea. Quo cu altera laoreet ceteros.
 
 ´.i.r.j.c.cp Ullum labore sensibus no vix. Id pro solum molestiae, ea mea omittam postulant eseruisse, sonet putent propriae et pri. No vidisse definitiones his, te dolore blandit&lt;hr&gt;lacerat cum. At vel nisl nobis, ne sea nulla corpora. At pri saperet nominati scriptorem, ei sale sanctus ea. Quo cu altera laoreet ceteros.
@@ -10481,7 +10499,7 @@ lacerat cum. At vel nisl nobis, ne sea nulla corpora. At pri saperet nominati sc
 
 ´.c2.gap.j.i.r ksj fölsjdf öljsljfsd jfsksj föl sjdföljsljfsd jfsksj fölsjdf ölj sljfsd jfsksj fölsjdföljsljf sd jfsksj fölsjdföljs ljfsd jfsksj fölsj dföljsljfsd jfsksj fölsjdfölj sljfsd jfs ksj fölsjdf öljsljfsd jfsksj föl sjdföljsljfsd jfsksj fölsjdf ölj sljfsd jfsksj fölsjdföljsljf sd jfsksj fölsjdföljs ljfsd jfsksj fölsj dföljsljfsd jfsksj fölsjdfölj sljfsd jfs
 
-´´.c2.r.j {{lorem-ipsum-100}}
+´.c2.r.j {{lorem-ipsum-100}}
 
 @@.i.r.b
 Das ist ein Test. Mein ''as lkfjhask'' alskjfhsad  fhsalkdfh sakdfsd hflshlfsafhsdfsf s sf sadf sdaf sdafsd fsdaf s df sadf sdf sdfsa  
@@ -10510,7 +10528,7 @@ asj fsadföl ashfsda fkshkfsaa
 ´ fsa fsd fsda fsdafsa
 </pre>
 </div>
-<div created="20200906091431254" modified="20200906180037046" tags="" title="test-table-1" type="text/vnd.tiddlywiki">
+<div created="20200906091431254" modified="20200907153126344" tags="" title="test-table-1" type="text/vnd.tiddlywiki">
 <pre>\ticktext tick=table tag=table endString=&quot;---&quot; mode=block
 \ticktext tick=caption tag=caption
 \ticktext tick=row tag=tr  mode=block endString=&quot;-&quot;
@@ -10520,25 +10538,25 @@ asj fsadföl ashfsda fkshkfsaa
 
 \ticktext tick=td tag=td 
 
-´.table ´.caption Some caption text
-´.row
-´.th header 1
-´.th2 header 2
+´table ´caption Some ´caption´ text
+´row
+´th header 1
+´th2 header 2
 -
-´.row
-´.td 1 text
-´.td cell 12 text
-´.td cell 13 text
+´row
+´td 1 text
+´td cell 12 text
+´td cell 13 text
 -
-´.row
-´.td 2 text
-´.td cell 22 text
-´.td cell 23 text
+´row
+´td 2 text
+´td cell 22 text
+´td cell 23 text
 ----
 
 </pre>
 </div>
-<div created="20200906133708774" modified="20200906182250703" tags="" title="test-table-multiline-cells" type="text/vnd.tiddlywiki">
+<div created="20200906133708774" modified="20200907140050832" tags="" title="test-table-multiline-cells" type="text/vnd.tiddlywiki">
 <pre>\ticktext tick=table tag=table endString=&quot;---&quot; mode=block
 \ticktext tick=caption tag=caption
 
@@ -10554,12 +10572,12 @@ asj fsadföl ashfsda fkshkfsaa
 \ticktext angel=cmulti tag=td params=&quot;.hl&quot;
 \ticktext angel use=cmulti
 
-´.table ´.caption Some caption text
-».row
-´.header  header 1
-´.header2 header 2 columns wide
+´table ´caption Some caption text
+»row
+´header  header 1
+´header2 header 2 columns wide
 --
-».row
+»row
 » 1 text
 
 » 12 text
@@ -10569,7 +10587,7 @@ line 2 alksjdfösdajf
 as döfjsadöfkjösadjf
 
 --
-».row
+»row
 ´ 2 text
 ´ 22 text
 ´ 23 text
@@ -10577,10 +10595,39 @@ as döfjsadöfkjösadjf
 
 </pre>
 </div>
+<div created="20200908103842958" modified="20200908104042653" tags="" title="test-table-use-degree-as-tick" type="text/vnd.tiddlywiki">
+<pre>\ticktext tick=table tag=table endString=&quot;---&quot; mode=block
+\ticktext tick=caption tag=caption
+\ticktext tick=row tag=tr  mode=block endString=&quot;-&quot;
+
+\ticktext tick=th tag=th 
+\ticktext tick=th2 tag=th  colspan=2
+
+\ticktext tick=xxx tag=td 
+\ticktext tick use=xxx
+
+°table °caption Some ´caption´ text
+°row
+°th header 1
+°th2 header 2
+-
+´row
+´ 1 text
+´ cell 12 text
+´ cell 13 text
+-
+´row
+´ 2 text
+´ cell 22 text
+´ cell 23 text
+----
+
+</pre>
+</div>
 <div created="20200906175845968" modified="20200906175912208" tags="" title="test-transclude-table" type="text/vnd.tiddlywiki">
 <pre>{{test-table-multiline-cells}}</pre>
 </div>
-<div created="20200902142529740" modified="20200902145414186" tags="use" title="test-transclusion-modes" type="text/vnd.tiddlywiki">
+<div created="20200902142529740" modified="20200907132839668" tags="use" title="test-transclusion-modes" type="text/vnd.tiddlywiki">
 <pre>\ticktext tick=&quot;inline&quot; tag=&quot;div&quot; params=&quot;.c.cs.hl&quot; 
 \ticktext tick=&quot;block&quot; tag=&quot;div&quot; params=&quot;.c.cs.hl&quot; mode=block
 
@@ -10588,19 +10635,22 @@ as döfjsadöfkjösadjf
 \ticktext tick=&quot;a&quot; use=block     TODO
 ```
 
-´.inline  {{test}}
+´inline  {{test}}
 
-´.block  {{test}}</pre>
+´block  {{test}}</pre>
 </div>
-<div created="20200906200519542" modified="20200906211927681" tags="" title="tick-inline" type="text/vnd.tiddlywiki">
-<pre>
-This is a test. ´´.myClass This is some text with a class´´. 
+<div created="20200906200519542" modified="20200907135848663" tags="" title="tick-inline-simple" type="text/vnd.tiddlywiki">
+<pre>This is a test. ´´.myClass This is some text with a class´´. 
 
 -----
 
-´´.myClass This is some text with a class. It doesn't work at the start of the line! ´´
+```
+´´.myClass This is some text with a class. It starts at the beginning of the line´´
+```
 
-It clashes with the tick-block mode
+´´.myClass This is some text with a class. It starts at the beginning of the line´´
+
+
 </pre>
 </div>
 <div created="20200906185250705" modified="20200906190109650" tags="" title="why" type="text/vnd.tiddlywiki">
