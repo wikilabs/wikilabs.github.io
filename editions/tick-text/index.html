@@ -10176,7 +10176,7 @@ ul .star{
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div list="test-presentation test-reveal-listwidget" title="$:/StoryList">
+<div list="test-reveal-listwidget" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -10815,15 +10815,16 @@ asj fsadföl ashfsda fkshkfsaa
 ---
 </pre>
 </div>
-<div created="20200910104714545" modified="20200910125842606" tags="" title="test-reveal-listwidget" type="text/vnd.tiddlywiki">
+<div created="20200910104714545" modified="20200910131243056" tags="" title="test-reveal-listwidget" type="text/vnd.tiddlywiki">
 <pre>\customize tick=&quot;present&quot; htmlTag=&quot;$presentation&quot; mode=block endString=&quot;---&quot;
 \customize tick htmlTag=&quot;$slide&quot; 
 
-\customize angel=&quot;list&quot; htmlTag=&quot;$list&quot; mode=block endString=&quot;--&quot; filter=&quot;[tag[slide]sort[title]]&quot;
+\customize tick=&quot;list&quot; htmlTag=&quot;$list&quot; mode=block endString=&quot;--&quot; filter=&quot;[tag[slide]sort[title]]&quot;
 
-\customize angel htmlTag=&quot;$slide&quot; mode=block endString=&quot;--&quot;
+\customize angel htmlTag=&quot;$slide&quot; mode=block 
 
-´present »list » &lt;$transclude mode=&quot;block&quot; /&gt;
+´present ´list » {{}}
+
 </pre>
 </div>
 <div created="20200906091431254" modified="20200908145910591" tags="" title="test-table-1" type="text/vnd.tiddlywiki">
