@@ -157,6 +157,8 @@ Error message and password prompt
 
 <li>$:/core/ui/EditorToolbar/transcludify</li>
 
+<li>$:/core/ui/ViewTemplate/title</li>
+
 <li>$:/DefaultTiddlers</li>
 
 <li>$:/isEncrypted</li>
@@ -186,6 +188,10 @@ Error message and password prompt
 <li>$:/state/toc/toc-Basics--118161433</li>
 
 <li>$:/state/toc/toc-Reference--118161433</li>
+
+<li>$:/state/toc/toc/Reference-Debugging--118161433</li>
+
+<li>$:/state/toc/toc/Reference/Debugging-pragma-debugcustomize--118161433</li>
 
 <li>$:/status/RequireReloadDueToPluginChange</li>
 
@@ -223,9 +229,15 @@ Error message and password prompt
 
 <li>column-styles</li>
 
+<li>Custom Markup Definition</li>
+
 <li>Custom Wikitext Markers</li>
 
+<li>Customize the Details Element</li>
+
 <li>Customized Wikitext Lists</li>
+
+<li>Debugging</li>
 
 <li>details-css</li>
 
@@ -235,6 +247,8 @@ Error message and password prompt
 
 <li>easy-to-use</li>
 
+<li>Editor Toolbar Buttons</li>
+
 <li>EXPERIMENTAL</li>
 
 <li>How to style a Paragraph</li>
@@ -242,6 +256,10 @@ Error message and password prompt
 <li>ID - only</li>
 
 <li>ID - paragraph</li>
+
+<li>Import and Re-define a Pragma</li>
+
+<li>Import Predefined Pragmas</li>
 
 <li>inline-css</li>
 
@@ -267,17 +285,17 @@ Error message and password prompt
 
 <li>nl-is-hard-linebreak-css</li>
 
-<li>pargma-customize</li>
+<li>Pragma - importcustom</li>
+
+<li>Pragma Debug Options</li>
 
 <li>pragma-customizeinline</li>
-
-<li>pragma-debug-options</li>
 
 <li>pragma-debugcustomize</li>
 
 <li>pragma-debugcustomize-example</li>
 
-<li>pragma-importcustom</li>
+<li>pragma-details</li>
 
 <li>pragma-to-be-included</li>
 
@@ -314,6 +332,8 @@ Error message and password prompt
 <li>test-aside-clearfix</li>
 
 <li>test-aside-without-pragma</li>
+
+<li>test-copy-to-clipboard-widget</li>
 
 <li>test-details-open</li>
 
@@ -355,9 +375,9 @@ Error message and password prompt
 
 <li>toc</li>
 
-<li>Toolbar Buttons</li>
-
 <li>why</li>
+
+<li>wltc-docs-styles</li>
 
 </ul>
 </p>
@@ -373,26 +393,43 @@ Error message and password prompt
 <!--~~ Ordinary tiddlers ~~-->
 
 <div id="storeArea" style="display:none;">
-<div created="20200827100914489" modified="20200915201114290" tags="$:/tags/Stylesheet" title=":/plugins/wikilabs/tick-text/styles" type="text/css">
+<div created="20200827100914489" modified="20200917115654405" tags="$:/tags/Stylesheet" title=":/plugins/wikilabs/tick-text/styles" type="text/css">
 <pre>/* WikiLabs tiddler classes defined by js code */
 .wltc {
-  margin-top: 1em;
-  margin-bottom: 1em;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 /*------------------------------------------*/
 /* Indent by level adjusted to bullet lists */
 
 .i, .indent, .wltc-l2 {
-  margin-left: 2.65em;
+  margin-left: 2.65rem;
 }
 
 .ii, .wltc-l3 {
-  margin-left: 5.3em;
+  margin-left: 5.3rem;
 }
 
 .iii, .wltc-l4 {
-  margin-left: 7.95em;
+  margin-left: 7.95rem;
+}
+
+/*------------------------------------------*/
+/* Dedent elements */
+
+.-i, .dedent {
+  margin-left: -2.65rem;
+}
+
+.-ii  {
+  margin-left: -5.3rem;
+}
+
+.-iii {
+  margin-left: -7.95rem;
+}
+
 }
 
 /*------------------------------------------*/
@@ -403,7 +440,7 @@ il1, .indentLine1 {
 }
 
 ol1, .outdentLine1 {
-  text-indent: -2.65em;
+  text-indent: -2.65rem;
 }
 
 .j, .justify {
@@ -412,7 +449,7 @@ ol1, .outdentLine1 {
 
 /* Centering functions */
 .r, .right-dedent {
-  margin-right: 3em;
+  margin-right: 2.65rem;
 }
 
 /*------------------------------------------*/
@@ -425,21 +462,21 @@ ul .star{
 /* Margin double, margin half               */
 
 .md, .margin-double {
-  margin-top: 2em;
-  margin-bottom: 2em;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .mtd, .margin-top-double {
-  margin-top: 2em;
+  margin-top: 2rem;
 }
 
 .-mh, .margin-half {
-  margin-top: -.5em;
-  margin-bottom: -.5em;
+  margin-top: -.5rem;
+  margin-bottom: -.5rem;
 }
 
 .-mbh, .-margin-bottom-half {
-  margin-bottom: -.5em;
+  margin-bottom: -.5rem;
 }
 
 /*------------------------------------------------------*/
@@ -485,8 +522,8 @@ ul .star{
 
 aside {
     width: 40%;
-    padding: .5em 1em;
-    margin-left: .5em;
+    padding: .5rem 1rem;
+    margin-left: .5rem;
     float: right;
     box-shadow: inset 5px 0 5px -5px #29627e;
     font-style: italic;
@@ -497,7 +534,7 @@ aside {
 <div created="20200907202432859" list="Pink LavenderBlush MediumVioletRed" modified="20200907202437095" title="$:/config/ColourPicker/Recent" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
-<div created="20200916105315917" force="yes" id="≈" modified="20200916122807955" name="ID - only" title="$:/config/edit/linePrefix" type="text/vnd.tiddlywiki">
+<div created="20200916105315917" force="yes" id="›" modified="20200917113028431" name="ID - only" title="$:/config/edit/linePrefix" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div created="20200915130603495" modified="20200915130603504" title="$:/config/RelinkOnRename" type="text/vnd.tiddlywiki">
@@ -6137,7 +6174,7 @@ aside {
         },
         &quot;$:/core/modules/savers/gitea.js&quot;: {
             &quot;title&quot;: &quot;$:/core/modules/savers/gitea.js&quot;,
-            &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/savers/gitea.js\ntype: application/javascript\nmodule-type: saver\n\nSaves wiki by pushing a commit to the gitea\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\n/*\nSelect the appropriate saver module and set it up\n*/\nvar GiteaSaver = function(wiki) {\n\tthis.wiki = wiki;\n};\n\nGiteaSaver.prototype.save = function(text,method,callback) {\n\tvar self = this,\n\t\tusername = this.wiki.getTiddlerText(\&quot;$:/Gitea/Username\&quot;),\n\t\tpassword = $tw.utils.getPassword(\&quot;Gitea\&quot;),\n\t\trepo = this.wiki.getTiddlerText(\&quot;$:/Gitea/Repo\&quot;),\n\t\tpath = this.wiki.getTiddlerText(\&quot;$:/Gitea/Path\&quot;,\&quot;\&quot;),\n\t\tfilename = this.wiki.getTiddlerText(\&quot;$:/Gitea/Filename\&quot;),\n\t\tbranch = this.wiki.getTiddlerText(\&quot;$:/Gitea/Branch\&quot;) || \&quot;master\&quot;,\n\t\tendpoint = this.wiki.getTiddlerText(\&quot;$:/Gitea/ServerURL\&quot;) || \&quot;https://gitea\&quot;,\n\t\theaders = {\n\t\t\t\&quot;Accept\&quot;: \&quot;application/json\&quot;,\n\t\t\t\&quot;Content-Type\&quot;: \&quot;application/json;charset=UTF-8\&quot;,\n\t\t\t\&quot;Authorization\&quot;: \&quot;Basic \&quot; + window.btoa(username + \&quot;:\&quot; + password)\n\t\t};\n\t// Bail if we don't have everything we need\n\tif(!username || !password || !repo || !filename) {\n\t\treturn false;\n\t}\n\t// Make sure the path start and ends with a slash\n\tif(path.substring(0,1) !== \&quot;/\&quot;) {\n\t\tpath = \&quot;/\&quot; + path;\n\t}\n\tif(path.substring(path.length - 1) !== \&quot;/\&quot;) {\n\t\tpath = path + \&quot;/\&quot;;\n\t}\n\t// Compose the base URI\n\tvar uri = endpoint + \&quot;/repos/\&quot; + repo + \&quot;/contents\&quot; + path;\n\t// Perform a get request to get the details (inc shas) of files in the same path as our file\n\t$tw.utils.httpRequest({\n\t\turl: uri,\n\t\ttype: \&quot;GET\&quot;,\n\t\theaders: headers,\n\t\tdata: {\n\t\t\tref: branch\n\t\t},\n\t\tcallback: function(err,getResponseDataJson,xhr) {\n\t\t\tvar getResponseData,sha = \&quot;\&quot;;\n\t\t\tif(err &amp;&amp; xhr.status !== 404) {\n\t\t\t\treturn callback(err);\n\t\t\t}\n\t\t\tvar use_put = true;\n\t\t\tif(xhr.status !== 404) {\n\t\t\t\tgetResponseData = JSON.parse(getResponseDataJson);\n\t\t\t\t$tw.utils.each(getResponseData,function(details) {\n\t\t\t\t\tif(details.name === filename) {\n\t\t\t\t\t\tsha = details.sha;\n\t\t\t\t\t}\n\t\t\t\t});\n\t\t\t\tif(sha === \&quot;\&quot;){\n\t\t\t\t\tuse_put = false;\n\t\t\t\t}\n\t\t\t}\n\t\t\tvar data = {\n\t\t\t\tmessage: $tw.language.getRawString(\&quot;ControlPanel/Saving/GitService/CommitMessage\&quot;),\n\t\t\t\tcontent: $tw.utils.base64Encode(text),\n\t\t\t\tsha: sha\n\t\t\t};\n\t\t\t$tw.utils.httpRequest({\n\t\t\t\turl: endpoint + \&quot;/repos/\&quot; + repo + \&quot;/branches/\&quot; + branch,\n\t\t\t\ttype: \&quot;GET\&quot;,\n\t\t\t\theaders: headers,\n\t\t\t\tcallback: function(err,getResponseDataJson,xhr) {\n\t\t\t\t\tif(xhr.status === 404) {\n\t\t\t\t\t\tcallback(\&quot;Please ensure the branch in the Gitea repo exists\&quot;);\n\t\t\t\t\t}else{\n\t\t\t\t\t\tdata[\&quot;branch\&quot;] = branch;\n\t\t\t\t\t\tself.upload(uri + filename, use_put?\&quot;PUT\&quot;:\&quot;POST\&quot;, headers, data, callback);\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t});\n\t\t}\n\t});\n\treturn true;\n};\n\nGiteaSaver.prototype.upload = function(uri,method,headers,data,callback) {\n\t$tw.utils.httpRequest({\n\t\turl: uri,\n\t\ttype: method,\n\t\theaders: headers,\n\t\tdata: JSON.stringify(data),\n\t\tcallback: function(err,putResponseDataJson,xhr) {\n\t\t\tif(err) {\n\t\t\t\treturn callback(err);\n\t\t\t}\n\t\t\tvar putResponseData = JSON.parse(putResponseDataJson);\n\t\t\tcallback(null);\n\t\t}\n\t});\n};\n\n/*\nInformation about this saver\n*/\nGiteaSaver.prototype.info = {\n\tname: \&quot;Gitea\&quot;,\n\tpriority: 2000,\n\tcapabilities: [\&quot;save\&quot;, \&quot;autosave\&quot;]\n};\n\n/*\nStatic method that returns true if this saver is capable of working\n*/\nexports.canSave = function(wiki) {\n\treturn true;\n};\n\n/*\nCreate an instance of this saver\n*/\nexports.create = function(wiki) {\n\treturn new GiteaSaver(wiki);\n};\n\n})();\n&quot;,
+            &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/savers/gitea.js\ntype: application/javascript\nmodule-type: saver\n\nSaves wiki by pushing a commit to the gitea\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\n/*\nSelect the appropriate saver module and set it up\n*/\nvar GiteaSaver = function(wiki) {\n\tthis.wiki = wiki;\n};\n\nGiteaSaver.prototype.save = function(text,method,callback) {\n\tvar self = this,\n\t\tusername = this.wiki.getTiddlerText(\&quot;$:/Gitea/Username\&quot;),\n\t\tpassword = $tw.utils.getPassword(\&quot;Gitea\&quot;),\n\t\trepo = this.wiki.getTiddlerText(\&quot;$:/Gitea/Repo\&quot;),\n\t\tpath = this.wiki.getTiddlerText(\&quot;$:/Gitea/Path\&quot;,\&quot;\&quot;),\n\t\tfilename = this.wiki.getTiddlerText(\&quot;$:/Gitea/Filename\&quot;),\n\t\tbranch = this.wiki.getTiddlerText(\&quot;$:/Gitea/Branch\&quot;) || \&quot;master\&quot;,\n\t\tendpoint = this.wiki.getTiddlerText(\&quot;$:/Gitea/ServerURL\&quot;) || \&quot;https://gitea\&quot;,\n\t\theaders = {\n\t\t\t\&quot;Accept\&quot;: \&quot;application/json\&quot;,\n\t\t\t\&quot;Content-Type\&quot;: \&quot;application/json;charset=UTF-8\&quot;,\n\t\t\t\&quot;Authorization\&quot;: \&quot;token \&quot; + password\n\t\t};\n\t// Bail if we don't have everything we need\n\tif(!username || !password || !repo || !filename) {\n\t\treturn false;\n\t}\n\t// Make sure the path start and ends with a slash\n\tif(path.substring(0,1) !== \&quot;/\&quot;) {\n\t\tpath = \&quot;/\&quot; + path;\n\t}\n\tif(path.substring(path.length - 1) !== \&quot;/\&quot;) {\n\t\tpath = path + \&quot;/\&quot;;\n\t}\n\t// Compose the base URI\n\tvar uri = endpoint + \&quot;/repos/\&quot; + repo + \&quot;/contents\&quot; + path;\n\t// Perform a get request to get the details (inc shas) of files in the same path as our file\n\t$tw.utils.httpRequest({\n\t\turl: uri,\n\t\ttype: \&quot;GET\&quot;,\n\t\theaders: headers,\n\t\tdata: {\n\t\t\tref: branch\n\t\t},\n\t\tcallback: function(err,getResponseDataJson,xhr) {\n\t\t\tvar getResponseData,sha = \&quot;\&quot;;\n\t\t\tif(err &amp;&amp; xhr.status !== 404) {\n\t\t\t\treturn callback(err);\n\t\t\t}\n\t\t\tvar use_put = true;\n\t\t\tif(xhr.status !== 404) {\n\t\t\t\tgetResponseData = JSON.parse(getResponseDataJson);\n\t\t\t\t$tw.utils.each(getResponseData,function(details) {\n\t\t\t\t\tif(details.name === filename) {\n\t\t\t\t\t\tsha = details.sha;\n\t\t\t\t\t}\n\t\t\t\t});\n\t\t\t\tif(sha === \&quot;\&quot;){\n\t\t\t\t\tuse_put = false;\n\t\t\t\t}\n\t\t\t}\n\t\t\tvar data = {\n\t\t\t\tmessage: $tw.language.getRawString(\&quot;ControlPanel/Saving/GitService/CommitMessage\&quot;),\n\t\t\t\tcontent: $tw.utils.base64Encode(text),\n\t\t\t\tsha: sha\n\t\t\t};\n\t\t\t$tw.utils.httpRequest({\n\t\t\t\turl: endpoint + \&quot;/repos/\&quot; + repo + \&quot;/branches/\&quot; + branch,\n\t\t\t\ttype: \&quot;GET\&quot;,\n\t\t\t\theaders: headers,\n\t\t\t\tcallback: function(err,getResponseDataJson,xhr) {\n\t\t\t\t\tif(xhr.status === 404) {\n\t\t\t\t\t\tcallback(\&quot;Please ensure the branch in the Gitea repo exists\&quot;);\n\t\t\t\t\t}else{\n\t\t\t\t\t\tdata[\&quot;branch\&quot;] = branch;\n\t\t\t\t\t\tself.upload(uri + filename, use_put?\&quot;PUT\&quot;:\&quot;POST\&quot;, headers, data, callback);\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t});\n\t\t}\n\t});\n\treturn true;\n};\n\nGiteaSaver.prototype.upload = function(uri,method,headers,data,callback) {\n\t$tw.utils.httpRequest({\n\t\turl: uri,\n\t\ttype: method,\n\t\theaders: headers,\n\t\tdata: JSON.stringify(data),\n\t\tcallback: function(err,putResponseDataJson,xhr) {\n\t\t\tif(err) {\n\t\t\t\treturn callback(err);\n\t\t\t}\n\t\t\tvar putResponseData = JSON.parse(putResponseDataJson);\n\t\t\tcallback(null);\n\t\t}\n\t});\n};\n\n/*\nInformation about this saver\n*/\nGiteaSaver.prototype.info = {\n\tname: \&quot;Gitea\&quot;,\n\tpriority: 2000,\n\tcapabilities: [\&quot;save\&quot;, \&quot;autosave\&quot;]\n};\n\n/*\nStatic method that returns true if this saver is capable of working\n*/\nexports.canSave = function(wiki) {\n\treturn true;\n};\n\n/*\nCreate an instance of this saver\n*/\nexports.create = function(wiki) {\n\treturn new GiteaSaver(wiki);\n};\n\n})();\n&quot;,
             &quot;type&quot;: &quot;application/javascript&quot;,
             &quot;module-type&quot;: &quot;saver&quot;
         },
@@ -7026,7 +7063,7 @@ aside {
         &quot;$:/core/templates/alltiddlers.template.html&quot;: {
             &quot;title&quot;: &quot;$:/core/templates/alltiddlers.template.html&quot;,
             &quot;type&quot;: &quot;text/vnd.tiddlywiki-html&quot;,
-            &quot;text&quot;: &quot;&lt;!-- This template is provided for backwards compatibility with older versions of TiddlyWiki --&gt;\n\n&lt;$set name=\&quot; \&quot; value=\&quot;[!is[system]sort[title]]\&quot;&gt;\n\n{{$:/core/templates/exporters/StaticRiver}}\n\n&lt;/$set&gt;\n&quot;
+            &quot;text&quot;: &quot;&lt;!-- This template is provided for backwards compatibility with older versions of TiddlyWiki --&gt;\n\n&lt;$set name=\&quot;exportFilter\&quot; value=\&quot;[!is[system]sort[title]]\&quot;&gt;\n\n{{$:/core/templates/exporters/StaticRiver}}\n\n&lt;/$set&gt;\n&quot;
         },
         &quot;$:/core/templates/canonical-uri-external-image&quot;: {
             &quot;title&quot;: &quot;$:/core/templates/canonical-uri-external-image&quot;,
@@ -9993,7 +10030,7 @@ aside {
     }
 }</pre>
 </div>
-<div caption="{{$:/language/Buttons/Linkify/Caption}}" condition="[&lt;targetTiddler&gt;!has[type]] [&lt;targetTiddler&gt;type[text/vnd.tiddlywiki]]" created="20200913204350305" description="{{$:/language/Buttons/Linkify/Hint}}" icon="$:/core/images/linkify" modified="20200913204350377" shortcuts="((linkify))" tags="$:/tags/EditorToolbar" title="$:/core/ui/EditorToolbar/linkify" type="text/vnd.tiddlywiki">
+<div caption="{{$:/language/Buttons/Linkify/Caption}}" condition="[&lt;targetTiddler&gt;!has[type]] [&lt;targetTiddler&gt;type[text/vnd.tiddlywiki]]" created="20200831060637558" description="{{$:/language/Buttons/Linkify/Hint}}" icon="$:/core/images/linkify" modified="20200831060637611" shortcuts="((linkify))" tags="$:/tags/EditorToolbar" title="$:/core/ui/EditorToolbar/linkify" type="text/vnd.tiddlywiki">
 <pre>&lt;$action-sendmessage
 	$message=&quot;tm-edit-text-operation&quot;
 	$param=&quot;wrap-selection&quot;
@@ -10002,7 +10039,7 @@ aside {
 /&gt;
 </pre>
 </div>
-<div caption="{{$:/language/Buttons/Transcludify/Caption}}" condition="[&lt;targetTiddler&gt;!has[type]] [&lt;targetTiddler&gt;type[text/vnd.tiddlywiki]]" created="20200913204350305" description="{{$:/language/Buttons/Transcludify/Hint}}" icon="$:/core/images/transcludify" modified="20200913204350380" shortcuts="((transcludify))" tags="$:/tags/EditorToolbar" title="$:/core/ui/EditorToolbar/transcludify" type="text/vnd.tiddlywiki">
+<div caption="{{$:/language/Buttons/Transcludify/Caption}}" condition="[&lt;targetTiddler&gt;!has[type]] [&lt;targetTiddler&gt;type[text/vnd.tiddlywiki]]" created="20200831060637558" description="{{$:/language/Buttons/Transcludify/Hint}}" icon="$:/core/images/transcludify" modified="20200831060637615" shortcuts="((transcludify))" tags="$:/tags/EditorToolbar" title="$:/core/ui/EditorToolbar/transcludify" type="text/vnd.tiddlywiki">
 <pre>&lt;$action-sendmessage
 	$message=&quot;tm-edit-text-operation&quot;
 	$param=&quot;wrap-selection&quot;
@@ -10010,6 +10047,51 @@ aside {
 	suffix=&quot;}}&quot;
 /&gt;
 </pre>
+</div>
+<div created="20200917124335543" modified="20200917190755952" tags="$:/tags/ViewTemplate" title="$:/core/ui/ViewTemplate/title" type="text/vnd.tiddlywiki">
+<pre>\whitespace trim
+\define title-styles()
+fill:$(foregroundColor)$;
+\end
+\define config-title()
+$:/config/ViewToolbarButtons/Visibility/$(listItem)$
+\end
+&lt;div class=&quot;tc-tiddler-title&quot;&gt;
+&lt;div class=&quot;tc-titlebar&quot;&gt;
+&lt;span class=&quot;tc-tiddler-controls&quot;&gt;
+&lt;$list filter=&quot;[all[shadows+tiddlers]tag[$:/tags/ViewToolbar]!has[draft.of]]&quot; variable=&quot;listItem&quot;&gt;&lt;$reveal type=&quot;nomatch&quot; state=&lt;&lt;config-title&gt;&gt; text=&quot;hide&quot;&gt;&lt;$set name=&quot;tv-config-toolbar-class&quot; filter=&quot;[&lt;tv-config-toolbar-class&gt;] [&lt;listItem&gt;encodeuricomponent[]addprefix[tc-btn-]]&quot;&gt;&lt;$transclude tiddler=&lt;&lt;listItem&gt;&gt;/&gt;&lt;/$set&gt;&lt;/$reveal&gt;&lt;/$list&gt;
+&lt;/span&gt;
+&lt;$set name=&quot;tv-wikilinks&quot; value={{$:/config/Tiddlers/TitleLinks}}&gt;
+&lt;$link&gt;
+&lt;$set name=&quot;foregroundColor&quot; value={{!!color}}&gt;
+&lt;$list filter=&quot;[all[current]has[icon]]~[[$:/config/DefaultTiddlerIcon]has[text]]&quot;&gt;
+&lt;span class=&quot;tc-tiddler-title-icon&quot; style=&lt;&lt;title-styles&gt;&gt;&gt;
+&lt;$transclude tiddler={{!!icon}}&gt;
+&lt;$transclude tiddler={{$:/config/DefaultTiddlerIcon}}/&gt;
+&lt;/$transclude&gt;
+&lt;/span&gt;
+&lt;/$list&gt;
+&lt;/$set&gt;
+&lt;$list filter=&quot;[all[current]removeprefix[$:/]]&quot;&gt;
+&lt;h2 class=&quot;tc-title&quot; title={{$:/language/SystemTiddler/Tooltip}}&gt;
+&lt;span class=&quot;tc-system-title-prefix&quot;&gt;$:/&lt;/span&gt;&lt;$text text=&lt;&lt;currentTiddler&gt;&gt;/&gt;
+&lt;/h2&gt;
+&lt;/$list&gt;
+&lt;$list filter=&quot;[all[current]!prefix[$:/]]&quot;&gt;
+&lt;h2 class=&quot;tc-title&quot;&gt;
+&lt;$view field=&quot;title&quot;/&gt;
+&lt;/h2&gt;
+&lt;/$list&gt;
+&lt;/$link&gt;
+&lt;/$set&gt;
+&lt;/div&gt;
+
+&lt;$reveal type=&quot;nomatch&quot; text=&quot;&quot; default=&quot;&quot; state=&lt;&lt;tiddlerInfoState&gt;&gt; class=&quot;tc-tiddler-info tc-popup-handle&quot; animate=&quot;yes&quot; retain=&quot;yes&quot;&gt;
+
+&lt;$list filter=&quot;[all[shadows+tiddlers]tag[$:/tags/TiddlerInfoSegment]!has[draft.of]] [[$:/core/ui/TiddlerInfo]]&quot; variable=&quot;listItem&quot;&gt;&lt;$transclude tiddler=&lt;&lt;listItem&gt;&gt; mode=&quot;block&quot;/&gt;&lt;/$list&gt;
+
+&lt;/$reveal&gt;
+&lt;/div&gt;</pre>
 </div>
 <div created="20200830152450408" modified="20200906201433958" title="$:/DefaultTiddlers" type="text/vnd.tiddlywiki">
 <pre>[list[$:/StoryList]]</pre>
@@ -11207,19 +11289,19 @@ aside {
         },
         &quot;$:/plugins/wikilabs/tick-text/wikirules/customize.js&quot;: {
             &quot;title&quot;: &quot;$:/plugins/wikilabs/tick-text/wikirules/customize.js&quot;,
-            &quot;text&quot;: &quot;/*\\\r\ntitle: $:/plugins/wikilabs/tick-text/wikirules/customize.js\r\ntype: application/javascript\r\nmodule-type: wikirule\r\n\r\nWiki pragma rule for whitespace specifications\r\n\r\n```\r\n\\customize tick=§ _element=div _endString= _mode= _params= _use=\r\n\r\n\\customize angel=x _element=span _params=.i.j.c.cp _endString=eee\r\n\r\n\\customize single=det _element=\&quot;details\&quot; _params=\&quot;\&quot; _endString=\&quot;—\&quot;\r\n\r\n\\customize degree=sum _element=\&quot;summary\&quot;\r\n\r\n\\customize underscore _element=span\r\n```\r\n\r\n\\*/\r\n(function(){\r\n\r\n/*jslint node: true, browser: true */\r\n/*global $tw:false, exports:false*/\r\n\&quot;use strict\&quot;;\r\n\r\nexports.name = \&quot;customize\&quot;;\r\nexports.types = {pragma: true};\r\n\r\nvar idTypes = \&quot;tick,single,degree,underscore,angel,almost\&quot;.split(\&quot;,\&quot;);\r\n/*\r\nInstantiate parse rule\r\n*/\r\nexports.init = function(parser) {\r\n\tvar self = this;\r\n\tthis.parser = parser;\r\n\t// Regexp to match\r\n\tthis.matchRegExp = /^\\\\customize[^\\S\\n]/mg;\r\n\r\n\tthis.p = this.parser;\r\n\tthis.p.configTickText = this.p.configTickText  || {};\r\n\t\r\n\tthis.pc = this.p.configTickText;\r\n\t\r\n\tidTypes.map( function(id) {\r\n\t\tself.pc[id] = self.pc[id] || {};\r\n\t})\r\n};\r\n\r\n\r\n/* parse attributes\r\n\r\nvar s = '&lt;option value=\&quot;\&quot; data-foo=\&quot;{{te st}}\&quot; readonly&gt;Value 1&lt;/option&gt;';\r\n\r\nvar test_element = document.createElement('div');\r\ntest_element.innerHTML = s;\r\n\r\nvar element = test_element.childNodes[0];\r\nvar attributes = element.attributes;\r\n\r\nfor (var i = 0; i &lt; attributes.length; i++) {\r\n    var attribute = attributes[i];\r\n\r\n    console.log(attribute.name, '=&gt;', attribute.value);\r\n}\r\n\r\n*/\r\n\r\n/*\r\nexports.parseTag = function(source,pos,options) {\r\n*/\r\n\r\n/*\r\nreturns an object array with::\r\nstart, end .. regexp numbers\r\ntype: string .. should be always string\r\nname: .. parameter name // \r\nvalue: .. parameter value as string\r\n\r\nexample tick=x htmlTag=div params=\&quot;.i.j.c.cp\&quot; end=\&quot;eee\&quot;\r\n\r\ndoesn't work as expected.\r\n*/\r\nfunction parseAttributes(source) {\r\n\tvar pos = 0,\r\n\t\tattributes= [];\r\n\r\n\t// Process attributes\r\n\tvar attribute = $tw.utils.parseAttribute(source,pos);\r\n\twhile(attribute) {\r\n\t\tattributes.push(attribute);\r\n\t\tpos = attribute.end;\r\n\t\t// Get the next attribute\r\n\t\tattribute = $tw.utils.parseAttribute(source,pos);\r\n\t}\r\n\treturn attributes;\r\n}\r\n\r\n/*\r\nParse the most recent match\r\n*/\r\nexports.parse = function() {\r\n\t// Move past the pragma invocation\r\n\tthis.parser.pos = this.matchRegExp.lastIndex;\r\n\t// Parse line terminated by a line break\r\n\tvar reMatch = /([^\\n]*\\S)|(\\r?\\n)/mg,\r\n\t\tline = \&quot;\&quot;;\r\n\treMatch.lastIndex = this.parser.pos;\r\n\tvar match = reMatch.exec(this.parser.source);\r\n\twhile(match &amp;&amp; match.index === this.parser.pos) {\r\n\t\tthis.parser.pos = reMatch.lastIndex;\r\n\t\t// Exit if we've got the line break\r\n\t\tif(match[2]) {\r\n\t\t\tbreak;\r\n\t\t}\r\n\t\t// Process the token\r\n\t\tif(match[1]) {\r\n\t\t\tline = (match[1]);\r\n\t\t}\r\n\t\t// Match the next token\r\n\t\tmatch = reMatch.exec(this.parser.source);\r\n\t}\r\n\t\r\n\tvar attributes = parseAttributes(line);\r\n\r\n\t// \\ticktext tick=x htmlTag=div params=\&quot;.i.j.c.cp\&quot; end=\&quot;eee\&quot;\r\n\tvar id = \&quot;X\&quot;, // There should be no id X!!\r\n//\t\tconfigTickText = {_mode:\&quot;\&quot;, _element:\&quot;\&quot;, _params:\&quot;\&quot;, _endString:\&quot;\&quot;};\r\n\t\tconfigTickText = {};\r\n\t\r\n\t$tw.utils.each(attributes,function(token) {\r\n\t\tswitch(token.name) {\r\n\t\t\tcase \&quot;tick\&quot;: // fall through\r\n\t\t\tcase \&quot;angel\&quot;: // fall through\r\n\t\t\tcase \&quot;almost\&quot;: // fall through\r\n\t\t\tcase \&quot;single\&quot;: // fall through\r\n\t\t\tcase \&quot;underscore\&quot;: // fall through\r\n\t\t\tcase \&quot;degree\&quot;:\r\n\t\t\t\tid = token.name;\r\n\t\t\t\tconfigTickText.symbol = token.value;\r\n\t\t\t\tbreak;\r\n\t\t\tcase \&quot;_mode\&quot;:\r\n\t\t\t\tconfigTickText._mode = token.value;\r\n\t\t\t\tbreak;\r\n\t\t\tcase \&quot;_element\&quot;:\r\n\t\t\t\tconfigTickText._element = token.value;\r\n\t\t\t\tbreak;\r\n\t\t\tcase \&quot;_params\&quot;:\r\n\t\t\t\tconfigTickText._params = token.value;\r\n\t\t\t\tbreak;\r\n\t\t\tcase \&quot;_endString\&quot;:\r\n\t\t\t\tconfigTickText._endString = token.value;\r\n\t\t\t\tbreak;\r\n\t\t\tdefault:\r\n\t\t\t\tconfigTickText[token.name] = token.value || \&quot;\&quot;;\r\n\t\t}\r\n\t});\r\n\t\r\n\t// if _debug is set by _use in an other tiddler, we need the _debugString!\r\n\tvar debugString = \&quot;\\\\customize\&quot;;\r\n\tObject.keys(configTickText).map( function(x) {\r\n\t\tif (x == \&quot;symbol\&quot;) debugString += ' ' + id + '=\&quot;' + configTickText[x] + '\&quot;';\r\n\t\telse if (x == \&quot;_debug\&quot;) debugString;\r\n\t\telse debugString += ' ' + x + '=\&quot;' + configTickText[x] + '\&quot;'; \r\n\t})\r\n\tconfigTickText._debugString = debugString;\r\n\r\n\tthis.pc[id][configTickText.symbol] = configTickText;\r\n\t// No parse tree nodes to return\r\n\treturn [];\r\n};\r\n\r\n})();\r\n&quot;,
+            &quot;text&quot;: &quot;/*\\\r\ntitle: $:/plugins/wikilabs/tick-text/wikirules/customize.js\r\ntype: application/javascript\r\nmodule-type: wikirule\r\n\r\nWiki pragma rule for whitespace specifications\r\n\r\n```\r\n\\customize tick=§ _element=div _endString= _mode= _params= _use=\r\n\r\n\\customize angel=x _element=span _params=.i.j.c.cp _endString=eee\r\n\r\n\\customize single=det _element=\&quot;details\&quot; _params=\&quot;\&quot; _endString=\&quot;—\&quot;\r\n\r\n\\customize degree=sum _element=\&quot;summary\&quot;\r\n\r\n\\customize underscore _element=span\r\n```\r\n\r\n\\*/\r\n(function(){\r\n\r\n/*jslint node: true, browser: true */\r\n/*global $tw:false, exports:false*/\r\n\&quot;use strict\&quot;;\r\n\r\nexports.name = \&quot;customize\&quot;;\r\nexports.types = {pragma: true};\r\n\r\nvar idTypes = [\&quot;tick\&quot;, \&quot;single\&quot;, \&quot;degree\&quot;, \&quot;underscore\&quot;, \&quot;angel\&quot;, \&quot;almost\&quot;];\r\n/*\r\nInstantiate parse rule\r\n*/\r\nexports.init = function(parser) {\r\n\tvar self = this;\r\n\tthis.parser = parser;\r\n\t// Regexp to match\r\n\tthis.matchRegExp = /^\\\\customize[^\\S\\n]/mg;\r\n\r\n\tthis.p = this.parser;\r\n\tthis.p.configTickText = this.p.configTickText  || {};\r\n\t\r\n\tthis.pc = this.p.configTickText;\r\n\t\r\n\tidTypes.map( function(id) {\r\n\t\tself.pc[id] = self.pc[id] || {};\r\n\t})\r\n};\r\n\r\n\r\n/* parse attributes\r\n\r\nvar s = '&lt;option value=\&quot;\&quot; data-foo=\&quot;{{te st}}\&quot; readonly&gt;Value 1&lt;/option&gt;';\r\n\r\nvar test_element = document.createElement('div');\r\ntest_element.innerHTML = s;\r\n\r\nvar element = test_element.childNodes[0];\r\nvar attributes = element.attributes;\r\n\r\nfor (var i = 0; i &lt; attributes.length; i++) {\r\n    var attribute = attributes[i];\r\n\r\n    console.log(attribute.name, '=&gt;', attribute.value);\r\n}\r\n\r\n*/\r\n\r\n/*\r\nexports.parseTag = function(source,pos,options) {\r\n*/\r\n\r\n/*\r\nreturns an object array with::\r\nstart, end .. regexp numbers\r\ntype: string .. should be always string\r\nname: .. parameter name // \r\nvalue: .. parameter value as string\r\n\r\nexample tick=x htmlTag=div params=\&quot;.i.j.c.cp\&quot; end=\&quot;eee\&quot;\r\n\r\ndoesn't work as expected.\r\n*/\r\nfunction parseAttributes(source) {\r\n\tvar pos = 0,\r\n\t\tattributes= [];\r\n\r\n\t// Process attributes\r\n\tvar attribute = $tw.utils.parseAttribute(source,pos);\r\n\twhile(attribute) {\r\n\t\tattributes.push(attribute);\r\n\t\tpos = attribute.end;\r\n\t\t// Get the next attribute\r\n\t\tattribute = $tw.utils.parseAttribute(source,pos);\r\n\t}\r\n\treturn attributes;\r\n}\r\n\r\n/*\r\nParse the most recent match\r\n*/\r\nexports.parse = function() {\r\n\t// Move past the pragma invocation\r\n\tthis.parser.pos = this.matchRegExp.lastIndex;\r\n\t// Parse line terminated by a line break\r\n\tvar reMatch = /([^\\n]*\\S)|(\\r?\\n)/mg,\r\n\t\tline = \&quot;\&quot;;\r\n\treMatch.lastIndex = this.parser.pos;\r\n\tvar match = reMatch.exec(this.parser.source);\r\n\twhile(match &amp;&amp; match.index === this.parser.pos) {\r\n\t\tthis.parser.pos = reMatch.lastIndex;\r\n\t\t// Exit if we've got the line break\r\n\t\tif(match[2]) {\r\n\t\t\tbreak;\r\n\t\t}\r\n\t\t// Process the token\r\n\t\tif(match[1]) {\r\n\t\t\tline = (match[1]);\r\n\t\t}\r\n\t\t// Match the next token\r\n\t\tmatch = reMatch.exec(this.parser.source);\r\n\t}\r\n\t\r\n\tvar attributes = parseAttributes(line);\r\n\r\n\t// \\ticktext tick=x htmlTag=div params=\&quot;.i.j.c.cp\&quot; end=\&quot;eee\&quot;\r\n\tvar id = \&quot;X\&quot;, // There should be no id X!!\r\n//\t\tconfigTickText = {_mode:\&quot;\&quot;, _element:\&quot;\&quot;, _params:\&quot;\&quot;, _endString:\&quot;\&quot;};\r\n\t\tconfigTickText = {};\r\n\t\r\n\t$tw.utils.each(attributes,function(token) {\r\n\t\tswitch(token.name) {\r\n\t\t\tcase \&quot;tick\&quot;: // fall through\r\n\t\t\tcase \&quot;angel\&quot;: // fall through\r\n\t\t\tcase \&quot;almost\&quot;: // fall through\r\n\t\t\tcase \&quot;single\&quot;: // fall through\r\n\t\t\tcase \&quot;underscore\&quot;: // fall through\r\n\t\t\tcase \&quot;degree\&quot;:\r\n\t\t\t\tid = token.name;\r\n\t\t\t\tconfigTickText.symbol = token.value;\r\n\t\t\t\tbreak;\r\n\t\t\tcase \&quot;_mode\&quot;:\r\n\t\t\t\tconfigTickText._mode = token.value;\r\n\t\t\t\tbreak;\r\n\t\t\tcase \&quot;_element\&quot;:\r\n\t\t\t\tconfigTickText._element = token.value;\r\n\t\t\t\tbreak;\r\n\t\t\tcase \&quot;_params\&quot;:\r\n\t\t\t\tconfigTickText._params = token.value;\r\n\t\t\t\tbreak;\r\n\t\t\tcase \&quot;_endString\&quot;:\r\n\t\t\t\tconfigTickText._endString = token.value;\r\n\t\t\t\tbreak;\r\n\t\t\tdefault:\r\n\t\t\t\tconfigTickText[token.name] = token.value || \&quot;\&quot;;\r\n\t\t}\r\n\t});\r\n\t\r\n\t// if _debug is set by _use in an other tiddler, we need the _debugString!\r\n\tvar debugString = \&quot;\\\\customize\&quot;;\r\n\tObject.keys(configTickText).map( function(x) {\r\n\t\tif (x == \&quot;symbol\&quot;) debugString += ' ' + id + '=\&quot;' + configTickText[x] + '\&quot;';\r\n\t\telse if (x == \&quot;_debug\&quot;) debugString;\r\n\t\telse debugString += ' ' + x + '=\&quot;' + configTickText[x] + '\&quot;'; \r\n\t})\r\n\tconfigTickText._debugString = debugString;\r\n\r\n\tthis.pc[id][configTickText.symbol] = configTickText;\r\n\t// No parse tree nodes to return\r\n\treturn [];\r\n};\r\n\r\n})();\r\n&quot;,
             &quot;type&quot;: &quot;application/javascript&quot;,
             &quot;module-type&quot;: &quot;wikirule&quot;
         },
         &quot;$:/plugins/wikilabs/tick-text/wikirules/pragmas/debug-customize.js&quot;: {
             &quot;title&quot;: &quot;$:/plugins/wikilabs/tick-text/wikirules/pragmas/debug-customize.js&quot;,
-            &quot;text&quot;: &quot;/*\\\r\ntitle: $:/plugins/wikilabs/tick-text/wikirules/pragmas/debug-customize.js\r\ntype: application/javascript\r\nmodule-type: wikirule\r\n\r\nReturns a JSON info of parser.configTickText\r\n\r\n```\r\n\\debugcostomize\r\n```\r\n\r\n\\*/\r\n(function(){\r\n\r\n/*jslint node: true, browser: true */\r\n/*global $tw:false, exports:false*/\r\n\&quot;use strict\&quot;;\r\n\r\nexports.name = \&quot;debugcustomize\&quot;;\r\nexports.types = {pragma: true};\r\n\t\r\nvar idTypes = \&quot;tick,single,degree,underscore,angel,almost\&quot;.split(\&quot;,\&quot;);\r\n/*\r\nInstantiate parse rule\r\n*/\r\nexports.init = function(parser) {\r\n\tvar self = this;\r\n\tthis.parser = parser;\r\n\t// Regexp to match\r\n\tthis.matchRegExp = /^\\\\debugcustomize[^\\S\\n]/mg;\r\n\t\r\n\tthis.p = this.parser;\r\n\tthis.p.configTickText = this.p.configTickText  || {};\r\n\t\r\n\tthis.pc = this.p.configTickText;\r\n\t\r\n\tidTypes.map( function(id) {\r\n\t\tself.pc[id] = self.pc[id] || {};\r\n\t})};\r\n\r\n/*\r\nParse the most recent match\r\n*/\r\nexports.parse = function() {\r\n\tvar text = \&quot;\&quot;;\r\n\t\r\n\t// Move past the pragma invocation\r\n\tthis.parser.pos = this.matchRegExp.lastIndex;\r\n\t// Parse line terminated by a line break\r\n\tvar reMatch = /(.*)(\\r?\\n)|$/mg;\r\n\treMatch.lastIndex = this.parser.pos;\r\n\tvar match = reMatch.exec(this.parser.source);\r\n\tthis.parser.pos = reMatch.lastIndex;\r\n\t\r\n\tif (match) {\r\n\t\tswitch(match[1]) {\r\n\t\t\tcase \&quot;tick\&quot;:\r\n\t\t\t\ttext = \&quot;tick:\\n\&quot; + JSON.stringify(this.pc.tick, null, 2)\r\n\t\t\t\tbreak;\r\n\t\t\tcase \&quot;angel\&quot;:\r\n\t\t\t\ttext += \&quot;angel:\\n\&quot; + JSON.stringify(this.pc.angel, null, 2)\r\n\t\t\t\tbreak;\r\n\t\t\tcase \&quot;almost\&quot;:\r\n\t\t\t\ttext += \&quot;almost:\\n\&quot; + JSON.stringify(this.pc.almost, null, 2)\r\n\t\t\t\tbreak;\r\n\t\t\tcase \&quot;single\&quot;:\r\n\t\t\t\ttext += \&quot;single:\\n\&quot; + JSON.stringify(this.pc.single, null, 2)\r\n\t\t\t\tbreak;\r\n\t\t\tcase \&quot;underscore\&quot;:\r\n\t\t\t\ttext += \&quot;underscore:\\n\&quot; + JSON.stringify(this.pc.underscore, null, 2)\r\n\t\t\t\tbreak;\r\n\t\t\tcase \&quot;degree\&quot;:\r\n\t\t\t\ttext += \&quot;degree:\\n\&quot; + JSON.stringify(this.pc.degree, null, 2)\r\n\t\t\t\tbreak;\r\n\t\t\tcase \&quot;all\&quot;: // fall through\r\n\t\t\tdefault:\r\n\t\t\t\ttext = JSON.stringify(this.pc, null, 2) + \&quot;\\n\\n\&quot;\r\n\t\t\t\tbreak\r\n\t\t}\r\n\t}\r\n\t\r\n\treturn [{\r\n\t\ttype: \&quot;codeblock\&quot;,\r\n\t\tattributes: {\r\n\t\t\t\tcode: {type: \&quot;string\&quot;, value: text}\r\n\t\t}\r\n\t}]\r\n};\r\n\r\n})();\r\n&quot;,
+            &quot;text&quot;: &quot;/*\\\r\ntitle: $:/plugins/wikilabs/tick-text/wikirules/pragmas/debug-customize.js\r\ntype: application/javascript\r\nmodule-type: wikirule\r\n\r\nReturns a JSON info of parser.configTickText\r\n\r\n```\r\n\\debugcostomize\r\n```\r\n\r\n\\*/\r\n(function(){\r\n\r\n/*jslint node: true, browser: true */\r\n/*global $tw:false, exports:false*/\r\n\&quot;use strict\&quot;;\r\n\r\nexports.name = \&quot;debugcustomize\&quot;;\r\nexports.types = {pragma: true};\r\n\t\r\nvar idTypes = [\&quot;tick\&quot;, \&quot;single\&quot;, \&quot;degree\&quot;, \&quot;underscore\&quot;, \&quot;angel\&quot;, \&quot;almost\&quot;];\r\n/*\r\nInstantiate parse rule\r\n*/\r\nexports.init = function(parser) {\r\n\tvar self = this;\r\n\tthis.parser = parser;\r\n\t// Regexp to match\r\n\tthis.matchRegExp = /^\\\\debugcustomize[^\\S\\n]/mg;\r\n\t\r\n\tthis.p = this.parser;\r\n\tthis.p.configTickText = this.p.configTickText  || {};\r\n\t\r\n\tthis.pc = this.p.configTickText;\r\n\t\r\n\tidTypes.map( function(id) {\r\n\t\tself.pc[id] = self.pc[id] || {};\r\n\t})};\r\n\r\n/*\r\nParse the most recent match\r\n*/\r\nexports.parse = function() {\r\n\tvar text = \&quot;\&quot;;\r\n\t\r\n\t// Move past the pragma invocation\r\n\tthis.parser.pos = this.matchRegExp.lastIndex;\r\n\t// Parse line terminated by a line break\r\n\tvar reMatch = /(.*)(\\r?\\n)|$/mg;\r\n\treMatch.lastIndex = this.parser.pos;\r\n\tvar match = reMatch.exec(this.parser.source);\r\n\tthis.parser.pos = reMatch.lastIndex;\r\n\t\r\n\tif (match) {\r\n\t\tswitch(match[1]) {\r\n\t\t\tcase \&quot;tick\&quot;:\r\n\t\t\t\ttext = \&quot;tick:\\n\&quot; + JSON.stringify(this.pc.tick, null, 2)\r\n\t\t\t\tbreak;\r\n\t\t\tcase \&quot;angel\&quot;:\r\n\t\t\t\ttext += \&quot;angel:\\n\&quot; + JSON.stringify(this.pc.angel, null, 2)\r\n\t\t\t\tbreak;\r\n\t\t\tcase \&quot;almost\&quot;:\r\n\t\t\t\ttext += \&quot;almost:\\n\&quot; + JSON.stringify(this.pc.almost, null, 2)\r\n\t\t\t\tbreak;\r\n\t\t\tcase \&quot;single\&quot;:\r\n\t\t\t\ttext += \&quot;single:\\n\&quot; + JSON.stringify(this.pc.single, null, 2)\r\n\t\t\t\tbreak;\r\n\t\t\tcase \&quot;underscore\&quot;:\r\n\t\t\t\ttext += \&quot;underscore:\\n\&quot; + JSON.stringify(this.pc.underscore, null, 2)\r\n\t\t\t\tbreak;\r\n\t\t\tcase \&quot;degree\&quot;:\r\n\t\t\t\ttext += \&quot;degree:\\n\&quot; + JSON.stringify(this.pc.degree, null, 2)\r\n\t\t\t\tbreak;\r\n\t\t\tcase \&quot;all\&quot;: // fall through\r\n\t\t\tdefault:\r\n\t\t\t\ttext = JSON.stringify(this.pc, null, 2) + \&quot;\\n\\n\&quot;\r\n\t\t\t\tbreak\r\n\t\t}\r\n\t}\r\n\t\r\n\treturn [{\r\n\t\ttype: \&quot;codeblock\&quot;,\r\n\t\tattributes: {\r\n\t\t\t\tcode: {type: \&quot;string\&quot;, value: text}\r\n\t\t}\r\n\t}]\r\n};\r\n\r\n})();\r\n&quot;,
             &quot;type&quot;: &quot;application/javascript&quot;,
             &quot;module-type&quot;: &quot;wikirule&quot;
         },
         &quot;$:/plugins/wikilabs/tick-text/wikirules/pragmas/import-custom.js&quot;: {
             &quot;title&quot;: &quot;$:/plugins/wikilabs/tick-text/wikirules/pragmas/import-custom.js&quot;,
-            &quot;text&quot;: &quot;/*\\\r\ntitle: $:/plugins/wikilabs/tick-text/wikirules/pragmas/import-custom.js\r\ntype: application/javascript\r\nmodule-type: wikirule\r\n\r\nWiki pragma rule to import pragmas from other tiddlers\r\n\r\n```\r\n\\importcustom [[pragma-global]] ... filter\r\n```\r\n\r\n\\*/\r\n(function(){\r\n\r\n/*jslint node: true, browser: true */\r\n/*global $tw:false, exports:false*/\r\n\&quot;use strict\&quot;;\r\n\r\nexports.name = \&quot;importcustom\&quot;;\r\nexports.types = {pragma: true};\r\n\r\nvar idTypes = \&quot;tick,single,degree,underscore,angel,almost\&quot;.split(\&quot;,\&quot;);\r\n/*\r\nInstantiate parse rule\r\n*/\r\nexports.init = function(parser) {\r\n\tvar self = this;\r\n\tthis.parser = parser;\r\n\t// Regexp to match\r\n\tthis.matchRegExp = /^\\\\importcustom[^\\S\\n]/mg;\r\n\t\r\n\tthis.p = this.parser;\r\n\tthis.p.configTickText = this.p.configTickText  || {};\r\n\t\r\n\tthis.pc = this.p.configTickText;\r\n\t\r\n\tidTypes.map( function(id) {\r\n\t\tself.pc[id] = self.pc[id] || {};\r\n\t})\r\n};\r\n\r\n/*\r\nParse the most recent match\r\n*/\r\nexports.parse = function() {\r\n\tvar self = this,\r\n\t\tfilter,\r\n\t\ttiddlerList;\r\n\r\n\t// Move past the pragma invocation\r\n\tthis.parser.pos = this.matchRegExp.lastIndex;\r\n\t// Parse line terminated by a line break\r\n\tvar reMatch = /(.*)(\\r?\\n)|$/mg;\r\n\treMatch.lastIndex = this.parser.pos;\r\n\tvar match = reMatch.exec(this.parser.source);\r\n\tthis.parser.pos = reMatch.lastIndex;\r\n\t\r\n\tif (match) {\r\n\t\tfilter = match[1];\r\n\t\ttiddlerList = $tw.wiki.filterTiddlers(filter);\r\n\t}\r\n\r\n\t$tw.utils.each(tiddlerList,function(title) {\r\n\t\tvar pragmaInParser = $tw.wiki.parseText(\&quot;text/vnd.tiddlywiki\&quot;, $tw.wiki.getTiddlerText(title));\r\n\t\t\r\n\t\tidTypes.map( function(id) {\r\n\t\t\t$tw.utils.extend(self.pc[id] = pragmaInParser.configTickText[id]);\r\n\t\t})\r\n\t});\r\n\r\n\t// No parse tree nodes to return\r\n\treturn [];\r\n};\r\n\r\n})();\r\n&quot;,
+            &quot;text&quot;: &quot;/*\\\r\ntitle: $:/plugins/wikilabs/tick-text/wikirules/pragmas/import-custom.js\r\ntype: application/javascript\r\nmodule-type: wikirule\r\n\r\nWiki pragma rule to import pragmas from other tiddlers\r\n\r\n```\r\n\\importcustom [[pragma-global]] ... filter\r\n```\r\n\r\n\\*/\r\n(function(){\r\n\r\n/*jslint node: true, browser: true */\r\n/*global $tw:false, exports:false*/\r\n\&quot;use strict\&quot;;\r\n\r\nexports.name = \&quot;importcustom\&quot;;\r\nexports.types = {pragma: true};\r\n\r\nvar idTypes = [\&quot;tick\&quot;, \&quot;single\&quot;, \&quot;degree\&quot;, \&quot;underscore\&quot;, \&quot;angel\&quot;, \&quot;almost\&quot;];\r\n/*\r\nInstantiate parse rule\r\n*/\r\nexports.init = function(parser) {\r\n\tvar self = this;\r\n\tthis.parser = parser;\r\n\t// Regexp to match\r\n\tthis.matchRegExp = /^\\\\importcustom[^\\S\\n]/mg;\r\n\t\r\n\tthis.p = this.parser;\r\n\tthis.p.configTickText = this.p.configTickText  || {};\r\n\t\r\n\tthis.pc = this.p.configTickText;\r\n\t\r\n\tidTypes.map( function(id) {\r\n\t\tself.pc[id] = self.pc[id] || {};\r\n\t})\r\n};\r\n\r\n/*\r\nParse the most recent match\r\n*/\r\nexports.parse = function() {\r\n\tvar self = this,\r\n\t\tfilter,\r\n\t\ttiddlerList;\r\n\r\n\t// Move past the pragma invocation\r\n\tthis.parser.pos = this.matchRegExp.lastIndex;\r\n\t// Parse line terminated by a line break\r\n\tvar reMatch = /(.*)(\\r?\\n)|$/mg;\r\n\treMatch.lastIndex = this.parser.pos;\r\n\tvar match = reMatch.exec(this.parser.source);\r\n\tthis.parser.pos = reMatch.lastIndex;\r\n\t\r\n\tif (match) {\r\n\t\tfilter = match[1];\r\n\t\ttiddlerList = $tw.wiki.filterTiddlers(filter);\r\n\t}\r\n\r\n\t$tw.utils.each(tiddlerList,function(title) {\r\n\t\tvar pragmaInParser = $tw.wiki.parseText(\&quot;text/vnd.tiddlywiki\&quot;, $tw.wiki.getTiddlerText(title));\r\n\t\t\r\n\t\tidTypes.map( function(id) {\r\n\t\t\t$tw.utils.extend(self.pc[id] = pragmaInParser.configTickText[id]);\r\n\t\t})\r\n\t});\r\n\r\n\t// No parse tree nodes to return\r\n\treturn [];\r\n};\r\n\r\n})();\r\n&quot;,
             &quot;type&quot;: &quot;application/javascript&quot;,
             &quot;module-type&quot;: &quot;wikirule&quot;
         },
@@ -11231,7 +11313,7 @@ aside {
         },
         &quot;$:/plugins/wikilabs/tick-text/wikirules/ticktext.js&quot;: {
             &quot;title&quot;: &quot;$:/plugins/wikilabs/tick-text/wikirules/ticktext.js&quot;,
-            &quot;text&quot;: &quot;/*\\\ntitle: $:/plugins/wikilabs/tick-text/wikirules/ticktext.js\ntype: application/javascript\nmodule-type: wikirule\n\nWiki text block rule for ticktext and angeltext\n\nDetect\n\n´asdf.my.Class This is some text with a name and class\n´.a.b.c.d This is some text with class\n\n»»»asdf.my.Class This is some text with a name and class\n».a.b.c.d This is some text with class\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw:false exports:false */\n\&quot;use strict\&quot;;\n\nvar CLASS_GROUP = \&quot;wltc\&quot;;\nvar CLASS_PREFIX = CLASS_GROUP + \&quot;-l\&quot;; // l .. level\n\nexports.name = \&quot;ticktext\&quot;;\nexports.types = {block: true};\n\t\nvar idTypes = \&quot;tick,single,degree,underscore,angel,almost\&quot;.split(\&quot;,\&quot;);\n\nexports.init = function(parser) {\n\tvar self = this;\n\tthis.parser = parser;\n\t// Regexp to match \n//\tthis.matchRegExp = /(^´{1,4}|^»{1,4})/mg; //a  OK\n\t\n\t// match[1] ... all symbols 1-4 ´ or » or ° or , or _\n\t// match[2] ... htmlTag ... default DIV\n\t// match[3] ... classString\n//\tthis.matchRegExp = /(^´{1,4}|^»{1,4})((?:[^\\.\\r\\n\\s]+))?(\\.(?:[^\\r\\n\\s]+))?/mg; //a\n//\tthis.matchRegExp = /((?=´[^´])´|»{1,4})((?:[^\\.\\r\\n\\s´]+))?(\\.(?:[^\\r\\n\\s]+))?/mg; //a  OK\n\tthis.matchRegExp = /((?=´[^´])´|[»≈]{1,4}|(?=°[^°])°|(?=›[^›])›|(?=_[^_])_)((?:[^\\.\\r\\n\\s´°]+))?(\\.(?:[^\\r\\n\\s]+))?/mg; //a  OK\n\t\n\tthis.p = this.parser;\n\tthis.p.configTickText = this.p.configTickText || {};\n\t\n\tthis.pc = this.p.configTickText;\n\t\n\tidTypes.map( function(id) {\n\t\tself.pc[id] = self.pc[id] || {};\n\t})\n\t\n\tthis.pc.X = {}; // There is a naming problem\n};\n\n/*\nParse the most recent match\n*/\nexports.parse = function() {\n\t/*\n\tSkip the endstring at the current position. Options are:\n\ttreatNewlinesAsNonWhitespace: true if newlines are NOT to be treated as whitespace\n\t*/\n\tfunction skipEndString (endString) {\n\t\tvar endRegExp = new RegExp(\&quot;(\&quot; + $tw.utils.escapeRegExp(endString) + \&quot;)\&quot;,\&quot;mg\&quot;)\n\t\tendRegExp.lastIndex = self.parser.pos;\n\t\tvar endMatch = endRegExp.exec(self.parser.source);\n\t\tif(endMatch &amp;&amp; endMatch.index === self.parser.pos) {\n\t\t\tself.parser.pos = endRegExp.lastIndex;\n\t\t}\n\t}\n\n//---------------------\n\tvar self = this,\n\t\ttree = [],\n\t\troot = [];\n\n\t// Get all the details of the match\n\tvar level   = this.match[1].length; //abc\n\tvar id;\n//\tvar id      = (this.match[1][0] === \&quot;°\&quot; || this.match[1][0] === \&quot;´\&quot;) ? \&quot;tick\&quot; : (this.match[1][0] === \&quot;»\&quot;) ? \&quot;angel\&quot; : null;\n//\tvar id      = (this.match[1][0] === \&quot;´\&quot;) ? \&quot;tick\&quot; : (this.match[1][0] === \&quot;»\&quot;) ? \&quot;angel\&quot; : null;\n\tvar sym     = this.match[2]; // needs to be undefined if no match\n\tvar _params  = (this.match[3]) ? this.match[3] : \&quot;\&quot;;\n\n\tvar useParagraph = false; // use paragraph by default\n\n\tswitch (this.match[1][0]) {\n\t\tcase \&quot;»\&quot;:\n\t\t\tid = \&quot;angel\&quot;;\n\t\t\tuseParagraph = true;\n\t\tbreak;\n\t\tcase \&quot;≈\&quot;:\n\t\t\tid = \&quot;almost\&quot;;\n\t\t\tuseParagraph = true;\n\t\tbreak;\n\t\tcase \&quot;´\&quot;:\n\t\t\tid = \&quot;tick\&quot;\n\t\tbreak;\n\t\tcase \&quot;›\&quot;:\n\t\t\tid = \&quot;single\&quot;\n\t\tbreak;\n\t\tcase \&quot;_\&quot;:\n\t\t\tid = \&quot;underscore\&quot;\n\t\tbreak;\n\t\tcase \&quot;°\&quot;:\n\t\t\tid = \&quot;degree\&quot;\n\t\tbreak;\n\t}\n\t\n\t// \&quot;_debug\&quot; is a binary parameter\n\tvar options = {symbol: sym, _mode : \&quot;inline\&quot;, _element : (useParagraph) ? \&quot;p\&quot; : \&quot;div\&quot;, _params : _params, _endString : \&quot;\&quot;, _use: \&quot;\&quot;, _debug: false, _debugString: \&quot;\&quot;};\n\t\n\tvar textEndInner,\n\t\ttextStartInner,\n\t\ttextEnd,\n\t\ttextStart = this.parser.pos; // remember text postions for widget text handling\n\n\t// Move past the start symbol\n\tthis.parser.pos = this.matchRegExp.lastIndex;\n\t\n\tthis.parser.skipWhitespace({treatNewlinesAsNonWhitespace: true});\n\t// remember text postions for macro src handling\n\ttextStartInner = this.parser.pos\n\t// Parse any classes, whitespace and then the heading itself\n\tvar classes = _params.split(\&quot;.\&quot;);\n\n\tvar forceDebug = false;\n\t\n\tif (!sym &amp;&amp; this.pc[id][\&quot;true\&quot;]) {\n\t// ID is locally defined\n\t\tsym = (this.pc[id][\&quot;true\&quot;]._use) ? this.pc[id][\&quot;true\&quot;]._use : true;\n\t\tforceDebug = (this.pc[id][\&quot;true\&quot;]._debug) ? this.pc[id][\&quot;true\&quot;]._debug : false;\n\t} else if (sym &amp;&amp; this.pc[id][sym] &amp;&amp; this.pc[id][sym]._use) {\n\t// ID and _use are locally defined\n\t\tsym = this.pc[id][sym]._use;\n\t\tforceDebug = (this.pc[id][sym]._debug) ? this.pc[id][sym]._debug : false;\n\t} else if (sym !== \&quot;\&quot;) {\n\t// Check if symbol is an HTML element\n\t\toptions._element = ($tw.config.htmlBlockElements.indexOf(sym) !== -1) ? sym : options._element;\n\t}\n\t\n\tif (this.pc[id][sym]) {\n\t\toptions.symbol = this.pc[id][sym].symbol || options.symbol;\n\t\toptions._endString = this.pc[id][sym]._endString || options._endString;\n\t\toptions._mode = this.pc[id][sym]._mode || options._mode;\n\t\toptions._element = this.pc[id][sym]._element || options._element;\n\t\toptions._params = this.pc[id][sym]._params || options._params;\n\t\t\n\t\tif (forceDebug) options._debug = forceDebug;\n\t\telse options._debug = this.pc[id][sym]._debug || options._debug;\n\t\t\n\t\toptions._debugString = this.pc[id][sym]._debugString || options._debugString;\n\t\tclasses = (options._params + _params).split(\&quot;.\&quot;) // pragma _params are added to tick _params\n//\t\tclasses[0] = options._params.split(\&quot;.\&quot;).join(\&quot; \&quot;).trim() // replace the name element\n\t}\n\t\n\tthis.parser.skipWhitespace({treatNewlinesAsNonWhitespace: true});\n\n\tif (options._mode === \&quot;block\&quot;) {\n\t// standard rendering\n\t\t// no GROUP in block mode\n\t\tclasses.push(CLASS_PREFIX + level);\n\t\t\n//\t\ttree = this.parser.parseBlocks(\&quot;^\&quot; + $tw.utils.escapeRegExp(options._endString) + \&quot;$\&quot;);\n\t\ttree = this.parser.parseBlocks($tw.utils.escapeRegExp(options._endString));\n\t} else {\n\t\t// apply CLASS_GROUP only if in inline mode. \n\t\tclasses.push(CLASS_PREFIX + level + \&quot; \&quot; + CLASS_GROUP);\n\n\t\tif (options._endString === \&quot;\&quot;) {\n\t\t\ttree = this.parser.parseInlineRun((useParagraph) ? /(\\r?\\n\\r?\\n)/mg : /(\\r?\\n)/mg);// OK for single new-line\n\t\t} else {\n\t\t\ttree = this.parser.parseInlineRun(new RegExp(\&quot;(^\&quot; + $tw.utils.escapeRegExp(options._endString) + \&quot;$)\&quot;,\&quot;mg\&quot;));\n\t\t}\n\t}\n\t// remember text postions for macro src handling\n\ttextEndInner = this.parser.pos - options._endString.length;\n\n\tskipEndString(options._endString);\n\t\n\ttextEnd = this.parser.pos;\n\n\tvar attributes = {\n\t\t\t\&quot;class\&quot;: {type: \&quot;string\&quot;, value: classes.join(\&quot; \&quot;).trim()}\n\t\t}\n\t\n\tvar fixAttributes = [\&quot;tick\&quot;, \&quot;angel\&quot;, \&quot;almost\&quot;, \&quot;single\&quot;, \&quot;underscore\&quot;, \&quot;degree\&quot;, \&quot;symbol\&quot;,\n\t\t\t\t\t\t \&quot;_endString\&quot;, \&quot;_mode\&quot;, \&quot;_element\&quot;, \&quot;_params\&quot;, \&quot;_use\&quot;, \&quot;_debug\&quot;, \&quot;_debugString\&quot;];\n\n\t// Callback is invoked with (element,title,object)\n\t$tw.utils.each(this.pc[id][sym], function(val,title) {\n\t\tif (fixAttributes.indexOf(title) === -1) {\n\t\t\tattributes[title] = {type:\&quot;string\&quot;, value: val}\n\t\t\t}\n\t});\n\n\t// show tick config and code\n\tvar showRendered = true;\n\tif (options._debug) {\n\t\tswitch (options._debug) {\n\t\t\tcase \&quot;both\&quot;:\n\t\t\t\troot.push({type:\&quot;codeblock\&quot;, attributes:{ code: {type:\&quot;string\&quot;, value: options._debugString}}})\n\t\t\t\tvar textOuter = this.parser.source.slice(textStart, textEnd);\n\t\t\t\troot.push({type:\&quot;codeblock\&quot;, attributes:{ code: {type:\&quot;string\&quot;, value: textOuter}}})\n\t\t\tbreak;\n\t\t\tcase \&quot;textOnly\&quot;:\n\t\t\t\tshowRendered = false;\n\t\t\t\t// intentional fall through\n\t\t\tcase \&quot;text\&quot;:\n\t\t\t\tvar textOuter = this.parser.source.slice(textStart, textEnd);\n\t//\t\t\tvar textInner = this.parser.source.slice(textStartInner, textEndInner);\n\t\t\t\troot.push({type:\&quot;codeblock\&quot;, attributes:{ code: {type:\&quot;string\&quot;, value: textOuter}}})\n\t\t\tbreak;\n\t\t\tcase \&quot;pragmaOnly\&quot;:\n\t\t\t\tshowRendered = false;\n\t\t\t\t// intentional fall through\n\t\t\tcase \&quot;pragma\&quot;: \n\t\t\t\t// intentional fall through\n\t\t\tdefault:\n\t\t\t\troot.push({type:\&quot;codeblock\&quot;, attributes:{ code: {type:\&quot;string\&quot;, value: options._debugString}}})\n\t\t\tbreak;\n\t\t}\n\t}\n\t\n\tif (showRendered) {\n\t\t// check if element is a widget\n\t\tif (options._element[0] === \&quot;$\&quot;) {\n\t//\t\tvar textOuter = this.parser.source.slice(textStart, textEnd);\n\t//\t\tvar textInner = this.parser.source.slice(textStartInner, textEndInner);\n\t\t\tvar type = options._element.slice(1);\n\n\t\t\troot.push({ type: type,\n\t\t\t\t\t\ttag: options._element,\n\t\t\t\t\t\tattributes: attributes,\n\t\t\t\t\t\tchildren: tree})\n\t\t} else {\n\t\t\troot.push( { type: \&quot;element\&quot;, tag: options._element, attributes: attributes, children: tree});\n\t\t}\n\t}\n\t// Return the paragraph\n\treturn root;\n};\n})();\n&quot;,
+            &quot;text&quot;: &quot;/*\\\ntitle: $:/plugins/wikilabs/tick-text/wikirules/ticktext.js\ntype: application/javascript\nmodule-type: wikirule\n\nWiki text block rule for ticktext and angeltext\n\nDetect\n\n´asdf.my.Class This is some text with a name and class\n´.a.b.c.d This is some text with class\n\n»»»asdf.my.Class This is some text with a name and class\n».a.b.c.d This is some text with class\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw:false exports:false */\n\&quot;use strict\&quot;;\n\nvar CLASS_GROUP = \&quot;wltc\&quot;;\nvar CLASS_PREFIX = CLASS_GROUP + \&quot;-l\&quot;; // l .. level\n\nexports.name = \&quot;ticktext\&quot;;\nexports.types = {block: true};\n\t\nvar idTypes = \&quot;tick,single,degree,underscore,angel,almost\&quot;.split(\&quot;,\&quot;);\n\nexports.init = function(parser) {\n\tthis.parser = parser;\n\n\tvar self = this;\n\n\t// Regexp to match \n\t// match[1] ... all symbols 1-4 ´ or » or ° or , or _\n\t// match[2] ... htmlTag ... default DIV\n\t// match[3] ... classString\n\tthis.matchRegExp = /((?=´[^´])´|[»≈]{1,4}|(?=°[^°])°|(?=›[^›])›|(?=_[^_])_)((?:[^\\.\\r\\n\\s´°]+))?(\\.(?:[^\\r\\n\\s]+))?/mg; //a  OK\n\t\n\tthis.p = this.parser;\n\tthis.p.configTickText = this.p.configTickText || {};\n\t\n\tthis.pc = this.p.configTickText;\n\t\n\tidTypes.map( function(id) {\n\t\tself.pc[id] = self.pc[id] || {};\n\t})\n\t\n\tthis.pc.X = {}; // There is a naming problem\n};\n\n/*\nParse the most recent match\n*/\nexports.parse = function() {\n\t/*\n\tSkip the endstring at the current position. Options are:\n\ttreatNewlinesAsNonWhitespace: true if newlines are NOT to be treated as whitespace\n\t*/\n\tfunction skipEndString (endString) {\n\t\tvar endRegExp = new RegExp(\&quot;(\&quot; + $tw.utils.escapeRegExp(endString) + \&quot;)\&quot;,\&quot;mg\&quot;)\n\t\tendRegExp.lastIndex = self.parser.pos;\n\t\tvar endMatch = endRegExp.exec(self.parser.source);\n\t\tif(endMatch &amp;&amp; endMatch.index === self.parser.pos) {\n\t\t\tself.parser.pos = endRegExp.lastIndex;\n\t\t}\n\t}\n\n//---------------------\n\tvar self = this,\n\t\ttree = [],\n\t\troot = [];\n\n\t// Get all the details of the match\n\tvar id,\n\t\tlevel   = this.match[1].length,\n\t\tsym     = this.match[2], // needs to be undefined if no match\n\t\t_params  = (this.match[3]) ? this.match[3] : \&quot;\&quot;;\n\n\tvar useParagraph = false; // use paragraph by default\n\n\tswitch (this.match[1][0]) {\n\t\tcase \&quot;»\&quot;:\n\t\t\tid = \&quot;angel\&quot;;\n\t\t\tuseParagraph = true;\n\t\tbreak;\n\t\tcase \&quot;≈\&quot;:\n\t\t\tid = \&quot;almost\&quot;;\n\t\t\tuseParagraph = true;\n\t\tbreak;\n\t\tcase \&quot;´\&quot;:\n\t\t\tid = \&quot;tick\&quot;\n\t\tbreak;\n\t\tcase \&quot;›\&quot;:\n\t\t\tid = \&quot;single\&quot;\n\t\tbreak;\n\t\tcase \&quot;_\&quot;:\n\t\t\tid = \&quot;underscore\&quot;\n\t\tbreak;\n\t\tcase \&quot;°\&quot;:\n\t\t\tid = \&quot;degree\&quot;\n\t\tbreak;\n\t}\n\t\n\t// \&quot;_debug\&quot; is a binary parameter\n\tvar options = {symbol: sym, _mode : \&quot;inline\&quot;, _element : (useParagraph) ? \&quot;p\&quot; : \&quot;div\&quot;, _params : _params, _endString : \&quot;\&quot;, _use: \&quot;\&quot;, _debug: false, _debugString: \&quot;\&quot;};\n\t\n\tvar textEndInner,\n\t\ttextStartInner,\n\t\ttextEnd,\n\t\ttextStart = this.parser.pos; // remember text postions for widget text handling\n\n\t// Move past the start symbol\n\tthis.parser.pos = this.matchRegExp.lastIndex;\n\t\n\tthis.parser.skipWhitespace({treatNewlinesAsNonWhitespace: true});\n\t// remember text postions for macro src handling\n\ttextStartInner = this.parser.pos\n\t// Parse any classes, whitespace and then the heading itself\n\tvar classes = _params.split(\&quot;.\&quot;);\n\n\tvar forceDebug = false;\n\t\n\tif (!sym &amp;&amp; this.pc[id][\&quot;true\&quot;]) {\n\t// ID is locally defined\n\t\tforceDebug = (this.pc[id][\&quot;true\&quot;]._debug) ? this.pc[id][\&quot;true\&quot;]._debug : false;\n\t\tsym = (this.pc[id][\&quot;true\&quot;]._use) ? this.pc[id][\&quot;true\&quot;]._use : true;\n\t} else if (sym &amp;&amp; this.pc[id][sym] &amp;&amp; this.pc[id][sym]._use) {\n\t// ID and _use are locally defined\n\t\tforceDebug = (this.pc[id][sym]._debug) ? this.pc[id][sym]._debug : false;\n\t\tsym = this.pc[id][sym]._use;\n\t} else if (sym !== \&quot;\&quot;) {\n\t// Check if symbol is an HTML element\n\t\toptions._element = ($tw.config.htmlBlockElements.indexOf(sym) !== -1) ? sym : options._element;\n\t}\n\t\n\tif (this.pc[id][sym]) {\n\t\toptions.symbol = this.pc[id][sym].symbol || options.symbol;\n\t\toptions._endString = this.pc[id][sym]._endString || options._endString;\n\t\toptions._mode = this.pc[id][sym]._mode || options._mode;\n\t\toptions._element = this.pc[id][sym]._element || options._element;\n\t\toptions._params = this.pc[id][sym]._params || options._params;\n\t\t\n\t\tif (forceDebug) options._debug = forceDebug;\n\t\telse options._debug = this.pc[id][sym]._debug || options._debug;\n\t\t\n\t\toptions._debugString = this.pc[id][sym]._debugString || options._debugString;\n\t\tclasses = (options._params + _params).split(\&quot;.\&quot;) // pragma _params are added to tick _params\n//\t\tclasses[0] = options._params.split(\&quot;.\&quot;).join(\&quot; \&quot;).trim() // replace the name element\n\t}\n\t\n\tthis.parser.skipWhitespace({treatNewlinesAsNonWhitespace: true});\n\n\tif (options._mode === \&quot;block\&quot;) {\n\t// standard rendering\n\t\t// no GROUP in block mode\n\t\tclasses.push(CLASS_PREFIX + level);\n\t\t\n\t\tif (options._endString === \&quot;\&quot;) options._endString = (useParagraph) ? \&quot;\\r?\\n\\r?\\n\&quot; : \&quot;\\r?\\n\&quot;;\n\t\t\n//\t\ttree = this.parser.parseBlocks(\&quot;^\&quot; + $tw.utils.escapeRegExp(options._endString) + \&quot;$\&quot;);\n//\t\ttree = this.parser.parseBlocks($tw.utils.escapeRegExp(options._endString));\n\t\ttree = this.parser.parseBlocks(options._endString);\n\t} else {\n\t\t// apply CLASS_GROUP only if in inline mode. \n\t\tclasses.push(CLASS_PREFIX + level + \&quot; \&quot; + CLASS_GROUP);\n\n\t\tif (options._endString === \&quot;\&quot;) {\n\t\t\ttree = this.parser.parseInlineRun((useParagraph) ? /(\\r?\\n\\r?\\n)/mg : /(\\r?\\n)/mg);// OK for single new-line\n\t\t} else {\n\t\t\ttree = this.parser.parseInlineRun(new RegExp(\&quot;(^\&quot; + $tw.utils.escapeRegExp(options._endString) + \&quot;$)\&quot;,\&quot;mg\&quot;));\n\t\t}\n\t}\n\t// remember text postions for macro src handling\n\ttextEndInner = this.parser.pos - options._endString.length;\n\n\tskipEndString(options._endString);\n\t\n\ttextEnd = this.parser.pos;\n\n\tvar attributes = {\n\t\t\t\&quot;class\&quot;: {type: \&quot;string\&quot;, value: classes.join(\&quot; \&quot;).trim()}\n\t\t}\n\t\n\tvar fixAttributes = [\&quot;tick\&quot;, \&quot;angel\&quot;, \&quot;almost\&quot;, \&quot;single\&quot;, \&quot;underscore\&quot;, \&quot;degree\&quot;, \&quot;symbol\&quot;,\n\t\t\t\t\t\t \&quot;_endString\&quot;, \&quot;_mode\&quot;, \&quot;_element\&quot;, \&quot;_params\&quot;, \&quot;_use\&quot;, \&quot;_debug\&quot;, \&quot;_debugString\&quot;];\n\n\t// Callback is invoked with (element,title,object)\n\t$tw.utils.each(this.pc[id][sym], function(val,title) {\n\t\tif (fixAttributes.indexOf(title) === -1) {\n\t\t\tattributes[title] = {type:\&quot;string\&quot;, value: val}\n\t\t\t}\n\t});\n\n\t// show tick config and code\n\tvar showRendered = true;\n\tif (options._debug) {\n\t\tswitch (options._debug) {\n\t\t\tcase \&quot;both\&quot;:\n\t\t\t\troot.push({type:\&quot;codeblock\&quot;, attributes:{ code: {type:\&quot;string\&quot;, value: options._debugString}}})\n\t\t\t\tvar textOuter = this.parser.source.slice(textStart, textEnd);\n\t\t\t\troot.push({type:\&quot;codeblock\&quot;, attributes:{ code: {type:\&quot;string\&quot;, value: textOuter}}})\n\t\t\tbreak;\n\t\t\tcase \&quot;textOnly\&quot;:\n\t\t\t\tshowRendered = false;\n\t\t\t\t// intentional fall through\n\t\t\tcase \&quot;text\&quot;:\n\t\t\t\tvar textOuter = this.parser.source.slice(textStart, textEnd);\n\t//\t\t\tvar textInner = this.parser.source.slice(textStartInner, textEndInner);\n\t\t\t\troot.push({type:\&quot;codeblock\&quot;, attributes:{ code: {type:\&quot;string\&quot;, value: textOuter}}})\n\t\t\tbreak;\n\t\t\tcase \&quot;pragmaOnly\&quot;:\n\t\t\t\tshowRendered = false;\n\t\t\t\t// intentional fall through\n\t\t\tcase \&quot;pragma\&quot;: \n\t\t\t\t// intentional fall through\n\t\t\tdefault:\n\t\t\t\troot.push({type:\&quot;codeblock\&quot;, attributes:{ code: {type:\&quot;string\&quot;, value: options._debugString}}})\n\t\t\tbreak;\n\t\t}\n\t}\n\t\n\tif (showRendered) {\n\t\t// check if element is a widget\n\t\tif (options._element[0] === \&quot;$\&quot;) {\n\t//\t\tvar textOuter = this.parser.source.slice(textStart, textEnd);\n\t//\t\tvar textInner = this.parser.source.slice(textStartInner, textEndInner);\n\t\t\tvar type = options._element.slice(1);\n\n\t\t\troot.push({ type: type,\n\t\t\t\t\t\ttag: options._element,\n\t\t\t\t\t\tattributes: attributes,\n\t\t\t\t\t\tchildren: tree})\n\t\t} else {\n\t\t\troot.push( { type: \&quot;element\&quot;, tag: options._element, attributes: attributes, children: tree});\n\t\t}\n\t}\n\t// Return the paragraph\n\treturn root;\n};\n})();\n&quot;,
             &quot;type&quot;: &quot;application/javascript&quot;,
             &quot;module-type&quot;: &quot;wikirule&quot;
         }
@@ -11312,22 +11394,28 @@ aside {
 &lt;/$reveal&gt;
 &lt;/$tiddler&gt;</pre>
 </div>
-<div created="20200916123326383" modified="20200916123326383" title="$:/state/tab/sidebar--595412856">
+<div created="20200917205907457" modified="20200917205907457" title="$:/state/tab/sidebar--595412856">
 <pre>TableOfContents</pre>
 </div>
-<div created="20200916123328361" modified="20200916123328361" title="$:/state/toc/toc-Advanced--118161433">
+<div created="20200917205909219" modified="20200917205909219" title="$:/state/toc/toc-Advanced--118161433">
 <pre>open</pre>
 </div>
-<div created="20200916123330539" modified="20200916123330539" title="$:/state/toc/toc-Basics--118161433">
+<div created="20200917205909713" modified="20200917205909713" title="$:/state/toc/toc-Basics--118161433">
 <pre>open</pre>
 </div>
-<div created="20200916123327859" modified="20200916123327859" title="$:/state/toc/toc-Reference--118161433">
+<div created="20200917205908692" modified="20200917205908692" title="$:/state/toc/toc-Reference--118161433">
 <pre>open</pre>
+</div>
+<div created="20200917205911483" modified="20200917205911483" title="$:/state/toc/toc/Reference-Debugging--118161433">
+<pre>open</pre>
+</div>
+<div created="20200917205912627" modified="20200917205913098" title="$:/state/toc/toc/Reference/Debugging-pragma-debugcustomize--118161433">
+<pre>close</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div list="pargma-customize" title="$:/StoryList">
+<div list="EXPERIMENTAL" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -11343,7 +11431,7 @@ aside {
         },
         &quot;$:/info/startup-timestamp&quot;: {
             &quot;title&quot;: &quot;$:/info/startup-timestamp&quot;,
-            &quot;text&quot;: &quot;20200916123324447&quot;
+            &quot;text&quot;: &quot;20200917205905582&quot;
         },
         &quot;$:/info/url/full&quot;: {
             &quot;title&quot;: &quot;$:/info/url/full&quot;,
@@ -11504,7 +11592,7 @@ aside {
 <div created="20200829192849071" modified="20200829192849094" title="$:/themes/tiddlywiki/vanilla/options/sidebarlayout" type="text/vnd.tiddlywiki">
 <pre>fluid-fixed</pre>
 </div>
-<div created="20200915104157275" modified="20200915130709299" tags="Basics" title="About Colour Boxes" type="text/vnd.tiddlywiki">
+<div created="20200915104157275" modified="20200917172147441" tags="Basics docs" title="About Colour Boxes" type="text/vnd.tiddlywiki">
 <pre>! About Coloured Boxes
 
 In [[Easy styling for Paragraphs]] and [[More CSS Details]] I used &quot;coloured boxes&quot; to emphasize text elements. 
@@ -11576,7 +11664,7 @@ Just play with it and have fun!
 
 PS: There is one more thing at: [[Basics for advanced users]]</pre>
 </div>
-<div created="20200915195938717" list="[[Introducing Custom Markers for Advanced Users]] [[Customized Wikitext Lists]]" modified="20200915235608140" tags="toc" title="Advanced" type="text/vnd.tiddlywiki">
+<div created="20200915195938717" list="[[Introducing Custom Markers for Advanced Users]] [[Customize the Details Element]] [[Import Predefined Pragmas]] [[Import and Re-define a Pragma]] [[Customized Wikitext Lists]]" modified="20200917201154205" tags="toc" title="Advanced" type="text/vnd.tiddlywiki">
 <pre>! Documentation for advanced users
 
 &lt;&lt;list-links &quot;[tag{!!title}]&quot;&gt;&gt;</pre>
@@ -11597,12 +11685,12 @@ line 2
 
  </pre>
 </div>
-<div created="20200915110124766" list="[[How to style a Paragraph]] [[Misusing standard wikitext to indent a paragraph]] [[Custom Wikitext Markers]] [[Easy styling for Paragraphs]] [[More CSS Details]] [[About Colour Boxes]] [[Multi Column Text]] [[Basics for advanced users]]" modified="20200915200300941" tags="toc" title="Basics" type="text/vnd.tiddlywiki">
+<div created="20200915110124766" list="[[How to style a Paragraph]] [[Misusing standard wikitext to indent a paragraph]] [[Custom Wikitext Markers]] [[Easy styling for Paragraphs]] [[More CSS Details]] [[About Colour Boxes]] [[Multi Column Text]] [[Basics for advanced users]]" modified="20200917184724895" tags="toc" title="Basics" type="text/vnd.tiddlywiki">
 <pre>! The Basic Docs
 
 &lt;&lt;list-links &quot;[tag{!!title}]&quot;&gt;&gt;</pre>
 </div>
-<div created="20200915124848170" modified="20200915132707795" tags="Basics" title="Basics for advanced users" type="text/vnd.tiddlywiki">
+<div created="20200915124848170" modified="20200917172416416" tags="Basics docs" title="Basics for advanced users" type="text/vnd.tiddlywiki">
 <pre>If you want to use a horizontal rule within the box and justify the text, so it also aligns on the right side, you can do so like so: 
 
 ».indent.right-dedent.justify.cbox.cbox-primary `».indent.right-dedent.justify.cbox.cbox-primary` Ullum labore sensibus no vix. Id pro solum molestiae, ea mea omittam postulant eseruisse, sonet putent propriae et pri. 
@@ -11728,7 +11816,58 @@ If you think it can be &quot;optimized&quot; [[go on reading.|Introducing Custom
 .-cr { column-rule: initial;}
 </pre>
 </div>
-<div created="20200915091726829" modified="20200916122834423" tags="Basics" title="Custom Wikitext Markers" type="text/vnd.tiddlywiki">
+<div created="20200908152739520" modified="20200917202344977" tags="Reference docs" title="Custom Markup Definition" type="text/vnd.tiddlywiki">
+<pre>\customize angel=&quot;§&quot; _element=&quot;div&quot; _params=&quot;.hard-linebreaks&quot; _debug=both
+
+
+\customize angel=&quot;example&quot; _element=&quot;div&quot; _params=&quot;.hl&quot; _endString=&quot;---&quot; _mode=block _debug=pragmaOnly
+
+! Pragma Example
+
+»example ---
+
+!! Pragma Schema
+
+```
+\customize &lt;ID&gt;=&lt;userSymbol&gt;
+           _element=&lt;element&gt;
+           _params=&lt;class definitions&gt;
+           _endString=&lt;string&gt;
+           _mode=&lt;mode&gt;
+           _use=&lt;userSymbol reference&gt;
+           _debug=&lt;debug options&gt;
+```
+; IDs 
+: `tick (´), single (›), degree (°), underscore (_), angel (»), almost (≈)`
+
+; userSymbol
+: Can be any single character or word that identifies your &quot;symbol&quot;. The first pragma uses &quot;example&quot;. The pragma below uses &quot;§&quot;. So it depends on you, the user. 
+
+; element 
+: Can be any HTML element, that allows &quot;content&quot;. Or as seen later it can also be a widget. In later examples we will use ''$list'' for the list-widget. See: [[Customized Wikitext Lists]]
+
+; class definitions
+: Can be a string with a &quot;connected&quot; list of CSS class definitions, as shown below. &quot;.hard-linebreaks&quot;
+
+; mode
+: Can be ''block'' or ''inline''. inline is the default value, if the parameter is missing.
+
+; userSymbol reference
+: Can be a &quot;symbol&quot; name from a pragma that is already defined, or from imported pragmas. See: [[Pragma - importcustom]]
+
+; debug options
+: `pragma, pragmaOnly, text, textOnly, both`
+: See: [[Pragma Debug Options]]
+
+!! Pragma, Usage and Rendered
+
+»§ My text comes here.
+`angel` default end is `\n\n`. 
+The `_params=&quot;.hard-linebreaks&quot;` 
+allows us to see exactly that ;)
+</pre>
+</div>
+<div created="20200915091726829" modified="20200917172058478" tags="Basics docs" title="Custom Wikitext Markers" type="text/vnd.tiddlywiki">
 <pre>! Custom Wikitext Markers
 
 ... are a possibility to use ''new'' markers like: Angle, Tilde, Degree, Accent, Comma and Underscore ''» ≈ ° ´ _'' 
@@ -11746,8 +11885,96 @@ As shown in [[How to style a Paragraph]] and [[Misusing standard wikitext to ind
 * New mechanisms to completely re-define [[markup for advanced users]]
 </pre>
 </div>
-<div created="20200915195838828" modified="20200915195841878" tags="Advanced" title="Customized Wikitext Lists" type="text/vnd.tiddlywiki">
-<pre>TODO</pre>
+<div created="20200917105803339" modified="20200917190534107" tags="Advanced docs" title="Customize the Details Element" type="text/vnd.tiddlywiki">
+<pre>\customize tick=&quot;d&quot; _element=&quot;details&quot; _params=&quot;.notop.cbox.cbox-primary.hard-linebreaks&quot; _endString=&quot;------&quot; open  _mode=block _debug=text
+
+\customize tick=&quot;s&quot; _element=&quot;summary&quot; _params=&quot;.margin-init&quot;
+
+
+! Details Html Element
+
+At the moment there is no wikitext rule, in the ~TiddlyWiki core, to create an element like this, so we can customize one. 
+
+!! The DETAILS element looks like this: 
+
+```
+&lt;details class=&quot;xxx&quot;&gt;
+    &lt;summary class=&quot;yyy&quot;&gt;Details&lt;/summary&gt;
+    Something small enough to escape casual notice.
+&lt;/details&gt;
+```
+
+You need to use HTML syntax in wikitext or you need to create a macro with several parameters, that need to cover the whole text. Similar to:
+
+```
+&lt;&lt;details summary:&quot;Details&quot; status:&quot;open&quot; class:&quot;xxx&quot; src:&quot;&quot;&quot;
+Your text comes here
+&quot;&quot;&quot; &gt;&gt;
+```
+
+As you can see, it's almost the same amount to type and the &quot;plain text&quot; readability is similarly &quot;bad!&quot;
+
+With custom markup, it should be possible to improve the &quot;plain text&quot; readability, while still having the same output.
+
+!! The Pragma Definitions
+
+```
+\customize tick=&quot;d&quot; _element=&quot;details&quot; _params=&quot;.notop.cbox.cbox-primary.hard-linebreaks&quot; _endString=&quot;------&quot; _mode=block open  
+
+\customize tick=&quot;s&quot; _element=&quot;summary&quot; _params=&quot;.margin-init&quot;
+```
+
+!! Usage and Rendered
+
+´d ´s Details - Summay
+---
+line 1
+line 2
+------
+
+!!! The HTML Code
+
+```
+&lt;details class=&quot;notop c cl hl wltc-l1&quot; open=&quot;&quot;&gt;
+  &lt;summary class=&quot;-m wltc-l1 wltc&quot;&gt;Details - Summay&lt;/summary&gt;
+  &lt;hr&gt;
+  &lt;p&gt;
+     line 1&lt;br&gt;line 2&lt;br&gt;adsf 
+  &lt;/p&gt;
+&lt;/details&gt;
+```
+
+! Conclusion
+
+You may say: OK ... but typing the pragma is the same amount of work. 
+
+I'll say: You only have to write it once and use it several times. So there is an advantage to write less if you want to use it. AND  
+Have a closer look at: [[Import Predefined Pragmas]]</pre>
+</div>
+<div created="20200915195838828" modified="20200917205614697" tags="Advanced docs" title="Customized Wikitext Lists" type="text/vnd.tiddlywiki">
+<pre>! Custom List Widget
+
+TODO more info!
+
+!! Pragma
+
+```
+\customize tick=&quot;shortcuts&quot; _element=&quot;$list&quot;  filter=&quot;[all[shadows+tiddlers]prefix[$:/config/shortcuts]has:field[tags]]&quot; 
+\customize tick=&quot;list&quot; _element=&quot;ul&quot; _mode=block 
+```
+
+A custom wikitext list-widget can be found at: [[Keyboard Shortcuts]]
+
+!! Usage
+
+```
+´list ´shortcuts &lt;li&gt; {{!!title}} - {{!!text}} &lt;/li&gt;
+```</pre>
+</div>
+<div created="20200916130023030" list="pragma-debugcustomize [[Pragma Debug Options]]" modified="20200917202344981" tags="Reference" title="Debugging" type="text/vnd.tiddlywiki">
+<pre>! Debugging
+
+&lt;&lt;list-links &quot;[tag{!!title}]&quot;&gt;&gt;</pre>
 </div>
 <div created="20200902112515326" modified="20200906180716595" tags="$:/tags/Stylesheet" title="details-css" type="text/css">
 <pre>.notop p {
@@ -11758,7 +11985,7 @@ As shown in [[How to style a Paragraph]] and [[Misusing standard wikitext to ind
 <div title="E:\git\tiddly\wikilabs\editions\tick-text\tiddlers\Draft of 'test-importpragmas'.tid">
 <pre></pre>
 </div>
-<div created="20200915092942889" modified="20200915105740955" tags="Basics" title="Easy styling for Paragraphs" type="text/vnd.tiddlywiki">
+<div created="20200915092942889" modified="20200917172215101" tags="Basics docs" title="Easy styling for Paragraphs" type="text/vnd.tiddlywiki">
 <pre>! Easy styling for Paragraphs
 
 As shown in [[How to style a Paragraph]] there is some overhead, if you want to indent eg: 
@@ -11886,16 +12113,30 @@ There is a possibilty to define a `\customize` pragma now.
 
 </pre>
 </div>
-<div created="20200831074005709" modified="20200916123301879" tags="$:/tags/AboveStory" title="EXPERIMENTAL" type="text/vnd.tiddlywiki">
-<pre>[[why]] | [[easy-to-use]] | [[Basics]] | [[Reference]] Start reading at: [[How to style a Paragraph]]
+<div created="20200915111228377" modified="20200917172043663" tags="Reference docs" title="Editor Toolbar Buttons" type="text/vnd.tiddlywiki">
+<pre>! New Toolbar Buttons
 
-! This PAGE and PLUGINS are EXPERIMENTAL
+&lt;$list filter=&quot;[all[shadows+tiddlers]tag[$:/tags/EditorToolbar]prefix[$:/plugins/wikilabs]]&quot;&gt;
 
-!! Version 0.4.0 --- Sept. 16, 14:35
+´.i &lt;$transclude tiddler={{!!icon}}/&gt; &lt;$link&gt;{{!!caption}}&lt;/$link&gt; - {{!!description}}
 
-Everything is subject to change! There is no docs yet! Some tiddler names are weired! ... but have fun! Mario </pre>
+&lt;/$list&gt;
+
+! New Toolbar Icons
+
+&lt;&lt;list-links &quot;[all[shadows+tiddlers]prefix[$:/plugins/wikilabs/tick-text/icons]]&quot;&gt;&gt;
+</pre>
 </div>
-<div created="20200915075533228" modified="20200915105759737" tags="Basics" title="How to style a Paragraph" type="text/vnd.tiddlywiki">
+<div created="20200831074005709" modified="20200917205829575" tags="$:/tags/AboveStory" title="EXPERIMENTAL" type="text/vnd.tiddlywiki">
+<pre>[[why]] | [[easy-to-use]] | [[Basics]] | [[Advanced]] | [[Reference]] Start reading at: [[How to style a Paragraph]]
+
+! This PAGE and PLUGINS are BETA
+
+!! Version 0.4.1 --- Sept. 17, 23:00
+
+Names may be subject to change! There is some docs already! ... have fun! Mario </pre>
+</div>
+<div created="20200915075533228" modified="20200917172337816" tags="Basics docs" title="How to style a Paragraph" type="text/vnd.tiddlywiki">
 <pre>! How to style a Paragraph
 
 With TW there is no easy way to style a pagraph in wikitext. If you want to do it, you need to cover some wikitext within a html DIV element. eg: 
@@ -11996,12 +12237,91 @@ Next: [[Misusing standard wikitext to indent a paragraph]]</pre>
 <div caption="ID - paragraph" created="20200913114408060" modified="20200916102739750" tags="$:/tags/TextEditor/LinePrefix" title="ID - paragraph" type="text/plain">
 <pre>p</pre>
 </div>
+<div created="20200917195600440" modified="20200917202344990" tags="Advanced docs" title="Import and Re-define a Pragma" type="text/vnd.tiddlywiki">
+<pre>\importcustom [[pragma-details]]
+\customize degree=XXX _use=d _debug=both
+
+!! Redefine Imported Pragmas
+
+This tiddler talks about redefining imported pragmas. The pragma imported here is: [[pragma-details]].
+
+!! Pragmas Used Here
+
+```
+\importcustom [[pragma-details]]
+\customize degree=XXX _use=d _debug=both
+```
+!! _debug
+
+The reference documentation of the `_debug` parameter can be found at: [[Pragma Debug Options]]
+
+The `_debug=both` option here allows us, to see the pragma commands, definitions and the usage text. This makes it easier for me to document the functionality, without the need to duplicate a lot of code. 
+
+!!! Definition, Usage and Rendered
+
+°XXX.cbox-warning °s Details - Summay
+---
+line 1
+line 2
+------
+
+!! Explanation
+
+There are 2 &quot;re-defines&quot; going on here. 
+
+# New symbol `degree=XXX` and
+# Usage `XXX.cbox-warning`
+
+In [[Import Predefined Pragmas]] I did use the same `\importcustom` tiddler [[pragma-details]], which produced a blue box.
+
+Here we redefined the symbol: `b` with `XXX` and we added local parameters `.cbox-warning`, which produces the &quot;yellow&quot; box.
+
+</pre>
+</div>
+<div created="20200917190543970" modified="20200917195536074" tags="Advanced docs" title="Import Predefined Pragmas" type="text/vnd.tiddlywiki">
+<pre>\importcustom [[pragma-details]]
+
+! Import Predefined Pragmas
+
+The import pragma is named: `\importcustom &lt;filter expression&gt;`. The reference description can be found at: [[Pragma - importcustom]]. 
+
+''The pragma imported here is:''
+
+!! [[pragma-details]]
+{{pragma-details}}
+
+!! Pragma Used Here
+
+```
+\importcustom [[pragma-details]]
+```
+
+!!! Usage
+
+```
+°d °s Details - Summay
+---
+line 1
+line 2
+------
+```
+
+!!! Rendered
+
+°d °s Details - Summay
+---
+line 1
+line 2
+------
+
+!! Next: [[Import and Re-define a Pragma]]</pre>
+</div>
 <div created="20200906211537971" modified="20200906211738680" tags="$:/tags/Stylesheet" title="inline-css" type="text/vnd.tiddlywiki">
 <pre>.wltc-inline {
   background: lightsalmon;
 }</pre>
 </div>
-<div created="20200915132600098" modified="20200915195536242" tags="Advanced" title="Introducing Custom Markers for Advanced Users" type="text/vnd.tiddlywiki">
+<div created="20200915132600098" modified="20200917132128465" tags="Advanced docs" title="Introducing Custom Markers for Advanced Users" type="text/vnd.tiddlywiki">
 <pre>\customize angel=myBox _params=&quot;.indent.right-dedent.justify.cbox.cbox-primary&quot; 
 
 \customize angel=success _params=&quot;.indent.right-dedent.justify.cbox.cbox-success&quot; _debug
@@ -12046,11 +12366,13 @@ Ullum labore sensibus no vix. Id pro solum molestiae, ea mea omittam postulant e
 
 !! All possible parameters
 
-.. can be found at: [[pargma-customize]]
+.. can be found at: [[Custom Markup Definition]]
 </pre>
 </div>
-<div created="20200915111247673" modified="20200915235516394" tags="Reference" title="Keyboard Shortcuts" type="text/vnd.tiddlywiki">
-<pre>\customize tick=&quot;list-shortcuts&quot; _element=&quot;$list&quot; _widget=&quot;$list&quot; filter=&quot;[all[shadows+tiddlers]prefix[$:/config/shortcuts]has:field[tags]]&quot; 
+<div created="20200915111247673" modified="20200917125052201" tags="Reference docs" title="Keyboard Shortcuts" type="text/vnd.tiddlywiki">
+<pre>\customize tick=&quot;shortcuts&quot; _element=&quot;$list&quot;  filter=&quot;[all[shadows+tiddlers]prefix[$:/config/shortcuts]has:field[tags]]&quot; 
+
+\customize tick=&quot;list&quot; _element=&quot;ul&quot; _mode=block 
 
 ! Keyborad Shortcuts
 
@@ -12060,11 +12382,8 @@ The keyboard shortcuts can be defined in the $:/ControlPanel : Keyboard Shortcut
 
 The shortcuts are defined at: 
 
-&lt;ul&gt;
+´list ´shortcuts &lt;li&gt; {{!!title}} - {{!!text}} &lt;/li&gt;
 
-´list-shortcuts &lt;li&gt; {{!!title}} - {{!!text}}&lt;/li&gt;
-
-&lt;/ul&gt;
 
 TODO ... split parameter _element into _element and _widget
 </pre>
@@ -12091,7 +12410,7 @@ Mei quaeque veritus suavitate id, ius diam eius at. Suas labores expetendis vim 
 <div created="20200915110627102" modified="20200915110631037" title="markup for advanced users" type="text/vnd.tiddlywiki">
 <pre>ToDo</pre>
 </div>
-<div created="20200915091508527" modified="20200915194754861" tags="Basics" title="Misusing standard wikitext to indent a paragraph" type="text/vnd.tiddlywiki">
+<div created="20200915091508527" modified="20200917172130247" tags="Basics docs" title="Misusing standard wikitext to indent a paragraph" type="text/vnd.tiddlywiki">
 <pre>! Misusing standard wikitext to indent a paragraph
 
 As shown in: [[How to style a Paragraph]] there is some overhead in properly styling a paragraph in wikitext.
@@ -12126,7 +12445,7 @@ Tools for visually impaired users need a valid HTML structure to function right.
 
 ''A possible solution'' are: [[Custom Wikitext Markers]]</pre>
 </div>
-<div created="20200915095444188" modified="20200915105735910" tags="Basics" title="More CSS Details" type="text/vnd.tiddlywiki">
+<div created="20200915095444188" modified="20200917172354700" tags="Basics docs" title="More CSS Details" type="text/vnd.tiddlywiki">
 <pre>! wltc - CSS Details
 
 As described in [[Easy styling for Paragraphs]], some basic CSS classes are defined in 
@@ -12222,7 +12541,7 @@ This is an example to show the indent levels. ''DO NOT mix'' unordered lists and
 
 Next: [[About Color Boxes]]</pre>
 </div>
-<div created="20200915200156157" modified="20200915203242768" tags="Basics" title="Multi Column Text" type="text/vnd.tiddlywiki">
+<div created="20200915200156157" modified="20200917172114310" tags="Basics docs" title="Multi Column Text" type="text/vnd.tiddlywiki">
 <pre>\customize tick=2 _params=&quot;.c2.gap.justify.indent.right-dedent&quot; _debug=both
 
 ! Multi Columns in Wikitext
@@ -12312,63 +12631,88 @@ Mixing IDs for the same thing is terrible. A lot of config duplication is create
 }
 </pre>
 </div>
-<div created="20200908152739520" modified="20200916122850647" tags="Reference" title="pargma-customize" type="text/vnd.tiddlywiki">
-<pre>\customize angel=&quot;§&quot; _element=&quot;div&quot; _params=&quot;.hard-linebreaks&quot; _debug=both
+<div created="20200915185301184" modified="20200917171944531" tags="Reference docs" title="Pragma - importcustom" type="text/vnd.tiddlywiki">
+<pre>\importcustom [tag[pragmas]]
+\customize tick _use=&quot;success&quot;  _debug=both
+
+! Import a custom marker
+
+It's possible to import pragma definitions from other tiddlers. The pragma is named: `\importcustom`
+
+!! Schema
+
+```
+\importcustom &lt;filter expression&gt;
+```
+
+; filter expression
+: Can be a single tiddler like: `[[tiddler with spaces]]` or
+: It can be a filter expression: `[tag[pragmas]]`
 
 
-\customize angel=&quot;example&quot; _element=&quot;div&quot; _params=&quot;.hl&quot; _endString=&quot;---&quot; _mode=block _debug=pragmaOnly
+!! Code
 
-! Pragma Example
+```
+\importcustom [tag[pragmas]]
+\customize tick _use=&quot;success&quot;   
+```
 
-»example ---
+!! Tiddlers used:
 
-!! Pragma Schema
+&lt;&lt;list-links &quot;[tag[pragmas]][[test]]&quot;&gt;&gt;
 
-&lt;&lt;&lt;
+''The resolfed pragma configuration is:''
+
+´ {{test}}
+---
+</pre>
+</div>
+<div created="20200915185319344" modified="20200917203408994" tags="Debugging docs" title="Pragma Debug Options" type="text/vnd.tiddlywiki">
+<pre>\importcustom [[pragma-details]]
+\customize degree=XXX _use=d _debug=both
+
+! Lokal Debugging
+
+A `\customize` pragma can have a debugging option. First seen in: [[Import and Re-define a Pragma]]. It helps the user to &quot;find problems&quot; and it helps me &quot;creating the documentation&quot;
+
+!! Code
+
+```
+\importcustom [[pragma-details]]
+\customize degree=XXX _use=d _debug=both
+```
+
+!! Schema Used Here
+
+The full details to `&lt;ID&gt;, &lt;userSymbol&gt; and _use` can be found at the reference docs at: [[Custom Markup Definition]]
 
 ```
 \customize &lt;ID&gt;=&lt;userSymbol&gt;
-           _element=&lt;element&gt;
-           _params=&lt;class definitions&gt;
-           _endString=&lt;string&gt;
-           _mode=&lt;mode&gt;
            _use=&lt;userSymbol reference&gt;
            _debug=&lt;debug options&gt;
 ```
-; IDs 
-: `tick, single, degree, underscore, angel, almost`
-
-; userSymbol
-: Can be any single character or word that identifies your &quot;symbol&quot;. The first pragma uses &quot;example&quot;. The pragma below uses &quot;§&quot;. So it depends on you, the user. 
-
-; element 
-: Can be any HTML element, that allows &quot;content&quot;. Or as seen later it can also be a widget. In later examples we will use ''$list'' for the list-widget. See: [[Customized Wikitext Lists]]
-
-; class definitions
-: Can be a string with a &quot;connected&quot; list of CSS class definitions, as shown below. &quot;.hard-linebreaks&quot;
-
-; mode
-: Can be ''block'' or ''inline''. inline is the default value, if the parameter is missing.
-
-; userSymbol reference
-: Can be a &quot;symbol&quot; name from a pragma that is already defined, or from imported pragmas. See: [[pragma-importcustom]]
 
 ; debug options
-: `pragma, pragmaOnly, text, textOnly, both`
-: See: [[pragma-debug-options]]
+: Can be: `both, text, textOnly, pragma, pragmaOnly`
 
-&lt;&lt;&lt;
+!!! Debug Options
 
-!! Pragma, Usage and Rendered
+; both
+: The ''pragma'', the ''usage text'' are shown as &quot;code blocks&quot; //before// the ''rendered output''.
 
-&lt;&lt;&lt;
+; text
+: The ''usage text'' and the ''rendered output'' are shown
 
-»§ My text comes here.
-`angel` default end is `\n\n`. 
-The `_params=&quot;.hard-linebreaks&quot;` 
-allows us to see exactly that ;)
+; textOnly
+: The ''usage text'' is shown. Nothing else
 
-&lt;&lt;&lt;</pre>
+; pragma
+: The ''pragma'' and the ''rendered output'' are shown
+
+; pragmaOnly
+: Only the ''pragma'' will be shown
+
+TODO ´&lt;tabs with examples´</pre>
 </div>
 <div created="20200915152206666" modified="20200915152651771" tags="Reference" title="pragma-customizeinline" type="text/vnd.tiddlywiki">
 <pre>* `\custominline ...` ... not implemented in V0.3.x!
@@ -12376,10 +12720,7 @@ allows us to see exactly that ;)
 
 TODO</pre>
 </div>
-<div created="20200915185319344" modified="20200915185321671" title="pragma-debug-options" type="text/vnd.tiddlywiki">
-<pre>TODO</pre>
-</div>
-<div created="20200915152147177" modified="20200915190720968" tags="Reference" title="pragma-debugcustomize" type="text/vnd.tiddlywiki">
+<div created="20200915152147177" modified="20200917202344985" tags="Debugging docs" title="pragma-debugcustomize" type="text/vnd.tiddlywiki">
 <pre>\customize tick=&quot;d&quot; _element=&quot;details&quot; _params=&quot;.notop.c.cl.hl&quot; _endString=&quot;------&quot; open  _mode=block
 \customize tick=&quot;s&quot; _element=&quot;summary&quot; _params=&quot;.-m&quot;
 
@@ -12393,9 +12734,9 @@ It's possible to show the internal variables, that are used to store pragma defi
 
 ´d ´s Details - Summay
 ---
-Possible IDs can be found at: [[pargma-customize]]  
+Possible IDs can be found at: [[Custom Markup Definition]]  
   
-There are different &quot;_debug&quot; options available. See: [[pragma-debug-options]]
+There are different &quot;_debug&quot; options available. See: [[Pragma Debug Options]]
 ------
 
 !! Code
@@ -12413,46 +12754,9 @@ There are different &quot;_debug&quot; options available. See: [[pragma-debug-op
 <pre>\importcustom [[pragma-debugcustomize]]
 \debugcustomize all</pre>
 </div>
-<div created="20200915185301184" modified="20200915215502045" tags="Reference" title="pragma-importcustom" type="text/vnd.tiddlywiki">
-<pre>\importcustom [tag[pragmas]]
-\customize tick _use=&quot;success&quot;  _debug=both
-
-! Import a custom marker
-
-It's possible to import pragma definitions from other tiddlers. The pragma is named: `\importcustom`
-
-!! Schema
-
-```
-\importcustom &lt;filter expression&gt;
-```
-&lt;&lt;&lt;
-
-; filter expression
-: Can be a single tiddler like: `[[tiddler with spaces]]` or
-: It can be a filter expression: `[tag[pragmas]]`
-
-&lt;&lt;&lt;
-
-!! Code
-
-&lt;&lt;&lt;
-```
-\importcustom [tag[pragmas]]
-\customize tick _use=&quot;success&quot;   
-```
-&lt;&lt;&lt;
-
-!! Tiddlers used:
-&lt;&lt;&lt;
-
-&lt;&lt;list-links &quot;[tag[pragmas]][[test]]&quot;&gt;&gt;
-
-''The resolfed pragma configuration is:''
-
-´ {{test}}
----
-&lt;&lt;&lt;</pre>
+<div created="20200917191511666" modified="20200917194457917" title="pragma-details" type="text/plain">
+<pre>\customize degree=&quot;d&quot; _element=&quot;details&quot; _params=&quot;.notop.cbox.cbox-primary.hard-linebreaks&quot; _endString=&quot;------&quot; _mode=block open  
+\customize degree=&quot;s&quot; _element=&quot;summary&quot; _params=&quot;.margin-init&quot;</pre>
 </div>
 <div created="20200902144507426" modified="20200915213657451" tags="pragmas" title="pragma-to-be-included" type="text/plain">
 <pre>\customize tick=&quot;success&quot; _element=&quot;div&quot; _params=&quot;.c.cs.hl&quot; _mode=block _endString=&quot;---&quot;
@@ -12464,7 +12768,7 @@ It's possible to import pragma definitions from other tiddlers. The pragma is na
 
 </pre>
 </div>
-<div created="20200915093822946" modified="20200915105811268" tags="Reference" title="Predefined Stylesheets" type="text/vnd.tiddlywiki">
+<div created="20200915093822946" modified="20200917172441328" tags="Reference docs" title="Predefined Stylesheets" type="text/vnd.tiddlywiki">
 <pre>! Predefined Stylesheets
 
 &lt;&lt;list-links &quot;[tag[$:/tags/Stylesheet]]&quot;&gt;&gt;</pre>
@@ -12478,7 +12782,7 @@ It's possible to import pragma definitions from other tiddlers. The pragma is na
 \customize degree _use=presentation
 \customize angel _use=list</pre>
 </div>
-<div created="20200915110131659" list="pargma-customize [[Toolbar Buttons]] [[Predefined Stylesheets]] [[Keyboard Shortcuts]]" modified="20200915152104785" tags="toc" title="Reference" type="text/vnd.tiddlywiki">
+<div created="20200915110131659" list="[[Custom Markup Definition]] [[Pragma - importcustom]] pragma-customizeinline [[Editor Toolbar Buttons]] [[Keyboard Shortcuts]] [[Predefined Stylesheets]] Debugging" modified="20200916130301103" tags="toc" title="Reference" type="text/vnd.tiddlywiki">
 <pre>! Reference Docs
 
 &lt;&lt;list-links &quot;[tag{!!title}]&quot;&gt;&gt;</pre>
@@ -12628,6 +12932,23 @@ asdjfö las
 ».j.i {{lorem-ipsum-1-para}}
 
 CSS can be found at: [[aside-css]]
+</pre>
+</div>
+<div created="20200917203521801" modified="20200917205315104" tags="" title="test-copy-to-clipboard-widget" type="text/vnd.tiddlywiki">
+<pre>\customize underscore=copy _element=&quot;$button&quot; _mode=block _endString=&quot;------&quot; message=&quot;tm-copy-to-clipboard&quot;
+
+TODO create a copy to clipboard widget, that can be used with &quot;custom markup&quot;
+
+```
+&lt;$clipboard buttonText=&quot;copy&quot; class=&quot;&quot; showCode showText&gt;
+Content, that is copied to the clipboard
+&lt;/$clipboard&gt;
+```
+
+showCode ... no/yes=default ... show `&lt;code&gt;&lt;pre&gt; body text`
+
+showText ... no/yes=default ... show rendered outpub
+
 </pre>
 </div>
 <div created="20200902111614401" modified="20200910210756077" title="test-details-open" type="text/vnd.tiddlywiki">
@@ -13012,20 +13333,6 @@ I (mario) think, that underscore interferes with &quot;-&quot; as _endString</pr
 <div created="20200915110202512" list="Basics Advanced Reference Tasks" modified="20200915235542313" title="toc" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
-<div created="20200915111228377" modified="20200915120234818" tags="Reference" title="Toolbar Buttons" type="text/vnd.tiddlywiki">
-<pre>! New Toolbar Buttons
-
-&lt;$list filter=&quot;[all[shadows+tiddlers]tag[$:/tags/EditorToolbar]prefix[$:/plugins/wikilabs]]&quot;&gt;
-
-´.i &lt;$transclude tiddler={{!!icon}}/&gt; &lt;$link&gt;{{!!caption}}&lt;/$link&gt; - {{!!description}}
-
-&lt;/$list&gt;
-
-! New Toolbar Icons
-
-&lt;&lt;list-links &quot;[all[shadows+tiddlers]prefix[$:/plugins/wikilabs/tick-text/icons]]&quot;&gt;&gt;
-</pre>
-</div>
 <div created="20200906185250705" modified="20200908150946189" tags="" title="why" type="text/vnd.tiddlywiki">
 <pre>! Why does this project exist
 
@@ -13040,6 +13347,23 @@ I (mario) think, that underscore interferes with &quot;-&quot; as _endString</pr
 * Easy to use
 * Fast
 * Unobtrusive in plain text view</pre>
+</div>
+<div created="20200917121210781" modified="20200917195423674" tags="$:/tags/Stylesheet" title="wltc-docs-styles" type="text/css">
+<pre>[data-tags~=&quot;docs&quot;] .tc-tiddler-body {
+  padding-left: 2.65rem;
+}
+
+[data-tags~=&quot;docs&quot;] .tc-tiddler-body h1,
+[data-tags~=&quot;docs&quot;] .tc-tiddler-body h2  {
+  margin-left: -2.65rem;
+}
+
+[data-tags~=&quot;docs&quot;] .tc-tiddler-body h3, 
+[data-tags~=&quot;docs&quot;] .tc-tiddler-body h4,
+[data-tags~=&quot;docs&quot;] .tc-tiddler-body h5,
+[data-tags~=&quot;docs&quot;] .tc-tiddler-body h6  {
+  margin-left: -1.325rem;
+}</pre>
 </div>
 
 
