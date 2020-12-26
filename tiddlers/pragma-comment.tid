@@ -1,0 +1,9 @@
+created: 20201226173504500
+demo-url: https://wikilabs.github.io/editions/pragma-comment
+git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/pragma-comment
+modified: 20201226173522967
+tags: plugin
+title: pragma-comment
+type: text/vnd.tiddlywiki
+
+{{||$:/wikilabs/template/theme}}
