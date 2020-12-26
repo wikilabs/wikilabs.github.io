@@ -10045,12 +10045,12 @@ Error message and password prompt
 <div author="Mario Pietsch" core-version="&gt;=5.1.15" dependents="" description="Add possibility to add 'pragma comments'" list="readme license history" name="Pragma Comment" plugin-type="plugin" title="$:/plugins/wikilabs/pragma-comment" type="application/json" version="0.1.0">
 <pre>{
     &quot;tiddlers&quot;: {
-        &quot;$:/plugins/wikilabs/link-to-tabs/history&quot;: {
-            &quot;title&quot;: &quot;$:/plugins/wikilabs/link-to-tabs/history&quot;,
+        &quot;$:/plugins/wikilabs/pragma-comment/history&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/wikilabs/pragma-comment/history&quot;,
             &quot;text&quot;: &quot;\nV 0.1.0 - 2020.12.25\n\n* Initial release\n&quot;
         },
-        &quot;$:/plugins/wikilabs/pragma-comments/license&quot;: {
-            &quot;title&quot;: &quot;$:/plugins/wikilabs/pragma-comments/license&quot;,
+        &quot;$:/plugins/wikilabs/pragma-comment/license&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/wikilabs/pragma-comment/license&quot;,
             &quot;text&quot;: &quot;[[Pragma Comments Plugin|https://wikilabs.github.io/#pragma-comments]] (c) Mario Pietsch - 2020-2021\n\nhttps://opensource.org/licenses/BSD-3-Clause\n&quot;
         },
         &quot;$:/plugins/wikilabs/pragma-comment/pragma-comment.js&quot;: {
@@ -10059,8 +10059,8 @@ Error message and password prompt
             &quot;type&quot;: &quot;application/javascript&quot;,
             &quot;module-type&quot;: &quot;wikirule&quot;
         },
-        &quot;$:/plugins/wikilabs/link-to-tabs/readme&quot;: {
-            &quot;title&quot;: &quot;$:/plugins/wikilabs/link-to-tabs/readme&quot;,
+        &quot;$:/plugins/wikilabs/pragma-comment/readme&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/wikilabs/pragma-comment/readme&quot;,
             &quot;text&quot;: &quot;! Pragma Comment\n\nThe following lines will not create a parse-tree element and it will not interrupt the \&quot;pragma parser\&quot;. So comments can be placed outside of macro definitions, which is much faster during macro execution.\n\n```\n\\\\ comment comes here till the end of the line\n\\\\ comments like this are fast since they are ignored and the result is cached!\n\n\\define test()\n\\\\ This comment is as slow as the next line\n&lt;!-- HTML comment --&gt;\n\\end\n\n\\\\ The whole definition is deactivated. .... Works well for a few lines of code!\n\\\\define test()\n\\\\end\n\n\\\\ if you have big junks of code, it's easier to rename the macro eg: testXXXX() as shown below!\n\\define testXXXX()\nx\nx\nx\n\\end\n```\n\n\n&quot;
         }
     }
