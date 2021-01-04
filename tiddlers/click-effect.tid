@@ -1,0 +1,9 @@
+created: 20201226173139104
+demo-url: https://wikilabs.github.io/editions/click-effect
+git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/click-effect
+modified: 20201226173158013
+tags: plugin
+title: click-effect
+type: text/vnd.tiddlywiki
+
+{{||$:/wikilabs/template/theme}}
