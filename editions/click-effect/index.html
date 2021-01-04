@@ -141,17 +141,13 @@ Error message and password prompt
 
 <p>This <a class="tc-tiddlylink-external" href="https://tiddlywiki.com" rel="noopener noreferrer" target="_blank">TiddlyWiki</a> contains the following tiddlers:</p><p><ul>
 
-<li>$:/config/wikilabs/PluginLibraryWL/5.1.21</li>
-
-<li>$:/config/wikilabs/PluginLibraryWL/latest</li>
+<li>$:/config/clickEffect</li>
 
 <li>$:/core</li>
 
 <li>$:/isEncrypted</li>
 
-<li>$:/plugins/tiddlywiki/pluginlibrary</li>
-
-<li>$:/plugins/wikilabs/pluginlibrary</li>
+<li>$:/plugins/wikilabs/click-effect</li>
 
 <li>$:/status/RequireReloadDueToPluginChange</li>
 
@@ -160,6 +156,8 @@ Error message and password prompt
 <li>$:/themes/tiddlywiki/snowwhite</li>
 
 <li>$:/themes/tiddlywiki/vanilla</li>
+
+<li>GettingStarted</li>
 
 </ul>
 </p>
@@ -175,13 +173,8 @@ Error message and password prompt
 <!--~~ Ordinary tiddlers ~~-->
 
 <div id="storeArea" style="display:none;">
-<div caption="Wikilabs 5.1.21 compatible Library" created="20200605142858499" modified="20200605145627394" tags="$:/tags/PluginLibrary" title="$:/config/wikilabs/PluginLibraryWL/5.1.21" type="text/vnd.tiddlywiki" url="https://wikilabs.github.io/editions/pluginlibraryWL/library/V5.1.21-compatible/index.html">
-<pre>~WikiLabs plugin library. Compatible with ~TiddlyWiki Version 5.1.21
-</pre>
-</div>
-<div caption="Wikilabs Library (latest)" created="20200605142858499" modified="20200605145627394" tags="$:/tags/PluginLibrary" title="$:/config/wikilabs/PluginLibraryWL/latest" type="text/vnd.tiddlywiki" url="https://wikilabs.github.io/editions/pluginlibraryWL/library/latest/index.html">
-<pre>~WikiLabs plugin library latest version!
-</pre>
+<div created="20201222161655790" modified="20210104200730894" title="$:/config/clickEffect" type="text/vnd.tiddlywiki">
+<pre>clickEffect</pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="TiddlyWiki5 core" list="readme" name="Core" plugin-priority="0" plugin-type="plugin" title="$:/core" type="application/json" version="5.1.23">
 <pre>{
@@ -10050,44 +10043,42 @@ Error message and password prompt
 <div title="$:/isEncrypted">
 <pre>no</pre>
 </div>
-<div dependents="" description="Plugin library builder" list="readme" name="Plugin Library" plugin-type="plugin" title="$:/plugins/tiddlywiki/pluginlibrary" type="application/json" version="5.1.23">
+<div author="pmario" core-version="&gt;=5.1.22" dependents="" description="A simple mouse-button click effect" list="readme license history" name="Click Effect" plugin-type="plugin" title="$:/plugins/wikilabs/click-effect" type="application/json" version="0.2.0">
 <pre>{
     &quot;tiddlers&quot;: {
-        &quot;$:/plugins/tiddlywiki/pluginlibrary/asset-list-json&quot;: {
-            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/pluginlibrary/asset-list-json&quot;,
-            &quot;text&quot;: &quot;`var assetList = `&lt;$view tiddler=\&quot;$:/UpgradeLibrary/List\&quot;/&gt;`;\n`&quot;
+        &quot;$:/plugins/wikilabs/click-effect/clickEffectStyles&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/wikilabs/click-effect/clickEffectStyles&quot;,
+            &quot;tags&quot;: &quot;$:/tags/Stylesheet&quot;,
+            &quot;type&quot;: &quot;text/css&quot;,
+            &quot;text&quot;: &quot;.pulse {\n\tbackground: lightgreen;\n\tanimation: pulse 0.6s ease-out;\n\tz-index: 99999; \n}\n\n@keyframes pulse {\n\t0% { opacity: 1; }\n\t100% { opacity: 0.5; }\n}\n\n.clickEffect {\n\tposition: fixed;\n\tbox-sizing: border-box;\n\tborder-style: solid;\n\tborder-color: #aaa;\n\tborder-radius: 50%;\n\tanimation: clickEffect 0.4s ease-out;\n\tz-index: 99999;\n}\n\n@keyframes clickEffect {\n\t0% {\n\t\topacity: 1;\n\t\twidth: 0.5em;\n\t\theight: 0.5em;\n\t\tmargin: -0.25em;\n\t\tborder-width: 0.5em;\n\t}\n\t100% {\n\t\topacity: 0.2;\n\t\twidth: 5em;\n\t\theight: 5em;\n\t\tmargin: -2.5em;\n\t\tborder-width: 0.1em;\n\t}\n}&quot;
         },
-        &quot;$:/plugins/tiddlywiki/pluginlibrary/library.template.html&quot;: {
-            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/pluginlibrary/library.template.html&quot;,
-            &quot;text&quot;: &quot;\\rules only filteredtranscludeinline transcludeinline\n&lt;!doctype html&gt;\n&lt;html&gt;\n&lt;head&gt;\n&lt;meta http-equiv=\&quot;Content-Type\&quot; content=\&quot;text/html;charset=utf-8\&quot; /&gt;\n&lt;meta name=\&quot;application-name\&quot; content=\&quot;TiddlyWiki Plugin Library\&quot; /&gt;\n&lt;meta name=\&quot;application-version\&quot; content=\&quot;v0.0.0\&quot; /&gt;\n&lt;meta name=\&quot;copyright\&quot; content=\&quot;Copyright 2015 Jeremy Ruston\&quot; /&gt;\n&lt;link id=\&quot;faviconLink\&quot; rel=\&quot;shortcut icon\&quot; href=\&quot;favicon.ico\&quot;&gt;\n&lt;title&gt;Plugin Library&lt;/title&gt;\n&lt;script&gt;\n{{$:/plugins/tiddlywiki/pluginlibrary/asset-list-json}}\n{{$:/plugins/tiddlywiki/pluginlibrary/libraryserver.js}}\n&lt;/script&gt;\n&lt;/head&gt;\n&lt;body&gt;\n\n&lt;h1&gt;HelloThere&lt;/h1&gt;\n\n&lt;p&gt;This is the TiddlyWiki plugin library. It is not intended to be opened directly in the browser.&lt;/p&gt;\n\n&lt;p&gt;See &lt;a href=\&quot;https://tiddlywiki.com/\&quot; target=\&quot;_blank\&quot;&gt;https://tiddlywiki.com/&lt;/a&gt; for details of how to install plugins.&lt;/p&gt;\n\n&lt;/body&gt;\n&lt;/html&gt;&quot;
+        &quot;$:/config/clickEffect&quot;: {
+            &quot;title&quot;: &quot;$:/config/clickEffect&quot;,
+            &quot;text&quot;: &quot;clickEffect&quot;
         },
-        &quot;$:/plugins/tiddlywiki/pluginlibrary/libraryserver.js&quot;: {
-            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/pluginlibrary/libraryserver.js&quot;,
-            &quot;text&quot;: &quot;/*\\\ntitle: $:/plugins/tiddlywiki/pluginlibrary/libraryserver.js\ntype: application/javascript\nmodule-type: library\n\nA simple HTTP-over-window.postMessage implementation of a standard TiddlyWeb-compatible server. It uses real HTTP to load the individual tiddler JSON files.\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\n// Listen for window messages\nwindow.addEventListener(\&quot;message\&quot;,function listener(event){\n\tconsole.log(\&quot;plugin library: Received message from\&quot;,event.origin);\n\tconsole.log(\&quot;plugin library: Message content\&quot;,event.data);\n\tswitch(event.data.verb) {\n\t\tcase \&quot;GET\&quot;:\n\t\t\tif(event.data.url === \&quot;recipes/library/tiddlers.json\&quot;) {\n\t\t\t\t// Route for recipes/library/tiddlers.json\n\t\t\t\tevent.source.postMessage({\n\t\t\t\t\tverb: \&quot;GET-RESPONSE\&quot;,\n\t\t\t\t\tstatus: \&quot;200\&quot;,\n\t\t\t\t\tcookies: event.data.cookies,\n\t\t\t\t\turl: event.data.url,\n\t\t\t\t\ttype: \&quot;application/json\&quot;,\n\t\t\t\t\tbody: JSON.stringify(assetList,null,4)\n\t\t\t\t},\&quot;*\&quot;);\n\t\t\t} else if(event.data.url.indexOf(\&quot;recipes/library/tiddlers/\&quot;) === 0) {\n\t\t\t\tvar url = \&quot;recipes/library/tiddlers/\&quot; + encodeURIComponent(removePrefix(event.data.url,\&quot;recipes/library/tiddlers/\&quot;));\n\t\t\t\t// Route for recipes/library/tiddlers/&lt;uri-encoded-tiddler-title&gt;.json\n\t\t\t\thttpGet(url,function(err,responseText) {\n\t\t\t\t\tif(err) {\n\t\t\t\t\t\tevent.source.postMessage({\n\t\t\t\t\t\t\tverb: \&quot;GET-RESPONSE\&quot;,\n\t\t\t\t\t\t\tstatus: \&quot;404\&quot;,\n\t\t\t\t\t\t\tcookies: event.data.cookies,\n\t\t\t\t\t\t\turl: event.data.url,\n\t\t\t\t\t\t\ttype: \&quot;text/plain\&quot;,\n\t\t\t\t\t\t\tbody: \&quot;Not found\&quot;\n\t\t\t\t\t\t},\&quot;*\&quot;);\n\t\t\t\t\t} else {\n\t\t\t\t\t\tevent.source.postMessage({\n\t\t\t\t\t\t\tverb: \&quot;GET-RESPONSE\&quot;,\n\t\t\t\t\t\t\tstatus: \&quot;200\&quot;,\n\t\t\t\t\t\t\tcookies: event.data.cookies,\n\t\t\t\t\t\t\turl: event.data.url,\n\t\t\t\t\t\t\ttype: \&quot;application/json\&quot;,\n\t\t\t\t\t\t\tbody: responseText\n\t\t\t\t\t\t},\&quot;*\&quot;);\n\t\t\t\t\t}\n\t\t\t\t});\n\t\t\t} else {\n\t\t\t\tevent.source.postMessage({\n\t\t\t\t\tverb: \&quot;GET-RESPONSE\&quot;,\n\t\t\t\t\tstatus: \&quot;404\&quot;,\n\t\t\t\t\tcookies: event.data.cookies,\n\t\t\t\t\turl: event.data.url,\n\t\t\t\t\ttype: \&quot;text/plain\&quot;,\n\t\t\t\t\tbody: \&quot;Not found\&quot;\n\t\t\t\t},\&quot;*\&quot;);\n\t\t\t}\n\t\t\tbreak;\n\t}\n},false);\n\n// Helper to remove string prefixes\nfunction removePrefix(string,prefix) {\n\tif(string.indexOf(prefix) === 0) {\n\t\treturn string.substr(prefix.length);\n\t} else {\n\t\treturn string;\n\t}\n}\n\n// Helper for HTTP GET\nfunction httpGet(url,callback) {\n\tvar http = new XMLHttpRequest();\n\thttp.open(\&quot;GET\&quot;,url,true);\n\thttp.onreadystatechange = function() {\n\t\tif(http.readyState == 4 &amp;&amp; http.status == 200) {\n\t\t\tcallback(null,http.responseText);\n\t\t}\n\t};\n\thttp.send();\n}\n\n})();\n&quot;,
+        &quot;$:/core/modules/utils/dom-tweaks.js&quot;: {
+            &quot;title&quot;: &quot;$:/core/modules/utils/dom-tweaks.js&quot;,
+            &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/utils/dom-tweaks.js\ntype: application/javascript\nmodule-type: utils\n\nFix .pulseElement()\nAdd . clcikAnimation()\n\nVarious static DOM-related utility functions.\n\\*/\n\n(function(){\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\n/*\nFIX - FIX - FIX - FIX - FIX - FIX - should be part of the core\nPulse an element for debugging purposes\n*/\nexports.pulseElement = function(element) {\n\tvar eventName = $tw.utils.convertEventName(\&quot;animationEnd\&quot;);\n\t// Event handler to remove the class at the end\n\telement.addEventListener(eventName,function handler(event) {\n\t\telement.removeEventListener(eventName,handler,false);\n\t\t$tw.utils.removeClass(element,\&quot;pulse\&quot;);\n\t},false);\n\t// Apply the pulse class\n\t$tw.utils.removeClass(element,\&quot;pulse\&quot;);\n\t$tw.utils.forceLayout(element);\n\t$tw.utils.addClass(element,\&quot;pulse\&quot;);\n};\n\n/*\nCursor Click animation. Is useful to create videos\nThis animation creates its own div element\nOptions:\nclickEffect: CSS class name as string with no special formatting eg: clickEffect\ndomNode: DOM node, that should contain the animated element. eg: rootElement\nevent: event Object\n*/\nexports.clickAnimation = function(options) {\n\tvar options = options || {},\n\t\teventName = $tw.utils.convertEventName(\&quot;animationEnd\&quot;),\n\t\telement = document.createElement(\&quot;div\&quot;);\n\n\telement.className = options.clickEffect || \&quot;\&quot;;\n\telement.style.top = options.event.clientY+\&quot;px\&quot;;\n\telement.style.left = options.event.clientX+\&quot;px\&quot;;\n\toptions.domNode.appendChild(element);\n\t// Event handler to remove the element if animation is finished\n\telement.addEventListener(eventName,function() {\n\t\telement.parentElement.removeChild(element);\n\t\t}.bind(this),false);\n}\n\n})();&quot;,
             &quot;type&quot;: &quot;application/javascript&quot;,
-            &quot;module-type&quot;: &quot;library&quot;
+            &quot;module-type&quot;: &quot;utils&quot;
         },
-        &quot;$:/plugins/tiddlywiki/pluginlibrary/readme&quot;: {
-            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/pluginlibrary/readme&quot;,
-            &quot;text&quot;: &quot;This plugin is used behind the scenes by TiddlyWiki to build the plugin library.\n\n[[Source code|https://github.com/Jermolene/TiddlyWiki5/blob/master/plugins/tiddlywiki/pluginlibrary]]\n&quot;
-        }
-    }
-}</pre>
-</div>
-<div dependents="" description="Wikilabs plugin library configuration" list="readme" name="Wikilabs Plugin Library" plugin-type="plugin" title="$:/plugins/wikilabs/pluginlibrary" type="application/json" version="5.1.23">
-<pre>{
-    &quot;tiddlers&quot;: {
-        &quot;$:/plugins/wikilabs/pluginlibrary/asset-list-json&quot;: {
-            &quot;title&quot;: &quot;$:/plugins/wikilabs/pluginlibrary/asset-list-json&quot;,
-            &quot;text&quot;: &quot;`var assetList = `&lt;$view tiddler=\&quot;$:/UpgradeLibrary/List\&quot;/&gt;`;\n`&quot;
+        &quot;$:/core/modules/utils/dom/popup-tweaks.js&quot;: {
+            &quot;title&quot;: &quot;$:/core/modules/utils/dom/popup-tweaks.js&quot;,
+            &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/utils/dom/popup-tweaks.js\ntype: application/javascript\nmodule-type: utils\n\nModule that creates a $tw.utils.Popup object prototype that manages popups in the browser\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\n// Configuration tiddler, if click animation shuld be shown!\nvar CONFIG_CLICK_ANIMATION = \&quot;$:/config/clickEffect\&quot;;\nvar Popup = require(\&quot;$:/core/modules/utils/dom/popup.js\&quot;).Popup;\n\n// CHANGE -  CHANGE -  CHANGE -  CHANGE -  CHANGE\nPopup.prototype.handleEvent = function(event) {\n\tif(event.type === \&quot;click\&quot;) {\n\t\t// Find out what was clicked on\n\t\tvar info = this.popupInfo(event.target),\n\t\t\tcancelLevel = info.popupLevel - 1;\n\t\t// Don't remove the level that was clicked on if we clicked on a handle\n\t\tif(info.isHandle) {\n\t\t\tcancelLevel++;\n\t\t}\n\t\t// Cancel\n\t\tthis.cancel(cancelLevel);\n\t\t// Show Click Animation\n\t\tthis.clickAnimation(event);\n\t}\n};\n\nPopup.prototype.pulseElement = function(domNode) {\n\t$tw.utils.pulseElement(domNode)\n};\n\n/*\nAnimation Options: ... if configured\nclickEffect: CSS class name as string with no special formatting eg: clickEffect\ndomNode: DOM node, that should contain the animated element. eg: rootElement\nevent: event Object\n*/\nPopup.prototype.clickAnimation = function(event) {\n\tvar options = {};\n\toptions.event = event;\n\tvar clickEffect = $tw.wiki.getTiddlerText(CONFIG_CLICK_ANIMATION,\&quot;no\&quot;).trim();\n\tif (clickEffect === \&quot;clickEffect\&quot;) {\n\t\toptions = {\n\t\t\tclickEffect: \&quot;clickEffect\&quot;,\n\t\t\tdomNode: this.rootElement,\n\t\t\tevent: event\n\t\t}\n\t\t$tw.utils.clickAnimation(options);\n\t} else if (clickEffect === \&quot;pulse\&quot;) {\n\t\tthis.pulseElement(event.target);\n\t}\n};\n\n})();\n&quot;,
+            &quot;type&quot;: &quot;application/javascript&quot;,
+            &quot;module-type&quot;: &quot;utils&quot;
         },
-        &quot;$:/plugins/tiddlywiki/pluginlibrary/library.template.html&quot;: {
-            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/pluginlibrary/library.template.html&quot;,
-            &quot;text&quot;: &quot;\\rules only filteredtranscludeinline transcludeinline\n&lt;!doctype html&gt;\n\n&lt;!-- IMPORTANT! This template overwrites tiddlywiki pluginlibrary template. So we will have a specific descripton! --&gt;\n\n&lt;html&gt;\n&lt;head&gt;\n&lt;meta http-equiv=\&quot;Content-Type\&quot; content=\&quot;text/html;charset=utf-8\&quot; /&gt;\n&lt;meta name=\&quot;application-name\&quot; content=\&quot;Wikilabs Plugin Library\&quot; /&gt;\n&lt;meta name=\&quot;application-version\&quot; content=\&quot;v0.0.0\&quot; /&gt;\n&lt;meta name=\&quot;copyright\&quot; content=\&quot;Copyright 2020 Mario Pietsch\&quot; /&gt;\n&lt;link id=\&quot;faviconLink\&quot; rel=\&quot;shortcut icon\&quot; href=\&quot;favicon.ico\&quot;&gt;\n&lt;title&gt;Plugin Library&lt;/title&gt;\n&lt;script&gt;\n{{$:/plugins/wikilabs/pluginlibrary/asset-list-json}}\n&lt;!-- libraryserver.js MUST be used from /tiddlywiki/ otherwise we may loose latest changes !! --&gt;\n&lt;!-- wikilabs/pluginlibrary doesn't contain the code!! --&gt;\n{{$:/plugins/tiddlywiki/pluginlibrary/libraryserver.js}}\n&lt;/script&gt;\n&lt;/head&gt;\n&lt;body&gt;\n\n&lt;h1&gt;HelloThere&lt;/h1&gt;\n\n&lt;p&gt;This is the WikiLabs plugin library for TiddlyWiki. It is not intended to be opened directly in the browser.&lt;/p&gt;\n\n&lt;p&gt;See &lt;a href=\&quot;https://wikilabs.github.io/\&quot; target=\&quot;_blank\&quot;&gt;https://wikilabs.github.io/&lt;/a&gt; for details of how to install plugins.&lt;/p&gt;\n\n&lt;/body&gt;\n&lt;/html&gt;&quot;
+        &quot;$:/plugins/wikilabs/click-effect/history&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/wikilabs/click-effect/history&quot;,
+            &quot;text&quot;: &quot;V 0.2.0 - 2021.01.04\n\n* dom.js overwrite necessary utility functions only\n** add dom.clickAnimation()\n** fix dom.pulseElement() ... This should be part of the core\n* popup.js \n** add popup.pulseElement()\n** add popup.clickAnimation()\n** Change popup.handleEvent()\n\nV 0.1.0 - 2020.12.22\n\n* initial release\n* name: click-effect\n&quot;
         },
-        &quot;$:/plugins/wikilabs/pluginlibrary/readme&quot;: {
-            &quot;title&quot;: &quot;$:/plugins/wikilabs/pluginlibrary/readme&quot;,
-            &quot;text&quot;: &quot;This plugin is used behind the scenes by TiddlyWiki to build the plugin library.\n\n[[Source code|https://github.com/wikilabs/plugins/tree/master/wikilabs/pluginlibrary]]\n&quot;
+        &quot;$:/plugins/wikilabs/click-effect/license&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/wikilabs/click-effect/license&quot;,
+            &quot;text&quot;: &quot;[[Click-Effect-Plugin|https://wikilabs.github.io/#click-effect]] (C) Mario Pietsch - 2020-2021\nhttps://opensource.org/licenses/BSD-3-Clause\n&quot;
+        },
+        &quot;$:/plugins/wikilabs/click-effect/readme&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/wikilabs/click-effect/readme&quot;,
+            &quot;text&quot;: &quot;! Basics\n\nThis plugin shows a little \&quot;click animation\&quot; if the left mouse button is released\n\n! Settings\n\nTh current setting is: ''{{$:/config/clickEffect}}''\n\n| Setting | Description |h\n|&lt;$radio field=\&quot;text\&quot; tiddler=\&quot;$:/config/clickEffect\&quot; value=\&quot;clickEffect\&quot;&gt; Click Effect&lt;/$radio&gt; |A little click animation is shown at the cursor position |\n|&lt;$radio field=\&quot;text\&quot; tiddler=\&quot;$:/config/clickEffect\&quot; value=\&quot;pulse\&quot;&gt; Element Pulse&lt;/$radio&gt; |The html-element, that is clicked is highlighted |\n|&lt;$radio field=\&quot;text\&quot; tiddler=\&quot;$:/config/clickEffect\&quot; value=\&quot;no\&quot;&gt; Off&lt;/$radio&gt; |No click-animaiton is shown|\n\n----\n\n''Important'': This plugin modifies several core modules\n\n&lt;$list filter=\&quot;[[$:/plugins/wikilabs/click-effect]plugintiddlers[]prefix[$:/core/]]\&quot;&gt;&lt;$link to=&lt;&lt;currentTiddler&gt;&gt;&gt;&lt;&lt;currentTiddler&gt;&gt;&lt;br&gt;&lt;/$link&gt;&lt;/$list&gt;&quot;
         }
     }
 }</pre>
@@ -10206,6 +10197,18 @@ Error message and password prompt
         }
     }
 }</pre>
+</div>
+<div title="GettingStarted">
+<pre>! Overview
+
+This plugin &quot;Click Effect&quot; adds a little animation if the left mouse button is released
+
+{{$:/plugins/wikilabs/click-effect/readme}}
+
+! Plugins
+
+{{$:/core/ui/ControlPanel/Plugins}}
+</pre>
 </div>
 
 
