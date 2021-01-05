@@ -1,0 +1,9 @@
+created: 20170203103021609
+demo-url: https://wikilabs.github.io/editions/thin-scrollbars
+git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/thin-scrollbars
+modified: 20210105135945635
+tags: plugin
+title: thin-scrollbars
+type: text/vnd.tiddlywiki
+
+{{||$:/wikilabs/template/theme}}
