@@ -1,6 +1,7 @@
 {
 	"description": "Info-button persistent for one session",
 	"plugins": [
+		"wikilabs/click-effect",
 		"wikilabs/info-session",
 		"wikilabs/info-tagmap",
 		"wikilabs/multicol-dropdown",
