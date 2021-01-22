@@ -1,7 +1,11 @@
 created: 20190211002748002
-modified: 20210122173901413
+modified: 20210122184939661
 title: GettingStarted
 type: text/vnd.tiddlywiki
+
+<style>
+.tc-thumbnail-icon {border:black 1px solid;}
+</style>
 
 ! Welcome
 
@@ -20,8 +24,9 @@ It basically is a "jump off" page to various ~TiddlyWiki ''editions'', that show
 </$link>
 
 !! Video
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/0QwGUGckiwI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div style="font-size:0.8em;margin-top:2em;margin-bottom:2em;">
+{{VideoThumbnail - Use the Library Configuration}}
+</div>
 
 !! Compatible with TW 5.1.21
 

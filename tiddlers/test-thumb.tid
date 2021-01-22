@@ -1,0 +1,9 @@
+created: 20210122181241592
+modified: 20210122181414020
+tags: 
+title: test-thumb
+type: text/vnd.tiddlywiki
+
+<div style="font-size:0.7em;text-align:center;margin-top:2em;margin-bottom:2em;">
+<<list-thumbnails filter:"[tag[VideoThumbnail]]" width:"168" height:"95">>
+</div>

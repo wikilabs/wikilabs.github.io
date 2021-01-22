@@ -1,0 +1,13 @@
+background-color: #fff
+caption: Use ~WikiLabs Library Link
+color: red
+created: 20210122181308949
+icon: {{$:/core/images/video}}
+image: library-configuration.png
+link: How to use the Library Configuration Tiddler
+modified: 20210122185015078
+tags: VideoThumbnail
+title: VideoThumbnail - Use the Library Configuration
+type: text/vnd.tiddlywiki
+
+<<list-thumbnails filter:"[all[current]]" width:"336" height:"190">>
