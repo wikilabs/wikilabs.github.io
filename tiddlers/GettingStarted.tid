@@ -1,5 +1,5 @@
 created: 20190211002748002
-modified: 20200611172541554
+modified: 20210122173901413
 title: GettingStarted
 type: text/vnd.tiddlywiki
 
@@ -21,7 +21,7 @@ It basically is a "jump off" page to various ~TiddlyWiki ''editions'', that show
 
 !! Video
 
-TODO
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0QwGUGckiwI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 !! Compatible with TW 5.1.21
 
