@@ -47,7 +47,7 @@ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE." />
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
-<title>My TiddlyWiki — a non-linear personal web notebook</title>
+<title>Open Story — interacitve story configuration</title>
 <!--~~ This is a Tiddlywiki file. The points of interest in the file are marked with this pattern ~~-->
 
 <!--~~ Raw markup ~~-->
@@ -290,6 +290,12 @@ Error message and password prompt
 <li>$:/plugins/wikilabs/link-to-tabs</li>
 
 <li>$:/plugins/wikilabs/tm-open-story</li>
+
+<li>$:/plugins/wikilabs/xenlist</li>
+
+<li>$:/SiteSubtitle</li>
+
+<li>$:/SiteTitle</li>
 
 <li>$:/status/RequireReloadDueToPluginChange</li>
 
@@ -10272,7 +10278,7 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div created="20191220102420238" modified="20191220134922130" tags="$:/tags/Macro" title="$:/core/macros/list" type="text/vnd.tiddlywiki">
+<div created="20191220102420238" modified="20210125221305329" tags="$:/tags/Macro" title="$:/core/macros/list" type="text/vnd.tiddlywiki">
 <pre>\define list-links(filter,type:&quot;ul&quot;,subtype:&quot;li&quot;,class:&quot;&quot;,emptyMessage)
 \whitespace trim
 &lt;$type$ class=&quot;$class$&quot;&gt;
@@ -10295,7 +10301,7 @@ Error message and password prompt
 &lt;span class=&quot;tc-links-draggable-list&quot;&gt;
   &lt;$vars targetTiddler=&quot;&quot;&quot;$tiddler$&quot;&quot;&quot; targetField=&quot;&quot;&quot;$field$&quot;&quot;&quot;&gt;
     &lt;$type$ class=&quot;$class$&quot;&gt;
-      &lt;$list filter=&quot;[enlist:$suffix${$tiddler$!!$field$}]&quot;&gt;
+      &lt;$list filter=&quot;[xenlist:$suffix${$tiddler$!!$field$}]&quot;&gt;
         &lt;$droppable actions=&lt;&lt;list-links-draggable-drop-actions type:$suffix$&gt;&gt; tag=&quot;&quot;&quot;$subtype$&quot;&quot;&quot;&gt;
           &lt;div class=&quot;tc-droppable-placeholder&quot; /&gt;
           &lt;div&gt;
@@ -10369,9 +10375,10 @@ Error message and password prompt
   &lt;/$set&gt;
 &lt;/span&gt;
 \end
-</pre>
+
+&lt;pre&gt;&lt;$view /&gt;&lt;/pre&gt;</pre>
 </div>
-<div created="20200108164814312" modified="20200108180020042" tags="$:/tags/Macro" title="$:/core/macros/tabs" type="text/vnd.tiddlywiki">
+<div created="20200108164814312" modified="20210125212917559" tags="$:/tags/Macro" title="$:/core/macros/tabs" type="text/vnd.tiddlywiki">
 <pre>\define tabs(tabsList,default,state:&quot;$:/state/tab&quot;,class,template,buttonTemplate,retain,uniqueState)
 &lt;div class=&quot;tc-tab-set $class$&quot;&gt;
 &lt;div class=&quot;tc-tab-buttons $class$&quot;&gt;
@@ -10403,7 +10410,8 @@ Error message and password prompt
 &lt;/div&gt;
 &lt;/div&gt;
 \end
-</pre>
+
+&lt;pre&gt;&lt;$view /&gt;&lt;/pre&gt;</pre>
 </div>
 <div created="20191023112258770" modified="20191023113641276" tags="$:/tags/Macro" title="$:/core/macros/tree" type="text/vnd.tiddlywiki">
 <pre>\define link-icon() &lt;span&gt;{{$:/core/images/file}}&lt;/span&gt;
@@ -10464,7 +10472,7 @@ Error message and password prompt
 \end
 </pre>
 </div>
-<div caption="{{$:/language/Search/Story/Caption}} Story" created="20191022131630956" modified="20200121170428983" tags="$:/tags/AdvancedSearch" title="$:/core/ui/AdvancedSearch/Story" type="text/vnd.tiddlywiki">
+<div caption="{{$:/language/Search/Story/Caption}} Story" created="20191022131630956" modified="20210125221411393" tags="$:/tags/AdvancedSearch" title="$:/core/ui/AdvancedSearch/Story" type="text/vnd.tiddlywiki">
 <pre>\whitespace trim
 
 \define bak()
@@ -10474,7 +10482,7 @@ Error message and password prompt
 \end
 
 \define get-filter()
-[enlist:array{$(story-title)$!!filter}]
+[xenlist:array{$(story-title)$!!filter}]
 \end
 
 \define get-list()
@@ -10526,7 +10534,7 @@ $:/state/tab/$(story-title)$
 &lt;/$reveal&gt;
 </pre>
 </div>
-<div created="20191023104603480" modified="20200117153308190" tags="$:/tags/AdvancedSearch/StoryButton" title="$:/core/ui/AdvancedSearch/Story/StoryButtons/dropdown" type="text/vnd.tiddlywiki">
+<div created="20191023104603480" modified="20210125195251737" tags="$:/tags/AdvancedSearch/StoryButton" title="$:/core/ui/AdvancedSearch/Story/StoryButtons/dropdown" type="text/vnd.tiddlywiki">
 <pre>\whitespace trim
 
 \define link-icon()
@@ -10655,7 +10663,7 @@ $:/state/tab/$(story-title)$
      height: 0;
 }</pre>
 </div>
-<div button-classes="tc-text-editor-toolbar-item-start-group" caption="{{$:/language/Buttons/Edit/Caption}}" condition="[&lt;targetTiddler&gt;]" created="20200113115547087" custom-icon="yes" description="{{$:/language/Buttons/Edit/Hint}}" icon="$:/core/images/edit-button" modified="20200121175205330" shortcuts="((preview))" tags="" title="$:/core/ui/AdvancedSearch/Story/Tabs/Button/edit" type="text/vnd.tiddlywiki">
+<div button-classes="tc-text-editor-toolbar-item-start-group" caption="{{$:/language/Buttons/Edit/Caption}}" condition="[&lt;targetTiddler&gt;]" created="20200113115547087" custom-icon="yes" description="{{$:/language/Buttons/Edit/Hint}}" icon="$:/core/images/edit-button" modified="20210125220931007" shortcuts="((preview))" tags="" title="$:/core/ui/AdvancedSearch/Story/Tabs/Button/edit" type="text/vnd.tiddlywiki">
 <pre>\define closeActions()
 &lt;$action-setfield $tiddler=&quot;$:/temp/story&quot; $field=&quot;edit&quot; $value=&quot;no&quot;/&gt;
 \end
@@ -10665,7 +10673,7 @@ $:/state/tab/$(story-title)$
 &lt;$set name=x value={{{[&lt;story-title&gt;get&lt;currentTab&gt;]}}}&gt;
 &lt;$set name=lineFeed value=&quot;
 &quot;&gt;
-&lt;$action-setfield $tiddler=&quot;$:/temp/story&quot; text={{{[enlist:stringify&lt;x&gt;]+[join&lt;lineFeed&gt;]}}}/&gt;
+&lt;$action-setfield $tiddler=&quot;$:/temp/story&quot; text={{{[xenlist:stringify&lt;x&gt;]+[join&lt;lineFeed&gt;]}}}/&gt;
 &lt;/$set&gt;&lt;/$set&gt;
 \end
 \define get-x()
@@ -10703,7 +10711,7 @@ $(fieldName)$ - $(currentTab)$ - $(story-title)$
 &lt;/div&gt;
 </pre>
 </div>
-<div created="20191219115535436" modified="20200122100705135" tags="" title="$:/core/ui/AdvancedSearch/Story/Tabs/template" type="text/vnd.tiddlywiki">
+<div created="20191219115535436" modified="20210125221408773" tags="" title="$:/core/ui/AdvancedSearch/Story/Tabs/template" type="text/vnd.tiddlywiki">
 <pre>\define applyStory()
 &lt;$action-sendmessage $message=&quot;tm-open-story&quot; $param=&lt;&lt;story-title&gt;&gt; field=&lt;&lt;currentTab&gt;&gt; /&gt;
 \end
@@ -10735,7 +10743,7 @@ $:/temp/$(story-title)$/$(currentTab)$/edit
 
 \define showPreview()
 &lt;$reveal state=&lt;&lt;getStatePreview&gt;&gt; type=&quot;match&quot; text=&quot;yes&quot; tag=&quot;div&quot; class=&quot;tc-story-results tc-fr&quot; animate=yes retain=yes&gt;
-&lt;$set name=&quot;resultCount&quot; value={{{[enlist:array&lt;myList&gt;count[]]}}}&gt;
+&lt;$set name=&quot;resultCount&quot; value={{{[xenlist:array&lt;myList&gt;count[]]}}}&gt;
 &lt;span class=&quot;tc-float-right&quot;&gt;&lt;&lt;lingo Filter/Matches&gt;&gt;&lt;/span&gt;
 &lt;$macrocall $name=&quot;list-links&quot; filter={{{[{!!title}get&lt;currentTab&gt;]}}} type=&quot;div&quot; subtype=&quot;div&quot;/&gt;
 &lt;/$set&gt;
@@ -11531,7 +11539,7 @@ $button$
     }
 }</pre>
 </div>
-<div author="Mario Pietsch" core-version="&gt;=5.1.15" dependents="" description="Internal links are added to tabs if selected" list="readme license history" name="Link to Tabs" plugin-type="plugin" title="$:/plugins/wikilabs/link-to-tabs" type="application/json" version="2.0.1">
+<div author="Mario Pietsch" core-version="&gt;=5.1.15" dependents="" description="Internal links are added to tabs if selected" icon="$:/plugins/wikilabs/link-to-tabs/icon" list="readme license history" name="Link to Tabs" plugin-type="plugin" title="$:/plugins/wikilabs/link-to-tabs" type="application/json" version="2.0.1">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/core/macros/tabs&quot;: {
@@ -11563,6 +11571,10 @@ $button$
             &quot;title&quot;: &quot;$:/plugins/wikilabs/link-to-tabs/history&quot;,
             &quot;text&quot;: &quot;V 2.0.1 - 2020-12-25\n\n* update license\n\nV 2.0.0 - 2020.12.05\n\n* Update $:/core/macros/tabs to V5.1.23\n\nV 1.1.1 - 2020.01.19\n\n* Update license link/text\n\nV 1.1.0 - 2019.07.14\n\n* Add new option: Initially hide link\n** Transition time from hidden to visible is adjustable\n* Added: \&quot;Reset to Default\&quot; button\n\nV 1.0.1 - 2019.02.18\n\n* link-to-tabs works in drop-down elements now.\n\nV 1.0.0 - 2019.02.14\n\n* Use core tabs-macro from TW 5.1.19\n\nV &lt;1.0.0\n\n* Use core tabs-macro from TW 5.1.15\n&quot;
         },
+        &quot;$:/plugins/wikilabs/link-to-tabs/icon&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/wikilabs/link-to-tabs/icon&quot;,
+            &quot;text&quot;: &quot;&lt;svg width=\&quot;22pt\&quot; height=\&quot;22pt\&quot; version=\&quot;1.1\&quot; viewBox=\&quot;0 0 128 128\&quot;&gt;\n&lt;path transform=\&quot;scale(4.36)\&quot; d=\&quot;m18.6 0-14.5 7.33-3.93 14.7 10.5 7.33 14.5-7.33 3.93-14.7-10.5-7.33zm0.0371 4.98c1.26-7.68e-5 2.52 0.479 3.48 1.44 1.92 1.92 1.92 5.03 0 6.96l-3.48 3.48c-1.92 1.92-5.03 1.92-6.96 0a4.9 4.9 0 0 1-1.05-1.56l0.943-0.943a1.84 1.84 0 0 1 1.17-0.535 2.45 2.45 0 0 0 0.68 1.3c0.96 0.96 2.52 0.958 3.48-0.00195l3.47-3.47c0.962-0.962 0.962-2.52 0.00195-3.48-0.96-0.96-2.52-0.958-3.48 0.00195l-2.25 2.25a5.56 5.56 0 0 0-3.37-0.0508 4.97 4.97 0 0 1 0.41-0.465l3.48-3.48c0.96-0.96 2.22-1.44 3.48-1.44zm-5.76 5.76c1.26-5.8e-5 2.52 0.481 3.48 1.44a4.9 4.9 0 0 1 1.05 1.56l-0.941 0.943a1.84 1.84 0 0 1-1.17 0.533 2.45 2.45 0 0 0-0.68-1.29c-0.96-0.96-2.52-0.96-3.48 0l-3.48 3.48c-0.962 0.962-0.96 2.52 0 3.48 0.96 0.96 2.52 0.96 3.48 0l2.25-2.25a5.56 5.56 0 0 0 3.37 0.0527 4.97 4.97 0 0 1-0.41 0.463l-3.48 3.48c-1.92 1.92-5.03 1.92-6.96 0-1.92-1.92-1.92-5.03 0-6.95l3.48-3.48c0.96-0.96 2.22-1.44 3.48-1.44z\&quot; style=\&quot;stroke-width:.229\&quot;/&gt;\n&lt;/svg&gt;\n\n\n\n&quot;
+        },
         &quot;$:/plugins/wikilabs/link-to-tabs/license&quot;: {
             &quot;title&quot;: &quot;$:/plugins/wikilabs/link-to-tabs/license&quot;,
             &quot;text&quot;: &quot;[[Link-to-Tabs-Macro|https://wikilabs.github.io/#link-to-tabs]] (c) Mario Pietsch - 2016-2021\n\nhttps://opensource.org/licenses/BSD-3-Clause\n&quot;
@@ -11582,7 +11594,7 @@ $button$
     }
 }</pre>
 </div>
-<div author="pmario" core-version="&gt;=5.1.14" dependents="" description="Open several story tiddlers" list="readme license history" name="Open Story" plugin-type="plugin" title="$:/plugins/wikilabs/tm-open-story" type="application/json" version="0.1.1-beta">
+<div author="pmario" core-version="&gt;=5.1.14" dependents="$:/plugins/wikilabs/xenlist" description="Open several story tiddlers" list="readme license history" name="Open Story" plugin-type="plugin" title="$:/plugins/wikilabs/tm-open-story" type="application/json" version="0.2.0-beta">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/plugins/wikilabs/tm-open-story/history&quot;: {
@@ -11605,6 +11617,54 @@ $button$
         }
     }
 }</pre>
+</div>
+<div author="pmario" core-version="&gt;=5.1.14" dependents="" description="New enlist operator that understands comments and filter syntax" list="readme license history" name="xenlist" plugin-type="plugin" title="$:/plugins/wikilabs/xenlist" type="application/json" version="0.0.1-experimental">
+<pre>{
+    &quot;tiddlers&quot;: {
+        &quot;$:/plugins/wikilabs/xenlist/history&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/wikilabs/xenlist/history&quot;,
+            &quot;text&quot;: &quot;V 0.0.1-experimental - 2021.01.25\n\n* initial release\n** needed by bundler and wltm-open-story plugins\n&quot;
+        },
+        &quot;$:/plugins/wikilabs/xenlist/license&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/wikilabs/xenlist/license&quot;,
+            &quot;text&quot;: &quot;[[Xenlist Plugin|https://wikilabs.github.io/#xenlist]] (C) Mario Pietsch - 2021-\n\nhttps://opensource.org/licenses/BSD-3-Clause\n&quot;
+        },
+        &quot;$:/core/modules/filters/Xenlist.js&quot;: {
+            &quot;title&quot;: &quot;$:/core/modules/filters/Xenlist.js&quot;,
+            &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/filters/Xenlist.js\ntype: application/javascript\nmodule-type: filteroperator\n\nFilter operator returning its operand parsed as a list\n\n\\*/\n(function(){\n\n\t/*jslint node: true, browser: true */\n\t/*global $tw: false, exports: false */\n\t\&quot;use strict\&quot;;\n\t\n\t/*\n\tExport our filter function\n\t*/\n\texports.xenlist = function(source,operator,options) {\n\t\tvar allowDuplicates = false,\n\t\t\tuseFilterArray = false,\n\t\t\tmode = \&quot;filter\&quot;; // default - detect filter string elements\n\t\tvar list = [];\n\t\t\n\t\tswitch(operator.suffix) {\n\t\t\tcase \&quot;raw\&quot;:\n\t\t\t\tallowDuplicates = true;\n\t\t\t\tbreak;\n\t\t\tcase \&quot;dedupe\&quot;:\n\t\t\t\tallowDuplicates = false;\n\t\t\t\tbreak;\n\t\t\tcase \&quot;array\&quot;:\n\t\t\t\tallowDuplicates = true;\n\t\t\t\tuseFilterArray = true;\n\t\t\t\tbreak;\n\t\t\tcase \&quot;stringify\&quot;:\n\t\t\t\tallowDuplicates = true;\n\t\t\t\tuseFilterArray = true;\n\t\t\t\tmode = \&quot;stringify\&quot;;\n\t\t\t\tbreak;\n\t\t}\n\t\tvar x = $tw.utils.parseFilterArray;\n\t\tlist = (useFilterArray) ? x(operator.operand,allowDuplicates,mode) : $tw.utils.parseStringArray(operator.operand,allowDuplicates);\n\t\tif(operator.prefix === \&quot;!\&quot;) {\n\t\t\tvar results = [];\n\t\t\tsource(function(tiddler,title) {\n\t\t\t\tif(list.indexOf(title) === -1) {\n\t\t\t\t\tresults.push(title);\n\t\t\t\t}\n\t\t\t});\n\t\t\treturn results;\n\t\t} else {\n\t\t\treturn list;\n\t\t}\n\t};\n\t\n\t})();\n\t&quot;,
+            &quot;type&quot;: &quot;application/javascript&quot;,
+            &quot;module-type&quot;: &quot;filteroperator&quot;
+        },
+        &quot;$:/core/modules/widgets/action-listops.js&quot;: {
+            &quot;title&quot;: &quot;$:/core/modules/widgets/action-listops.js&quot;,
+            &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/widgets/action-listops.js\ntype: application/javascript\nmodule-type: widget\n\nAction widget to apply list operations to any tiddler field (defaults to the 'list' field of the current tiddler)\n\n\\*/\n(function() {\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\nvar Widget = require(\&quot;$:/core/modules/widgets/widget.js\&quot;).widget;\nvar ActionListopsWidget = function(parseTreeNode, options) {\n\tthis.initialise(parseTreeNode, options);\n};\n/**\n * Inherit from the base widget class\n */\nActionListopsWidget.prototype = new Widget();\n/**\n * Render this widget into the DOM\n */\nActionListopsWidget.prototype.render = function(parent, nextSibling) {\n\tthis.computeAttributes();\n\tthis.execute();\n};\n/**\n * Compute the internal state of the widget\n */\nActionListopsWidget.prototype.execute = function() {\n\t// Get our parameters\n\tthis.target = this.getAttribute(\&quot;$tiddler\&quot;, this.getVariable(\n\t\t\&quot;currentTiddler\&quot;));\n\tthis.filter = this.getAttribute(\&quot;$filter\&quot;);\n\tthis.subfilter = this.getAttribute(\&quot;$subfilter\&quot;);\n\tthis.listField = this.getAttribute(\&quot;$field\&quot;, \&quot;list\&quot;);\n\tthis.listIndex = this.getAttribute(\&quot;$index\&quot;);\n\tthis.filtertags = this.getAttribute(\&quot;$tags\&quot;);\n};\n/**\n * \tRefresh the widget by ensuring our attributes are up to date\n */\nActionListopsWidget.prototype.refresh = function(changedTiddlers) {\n\tvar changedAttributes = this.computeAttributes();\n\tif(changedAttributes.$tiddler || changedAttributes.$filter ||\n\t\tchangedAttributes.$subfilter || changedAttributes.$field ||\n\t\tchangedAttributes.$index || changedAttributes.$tags) {\n\t\tthis.refreshSelf();\n\t\treturn true;\n\t}\n\treturn this.refreshChildren(changedTiddlers);\n};\n/**\n * \tInvoke the action associated with this widget\n */\nActionListopsWidget.prototype.invokeAction = function(triggeringWidget,\n\tevent) {\n\t//Apply the specified filters to the lists\n\tvar field = this.listField,\n\t\tindex,\n\t\ttype = \&quot;!!\&quot;,\n\t\tlist = this.listField;\n\tif(this.listIndex) {\n\t\tfield = undefined;\n\t\tindex = this.listIndex;\n\t\ttype = \&quot;##\&quot;;\n\t\tlist = this.listIndex;\n\t}\n\tif(this.filter) {\n\t\tthis.wiki.setText(this.target, field, index, $tw.utils.stringifyList(\n\t\t\tthis.wiki\n\t\t\t.filterTiddlers(this.filter, this)));\n\t}\n\tif(this.subfilter) {\n\t\tvar filterString = \&quot;[xenlist:array{\&quot; + this.target + type + list + \&quot;}] \&quot; + this.subfilter;\n\t\tthis.wiki.setText(this.target, field, index, $tw.utils.stringifyList(\n\t\t\tthis.wiki.filterTiddlers(filterString, this)));\n\t}\n\tif(this.filtertags) {\n\t\tvar tiddler = this.wiki.getTiddler(this.target),\n\t\t\toldtags = tiddler ? (tiddler.fields.tags || []).slice(0) : [],\n\t\t\ttagfilter = \&quot;[list[\&quot; + this.target + \&quot;!!tags]] \&quot; + this.filtertags,\n\t\t\tnewtags = this.wiki.filterTiddlers(tagfilter,this);\n\t\tif($tw.utils.stringifyList(oldtags.sort()) !== $tw.utils.stringifyList(newtags.sort())) {\n\t\t\tthis.wiki.setText(this.target,\&quot;tags\&quot;,undefined,$tw.utils.stringifyList(newtags));\n\t\t}\n\t}\n\treturn true; // Action was invoked\n};\n\nexports[\&quot;action-listops\&quot;] = ActionListopsWidget;\n\n})();\n&quot;,
+            &quot;type&quot;: &quot;application/javascript&quot;,
+            &quot;module-type&quot;: &quot;widget&quot;
+        },
+        &quot;$:/plugins/wikilabs/xenlist/readme&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/wikilabs/xenlist/readme&quot;,
+            &quot;text&quot;: &quot;* TODO\n\n! Example\n\n```\nTODO\n```&quot;
+        },
+        &quot;$:/core/modules/utils/parseFilterArray.js&quot;: {
+            &quot;title&quot;: &quot;$:/core/modules/utils/parseFilterArray.js&quot;,
+            &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/utils/parseFilterArray.js\ntype: application/javascript\nmodule-type: utils\n\nParse a string field and return a filter-array. For example \&quot;OneTiddler [[Another Tiddler]] [subfilter{$:/DefaultTiddlers}]]\&quot;\nIt will return a filter in results[\&quot;OneTiddler\&quot;, \&quot;[[Another Tiddler]]\&quot; \&quot;[subfilter{$:/DefaultTiddlers}]]\&quot;]\n\n\\*/\n\n(function(){\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\nexports.parseFilterArray = function(value, allowDuplicate, mode) {\n\tvar item;\n\tif(typeof value === \&quot;string\&quot;) {\n\t\tvar memberRegExp = /\\[\\[((?:[^\\]])*)\\]\\]|[\&quot;']((?:[^\\]\&quot;'])*)[\&quot;']|(\\[?\\[.*?[\\]|\\&gt;|}]\\])|([+|\\-|~|=]\\[(?:[^\\]])*[\\]]+)|([+|\\-|~|=]\\S*)|([^[\\s]?\\S+)/mg,\n\t\t\tresults = [], names = {},\n\t\t\tmatch;\n\t\tdo {\n\t\t\tmatch = memberRegExp.exec(value);\n\t\t\tif(match) {\n\t\t\t\tif ((match[1] || match[2]) &amp;&amp; mode===\&quot;stringify\&quot;) {\n\t\t\t\t\titem = match[1] || match[2];\n\t\t\t\t\titem = \&quot;[[\&quot; + item + \&quot;]]\&quot;;\n\t\t\t\t} else { // \&quot;filter mode is active\&quot;\&quot;\n\t\t\t\t\titem = match[1] || match[2] || match[3] || match[4] || match[5] || match[6];\n\t\t\t\t}\n\t\t\t\tif(item !== undefined &amp;&amp; (!$tw.utils.hop(names,item) || allowDuplicate)) {\n\t\t\t\t\tresults.push(item);\n\t\t\t\t\tnames[item] = true;\n\t\t\t\t}\n\t\t\t}\n\t\t} while(match);\n\t\treturn results;\n\t} else if($tw.utils.isArray(value)) {\n\t\treturn value;\n\t} else {\n\t\treturn null;\n\t}\n};\n\n})();&quot;,
+            &quot;type&quot;: &quot;application/javascript&quot;,
+            &quot;module-type&quot;: &quot;utils&quot;
+        },
+        &quot;$:/core/modules/utils/stringifyList.js&quot;: {
+            &quot;title&quot;: &quot;$:/core/modules/utils/stringifyList.js&quot;,
+            &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/utils/stringifyList.js\ntype: application/javascript\nmodule-type: utils\n\nParse a string field and return a filter-array. For example \&quot;OneTiddler [[Another Tiddler]] [subfilter{$:/DefaultTiddlers}]]\&quot;\nIt will return a filter in results[\&quot;OneTiddler\&quot;, \&quot;[[Another Tiddler]]\&quot; \&quot;[subfilter{$:/DefaultTiddlers}]]\&quot;]\n\n\\*/\n\n(function(){\n\t/*jslint node: true, browser: true */\n\t/*global $tw: false */\n\t\&quot;use strict\&quot;;\n\n// Stringify an array of tiddler titles into a list string\nexports.stringifyList = function(value) {\n\tvar filterStart = \&quot;[+-~=\&quot;;\n\tif($tw.utils.isArray(value)) {\n\t\tvar result = new Array(value.length);\n\t\tfor(var t=0, l=value.length; t&lt;l; t++) {\n\t\t\tvar entry = value[t] || \&quot;\&quot;;\n\t\t\tif(filterStart.indexOf(entry[0]) !== -1) {\n\t\t\t\tresult[t] = entry;\n\t\t\t} else if(entry.indexOf(\&quot; \&quot;) !== -1) {\n\t\t\t\tresult[t] = \&quot;[[\&quot; + entry + \&quot;]]\&quot;;\n\t\t\t} else {\n\t\t\t\tresult[t] = entry;\n\t\t\t}\n\t\t}\n\t\treturn result.join(\&quot; \&quot;);\n\t} else {\n\t\treturn value || \&quot;\&quot;;\n\t}\n};\n\n})();&quot;,
+            &quot;type&quot;: &quot;application/javascript&quot;,
+            &quot;module-type&quot;: &quot;utils&quot;
+        }
+    }
+}</pre>
+</div>
+<div created="20201226130534614" modified="20201226130544569" title="$:/SiteSubtitle" type="text/vnd.tiddlywiki">
+<pre>interacitve story configuration</pre>
+</div>
+<div created="20201226130523796" modified="20201226130527173" title="$:/SiteTitle" type="text/vnd.tiddlywiki">
+<pre>Open Story</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
@@ -11905,7 +11965,7 @@ A           B           C</pre>
 <div created="20191216095445922" description="Tower of Hanoi - 4 Stones" filter="[enlist{!!list}]" list="4321-0-0-pg 4-321-0-pg 321-0-0-p4 321-0-0 32-0-1 3-2-1 3-21-0 0-21-3 1-2-3 1-0-32 0-0-321" modified="20200115141246091" tags="$:/tags/Story" title="Story/TOH/4-Stones" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
-<div created="20191216121603705" default="filter" description="Das ist ein Test Story" filter="4321-0-0-pg 4-321-0-pg 321-0-0-p4 [subfilter{Story/Tower of Hanoi/A-C Sequence!!list}]" modified="20200122100931782" tags="$:/tags/Story" title="Story/TOH/4-Stones-filtered" type="text/vnd.tiddlywiki">
+<div created="20191216121603705" default="filter" description="Das ist ein Test Story" filter="4321-0-0-pg 321-0-0-p4 4-321-0-pg [subfilter{Story/Tower of Hanoi/A-C Sequence!!list}]" modified="20210125221426121" tags="$:/tags/Story" title="Story/TOH/4-Stones-filtered" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div created="20191216122158993" default="filter" description="Das ist ein Test Story" filter="4321-0-0-pg 4-321-0-pg 321-0-0-p4 [subfilter{Story/Tower of Hanoi/A-C Sequence!!list}] 0-0-321 +[putafter[4-321-0-pg]] =0-0-321" list="4321-0-0-pg 4-321-0-pg 0-0-321 321-0-0-p4 321-0-0 32-0-1 3-2-1 3-21-0 0-21-3 1-2-3 1-0-32" modified="20200122110205216" tags="$:/tags/Story" title="Story/TOH/4-Stones-filtered-putafter" type="text/vnd.tiddlywiki">

@@ -47,7 +47,7 @@ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE." />
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
-<title>My TiddlyWiki — a non-linear personal web notebook</title>
+<title>KeyValues — advanced data-tiddler functions</title>
 <!--~~ This is a Tiddlywiki file. The points of interest in the file are marked with this pattern ~~-->
 
 <!--~~ Raw markup ~~-->
@@ -158,6 +158,10 @@ Error message and password prompt
 <li>$:/isEncrypted</li>
 
 <li>$:/plugins/wikilabs/keyvalues</li>
+
+<li>$:/SiteSubtitle</li>
+
+<li>$:/SiteTitle</li>
 
 <li>$:/status/RequireReloadDueToPluginChange</li>
 
@@ -10346,6 +10350,10 @@ exports.run = function(cond, then, elze) {
             &quot;title&quot;: &quot;$:/plugins/wikilabs/keyvalues/history&quot;,
             &quot;text&quot;: &quot;V 2.0.1 - 2020-12-25\n\n* update license\n\nV 1.0.0 - 2020.12.09\n\n* Publish the plugin + docs\n\nV 0.1.1 - 2020.01.19\n\n* Update license link/text\n\nV 0.1.0 - beta 2019.11.13\n\n* initial release\n** name: keyvalues\n&quot;
         },
+        &quot;$:/plugins/wikilabs/keyvalues/icon&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/wikilabs/keyvalues/icon&quot;,
+            &quot;text&quot;: &quot;&lt;svg width=\&quot;22pt\&quot; height=\&quot;22pt\&quot; version=\&quot;1.1\&quot; viewBox=\&quot;0 0 128 128\&quot;&gt;\n&lt;path transform=\&quot;scale(4.36)\&quot; d=\&quot;m18.6 0-14.5 7.33-3.93 14.7 10.5 7.33 14.5-7.33 3.93-14.7-10.5-7.33zm-13.3 11.4h2.01v2.83l2.9-2.83h2.34l-3.76 3.67 4.15 4.08h-2.52l-3.11-3.05v3.05h-2.01v-7.75zm11.7 0h2.03l2.07 5.72 2.07-5.72h2.02l-2.89 7.75h-2.4l-2.89-7.75zm-3.14 1.94h1.89v2.01h-1.89v-2.01zm0 3.8h1.89v2.01h-1.89v-2.01z\&quot; style=\&quot;stroke-width:.229\&quot;/&gt;\n&lt;/svg&gt;&quot;
+        },
         &quot;$:/core/modules/filters/keyvalues.js&quot;: {
             &quot;title&quot;: &quot;$:/core/modules/filters/keyvalues.js&quot;,
             &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/filters/keyvalues.js\ntype: application/javascript\nmodule-type: filteroperator\n\nFilter operator for returning the keys and values of a data tiddler\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\n/*\nExport our filter function\n*/\nexports.keyvalues = function(source,operator,options) {\n\tvar results = [],\n\t\tfieldList = [],\n\t\tsep = \&quot;:\&quot;,\n\t\tp1 = \&quot;key\&quot;,\n\t\tp2 = \&quot;value\&quot;,\n\t\tuseKey = true,\n\t\tuseValue = false,\n\t\tv1, v2, flags, pass, match, data,\n\t\tregexp, regexpString;\n\n\t// Process key, value parameters\n\tif(operator.suffixes &amp;&amp; operator.suffixes[0].length &gt; 0) {\n\t\tfieldList = operator.suffixes[0];\n\t\tp1 = fieldList[0] || \&quot;\&quot;;\n\t\tp2 = fieldList[1] || \&quot;\&quot;;\n\t}\n\t// Process &lt;separator&gt;\n\tif(operator.suffixes &amp;&amp; operator.suffixes[1]) {\n\t\tsep = operator.suffixes[1][0] || \&quot;:\&quot;;\n\t}\n\t// Process usekey or usevalue flags\n\tif(operator.suffixes &amp;&amp; operator.suffixes[2] &amp;&amp; operator.suffixes[2][0]) {\n\t\tuseKey = (operator.suffixes[2][0].toLowerCase() === \&quot;usekey\&quot;);\n\t\tuseValue = (operator.suffixes[2][0].toLowerCase() === \&quot;usevalue\&quot;);\n\t}\n\t// Process regexp operand if available\n\tregexpString = operator.operand;\n\tif (regexpString) {\n\t\tmatch = /^\\(\\?([gim]+)\\)/.exec(regexpString);\n\t\tif(match) {\n\t\t\tflags = match[1];\n\t\t\tregexpString = regexpString.substr(match[0].length);\n\t\t} else {\n\t\t\tmatch = /\\(\\?([gim]+)\\)$/.exec(regexpString);\n\t\t\tif(match) {\n\t\t\t\tflags = match[1];\n\t\t\t\tregexpString = regexpString.substr(0,regexpString.length - match[0].length);\n\t\t\t}\n\t\t}\n\t\ttry {\n\t\t\tregexp = new RegExp(regexpString,flags);\n\t\t} catch(e) {\n\t\t\treturn [\&quot;\&quot; + e];\n\t\t}\n\t}\n\t// Process incoming values\n\tsource(function(tiddler,title) {\n\t\tdata = options.wiki.getTiddlerDataCached(title);\n\t\tif(data) {\n\t\t\t// remove separator if there is no v2 element\n\t\t\tsep = (p2) ? sep : \&quot;\&quot;;\n\t\t\tfor (var [key, value] of Object.entries(data)) {\n\t\t\t\tv1 = (p1 === \&quot;key\&quot;) ? key : (p1 === \&quot;value\&quot;) ? value : \&quot;\&quot;;\n\t\t\t\tv2 = (p2 === \&quot;key\&quot;) ? key : (p2 === \&quot;value\&quot;) ? value : \&quot;\&quot;;\n\n\t\t\t\tif (regexpString) {\n\t\t\t\t\tpass = (useKey) ? regexp.exec(key) : (useValue) ? regexp.exec(value) : false;\n\t\t\t\t\tif (pass) {\n\t\t\t\t\t\tresults.push(v1+sep+v2);\n\t\t\t\t\t}\n\t\t\t\t} else {\n\t\t\t\t\tresults.push(v1+sep+v2);\n\t\t\t\t} // if regexpstring\n\t\t\t} // for\n\t\t} // if data\n\t});\n\treturn results;\n};\n})();\n\n&quot;,
@@ -10362,6 +10370,12 @@ exports.run = function(cond, then, elze) {
         }
     }
 }</pre>
+</div>
+<div created="20201226124957878" modified="20201226125004628" title="$:/SiteSubtitle" type="text/vnd.tiddlywiki">
+<pre>advanced data-tiddler functions</pre>
+</div>
+<div created="20201226124947100" modified="20201226125009728" title="$:/SiteTitle" type="text/vnd.tiddlywiki">
+<pre>~KeyValues</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>

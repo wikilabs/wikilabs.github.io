@@ -47,7 +47,7 @@ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE." />
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
-<title>My TiddlyWiki — a non-linear personal web notebook</title>
+<title>Link to Tabs — improves tab handling</title>
 <!--~~ This is a Tiddlywiki file. The points of interest in the file are marked with this pattern ~~-->
 
 <!--~~ Raw markup ~~-->
@@ -148,6 +148,10 @@ Error message and password prompt
 <li>$:/isEncrypted</li>
 
 <li>$:/plugins/wikilabs/link-to-tabs</li>
+
+<li>$:/SiteSubtitle</li>
+
+<li>$:/SiteTitle</li>
 
 <li>$:/status/RequireReloadDueToPluginChange</li>
 
@@ -10046,7 +10050,7 @@ Error message and password prompt
 <div title="$:/isEncrypted">
 <pre>no</pre>
 </div>
-<div author="Mario Pietsch" core-version="&gt;=5.1.15" dependents="" description="Internal links are added to tabs if selected" list="readme license history" name="Link to Tabs" plugin-type="plugin" title="$:/plugins/wikilabs/link-to-tabs" type="application/json" version="2.0.1">
+<div author="Mario Pietsch" core-version="&gt;=5.1.15" dependents="" description="Internal links are added to tabs if selected" icon="$:/plugins/wikilabs/link-to-tabs/icon" list="readme license history" name="Link to Tabs" plugin-type="plugin" title="$:/plugins/wikilabs/link-to-tabs" type="application/json" version="2.0.1">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/core/macros/tabs&quot;: {
@@ -10078,6 +10082,10 @@ Error message and password prompt
             &quot;title&quot;: &quot;$:/plugins/wikilabs/link-to-tabs/history&quot;,
             &quot;text&quot;: &quot;V 2.0.1 - 2020-12-25\n\n* update license\n\nV 2.0.0 - 2020.12.05\n\n* Update $:/core/macros/tabs to V5.1.23\n\nV 1.1.1 - 2020.01.19\n\n* Update license link/text\n\nV 1.1.0 - 2019.07.14\n\n* Add new option: Initially hide link\n** Transition time from hidden to visible is adjustable\n* Added: \&quot;Reset to Default\&quot; button\n\nV 1.0.1 - 2019.02.18\n\n* link-to-tabs works in drop-down elements now.\n\nV 1.0.0 - 2019.02.14\n\n* Use core tabs-macro from TW 5.1.19\n\nV &lt;1.0.0\n\n* Use core tabs-macro from TW 5.1.15\n&quot;
         },
+        &quot;$:/plugins/wikilabs/link-to-tabs/icon&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/wikilabs/link-to-tabs/icon&quot;,
+            &quot;text&quot;: &quot;&lt;svg width=\&quot;22pt\&quot; height=\&quot;22pt\&quot; version=\&quot;1.1\&quot; viewBox=\&quot;0 0 128 128\&quot;&gt;\n&lt;path transform=\&quot;scale(4.36)\&quot; d=\&quot;m18.6 0-14.5 7.33-3.93 14.7 10.5 7.33 14.5-7.33 3.93-14.7-10.5-7.33zm0.0371 4.98c1.26-7.68e-5 2.52 0.479 3.48 1.44 1.92 1.92 1.92 5.03 0 6.96l-3.48 3.48c-1.92 1.92-5.03 1.92-6.96 0a4.9 4.9 0 0 1-1.05-1.56l0.943-0.943a1.84 1.84 0 0 1 1.17-0.535 2.45 2.45 0 0 0 0.68 1.3c0.96 0.96 2.52 0.958 3.48-0.00195l3.47-3.47c0.962-0.962 0.962-2.52 0.00195-3.48-0.96-0.96-2.52-0.958-3.48 0.00195l-2.25 2.25a5.56 5.56 0 0 0-3.37-0.0508 4.97 4.97 0 0 1 0.41-0.465l3.48-3.48c0.96-0.96 2.22-1.44 3.48-1.44zm-5.76 5.76c1.26-5.8e-5 2.52 0.481 3.48 1.44a4.9 4.9 0 0 1 1.05 1.56l-0.941 0.943a1.84 1.84 0 0 1-1.17 0.533 2.45 2.45 0 0 0-0.68-1.29c-0.96-0.96-2.52-0.96-3.48 0l-3.48 3.48c-0.962 0.962-0.96 2.52 0 3.48 0.96 0.96 2.52 0.96 3.48 0l2.25-2.25a5.56 5.56 0 0 0 3.37 0.0527 4.97 4.97 0 0 1-0.41 0.463l-3.48 3.48c-1.92 1.92-5.03 1.92-6.96 0-1.92-1.92-1.92-5.03 0-6.95l3.48-3.48c0.96-0.96 2.22-1.44 3.48-1.44z\&quot; style=\&quot;stroke-width:.229\&quot;/&gt;\n&lt;/svg&gt;\n\n\n\n&quot;
+        },
         &quot;$:/plugins/wikilabs/link-to-tabs/license&quot;: {
             &quot;title&quot;: &quot;$:/plugins/wikilabs/link-to-tabs/license&quot;,
             &quot;text&quot;: &quot;[[Link-to-Tabs-Macro|https://wikilabs.github.io/#link-to-tabs]] (c) Mario Pietsch - 2016-2021\n\nhttps://opensource.org/licenses/BSD-3-Clause\n&quot;
@@ -10096,6 +10104,12 @@ Error message and password prompt
         }
     }
 }</pre>
+</div>
+<div created="20201226125050227" modified="20201226125056328" title="$:/SiteSubtitle" type="text/vnd.tiddlywiki">
+<pre>improves tab handling</pre>
+</div>
+<div created="20201226125042683" modified="20201226125046164" title="$:/SiteTitle" type="text/vnd.tiddlywiki">
+<pre>Link to Tabs</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
