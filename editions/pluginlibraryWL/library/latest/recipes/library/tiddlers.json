@@ -25,7 +25,8 @@
         "dependents": "",
         "type": "application/json",
         "readme": "! ~ReadMe\n\n* Documentation and more can be found at: https://wikilabs.github.io/editions/bundler\n* The position of the \"Bundles\" tab can be selected in the $:/ControlPanel : Bundles tab\n* There are 2 version of bundles\n** Bundle lists\n** Filtered Bundles ... which have to be activated by the user\n* The filter examples can be live tested, clicking on the number besides the \"export button\"\n* The Bundler can bundle itself and other plugins into a bundle :-).\n* You can create several \"selections\". Those combinations are persistently stored for reuse. \n* Bundle lists can be built up, over time. Just as the TW evolves. \n* The \"Enable Import Bundle\" option lets you collect / log imported tiddlers and create a new bundle, for future use.\n* This plugin only works with TW >= 5.1.18 since we use the \"subfilter\" operator which has been added in 5.1.18\n* It's easy to add the bundle configuration to the bundle itself eg: \n** If the bundle is named: `tagged-test.bundle`, the filter can look like this: `[tag[test]] tagged-test.bundle`\n* Have a closer look at the ~$:/ControlPanel: Bundles tab for more [[settings|$:/plugins/wikilabs/bundler/ui/ControlPanel/bundler-config]]. \n\n---\n\n''Important:'' This plugin modifies a core module:\n\n* $:/core/modules/upgraders/system.js",
-        "requires-reload": "yes"
+        "requires-reload": "yes",
+        "icon": "data:text/vnd.tiddlywiki,%3Csvg%20width%3D%2222pt%22%20height%3D%2222pt%22%20viewBox%3D%220%200%20128%20128%22%3E%0A%3Cpath%20d%3D%22M81.096%200l-63.22%2031.959L.741%2096.05l45.78%2031.959%2063.22-31.96%2017.135-64.091L81.096%200zM54.369%2025.593h25.419v.017a3.555%203.555%200%20012.673%201.038L92.532%2036.72a3.534%203.534%200%20011.047%202.459h.017v39.894a3.559%203.559%200%2001-3.567%203.557h-4.796v6.453a3.559%203.559%200%2001-3.566%203.558H76.87v6.278a3.56%203.56%200%2001-3.567%203.558H37.64a3.56%203.56%200%2001-3.566-3.558V49.215c0-1.97%201.6-3.566%203.566-3.566h4.796V39.37a3.568%203.568%200%20013.567-3.575h4.796v-6.453a3.56%203.56%200%20013.566-3.566zm2.411%205.276v4.752h14.606v.017a3.555%203.555%200%20012.673%201.038l10.072%2010.072a3.534%203.534%200%20011.046%202.459h.017v28.165h3.907V39.745c-4.884%200-7.369.698-9.33-4.102V30.89H56.792zm-8.37%2010.028v4.534h14.649v.009c.998-.044%201.97.34%202.672%201.046l10.072%2010.072a3.54%203.54%200%20011.046%202.45h.017v28.34h3.885V49.721c-4.883%200-7.368.707-9.33-4.094v-4.752H48.444zm-9.244%2010.028v46.652h32.743V59.078h-5.275a3.558%203.558%200%2001-3.567-3.558v-4.578H39.175z%22%2F%3E%0A%3C%2Fsvg%3E"
     },
     {
         "title": "$:/plugins/wikilabs/click-effect",
@@ -47,7 +48,7 @@
         "description": "Adds a possibilty to style text content with wikitext syntax",
         "list": "readme license history",
         "dependents": "$:/plugins/wikilabs/pragma-comment",
-        "version": "0.9.0",
+        "version": "0.10.0",
         "plugin-type": "plugin",
         "type": "application/json",
         "readme": "Adds a possibilty to style text content with wikitext syntax\n\nIt's possible to manipulate the rules behaviour with: \n\n`\\rules only ticktext`\n`\\rules excpet ticktext`\n",
@@ -140,6 +141,7 @@
     {
         "title": "$:/plugins/wikilabs/markdown-it",
         "description": "Markdown parser (Commonmark compatible)",
+        "name": "Markdown It",
         "author": "pmario",
         "core-version": ">=5.0.0",
         "version": "9.1.1",
