@@ -157,6 +157,8 @@ Error message and password prompt
 
 <li>$:/config/edit/inlinePrefix</li>
 
+<li>$:/config/edit/inlinePrefix/xx</li>
+
 <li>$:/config/edit/linePrefix</li>
 
 <li>$:/config/edit/linePrefix/force</li>
@@ -197,15 +199,17 @@ Error message and password prompt
 
 <li>$:/config/wikilabs/custom-markup/icons/inline/active</li>
 
+<li>$:/config/wikilabs/PluginLibraryWL/latest</li>
+
 <li>$:/core</li>
 
 <li>$:/core/ui/EditorToolbar/linkify</li>
 
 <li>$:/core/ui/EditorToolbar/transcludify</li>
 
-<li>$:/core/ui/EditTemplate/body/toolbar/button</li>
-
 <li>$:/core/ui/ViewTemplate/title</li>
+
+<li>$:/Import</li>
 
 <li>$:/Import!!popup-$:/core/macros/tabs</li>
 
@@ -223,9 +227,9 @@ Error message and password prompt
 
 <li>$:/plugins/wikilabs/space-space-newline</li>
 
-<li>$:/search-flt/inp/params</li>
+<li>$:/search-flt/drop-block</li>
 
-<li>$:/search-flt/params</li>
+<li>$:/search-flt/inp/drop-block</li>
 
 <li>$:/search-sdw/edit</li>
 
@@ -233,7 +237,11 @@ Error message and password prompt
 
 <li>$:/search-sys/inp/plug</li>
 
+<li>$:/search-sys/inp/state</li>
+
 <li>$:/search-sys/plug</li>
+
+<li>$:/search-sys/state</li>
 
 <li>$:/SiteSubtitle</li>
 
@@ -244,6 +252,8 @@ Error message and password prompt
 <li>$:/StoryList</li>
 
 <li>$:/tags/EditorToolbar</li>
+
+<li>$:/tags/Stylesheet</li>
 
 <li>$:/themes/tiddlywiki/snowwhite</li>
 
@@ -323,10 +333,6 @@ Error message and password prompt
 
 <li>global-pragma-definition</li>
 
-<li>Glyph - only</li>
-
-<li>Glyph - paragraph</li>
-
 <li>How to style a Paragraph</li>
 
 <li>idea</li>
@@ -335,11 +341,11 @@ Error message and password prompt
 
 <li>Import Predefined Pragmas</li>
 
+<li>inline-color-danger</li>
+
 <li>inline-color-light</li>
 
 <li>inline-css</li>
-
-<li>inline-glyph-only</li>
 
 <li>Introducing Custom Markers for Advanced Users</li>
 
@@ -785,13 +791,17 @@ td ul, td ol {
 <div created="20201002103508707" modified="20201003135611081" tags="$:/tags/Macro" title="$:/config/custom-markup/pragma/PageTemplate" type="text/vnd.tiddlywiki">
 <pre>\importcustom [tag[$:/tags/Pragma]]</pre>
 </div>
-<div created="20210218173910840" id="/°" modified="20210218193647721" name="inline-color-light" title="$:/config/edit/inlinePrefix" type="text/vnd.tiddlywiki">
-<pre>.cl </pre>
+<div caption="`⠒.d ⠶` Color Danger" created="20210320101024973" modified="20210320101024993" name="inline-color-danger" tags="" title="$:/config/edit/inlinePrefix" type="application/x-tiddler-dictionary">
+<pre>prefix: ⠒.cd
+suffix: ⠶</pre>
 </div>
-<div created="20210218172425897" id="»" modified="20210218172425918" name="Glyph - only" title="$:/config/edit/linePrefix" type="text/vnd.tiddlywiki">
+<div created="20210320095200574" id="『" modified="20210320100355695" title="$:/config/edit/inlinePrefix/xx" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
-<div created="20201214223025617" modified="20210218154405391" title="$:/config/edit/linePrefix/force" type="text/vnd.tiddlywiki">
+<div created="20210320093251776" id="≈" modified="20210320104854297" name="Colorbox Danger" title="$:/config/edit/linePrefix" type="text/vnd.tiddlywiki">
+<pre>».hl.c.cd</pre>
+</div>
+<div created="20201214223025617" modified="20210320093250933" title="$:/config/edit/linePrefix/force" type="text/vnd.tiddlywiki">
 <pre>yes</pre>
 </div>
 <div created="20210216152008245" modified="20210218173415841" title="$:/config/EditorToolbarButtons/Visibility/$:/plugins/wikilabs/custom-markup/EditorToolbar/add-angle" type="text/vnd.tiddlywiki">
@@ -842,19 +852,22 @@ td ul, td ol {
 <div created="20200915105902698" modified="20200915105902719" title="$:/config/ViewToolbarButtons/Visibility/$:/core/ui/Buttons/new-here" type="text/vnd.tiddlywiki">
 <pre>show</pre>
 </div>
-<div created="20210218163954002" modified="20210218163954060" title="$:/config/wikilabs/custom-markup/icons/glyphs/active" type="application/json">
+<div created="20210320104853277" modified="20210320104854301" title="$:/config/wikilabs/custom-markup/icons/glyphs/active" type="application/json">
 <pre>{
-&quot;glyph&quot;: &quot;»&quot;,
+&quot;glyph&quot;: &quot;≈&quot;,
 &quot;disabled&quot;: &quot;no&quot;,
-&quot;element&quot;: &quot;&lt;path d='m6.8 98.9-6.3-6.21 30-30.2-29.5-29.5 6.25-6.32 35.9 35.9z' style='stroke-width:2.41'/&gt;&lt;path d='m34.4 98.9-6.3-6.21 30-30.2-29.5-29.5 6.25-6.32 35.9 35.9z' style='stroke-width:2.41'/&gt;&quot;
+&quot;element&quot;: &quot;&lt;path d='m70.1 65.6v13.2q-5.74 5.75-10.7 8.34-4.87 2.51-10.2 2.51-6.02 0-14-4.35-0.547-0.295-0.93-0.516-0.328-0.148-1.15-0.59-8.48-4.5-13.6-4.5-4.81 0-9.52 2.8-4.7 2.8-10.1 9v-13.2q5.74-5.75 10.6-8.26 4.92-2.58 10.2-2.58 6.02 0 14.1 4.35 0.602 0.369 0.875 0.516 0.328 0.148 1.15 0.59 8.48 4.5 13.6 4.5 4.7 0 9.3-2.73 4.65-2.8 10.3-9.08zm0-28.7v13.1q-5.74 5.83-10.7 8.41-4.87 2.51-10.2 2.51-6.02 0-14-4.35-0.547-0.295-0.93-0.516-0.328-0.148-1.15-0.59-8.48-4.5-13.6-4.5-4.81 0-9.52 2.8-4.7 2.8-10.1 8.93v-13.1q5.74-5.75 10.6-8.26 4.92-2.58 10.2-2.58 6.02 0 14.1 4.35 0.547 0.295 0.82 0.443 0.383 0.221 1.2 0.664 8.48 4.5 13.6 4.5 4.7 0 9.3-2.73 4.65-2.8 10.3-9.08z'/&gt;&quot;
 }</pre>
 </div>
-<div created="20210218193647707" modified="20210218193647783" title="$:/config/wikilabs/custom-markup/icons/inline/active" type="application/json">
+<div created="20210320100355674" modified="20210320100355752" title="$:/config/wikilabs/custom-markup/icons/inline/active" type="application/json">
 <pre>{
-&quot;prefix&quot;: &quot;/°&quot;,
-&quot;suffix&quot;: &quot;°/&quot;,
-&quot;element&quot;: &quot;&lt;path d='m43.1 5.08h16l-37.9 121h-15.9z' style='stroke-width:4.36'/&gt;&lt;path d='m95.9 13.8q-5.18 0-8.78 3.6t-3.6 8.78 3.52 8.7q3.6 3.52 8.85 3.52 5.18 0 8.78-3.52 3.6-3.6 3.6-8.7 0-5.18-3.67-8.78-3.6-3.6-8.7-3.6zm0-11.7q4.75 0 9.14 1.87 4.39 1.8 7.84 5.18 3.38 3.45 5.11 7.77 1.8 4.32 1.8 9.21 0 4.82-1.8 9.21-1.73 4.32-4.96 7.55-3.45 3.45-7.91 5.32-4.46 1.8-9.35 1.8-10.1 0-17-6.83-6.83-6.91-6.83-17t6.91-17q6.98-6.98 17.1-6.98z' style='stroke-width:4.36'/&gt;&quot;
-}
+&quot;prefix&quot;: &quot;『&quot;,
+&quot;suffix&quot;: &quot;』&quot;,
+&quot;element&quot;: &quot;&lt;path d='m58.5 29.4v96.5h-27v-123h49.6v27zm-19.4-20.5v111h11.9v-96.5h22.6v-14z' style='stroke-width:4.36'/&gt;&quot;
+}</pre>
+</div>
+<div caption="Wikilabs Library (latest)" created="20200605142858499" modified="20210318183032613" tags="$:/tags/PluginLibrary" title="$:/config/wikilabs/PluginLibraryWL/latest" type="text/vnd.tiddlywiki" url="https://wikilabs.github.io/editions/pluginlibraryWL/library/latest/index.html">
+<pre>~WikiLabs plugin library latest version!
 </pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="TiddlyWiki5 core" list="readme" name="Core" plugin-priority="0" plugin-type="plugin" title="$:/core" type="application/json" version="5.1.23">
@@ -10739,116 +10752,6 @@ td ul, td ol {
 /&gt;
 </pre>
 </div>
-<div created="20201214134842220" modified="20201214212029337" title="$:/core/ui/EditTemplate/body/toolbar/button" type="text/vnd.tiddlywiki">
-<pre>\define toolbar-button-icon()
-&lt;$list
-
-  filter=&quot;[all[current]!has[custom-icon]]&quot;
-  variable=&quot;no-custom-icon&quot;
-
-&gt;&lt;$transclude
-
-  tiddler={{!!icon}}
-
-/&gt;&lt;/$list&gt;
-\end
-
-\define toolbar-button-tooltip()
-{{!!description}}&lt;$macrocall $name=&quot;displayshortcuts&quot; $output=&quot;text/plain&quot; shortcuts={{!!shortcuts}} prefix=&quot;` - [&quot; separator=&quot;] [&quot; suffix=&quot;]`&quot;/&gt;
-\end
-
-\define toolbar-button()
-&lt;$list
-
-  filter={{!!condition}}
-  variable=&quot;list-condition&quot;
-
-&gt;&lt;$wikify
-
-  name=&quot;tooltip-text&quot;
-  text=&lt;&lt;toolbar-button-tooltip&gt;&gt;
-  mode=&quot;inline&quot;
-  output=&quot;text&quot;
-
-&gt;&lt;$list
-
-  filter=&quot;[all[current]!has[dropdown]]&quot;
-  variable=&quot;no-dropdown&quot;
-
-&gt;&lt;$set name=disabled filter={{!!condition-disabled}}&gt;&lt;$button
-
-  class=&quot;tc-btn-invisible $(buttonClasses)$&quot;
-  tooltip=&lt;&lt;tooltip-text&gt;&gt;
-  actions={{!!actions}}
-  disabled=&lt;&lt;disabled&gt;&gt;
-
-&gt;&lt;span
-
-  data-tw-keyboard-shortcut={{!!shortcuts}}
-
-/&gt;&lt;&lt;toolbar-button-icon&gt;&gt;&lt;$transclude
-
-  tiddler=&lt;&lt;currentTiddler&gt;&gt;
-  field=&quot;text&quot;
-
-/&gt;&lt;/$button&gt;&lt;/$set&gt;&lt;/$list&gt;&lt;$list
-
-  filter=&quot;[all[current]has[dropdown]]&quot;
-  variable=&quot;dropdown&quot;
-
-&gt;&lt;$set
-
-  name=&quot;dropdown-state&quot;
-  value=&lt;&lt;qualify &quot;$:/state/EditorToolbarDropdown&quot;&gt;&gt;
-
-&gt;&lt;$button
-
-  popup=&lt;&lt;dropdown-state&gt;&gt;
-  class=&quot;tc-popup-keep tc-btn-invisible $(buttonClasses)$&quot;
-  selectedClass=&quot;tc-selected&quot;
-  tooltip=&lt;&lt;tooltip-text&gt;&gt;
-  actions={{!!actions}}
-
-&gt;&lt;span
-
-  data-tw-keyboard-shortcut={{!!shortcuts}}
-
-/&gt;&lt;&lt;toolbar-button-icon&gt;&gt;&lt;$transclude
-
-  tiddler=&lt;&lt;currentTiddler&gt;&gt;
-  field=&quot;text&quot;
-
-/&gt;&lt;/$button&gt;&lt;$reveal
-
-  state=&lt;&lt;dropdown-state&gt;&gt;
-  type=&quot;popup&quot;
-  position=&quot;below&quot;
-  animate=&quot;yes&quot;
-  tag=&quot;span&quot;
-
-&gt;&lt;div
-
-  class=&quot;tc-drop-down tc-popup-keep&quot;
-
-&gt;&lt;$transclude
-
-  tiddler={{!!dropdown}}
-  mode=&quot;block&quot;
-
-/&gt;&lt;/div&gt;&lt;/$reveal&gt;&lt;/$set&gt;&lt;/$list&gt;&lt;/$wikify&gt;&lt;/$list&gt;
-\end
-
-\define toolbar-button-outer()
-&lt;$set
-
-  name=&quot;buttonClasses&quot;
-  value={{!!button-classes}}
-
-&gt;&lt;&lt;toolbar-button&gt;&gt;&lt;/$set&gt;
-\end
-
-&lt;&lt;toolbar-button-outer&gt;&gt;</pre>
-</div>
 <div created="20200917124335543" modified="20200917190755952" tags="$:/tags/ViewTemplate" title="$:/core/ui/ViewTemplate/title" type="text/vnd.tiddlywiki">
 <pre>\whitespace trim
 \define title-styles()
@@ -10893,6 +10796,11 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 
 &lt;/$reveal&gt;
 &lt;/div&gt;</pre>
+</div>
+<div created="20210320104840296" modified="20210320104840296" status="complete" title="$:/Import" type="text/vnd.tiddlywiki">
+<pre>The following tiddlers were imported:
+
+# [[$:/core/ui/EditTemplate/body/toolbar/button]]</pre>
 </div>
 <div created="20201026200419356" modified="20201026200419373" title="$:/Import!!popup-$:/core/macros/tabs" type="text/vnd.tiddlywiki">
 <pre>yes</pre>
@@ -11833,7 +11741,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     }
 }</pre>
 </div>
-<div dependents="$:/plugins/wikilabs/pragma-comment" description="Adds a possibilty to style text content with wikitext syntax" list="readme license history" name="Custom Markup" plugin-type="plugin" title="$:/plugins/wikilabs/custom-markup" type="application/json" version="0.11.0">
+<div dependents="$:/plugins/wikilabs/pragma-comment" description="Adds a possibilty to style text content with wikitext syntax" list="readme license history" name="Custom Markup" plugin-type="plugin" title="$:/plugins/wikilabs/custom-markup" type="application/json" version="0.11.1">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/config/custom-markup/pragma/PageTemplate&quot;: {
@@ -12014,12 +11922,12 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
         &quot;$:/plugins/wikilabs/custom-markup/EditorToolbar/inline-dropdown&quot;: {
             &quot;title&quot;: &quot;$:/plugins/wikilabs/custom-markup/EditorToolbar/inline-dropdown&quot;,
             &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
-            &quot;text&quot;: &quot;\\define getConfigName() $:/plugins/wikilabs/custom-markup/icons/inline/$(__name__)$\n\n\\define selectID()\n&lt;$action-createtiddler \n\t$basetitle=\&quot;$:/config/wikilabs/custom-markup/icons/inline/active\&quot;\n\t$overwrite=\&quot;yes\&quot; $template=&lt;&lt;getConfigName&gt;&gt;\n/&gt;\n\\end\n\\define selectActions()\n&lt;$action-createtiddler $basetitle=\&quot;$:/config/edit/inlinePrefix\&quot; $overwrite=\&quot;yes\&quot; \n\t\ttext={{{ [&lt;inlinePrefix&gt;get[text]] }}}\n\t\tname=\&quot;\&quot;\&quot;$(inlinePrefix)$\&quot;\&quot;\&quot;\n\t\tid={{{ [{$:/config/wikilabs/custom-markup/icons/inline/active##prefix}] ~[[/°]] }}}\n/&gt;\n&lt;$action-sendmessage $message=\&quot;tm-copy-to-clipboard\&quot; $param={{{ [{$:/config/wikilabs/custom-markup/icons/inline/active##prefix}addsuffix{$:/config/edit/inlinePrefix!!text}addsuffix{$:/config/wikilabs/custom-markup/icons/inline/active##suffix}] }}}/&gt;\n&lt;$action-sendmessage $message=\&quot;tm-notify\&quot; $param=\&quot;$:/plugins/wikilabs/custom-markup/EditorToolbar/notify/id-prepared\&quot;/&gt;\n&lt;$action-deletetiddler $tiddler=&lt;&lt;dropdown-state&gt;&gt; /&gt;\n\\end\n\n\\define idSelector()\n&lt;$tiddler tiddler=\&quot;$:/config/edit/inlinePrefix\&quot;&gt;\n\t&lt;$wl-radio field=\&quot;id\&quot; value=\&quot;/°\&quot; actions=&lt;&lt;selectID&gt;&gt; name=\&quot;slash\&quot;&gt; `/°..°/` &lt;/$wl-radio&gt;|\n\t&lt;$wl-radio field=\&quot;id\&quot; value=\&quot;⠒\&quot; actions=&lt;&lt;selectID&gt;&gt; name=\&quot;braille\&quot;&gt; `⠒..⠶` &lt;/$wl-radio&gt;|\n\t&lt;$wl-radio field=\&quot;id\&quot; value=\&quot;『\&quot; actions=&lt;&lt;selectID&gt;&gt; name=\&quot;corner\&quot;&gt; `『..』` &lt;/$wl-radio&gt;|\n&lt;/$tiddler&gt;\n\\end\n\n\\define preview-type-button()\n&lt;$button tag=\&quot;a\&quot; actions=&lt;&lt;selectActions&gt;&gt; &gt;\n\n&lt;$transclude tiddler=&lt;&lt;inlinePrefix&gt;&gt; field=\&quot;caption\&quot; mode=\&quot;inline\&quot;&gt;\n\n&lt;$view tiddler=&lt;&lt;inlinePrefix&gt;&gt; field=\&quot;title\&quot; mode=\&quot;inline\&quot;/&gt;\n\n&lt;/$transclude&gt; \n\n&lt;$reveal tag=\&quot;span\&quot; stateTitle=\&quot;$:/config/edit/inlinePrefix\&quot; stateField=name type=\&quot;match\&quot; text=&lt;&lt;inlinePrefix&gt;&gt; default=\&quot;XXXXX\&quot;&gt;\n\n&lt;$entity entity=\&quot;&amp;nbsp;\&quot;/&gt;\n\n&lt;$entity entity=\&quot;&amp;#x2713;\&quot;/&gt;\n\n&lt;/$reveal&gt;\n\n&lt;/$button&gt;\n\\end\n\nSelect inline glyph -- &lt;$macrocall $name=idSelector /&gt;\n\n----\n\n&lt;$list filter=\&quot;[all[shadows+tiddlers]tag[$:/tags/TextEditor/InlinePrefix]!has[draft.of]sort[title]]\&quot; variable=\&quot;inlinePrefix\&quot;&gt;\n\n&lt;&lt;preview-type-button&gt;&gt;\n\n&lt;/$list&gt;\n\n----\n\n&lt;$button tag=\&quot;a\&quot;&gt;\n\n&lt;$action-sendmessage\n\t$message=\&quot;tm-new-tiddler\&quot;\n\ttags=\&quot;$:/tags/TextEditor/InlinePrefix\&quot;\n\tcaption=\&quot;New Inline Prefix\&quot;\n\ttext=\&quot;\&quot;\n/&gt;\n\n&lt;$action-deletetiddler \n\t$tiddler=&lt;&lt;dropdown-state&gt;&gt; \n/&gt;\n\n&lt;em&gt;\n\n&lt;$text text={{$:/language/Buttons/Stamp/Caption/New}}/&gt;\n\n&lt;/em&gt;\n\n&lt;/$button&gt;\n&quot;
+            &quot;text&quot;: &quot;\\define getConfigName() $:/plugins/wikilabs/custom-markup/icons/inline/$(__name__)$\n\n\\define selectID()\n&lt;$action-createtiddler \n\t$basetitle=\&quot;$:/config/wikilabs/custom-markup/icons/inline/active\&quot;\n\t$overwrite=\&quot;yes\&quot; $template=&lt;&lt;getConfigName&gt;&gt;\n/&gt;\n\\end\n\\define selectActions()\n&lt;$action-createtiddler $basetitle=\&quot;$:/config/edit/inlinePrefix\&quot; $overwrite=\&quot;yes\&quot; $template=\&quot;\&quot;\&quot;$(inlinePrefix)$\&quot;\&quot;\&quot;\n\tname=\&quot;\&quot;\&quot;$(inlinePrefix)$\&quot;\&quot;\&quot;\n\ttags=\&quot;\&quot;\n/&gt;\n&lt;$action-sendmessage $message=\&quot;tm-copy-to-clipboard\&quot; $param={{{ [{$:/config/wikilabs/custom-markup/icons/inline/active##prefix}addsuffix{$:/config/edit/inlinePrefix!!text}addsuffix{$:/config/wikilabs/custom-markup/icons/inline/active##suffix}] }}}/&gt;\n&lt;$action-sendmessage $message=\&quot;tm-notify\&quot; $param=\&quot;$:/plugins/wikilabs/custom-markup/EditorToolbar/notify/id-prepared\&quot;/&gt;\n&lt;$action-deletetiddler $tiddler=&lt;&lt;dropdown-state&gt;&gt; /&gt;\n\n&lt;$action-sendmessage\n\t$message=\&quot;tm-edit-text-operation\&quot;\n\t$param=\&quot;wrap-selection\&quot;\n\tprefix={{{ [{$:/config/edit/inlinePrefix##prefix}addsuffix[ ]] ~[[/° ]] }}}\n\tsuffix={{{ [{$:/config/edit/inlinePrefix##suffix}] ~[[°/]]}}}\n/&gt;\n\n\\end\n\n\\define idSelector()\n&lt;$tiddler tiddler=\&quot;$:/config/edit/inlinePrefix/xx\&quot;&gt;\n\t&lt;$wl-radio field=\&quot;id\&quot; value=\&quot;/°\&quot; actions=&lt;&lt;selectID&gt;&gt; name=\&quot;slash\&quot;&gt; `/°..°/` &lt;/$wl-radio&gt;|\n\t&lt;$wl-radio field=\&quot;id\&quot; value=\&quot;⠒\&quot; actions=&lt;&lt;selectID&gt;&gt; name=\&quot;braille\&quot;&gt; `⠒..⠶` &lt;/$wl-radio&gt;|\n\t&lt;$wl-radio field=\&quot;id\&quot; value=\&quot;『\&quot; actions=&lt;&lt;selectID&gt;&gt; name=\&quot;corner\&quot;&gt; `『..』` &lt;/$wl-radio&gt;|\n&lt;/$tiddler&gt;\n\\end\n\n\\define preview-type-button()\n&lt;$button tag=\&quot;a\&quot; actions=&lt;&lt;selectActions&gt;&gt; &gt;\n\n&lt;$transclude tiddler=&lt;&lt;inlinePrefix&gt;&gt; field=\&quot;caption\&quot; mode=\&quot;inline\&quot;&gt;\n\n&lt;$view tiddler=&lt;&lt;inlinePrefix&gt;&gt; field=\&quot;title\&quot; mode=\&quot;inline\&quot;/&gt;\n\n&lt;/$transclude&gt; \n\n&lt;$reveal tag=\&quot;span\&quot; stateTitle=\&quot;$:/config/edit/inlinePrefix\&quot; stateField=name type=\&quot;match\&quot; text=&lt;&lt;inlinePrefix&gt;&gt; default=\&quot;XXXXX\&quot;&gt;\n\n&lt;$entity entity=\&quot;&amp;nbsp;\&quot;/&gt;\n\n&lt;$entity entity=\&quot;&amp;#x2713;\&quot;/&gt;\n\n&lt;/$reveal&gt;\n\n&lt;/$button&gt;\n\\end\n\nSelect inline glyph -- &lt;$macrocall $name=idSelector /&gt;\n\n----\n\n&lt;$list filter=\&quot;[all[shadows+tiddlers]tag[$:/tags/TextEditor/InlinePrefix]!has[draft.of]sort[title]]\&quot; variable=\&quot;inlinePrefix\&quot;&gt;\n\n&lt;&lt;preview-type-button&gt;&gt;\n\n&lt;/$list&gt;\n\n----\n\n&lt;$button tag=\&quot;a\&quot;&gt;\n\n&lt;$action-sendmessage\n\t$message=\&quot;tm-new-tiddler\&quot;\n\ttags=\&quot;$:/tags/TextEditor/InlinePrefix\&quot;\n\ttype=\&quot;application/x-tiddler-dictionary\&quot;\n\tcaption=\&quot;New Inline Prefix\&quot;\n\ttext=\&quot;prefix: \nsuffix: \&quot;\n/&gt;\n\n&lt;$action-deletetiddler \n\t$tiddler=&lt;&lt;dropdown-state&gt;&gt; \n/&gt;\n\n&lt;em&gt;\n\n&lt;$text text={{$:/language/Buttons/Stamp/Caption/New}}/&gt;\n\n&lt;/em&gt;\n\n&lt;/$button&gt;\n&quot;
         },
         &quot;$:/plugins/wikilabs/custom-markup/EditorToolbar/prefix-dropdown&quot;: {
             &quot;title&quot;: &quot;$:/plugins/wikilabs/custom-markup/EditorToolbar/prefix-dropdown&quot;,
             &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
-            &quot;text&quot;: &quot;\\define getConfigName() $:/plugins/wikilabs/custom-markup/icons/glyphs/$(__name__)$\n\n\\define selectID()\n&lt;$action-createtiddler $basetitle=\&quot;$:/config/wikilabs/custom-markup/icons/glyphs/active\&quot; $overwrite=\&quot;yes\&quot; $template=&lt;&lt;getConfigName&gt;&gt; /&gt;\n\\end\n\\define selectActions()\n&lt;$action-createtiddler $basetitle=\&quot;$:/config/edit/linePrefix\&quot; $overwrite=\&quot;yes\&quot; \n\t\ttext={{{ [&lt;linePrefix&gt;get[text]] }}}\n\t\tname=\&quot;\&quot;\&quot;$(linePrefix)$\&quot;\&quot;\&quot; \n\t\tid={{{ [{$:/config/wikilabs/custom-markup/icons/glyphs/active##glyph}] ~[[´]] }}}\n/&gt;\n&lt;$action-sendmessage $message=\&quot;tm-copy-to-clipboard\&quot; $param={{{ [{$:/config/edit/linePrefix!!id}addsuffix{$:/config/edit/linePrefix!!text}] }}}/&gt;\n&lt;$action-sendmessage $message=\&quot;tm-notify\&quot; $param=\&quot;$:/plugins/wikilabs/custom-markup/EditorToolbar/notify/id-prepared\&quot;/&gt;\n&lt;$action-deletetiddler $tiddler=&lt;&lt;dropdown-state&gt;&gt; /&gt;\n\\end\n\n\\define idSelector()\n&lt;$tiddler tiddler=\&quot;$:/config/edit/linePrefix\&quot;&gt;\n\t&lt;$wl-radio field=\&quot;id\&quot; value=\&quot;›\&quot; actions=&lt;&lt;selectID&gt;&gt; name=\&quot;single\&quot;&gt; `›` &lt;/$wl-radio&gt;|\n\t&lt;$wl-radio field=\&quot;id\&quot; value=\&quot;´\&quot; actions=&lt;&lt;selectID&gt;&gt; name=\&quot;tick\&quot;&gt; `´` &lt;/$wl-radio&gt;|\n\t&lt;$wl-radio field=\&quot;id\&quot; value=\&quot;°\&quot; actions=&lt;&lt;selectID&gt;&gt; name=\&quot;degree\&quot;&gt; `°` &lt;/$wl-radio&gt;|\n\t&lt;$wl-radio field=\&quot;id\&quot; value=\&quot;»\&quot; actions=&lt;&lt;selectID&gt;&gt; name=\&quot;angle\&quot;&gt; `»` &lt;/$wl-radio&gt;|\n\t&lt;$wl-radio field=\&quot;id\&quot; value=\&quot;≈\&quot; actions=&lt;&lt;selectID&gt;&gt; name=\&quot;about\&quot;&gt; `≈` &lt;/$wl-radio&gt;|\n\t&lt;$wl-radio field=\&quot;id\&quot; value=\&quot;¶\&quot; actions=&lt;&lt;selectID&gt;&gt; name=\&quot;pilcrow\&quot;&gt; `¶` &lt;/$wl-radio&gt;|\n&lt;/$tiddler&gt;\n&lt;$checkbox tiddler=\&quot;$:/config/edit/linePrefix/force\&quot; \n\tfield=text \n\tchecked=\&quot;yes\&quot; unchecked=\&quot;no\&quot; default=\&quot;no\&quot; &gt; Use all lines\n&lt;/$checkbox&gt;\n\\end\n\n\\define preview-type-button()\n&lt;$button tag=\&quot;a\&quot; actions=&lt;&lt;selectActions&gt;&gt; &gt;\n\n&lt;$transclude tiddler=&lt;&lt;linePrefix&gt;&gt; field=\&quot;caption\&quot; mode=\&quot;inline\&quot;&gt;\n\n&lt;$view tiddler=&lt;&lt;linePrefix&gt;&gt; field=\&quot;title\&quot; mode=\&quot;inline\&quot;/&gt;\n\n&lt;/$transclude&gt; \n\n&lt;$reveal tag=\&quot;span\&quot; stateTitle=\&quot;$:/config/edit/linePrefix\&quot; stateField=name type=\&quot;match\&quot; text=&lt;&lt;linePrefix&gt;&gt; default=\&quot;XXXXX\&quot;&gt;\n\n&lt;$entity entity=\&quot;&amp;nbsp;\&quot;/&gt;\n\n&lt;$entity entity=\&quot;&amp;#x2713;\&quot;/&gt;\n\n&lt;/$reveal&gt;\n\n&lt;/$button&gt;\n\\end\n\nSelect glyph -- &lt;$macrocall $name=idSelector /&gt;\n\n----\n\n&lt;$list filter=\&quot;[all[shadows+tiddlers]tag[$:/tags/TextEditor/LinePrefix]!has[draft.of]sort[title]]\&quot; variable=\&quot;linePrefix\&quot;&gt;\n\n&lt;&lt;preview-type-button&gt;&gt;\n\n&lt;/$list&gt;\n\n----\n\n&lt;$button tag=\&quot;a\&quot;&gt;\n\n&lt;$action-sendmessage\n\t$message=\&quot;tm-new-tiddler\&quot;\n\ttags=\&quot;$:/tags/TextEditor/LinePrefix\&quot;\n\tcaption=\&quot;New Line Prefix\&quot;\n\ttext=\&quot;\&quot;\n/&gt;\n\n&lt;$action-deletetiddler \n\t$tiddler=&lt;&lt;dropdown-state&gt;&gt; \n/&gt;\n\n&lt;em&gt;\n\n&lt;$text text={{$:/language/Buttons/Stamp/Caption/New}}/&gt;\n\n&lt;/em&gt;\n\n&lt;/$button&gt;\n&quot;
+            &quot;text&quot;: &quot;\\define getConfigName() $:/plugins/wikilabs/custom-markup/icons/glyphs/$(__name__)$\n\n\\define selectID()\n&lt;$action-createtiddler $basetitle=\&quot;$:/config/wikilabs/custom-markup/icons/glyphs/active\&quot; $overwrite=\&quot;yes\&quot; $template=&lt;&lt;getConfigName&gt;&gt; /&gt;\n\\end\n\\define selectActions()\n&lt;$action-createtiddler $basetitle=\&quot;$:/config/edit/linePrefix\&quot; $overwrite=\&quot;yes\&quot; \n\t\ttext={{{ [&lt;linePrefix&gt;get[text]] }}}\n\t\tname=\&quot;\&quot;\&quot;$(linePrefix)$\&quot;\&quot;\&quot; \n\t\tid={{{ [{$:/config/wikilabs/custom-markup/icons/glyphs/active##glyph}] ~[[´]] }}}\n/&gt;\n&lt;$action-sendmessage $message=\&quot;tm-copy-to-clipboard\&quot; $param={{{ [{$:/config/edit/linePrefix!!text}] }}}/&gt;\n&lt;$action-sendmessage $message=\&quot;tm-notify\&quot; $param=\&quot;$:/plugins/wikilabs/custom-markup/EditorToolbar/notify/id-prepared\&quot;/&gt;\n&lt;$action-deletetiddler $tiddler=&lt;&lt;dropdown-state&gt;&gt; /&gt;\n&lt;$action-sendmessage\n\t$message=\&quot;tm-edit-text-operation\&quot;\n\t$param=\&quot;toggle-tick\&quot;\n\tcharacter={{{ [[$:/config/edit/linePrefix]get[text]] }}}\n\tcount=\&quot;1\&quot;\n\tforce={{{ [{$:/config/edit/linePrefix/force}] ~[[no]] }}}\n/&gt;\n\\end\n\n\\define idSelector()\n&lt;$tiddler tiddler=\&quot;$:/config/edit/linePrefix\&quot;&gt;\n\t&lt;$wl-radio field=\&quot;id\&quot; value=\&quot;›\&quot; actions=&lt;&lt;selectID&gt;&gt; name=\&quot;single\&quot;&gt; `›` &lt;/$wl-radio&gt;|\n\t&lt;$wl-radio field=\&quot;id\&quot; value=\&quot;´\&quot; actions=&lt;&lt;selectID&gt;&gt; name=\&quot;tick\&quot;&gt; `´` &lt;/$wl-radio&gt;|\n\t&lt;$wl-radio field=\&quot;id\&quot; value=\&quot;°\&quot; actions=&lt;&lt;selectID&gt;&gt; name=\&quot;degree\&quot;&gt; `°` &lt;/$wl-radio&gt;|\n\t&lt;$wl-radio field=\&quot;id\&quot; value=\&quot;»\&quot; actions=&lt;&lt;selectID&gt;&gt; name=\&quot;angle\&quot;&gt; `»` &lt;/$wl-radio&gt;|\n\t&lt;$wl-radio field=\&quot;id\&quot; value=\&quot;≈\&quot; actions=&lt;&lt;selectID&gt;&gt; name=\&quot;about\&quot;&gt; `≈` &lt;/$wl-radio&gt;|\n\t&lt;$wl-radio field=\&quot;id\&quot; value=\&quot;¶\&quot; actions=&lt;&lt;selectID&gt;&gt; name=\&quot;pilcrow\&quot;&gt; `¶` &lt;/$wl-radio&gt;|\n&lt;/$tiddler&gt;\n&lt;$checkbox tiddler=\&quot;$:/config/edit/linePrefix/force\&quot; \n\tfield=text \n\tchecked=\&quot;yes\&quot; unchecked=\&quot;no\&quot; default=\&quot;no\&quot; &gt; Use empty lines\n&lt;/$checkbox&gt;\n\\end\n\n\\define preview-type-button()\n&lt;$button tag=\&quot;a\&quot; actions=&lt;&lt;selectActions&gt;&gt; &gt;\n\n\t&lt;$transclude tiddler=&lt;&lt;linePrefix&gt;&gt; field=\&quot;caption\&quot; mode=\&quot;inline\&quot;&gt;\n\n\t\t&lt;$view tiddler=&lt;&lt;linePrefix&gt;&gt; field=\&quot;title\&quot; mode=\&quot;inline\&quot;/&gt;\n\n\t&lt;/$transclude&gt;\n\n\t&lt;$reveal tag=\&quot;span\&quot; stateTitle=\&quot;$:/config/edit/linePrefix\&quot; stateField=name type=\&quot;match\&quot; text=&lt;&lt;linePrefix&gt;&gt; default=\&quot;XXXXX\&quot;&gt;\n\n\t\t&lt;$entity entity=\&quot;&amp;nbsp;\&quot;/&gt;\n\n\t\t&lt;$entity entity=\&quot;&amp;#x2713;\&quot;/&gt;\n\n\t&lt;/$reveal&gt;\n\n&lt;/$button&gt;\n\\end\n\nSelect glyph -- &lt;$macrocall $name=idSelector /&gt;\n\n----\n\n&lt;$list filter=\&quot;[all[shadows+tiddlers]tag[$:/tags/TextEditor/LinePrefix]!has[draft.of]sort[title]]\&quot; variable=\&quot;linePrefix\&quot;&gt;\n\n&lt;&lt;preview-type-button&gt;&gt;\n\n&lt;/$list&gt;\n\n----\n\n&lt;$button tag=\&quot;a\&quot;&gt;\n\n&lt;$action-sendmessage\n\t$message=\&quot;tm-new-tiddler\&quot;\n\ttags=\&quot;$:/tags/TextEditor/LinePrefix\&quot;\n\tcaption=\&quot;New Line Prefix\&quot;\n\ttext=\&quot;\&quot;\n/&gt;\n\n&lt;$action-deletetiddler \n\t$tiddler=&lt;&lt;dropdown-state&gt;&gt; \n/&gt;\n\n&lt;em&gt;\n\n&lt;$text text={{$:/language/Buttons/Stamp/Caption/New}}/&gt;\n\n&lt;/em&gt;\n\n&lt;/$button&gt;\n&quot;
         },
         &quot;$:/plugins/wikilabs/custom-markup/EditorToolbar/remove-angle&quot;: {
             &quot;title&quot;: &quot;$:/plugins/wikilabs/custom-markup/EditorToolbar/remove-angle&quot;,
@@ -12035,7 +11943,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
             &quot;title&quot;: &quot;$:/plugins/wikilabs/custom-markup/EditorToolbar/remove-glyph&quot;,
             &quot;caption&quot;: &quot;remove-glyph&quot;,
             &quot;condition&quot;: &quot;[&lt;targetTiddler&gt;!has[type]] [&lt;targetTiddler&gt;type[text/vnd.tiddlywiki]]&quot;,
-            &quot;description&quot;: &quot;Add a \&quot;glyph\&quot; at the start of the selected line(s)&quot;,
+            &quot;description&quot;: &quot;Remove a \&quot;glyph\&quot; at the start of the selected line(s)&quot;,
             &quot;condition-disabled&quot;: &quot;[[$:/config/wikilabs/custom-markup/icons/glyphs/active]getindex[disabled]else[yes]]&quot;,
             &quot;icon&quot;: &quot;$:/plugins/wikilabs/custom-markup/icons/glyph-minus&quot;,
             &quot;shortcuts&quot;: &quot;((remove-glyph))&quot;,
@@ -12057,13 +11965,13 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
         &quot;$:/plugins/wikilabs/custom-markup/EditorToolbar/toggle-glyph&quot;: {
             &quot;title&quot;: &quot;$:/plugins/wikilabs/custom-markup/EditorToolbar/toggle-glyph&quot;,
             &quot;caption&quot;: &quot;toggle-glyph&quot;,
-            &quot;condition&quot;: &quot;[&lt;targetTiddler&gt;!has[type]] [&lt;targetTiddler&gt;type[text/vnd.tiddlywiki]]&quot;,
+            &quot;condition&quot;: &quot;[&lt;targetTiddler&gt;!has[type]] [&lt;targetTiddler&gt;type[text/vnd.tiddlywiki]] [&lt;targetTiddler&gt;type[application/x-tiddler-dictionary]]&quot;,
             &quot;description&quot;: &quot;Toggle the \&quot;glyph\&quot; at the start of the selected line(s)&quot;,
             &quot;icon&quot;: &quot;$:/plugins/wikilabs/custom-markup/icons/glyph-toggle&quot;,
             &quot;shortcuts&quot;: &quot;((toggle-glyph))&quot;,
             &quot;button-classes&quot;: &quot;tc-text-editor-toolbar-item-start-group&quot;,
             &quot;tags&quot;: &quot;$:/tags/EditorToolbar&quot;,
-            &quot;text&quot;: &quot;&lt;$action-sendmessage\n\t$message=\&quot;tm-edit-text-operation\&quot;\n\t$param=\&quot;toggle-tick\&quot;\n\tcharacter={{{ [{$:/config/wikilabs/custom-markup/icons/glyphs/active##glyph}addsuffix{$:/config/edit/linePrefix!!text}] }}}\n\tcount=\&quot;1\&quot;\n\tforce={{{ [{$:/config/edit/linePrefix/force}] }}}\n/&gt;\n&quot;
+            &quot;text&quot;: &quot;&lt;$action-sendmessage\n\t$message=\&quot;tm-edit-text-operation\&quot;\n\t$param=\&quot;toggle-tick\&quot;\n\tcharacter={{{ [{$:/config/wikilabs/custom-markup/icons/glyphs/active##glyph}] }}}\n\tcount=\&quot;1\&quot;\n\tforce={{{ [{$:/config/edit/linePrefix/force}] }}}\n/&gt;\n&quot;
         },
         &quot;$:/plugins/wikilabs/custom-markup/EditorToolbar/toggle-inline&quot;: {
             &quot;title&quot;: &quot;$:/plugins/wikilabs/custom-markup/EditorToolbar/toggle-inline&quot;,
@@ -12071,9 +11979,9 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
             &quot;icon&quot;: &quot;$:/plugins/wikilabs/custom-markup/icons/inline-toggle&quot;,
             &quot;caption&quot;: &quot;inline&quot;,
             &quot;description&quot;: &quot;wrap selection&quot;,
-            &quot;condition&quot;: &quot;[&lt;targetTiddler&gt;!has[type]] [&lt;targetTiddler&gt;type[text/vnd.tiddlywiki]]&quot;,
+            &quot;condition&quot;: &quot;[&lt;targetTiddler&gt;!has[type]] [&lt;targetTiddler&gt;type[text/vnd.tiddlywiki]] [&lt;targetTiddler&gt;type[application/x-tiddler-dictionary]]&quot;,
             &quot;shortcuts&quot;: &quot;((toggle-inline))&quot;,
-            &quot;text&quot;: &quot;&lt;$action-sendmessage\n\t$message=\&quot;tm-edit-text-operation\&quot;\n\t$param=\&quot;wrap-selection\&quot;\n\tprefix={{{ [{$:/config/wikilabs/custom-markup/icons/inline/active##prefix}addsuffix{$:/config/edit/inlinePrefix!!text}addsuffix[ ]] ~[[/° ]] }}}\n\tsuffix={{{ [{$:/config/wikilabs/custom-markup/icons/inline/active##suffix}] ~[[°/]]}}}\n/&gt;\n&quot;
+            &quot;text&quot;: &quot;&lt;$action-sendmessage\n\t$message=\&quot;tm-edit-text-operation\&quot;\n\t$param=\&quot;wrap-selection\&quot;\n\tprefix={{{ [{$:/config/wikilabs/custom-markup/icons/inline/active##prefix}addsuffix[ ]] ~[[/° ]] }}}\n\tsuffix={{{ [{$:/config/wikilabs/custom-markup/icons/inline/active##suffix}] ~[[°/]]}}}\n/&gt;\n&quot;
         },
         &quot;$:/plugins/wikilabs/custom-markup/EditorToolbar/toggle-tick&quot;: {
             &quot;title&quot;: &quot;$:/plugins/wikilabs/custom-markup/EditorToolbar/toggle-tick&quot;,
@@ -12091,7 +11999,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
         },
         &quot;$:/plugins/wikilabs/custom-markup/history&quot;: {
             &quot;title&quot;: &quot;$:/plugins/wikilabs/custom-markup/history&quot;,
-            &quot;text&quot;: &quot;V 0.11.0 - 2021-03-18\n\n''Breaking change''\n\n* Rename Glyph: `about` ''to'' `approx (≈)`, which is the official name of the char\n* Change the `_params` formatting to `_params=\&quot;:::p1:::p2\&quot;`\n\nSee [[full history|$:/plugins/wikilabs/custom-markup/history-full]]\n&quot;
+            &quot;text&quot;: &quot;V 0.11.1 - 2021-03-20\n\n* custom dropdown - \&quot;snippets\&quot; got new functionality\n\nV 0.11.0 - 2021-03-18\n\n''Breaking changes''\n\n* Rename Glyph: `about` ''to'' `approx (≈)`, which is the official name of the char\n* Change the `_params` formatting to `_params=\&quot;:::p1:::p2\&quot;`\n\nSee [[full history|$:/plugins/wikilabs/custom-markup/history-full]]\n&quot;
         },
         &quot;$:/plugins/wikilabs/custom-markup/icons/add-newline&quot;: {
             &quot;title&quot;: &quot;$:/plugins/wikilabs/custom-markup/icons/add-newline&quot;,
@@ -12228,6 +12136,13 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
             &quot;title&quot;: &quot;$:/plugins/wikilabs/custom-markup/readme&quot;,
             &quot;text&quot;: &quot;Adds a possibilty to style text content with wikitext syntax\n\nIt's possible to manipulate the rules behaviour with: \n\n`\\rules only ticktext`\n`\\rules excpet ticktext`\n&quot;
         },
+        &quot;$:/core/ui/EditTemplate/body/toolbar/button&quot;: {
+            &quot;title&quot;: &quot;$:/core/ui/EditTemplate/body/toolbar/button&quot;,
+            &quot;created&quot;: &quot;20201214134842220&quot;,
+            &quot;modified&quot;: &quot;20210320104840347&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;\\define toolbar-button-icon()\n&lt;$list\n\n  filter=\&quot;[all[current]!has[custom-icon]]\&quot;\n  variable=\&quot;no-custom-icon\&quot;\n\n&gt;&lt;$transclude\n\n  tiddler={{!!icon}}\n\n/&gt;&lt;/$list&gt;\n\\end\n\n\\define toolbar-button-tooltip()\n{{!!description}}&lt;$macrocall $name=\&quot;displayshortcuts\&quot; $output=\&quot;text/plain\&quot; shortcuts={{!!shortcuts}} prefix=\&quot;` - [\&quot; separator=\&quot;] [\&quot; suffix=\&quot;]`\&quot;/&gt;\n\\end\n\n\\define toolbar-button()\n&lt;$list\n\n  filter={{!!condition}}\n  variable=\&quot;list-condition\&quot;\n\n&gt;&lt;$wikify\n\n  name=\&quot;tooltip-text\&quot;\n  text=&lt;&lt;toolbar-button-tooltip&gt;&gt;\n  mode=\&quot;inline\&quot;\n  output=\&quot;text\&quot;\n\n&gt;&lt;$list\n\n  filter=\&quot;[all[current]!has[dropdown]]\&quot;\n  variable=\&quot;no-dropdown\&quot;\n\n&gt;&lt;$set name=disabled filter={{!!condition-disabled}}&gt;&lt;$button\n\n  class=\&quot;tc-btn-invisible $(buttonClasses)$\&quot;\n  tooltip=&lt;&lt;tooltip-text&gt;&gt;\n  actions={{!!actions}}\n  disabled=&lt;&lt;disabled&gt;&gt;\n\n&gt;&lt;span\n\n  data-tw-keyboard-shortcut={{!!shortcuts}}\n\n/&gt;&lt;&lt;toolbar-button-icon&gt;&gt;&lt;$transclude\n\n  tiddler=&lt;&lt;currentTiddler&gt;&gt;\n  field=\&quot;text\&quot;\n\n/&gt;&lt;/$button&gt;&lt;/$set&gt;&lt;/$list&gt;&lt;$list\n\n  filter=\&quot;[all[current]has[dropdown]]\&quot;\n  variable=\&quot;dropdown\&quot;\n\n&gt;&lt;$set\n\n  name=\&quot;dropdown-state\&quot;\n  value=&lt;&lt;qualify \&quot;$:/state/EditorToolbarDropdown\&quot;&gt;&gt;\n\n&gt;&lt;$button\n\n  popup=&lt;&lt;dropdown-state&gt;&gt;\n  class=\&quot;tc-popup-keep tc-btn-invisible $(buttonClasses)$\&quot;\n  selectedClass=\&quot;tc-selected\&quot;\n  tooltip=&lt;&lt;tooltip-text&gt;&gt;\n  actions={{!!actions}}\n\n&gt;&lt;span\n\n  data-tw-keyboard-shortcut={{!!shortcuts}}\n\n/&gt;&lt;&lt;toolbar-button-icon&gt;&gt;&lt;$transclude\n\n  tiddler=&lt;&lt;currentTiddler&gt;&gt;\n  field=\&quot;text\&quot;\n\n/&gt;&lt;/$button&gt;&lt;$reveal\n\n  state=&lt;&lt;dropdown-state&gt;&gt;\n  type=\&quot;popup\&quot;\n  position=\&quot;below\&quot;\n  animate=\&quot;yes\&quot;\n  tag=\&quot;span\&quot;\n\n&gt;&lt;div\n\n  class=\&quot;tc-drop-down tc-popup-keep\&quot;\n\n&gt;&lt;$transclude\n\n  tiddler={{!!dropdown}}\n  mode=\&quot;block\&quot;\n\n/&gt;&lt;/div&gt;&lt;/$reveal&gt;&lt;/$set&gt;&lt;/$list&gt;&lt;/$wikify&gt;&lt;/$list&gt;\n\\end\n\n\\define toolbar-button-outer()\n&lt;$set\n\n  name=\&quot;buttonClasses\&quot;\n  value={{!!button-classes}}\n\n&gt;&lt;&lt;toolbar-button&gt;&gt;&lt;/$set&gt;\n\\end\n\n&lt;&lt;toolbar-button-outer&gt;&gt;&quot;
+        },
         &quot;$:/plugins/wikilabs/custom-markup/wl-radio-widget.js&quot;: {
             &quot;title&quot;: &quot;$:/plugins/wikilabs/custom-markup/wl-radio-widget.js&quot;,
             &quot;text&quot;: &quot;/*\\\ntitle: $:/plugins/wikilabs/custom-markup/wl-radio-widget.js\ntype: application/javascript\nmodule-type: widget-subclass\n\\*/\n\n(function(){\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\nexports.baseClass = \&quot;radio\&quot;;\nexports.name = \&quot;wl-radio\&quot;;\n\nexports.constructor = function(parseTreeNode,options) {\n\tthis.initialise(parseTreeNode,options);\n}\nexports.prototype = {};\n\nexports.prototype.handleChangeEvent = function(event) {\n\tvar variables = Object.create(null);\n\tif(this.inputDomNode.checked) {\n\t\tthis.setValue();\n\t}\n\t// Trigger actions. Use variables = {key:value, key:value ...}\n\tif(this.radioActions) {\n\t\t$tw.utils.each(this.attributes,function(val,key) {\n\t\t\tif (key.substring(0,4) === \&quot;usr-\&quot;) {\n\t\t\t\tvariables[key] = \&quot;\&quot; + val;\n\t\t\t} else {\n\t\t\t\tvariables[\&quot;__\&quot; + key + \&quot;__\&quot;] = \&quot;\&quot; + val;\n\t\t\t}\n\t\t});\n\t\t// \&quot;tiddler\&quot; and/or \&quot;field\&quot; parameter may be missing in the widget call. See radio widget .execute() \n\t\tvariables = $tw.utils.extend(variables, {\&quot;__tiddler__\&quot;: this.radioTitle,\&quot;__field__\&quot;: this.radioField});\n\t\tthis.invokeActionString(this.radioActions,this,event,variables);\n\t}\n}\n\n})();&quot;,
@@ -12321,10 +12236,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     }
 }</pre>
 </div>
-<div created="20210318130153089" modified="20210318130153109" title="$:/search-flt/inp/params" type="text/vnd.tiddlywiki">
-<pre> test-params-with-spaces test-checkbox-widget-params-variable test-checkbox-widget-params-transclusion </pre>
-</div>
-<div caption="params" created="20210318130153089" icon="$:/plugins/wikilabs/advanced-search-plus/filter-search.svg" input-tiddler="$:/search-flt/inp/params" input-title="$:/search-flt/params" modified="20210318130153168" tags="$:/tags/AdvancedSearch" title="$:/search-flt/params" type="text/vnd.tiddlywiki">
+<div caption="drop-block" created="20210318200530130" icon="$:/plugins/wikilabs/advanced-search-plus/filter-search.svg" input-tiddler="$:/search-flt/inp/drop-block" input-title="$:/search-flt/drop-block" modified="20210318200530209" tags="$:/tags/AdvancedSearch" title="$:/search-flt/drop-block" type="text/vnd.tiddlywiki">
 <pre>\define lingo-base() $:/language/Search/
 
 &lt;$tiddler tiddler=&lt;&lt;currentTab&gt;&gt;&gt;
@@ -12371,6 +12283,9 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 &lt;/$reveal&gt;
 &lt;/$tiddler&gt;</pre>
 </div>
+<div created="20210318200530130" modified="20210320092533430" title="$:/search-flt/inp/drop-block" type="text/vnd.tiddlywiki">
+<pre>[tag[$:/tags/TextEditor/InlinePrefix]]</pre>
+</div>
 <div caption="edit" created="20200915230500496" icon="$:/plugins/wikilabs/advanced-search-plus/shadow-search.svg" input-tiddler="$:/search-sdw/inp/edit" input-title="$:/search-sdw/edit" modified="20200915230500572" tags="$:/tags/AdvancedSearch" title="$:/search-sdw/edit" type="text/vnd.tiddlywiki">
 <pre>\define lingo-base() $:/language/Search/
 
@@ -12411,7 +12326,44 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200831052106651" modified="20200831052106659" title="$:/search-sys/inp/plug" type="text/vnd.tiddlywiki">
 <pre>$:/plugins/wikilabs/</pre>
 </div>
+<div created="20210318192224287" modified="20210318192224303" title="$:/search-sys/inp/state" type="text/vnd.tiddlywiki">
+<pre>state</pre>
+</div>
 <div caption="plug" created="20200831052106651" icon="$:/plugins/wikilabs/advanced-search-plus/system-search.svg" input-tiddler="$:/search-sys/inp/plug" input-title="$:/search-sys/plug" modified="20200831052106678" tags="$:/tags/AdvancedSearch" title="$:/search-sys/plug" type="text/vnd.tiddlywiki">
+<pre>\define lingo-base() $:/language/Search/
+
+&lt;$tiddler tiddler=&lt;&lt;currentTab&gt;&gt;&gt;
+&lt;$button tooltip={{$:/language/Buttons/Delete/Caption}} &gt;
+  &lt;$action-deletetiddler $tiddler={{!!input-tiddler}}/&gt;
+  &lt;$action-deletetiddler $tiddler={{!!input-title}}/&gt;
+  &lt;$transclude tiddler=&quot;$:/core/images/delete-button&quot; /&gt;
+&lt;/$button&gt;
+&lt;&lt;lingo System/Hint&gt;&gt;
+
+&lt;div class=&quot;tc-search&quot;&gt;
+&lt;$edit-text tiddler={{!!input-tiddler}} type=&quot;search&quot; tag=&quot;input&quot; placeholder=&quot;...&quot; default=&quot;&quot;/&gt;
+&lt;$reveal state={{!!input-tiddler}} type=&quot;nomatch&quot; text=&quot;&quot;&gt;
+&lt;$button class=&quot;tc-btn-invisible&quot;&gt;
+&lt;$action-setfield $tiddler={{!!input-tiddler}} $field=&quot;text&quot; $value=&quot;&quot;/&gt;
+{{$:/core/images/close-button}}
+&lt;/$button&gt;
+&lt;/$reveal&gt;
+&lt;/div&gt;
+
+&lt;$reveal state={{!!input-tiddler}} type=&quot;nomatch&quot; text=&quot;&quot;&gt;
+&lt;$set name=&quot;search-term&quot; tiddler={{!!input-tiddler}}&gt;
+&lt;$set name=&quot;resultCount&quot; value=&quot;&lt;$count filter='[is[system]search&lt;search-term&gt;]'/&gt;&quot;&gt;
+&lt;div class=&quot;tc-search-results&quot;&gt;
+&lt;&lt;lingo System/Matches&gt;&gt;
+&lt;$list filter=&quot;[is[system]search&lt;search-term&gt;sort[title]limit[250]]&quot; template=&quot;$:/core/ui/ListItemTemplate&quot;/&gt;
+&lt;/div&gt;
+&lt;/$set&gt;&lt;/$set&gt;
+&lt;/$reveal&gt;
+&lt;$reveal state={{!!input-tiddler}} type=&quot;match&quot; text=&quot;&quot;&gt;
+&lt;/$reveal&gt;
+&lt;/$tiddler&gt;</pre>
+</div>
+<div caption="state" created="20210318192224287" icon="$:/plugins/wikilabs/advanced-search-plus/system-search.svg" input-tiddler="$:/search-sys/inp/state" input-title="$:/search-sys/state" modified="20210318192224371" tags="$:/tags/AdvancedSearch" title="$:/search-sys/state" type="text/vnd.tiddlywiki">
 <pre>\define lingo-base() $:/language/Search/
 
 &lt;$tiddler tiddler=&lt;&lt;currentTab&gt;&gt;&gt;
@@ -12458,6 +12410,9 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <pre></pre>
 </div>
 <div created="20200830174644399" list="$:/core/ui/EditorToolbar/paint $:/core/ui/EditorToolbar/opacity $:/core/ui/EditorToolbar/line-width $:/core/ui/EditorToolbar/rotate-left $:/core/ui/EditorToolbar/clear $:/core/ui/EditorToolbar/bold $:/core/ui/EditorToolbar/italic $:/core/ui/EditorToolbar/strikethrough $:/core/ui/EditorToolbar/underline $:/core/ui/EditorToolbar/superscript $:/core/ui/EditorToolbar/subscript $:/core/ui/EditorToolbar/mono-line $:/core/ui/EditorToolbar/linkify $:/core/ui/EditorToolbar/transcludify $:/core/ui/EditorToolbar/mono-block $:/core/ui/EditorToolbar/quote $:/core/ui/EditorToolbar/list-bullet $:/core/ui/EditorToolbar/list-number $:/core/ui/EditorToolbar/heading-1 $:/core/ui/EditorToolbar/heading-2 $:/core/ui/EditorToolbar/heading-3 $:/core/ui/EditorToolbar/heading-4 $:/core/ui/EditorToolbar/heading-5 $:/core/ui/EditorToolbar/heading-6 $:/core/ui/EditorToolbar/link $:/core/ui/EditorToolbar/excise $:/core/ui/EditorToolbar/picture $:/core/ui/EditorToolbar/stamp $:/core/ui/EditorToolbar/size $:/core/ui/EditorToolbar/editor-height $:/core/ui/EditorToolbar/more $:/core/ui/EditorToolbar/preview $:/core/ui/EditorToolbar/preview-type $:/plugins/wikilabs/custom-markup/EditorToolbar/add-newline $:/plugins/wikilabs/custom-markup/EditorToolbar/remove-angle $:/plugins/wikilabs/custom-markup/EditorToolbar/add-angle $:/plugins/wikilabs/custom-markup/EditorToolbar/remove-custom-markers $:/plugins/wikilabs/custom-markup/EditorToolbar/add-glyph $:/plugins/wikilabs/custom-markup/EditorToolbar/remove-glyph $:/plugins/wikilabs/custom-markup/EditorToolbar/toggle-glyph $:/plugins/wikilabs/custom-markup/EditorToolbar/chooser-block $:/plugins/wikilabs/custom-markup/EditorToolbar/toggle-inline $:/plugins/wikilabs/custom-markup/EditorToolbar/chooser-inline" modified="20210218172732817" title="$:/tags/EditorToolbar" type="text/vnd.tiddlywiki">
+<pre></pre>
+</div>
+<div created="20210320101219086" list="$:/themes/tiddlywiki/snowwhite/base $:/themes/tiddlywiki/vanilla/base $:/plugins/tiddlywiki/tiddlyweb/readonly $:/plugins/tiddlywiki/tiddlyweb/styles $:/plugins/flibbles/relink/ui/stylesheet.css $:/plugins/sukima/reveal-js/reveal.css $:/plugins/sukima/reveal-js/theme/simple.css $:/plugins/sukima/reveal-js/styles.css $:/plugins/tiddlywiki/internals/styles $:/plugins/wikilabs/advanced-search-plus/styles :/plugins/wikilabs/custom-markup/styles inline-css button-styles column-styles details-css nl-is-hard-linebreak-css table/Stylesheet text-checkbox-widget-css wltc-docs-styles-h-weight colorbox-styles" modified="20210320101329682" title="$:/tags/Stylesheet" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.23">
@@ -12708,20 +12663,20 @@ If you think it can be &quot;optimized&quot; [[go on reading.|Introducing Custom
 <div created="20200917211439090" modified="20200928123833744" tags="task" title="Check all TODO markers" type="text/vnd.tiddlywiki">
 <pre>&lt;&lt;list-links &quot;[search[todo]]&quot;&gt;&gt;</pre>
 </div>
-<div caption="Colorbox Danger" created="20200912090643796" modified="20200914095405682" tags="$:/tags/TextEditor/LinePrefix" title="Colorbox Danger" type="text/vnd.tiddlywiki">
-<pre>.hl.c.cd</pre>
+<div caption="» Colorbox Danger" created="20200912090643796" modified="20210320092030984" tags="$:/tags/TextEditor/LinePrefix" title="Colorbox Danger" type="text/vnd.tiddlywiki">
+<pre>».hl.c.cd</pre>
 </div>
-<div caption="Colorbox Light" created="20200914092414437" modified="20200914095150996" tags="$:/tags/TextEditor/LinePrefix" title="Colorbox Light" type="text/vnd.tiddlywiki">
-<pre>.hl.c.cl</pre>
+<div caption="» Colorbox Light" created="20200914092414437" modified="20210320092150697" tags="$:/tags/TextEditor/LinePrefix" title="Colorbox Light" type="text/vnd.tiddlywiki">
+<pre>».hl.c.cl</pre>
 </div>
-<div caption="Colorbox Primary" created="20200914092352947" modified="20200914095138642" tags="$:/tags/TextEditor/LinePrefix" title="Colorbox Primary" type="text/vnd.tiddlywiki">
-<pre>.hl.c.cp</pre>
+<div caption="» Colorbox Primary" created="20200914092352947" modified="20210320092142778" tags="$:/tags/TextEditor/LinePrefix" title="Colorbox Primary" type="text/vnd.tiddlywiki">
+<pre>».hl.c.cp</pre>
 </div>
-<div caption="Colorbox Sucsess" created="20200912090143918" modified="20200914095111186" tags="$:/tags/TextEditor/LinePrefix" title="Colorbox Sucsess" type="text/vnd.tiddlywiki">
-<pre>.hl.c.cs</pre>
+<div caption="» Colorbox Sucsess" created="20200912090143918" modified="20210320092137325" tags="$:/tags/TextEditor/LinePrefix" title="Colorbox Sucsess" type="text/vnd.tiddlywiki">
+<pre>».hl.c.cs</pre>
 </div>
-<div caption="Colorbox Warning" created="20200914092623529" modified="20200914095046700" tags="$:/tags/TextEditor/LinePrefix" title="Colorbox Warning" type="text/vnd.tiddlywiki">
-<pre>.hl.c.cl</pre>
+<div caption="» Colorbox Warning" created="20200914092623529" modified="20210320092131155" tags="$:/tags/TextEditor/LinePrefix" title="Colorbox Warning" type="text/vnd.tiddlywiki">
+<pre>».hl.c.cl</pre>
 </div>
 <div created="20200830115020156" modified="20200918092605056" tags="$:/tags/Stylesheet" title="colorbox-styles" type="text/css">
 <pre>/*-------------------------------*/
@@ -13403,12 +13358,6 @@ The sort order of the tiddlers tagged: `$:/tags/Pragma` can be used to define, w
 
 &lt;pre&gt;&lt;$view /&gt;&lt;/pre&gt;</pre>
 </div>
-<div caption="Glyph - only" created="20200914101848468" modified="20210216152307864" tags="$:/tags/TextEditor/LinePrefix" title="Glyph - only" type="text/vnd.tiddlywiki">
-<pre></pre>
-</div>
-<div caption="Glyph - paragraph" created="20200913114408060" modified="20210216152317484" tags="$:/tags/TextEditor/LinePrefix" title="Glyph - paragraph" type="text/plain">
-<pre>p</pre>
-</div>
 <div created="20200915075533228" modified="20200917172337816" tags="Basics docs" title="How to style a Paragraph" type="text/vnd.tiddlywiki">
 <pre>! How to style a Paragraph
 
@@ -13587,16 +13536,18 @@ line 2
 
 !! Next: [[Import and Re-define a Pragma]]</pre>
 </div>
-<div caption="Color Light" created="20210218154350306" modified="20210218155122304" tags="$:/tags/TextEditor/InlinePrefix" title="inline-color-light" type="text/vnd.tiddlywiki">
-<pre>.cl </pre>
+<div caption="`⠒.d ⠶` Color Danger" created="20210320095819316" modified="20210320100314099" tags="$:/tags/TextEditor/InlinePrefix" title="inline-color-danger" type="application/x-tiddler-dictionary">
+<pre>prefix: ⠒.cd
+suffix: ⠶</pre>
+</div>
+<div caption="`/°.cl °/` Color Light " created="20210218154350306" modified="20210320100318820" tags="$:/tags/TextEditor/InlinePrefix" title="inline-color-light" type="application/x-tiddler-dictionary">
+<pre>prefix: /°.cl
+suffix: °/</pre>
 </div>
 <div created="20200906211537971" modified="20200906211738680" tags="$:/tags/Stylesheet" title="inline-css" type="text/vnd.tiddlywiki">
 <pre>.wltc-inline {
   background: lightsalmon;
 }</pre>
-</div>
-<div caption="Glyph only" created="20210218154837085" modified="20210218154854954" tags="$:/tags/TextEditor/InlinePrefix" title="inline-glyph-only" type="text/vnd.tiddlywiki">
-<pre></pre>
 </div>
 <div created="20200915132600098" modified="20200917132128465" tags="Advanced docs" title="Introducing Custom Markers for Advanced Users" type="text/vnd.tiddlywiki">
 <pre>\customize angle=myBox _classes=&quot;.indent.right-dedent.justify.cbox.cbox-primary&quot; 
