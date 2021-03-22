@@ -1,9 +1,11 @@
 created: 20201226173536908
-demo-url: https://wikilabs.github.io/editions/space-space-newline
 git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/space-space-newline
-modified: 20201226173553898
-tags: plugin
+modified: 20210322111533598
+tags: plugin $:/tags/Link wikitext editor wikitex-extension
 title: space-space-newline
 type: text/vnd.tiddlywiki
+url: https://wikilabs.github.io/editions/space-space-newline
 
-{{||$:/wikilabs/template/theme}}
+! Space Space Newline
+
+This plugin adds the possibility to add hard linebreaks into prose wikitext.

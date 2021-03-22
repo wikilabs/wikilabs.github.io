@@ -1,9 +1,11 @@
-created: 201902181200
-demo-url: https://wikilabs.github.io/editions/field-search
+created: 20190218120000000
 git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/field-search
-modified: 201902181200
-tags: plugin
+modified: 20210322105507414
+tags: plugin $:/tags/Link search tabs advanced-search tools
 title: field-search
 type: text/vnd.tiddlywiki
+url: https://wikilabs.github.io/editions/field-search
 
-{{||$:/wikilabs/template/theme}}
+! Field Search Plugin
+
+This plugin adds several new tabs to the search dropdown. The elements, that should be used can be configured in the ~$:/ControlPanel

@@ -1,6 +1,6 @@
 caption: slant-01
 created: 20170203113430786
-demo-url: https://wikilabs.github.io/editions/slant-01
+url: https://wikilabs.github.io/editions/slant-01
 git-repo: https://github.com/wikilabs/themes/tree/master/wikilabs/slant-01
 modified: 20200611163108849
 tags: theme
@@ -15,4 +15,3 @@ Slant is a theme, that also includes several plugins. So if you want to use the 
 [[WikiLabs Plugin Configuration|$:/config/wikilabs/PluginLibraryWL/latest]]
 </span>
 
-{{||$:/wikilabs/template/theme}}

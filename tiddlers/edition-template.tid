@@ -1,9 +1,8 @@
 created: 20170203104234369
-demo-url: n/a
+url: n/a
 git-repo: https://github.com/wikilabs/editions/tree/master/edition-template
 modified: 20180328091030830
 tags: edition
 title: edition-template
 type: text/vnd.tiddlywiki
 
-{{||$:/wikilabs/template/theme}}

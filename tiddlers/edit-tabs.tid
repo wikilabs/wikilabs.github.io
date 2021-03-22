@@ -1,9 +1,11 @@
 created: 20180328073119156
-demo-url: https://wikilabs.github.io/editions/edit-tabs
 git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/edit-tabs
-modified: 20180328073149169
-tags: plugin
+modified: 20210322105359978
+tags: plugin $:/tags/Link tabs development tools
 title: edit-tabs
 type: text/vnd.tiddlywiki
+url: https://wikilabs.github.io/editions/edit-tabs
 
-{{||$:/wikilabs/template/theme}}
+! Edit Tabs Plugin
+
+This plugin adds internal tiddler links to every tab if selected. It adds a setting to the ~ControlPanel: Settings tab, that allows you to activate "non system" tiddlers directly in edit mode. This comes in handy, if you are creating a lot of new stuff.

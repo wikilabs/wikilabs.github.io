@@ -1,9 +1,11 @@
 created: 20201226173619022
-demo-url: https://wikilabs.github.io/editions/wltm-open-story
 git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/wltm-open-story
-modified: 20201226173643546
-tags: experimental
+modified: 20210322113641226
+tags: EXPERIMENTAL advanced-tools search story-river story import export
 title: wltm-open-story
 type: text/vnd.tiddlywiki
+url: https://wikilabs.github.io/editions/wltm-open-story
 
-{{||$:/wikilabs/template/theme}}
+! Open Story River
+
+This plugin will allow you to create / save / reload "story river" configurations.

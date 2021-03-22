@@ -1,9 +1,11 @@
 created: 20170203102848440
-demo-url: https://wikilabs.github.io/editions/new-tiddler-from-search
 git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/new-tiddler-from-search
-modified: 20170314150708544
-tags: plugin
+modified: 20210322110800726
+tags: plugin $:/tags/Link search navigation dropdown popup [[tiddler creation]]
 title: new-tiddler-from-search
 type: text/vnd.tiddlywiki
+url: https://wikilabs.github.io/editions/new-tiddler-from-search
 
-{{||$:/wikilabs/template/theme}}
+! New Tiddler from Search
+
+This plugin adds a "New Tiddler" template, into the default search input element, that uses the "search term" as title

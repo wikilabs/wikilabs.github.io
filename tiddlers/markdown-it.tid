@@ -1,9 +1,11 @@
 created: 20180328090723502
-demo-url: https://wikilabs.github.io/editions/markdown-it
 git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/markdown-it
-modified: 20180328090748673
-tags: plugin
+modified: 20210322110201030
+tags: plugin $:/tags/Link markdown wikitext formatting
 title: markdown-it
 type: text/vnd.tiddlywiki
+url: https://wikilabs.github.io/editions/markdown-it
 
-{{||$:/wikilabs/template/theme}}
+! Markdown-it Plugin
+
+This is a demo of ~TiddlyWiki5 incorporating a plugin for the "markdown-it" markdown parser. 

@@ -1,9 +1,11 @@
 created: 20170203102805644
-demo-url: https://wikilabs.github.io/editions/info-tagmap
 git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/info-tagmap
-modified: 20180328073709857
-tags: plugin
+modified: 20210322105741862
+tags: plugin $:/tags/Link info-section tags tagging
 title: info-tagmap
 type: text/vnd.tiddlywiki
+url: https://wikilabs.github.io/editions/info-tagmap
 
-{{||$:/wikilabs/template/theme}}
+! Info ~TagMap Plugin
+
+This plugin adds a "tag map" to the tiddler info area.

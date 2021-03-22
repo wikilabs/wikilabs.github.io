@@ -1,9 +1,17 @@
 created: 20201226173504500
-demo-url: https://wikilabs.github.io/editions/pragma-comment
 git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/pragma-comment
-modified: 20201226173522967
-tags: plugin
+modified: 20210322111230766
+tags: plugin $:/tags/Link development editor advanced-tools wikitext wikitex-extension
 title: pragma-comment
 type: text/vnd.tiddlywiki
+url: https://wikilabs.github.io/editions/pragma-comment
 
-{{||$:/wikilabs/template/theme}}
+! Pragma Comment
+
+This plugin allows developers to add comments outside of "macro definitions", so they don't waste any time during execution. This is _not_ possible with the default wikitext
+
+```
+\\ comment comes here till the end of the line
+\define test() Hello World
+```
+

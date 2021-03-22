@@ -1,5 +1,5 @@
 created: 20200611163410374
-modified: 20201226172957589
+modified: 20210322113709919
 tags: 
 title: Details
 type: text/vnd.tiddlywiki
@@ -20,4 +20,4 @@ The ''~WikiLabs Pluginlibrary Configuration'' tiddlers can be found at: GettingS
 
 ! Experimental
 
-<<list-links "[tag[experimental]sort[]]">>
+<<list-links "[tag[EXPERIMENTAL]sort[]]">>

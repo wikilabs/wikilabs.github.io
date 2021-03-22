@@ -1,0 +1,11 @@
+created: 20210322130148311
+modified: 20210322130159768
+tags: 
+title: $:/wikilabs/save/community-links-big
+type: text/vnd.tiddlywiki
+
+\import [[$:/core/ui/PageMacros]] [all[shadows+tiddlers]tag[$:/tags/Macro]!has[draft.of]]
+\define saveTiddlerFilter()
+[is[system]] [tag[$:/tags/Link]] -[prefix[$:/state/popup/]] -[[$:/boot/boot.css]] -[type[application/javascript]library[yes]] -[[$:/boot/boot.js]] -[[$:/boot/bootprefix.js]] -[prefix[$:/plugins/]] -[prefix[$:/state/]] -[[$:/SiteTitle]] -[prefix[$:/themes/wikilabs/]] +[sort[title]] $(publishFilter)$
+\end
+{{$:/core/templates/tiddlywiki5.html}}

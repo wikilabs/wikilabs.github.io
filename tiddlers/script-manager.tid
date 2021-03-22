@@ -1,9 +1,12 @@
 created: 20171215212502872
-demo-url: https://wikilabs.github.io/editions/script-manager
 git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/script-manager
-modified: 20180328090310002
-tags: edition
+modified: 20210322114259192
+tags: edition $:/tags/Link HowTo wikitext development
 title: script-manager
 type: text/vnd.tiddlywiki
+url: https://wikilabs.github.io/editions/script-manager
 
-{{||$:/wikilabs/template/theme}}
+! Script Manager Edition
+
+This edition was mainly created to support a video series, that show, how the edition was created: Step by Step
+

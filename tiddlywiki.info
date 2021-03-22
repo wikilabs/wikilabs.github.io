@@ -20,11 +20,13 @@
 	],
 	"build": {
 		"index": [
-			"--rendertiddler", "$:/core/save/all", "index.html", "text/plain"
+			"--rendertiddler", "$:/core/save/all", "index.html", "text/plain",
+			"--rendertiddler", "$:/wikilabs/save/wikilabs-links", "wikilabs-links.html", "text/plain"
 		],
 		"github": [
 			"--output", "../../wikilabs.github.io",
-			"--rendertiddler", "$:/core/save/all", "index.html", "text/plain"
+			"--rendertiddler", "$:/core/save/all", "index.html", "text/plain",
+			"--rendertiddler", "$:/wikilabs/save/wikilabs-links", "wikilabs-links.html", "text/plain"
 		],
 		"externalimages": [
 			"--savetiddlers", "[is[image]]", "images",

@@ -1,9 +1,11 @@
 created: 20201226173418498
-demo-url: https://wikilabs.github.io/editions/keyvalues
 git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/keyvalues
-modified: 20201226173501633
-tags: plugin
+modified: 20210322105904651
+tags: plugin $:/tags/Link development advanced-tools search operators filter
 title: keyvalues
 type: text/vnd.tiddlywiki
+url: https://wikilabs.github.io/editions/keyvalues
 
-{{||$:/wikilabs/template/theme}}
+! Key Values Plugin
+
+This plugin adds new filter operators that improves and simplifies Data-Tiddler handling. 

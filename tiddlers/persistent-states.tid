@@ -1,9 +1,8 @@
 created: 20170203102859229
-demo-url: n/a
+url: n/a
 git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/persistent-states
 modified: 20170314151154134
 tags: plugin
 title: persistent-states
 type: text/vnd.tiddlywiki
 
-{{||$:/wikilabs/template/theme}}
