@@ -21,12 +21,14 @@
 	"build": {
 		"index": [
 			"--rendertiddler", "$:/core/save/all", "index.html", "text/plain",
-			"--rendertiddler", "$:/wikilabs/save/wikilabs-links", "wikilabs-links.html", "text/plain"
+			"--rendertiddler", "$:/wikilabs/save/wikilabs-links", "wikilabs-links.html", "text/plain",
+			"--rendertiddler", "$:/core/templates/tiddlywiki5.js","tiddlywiki.js","text/plain"
 		],
 		"github": [
 			"--output", "../../wikilabs.github.io",
 			"--rendertiddler", "$:/core/save/all", "index.html", "text/plain",
-			"--rendertiddler", "$:/wikilabs/save/wikilabs-links", "wikilabs-links.html", "text/plain"
+			"--rendertiddler", "$:/wikilabs/save/wikilabs-links", "wikilabs-links.html", "text/plain",
+			"--rendertiddler", "$:/core/templates/tiddlywiki5.js","tiddlywiki.js","text/plain"
 		],
 		"externalimages": [
 			"--savetiddlers", "[is[image]]", "images",
