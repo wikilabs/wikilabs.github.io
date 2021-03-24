@@ -1,7 +1,7 @@
 created: 20170203102848440
 git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/new-tiddler-from-search
-modified: 20210322110800726
-tags: plugin $:/tags/Link search navigation dropdown popup [[tiddler creation]]
+modified: 20210324164506264
+tags: plugin $:/tags/Link Search Navigation Dropdown Popup Tiddler-Creation
 title: new-tiddler-from-search
 type: text/vnd.tiddlywiki
 url: https://wikilabs.github.io/editions/new-tiddler-from-search

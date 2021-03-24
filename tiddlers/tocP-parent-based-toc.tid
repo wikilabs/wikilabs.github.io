@@ -1,7 +1,7 @@
 created: 20170203104721932
 git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/tocP
-modified: 20210322112153619
-tags: plugin $:/tags/Link TOC [[table of contents]] outline linking navigation editor
+modified: 20210324164257024
+tags: plugin $:/tags/Link TOC Table-of-Contents Outline Linking Navigation Editor
 title: tocP-parent-based-toc
 type: text/vnd.tiddlywiki
 url: https://wikilabs.github.io/editions/tocP

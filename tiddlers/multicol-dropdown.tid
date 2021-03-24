@@ -1,7 +1,7 @@
 created: 20170203102828029
 git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/multicol-dropdown
-modified: 20210322112019861
-tags: plugin $:/tags/Link ui tags editor dropdown popup CSS
+modified: 20210324164543165
+tags: plugin $:/tags/Link UI Tags Editor Dropdown Popup CSS
 title: multicol-dropdown
 type: text/vnd.tiddlywiki
 url: https://wikilabs.github.io/editions/multicol-dropdown

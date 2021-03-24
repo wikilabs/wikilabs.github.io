@@ -1,7 +1,7 @@
 created: 20170612083932764
 git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/bundler
-modified: 20210322105212481
-tags: plugin $:/tags/Link import export tools json
+modified: 20210324164825986
+tags: plugin $:/tags/Link Import Export Tools JSON
 title: bundler
 type: text/vnd.tiddlywiki
 url: https://wikilabs.github.io/editions/bundler

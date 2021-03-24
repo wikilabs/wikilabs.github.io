@@ -1,7 +1,7 @@
 created: 20200225173859549
 git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/speciallinks
-modified: 20210322111701901
-tags: plugin $:/tags/Link wikitex-extension wikitext editor
+modified: 20210324163518770
+tags: plugin $:/tags/Link Wikitex-Extensions WikiText Editor
 title: speciallinks
 type: text/vnd.tiddlywiki
 url: https://wikilabs.github.io/editions/speciallinks

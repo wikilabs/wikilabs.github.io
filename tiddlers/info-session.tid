@@ -1,7 +1,7 @@
 created: 20170203102751368
 git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/info-session
-modified: 20210322105631622
-tags: plugin $:/tags/Link ui tabs info-section navigation
+modified: 20210324164735095
+tags: plugin $:/tags/Link UI Tabs Info-Section Navigation
 title: info-session
 type: text/vnd.tiddlywiki
 url: https://wikilabs.github.io/editions/info-session

@@ -1,10 +1,10 @@
 created: 20170203113552821
-modified: 20210322101740360
+modified: 20210324145654670
 tags: $:/tags/ViewTemplate
 title: $:/wikilabs/template/theme
 type: text/vnd.tiddlywiki
 
-<$list filter="[all[current]regexp:tags[plugin|edition|theme|experimental]]">
+<$list filter="[all[current]regexp:tags[plugin|edition|theme|EXPERIMENTAL]]">
 
 ! Demo
 see: {{!!url}}

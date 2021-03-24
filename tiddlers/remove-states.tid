@@ -1,7 +1,7 @@
 created: 20170203102912765
 git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/remove-states
-modified: 20210322111410294
-tags: plugin $:/tags/Link ui tools development editor
+modified: 20210324164057242
+tags: plugin $:/tags/Link UI Tools Development Editor
 title: remove-states
 type: text/vnd.tiddlywiki
 url: https://wikilabs.github.io/editions/remove-states

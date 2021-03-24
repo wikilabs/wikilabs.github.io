@@ -1,7 +1,7 @@
 created: 20201226173418498
 git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/keyvalues
-modified: 20210322105904651
-tags: plugin $:/tags/Link development advanced-tools search operators filter
+modified: 20210324164653241
+tags: plugin $:/tags/Link Development Advanced-Tools Search Operators Filter
 title: keyvalues
 type: text/vnd.tiddlywiki
 url: https://wikilabs.github.io/editions/keyvalues

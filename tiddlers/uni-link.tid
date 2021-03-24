@@ -1,7 +1,7 @@
 created: 20170622132619091
 git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/uni-link
-modified: 20210322112437394
-tags: plugin $:/tags/Link alias wikitex-extension wikitext editor ui filter formatting advanced-search
+modified: 20210324164057257
+tags: plugin $:/tags/Link Alias Wikitex-Extensions WikiText Editor UI Filter Formatting Advanced-Search
 title: uni-link
 type: text/vnd.tiddlywiki
 url: https://wikilabs.github.io/editions/uni-link

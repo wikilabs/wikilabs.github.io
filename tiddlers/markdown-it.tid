@@ -1,7 +1,7 @@
 created: 20180328090723502
 git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/markdown-it
-modified: 20210322110201030
-tags: plugin $:/tags/Link markdown wikitext formatting
+modified: 20210324164607672
+tags: plugin $:/tags/Link Markdown WikiText Formatting
 title: markdown-it
 type: text/vnd.tiddlywiki
 url: https://wikilabs.github.io/editions/markdown-it

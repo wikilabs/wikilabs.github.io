@@ -1,7 +1,7 @@
 created: 20201226173504500
 git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/pragma-comment
-modified: 20210322111230766
-tags: plugin $:/tags/Link development editor advanced-tools wikitext wikitex-extension
+modified: 20210324163518764
+tags: plugin $:/tags/Link Development Editor Advanced-Tools WikiText Wikitex-Extensions
 title: pragma-comment
 type: text/vnd.tiddlywiki
 url: https://wikilabs.github.io/editions/pragma-comment
