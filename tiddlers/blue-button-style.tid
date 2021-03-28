@@ -1,0 +1,19 @@
+created: 20210328103644530
+modified: 20210328104019883
+tags: $:/tags/Stylesheet
+title: blue-button-style
+type: text/vnd.tiddlywiki
+
+.wltc-btn-big-blue{
+	display: inline-block;
+	padding: 8px;
+	margin: 4px 8px 4px 8px;
+	background: #b5dafb;
+	color: #ffffff;
+	fill: #ffffff;
+	border: none;
+	border-radius: 2px;
+	font-size: 1.2em;
+	line-height: 1.4em;
+	text-decoration: none;
+}

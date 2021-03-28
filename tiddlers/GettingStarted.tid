@@ -1,5 +1,5 @@
 created: 20190211002748002
-modified: 20210122184939661
+modified: 20210328103602859
 title: GettingStarted
 type: text/vnd.tiddlywiki
 
@@ -36,4 +36,4 @@ Import the following link, if you want to install a stable version which is comp
 
 ! Plugin Details
 
-Details can be found at: [[Details]]
+Details can be found at: <$link class="wltc-btn-big-blue" to="Details">Click Details</$link>
