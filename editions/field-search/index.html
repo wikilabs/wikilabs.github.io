@@ -141,6 +141,8 @@ Error message and password prompt
 
 <p>This <a class="tc-tiddlylink-external" href="https://tiddlywiki.com" rel="noopener noreferrer" target="_blank">TiddlyWiki</a> contains the following tiddlers:</p><p><ul>
 
+<li>$:/config/EmptyStoryMessage</li>
+
 <li>$:/config/field-search/data/a-b</li>
 
 <li>$:/config/field-search/data/a-b-t</li>
@@ -217,6 +219,9 @@ Error message and password prompt
 <!--~~ Ordinary tiddlers ~~-->
 
 <div id="storeArea" style="display:none;">
+<div created="20210328101235171" modified="20210328101250305" tags="" title="$:/config/EmptyStoryMessage" type="text/vnd.tiddlywiki">
+<pre>{{GettingStarted||$:/core/ui/ViewTemplate}}</pre>
+</div>
 <div caption="a-b" created="20210304215401124" modified="20210304215401154" tags="$:/tags/field-search/data" title="$:/config/field-search/data/a-b" type="application/json">
 <pre>{
     &quot;a&quot;: &quot;comment&quot;,
@@ -10122,7 +10127,7 @@ Error message and password prompt
 <div title="$:/isEncrypted">
 <pre>no</pre>
 </div>
-<div author="Mario Pietsch" core-version="&gt;=5.1.18" dependents="" description="New tabs are added to search results" list="readme license history" name="Field Search" plugin-type="plugin" title="$:/plugins/wikilabs/field-search" type="application/json" version="0.4.0-pre">
+<div author="Mario Pietsch" core-version="&gt;=5.1.18" dependents="" description="New tabs are added to search results" list="readme license history" name="Field Search" plugin-type="plugin" title="$:/plugins/wikilabs/field-search" type="application/json" version="0.4.1">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/config/field-search/data/Any Field&quot;: {
@@ -10166,7 +10171,7 @@ Error message and password prompt
         },
         &quot;$:/plugins/wikilabs/field-search/history&quot;: {
             &quot;title&quot;: &quot;$:/plugins/wikilabs/field-search/history&quot;,
-            &quot;text&quot;: &quot;V 0.3.0 - 2021-03-06\n\n* \&quot;+system\&quot; is more visible if selected\n** shows a \&quot;pointer cursor\&quot; now\n* show field-names in \&quot;all Fields\&quot; tab\n* complete redesign\n\nV 0.2.4 - 2020-12-25\n\n* update license\n\nV 0.2.3 - 2020.01.19\n\n* Update license link/text\n\nV 0.2.2 - 2019.02.27\n\n* add \&quot;include system tiddlers\&quot; option per tab\n* work with a single template instead of duplicated code\n* Adjust minimum TW version to V5.1.18 because of \&quot;subfilter\&quot; usage\n\nV 0.1.0 - 2019.02.19\n\n* Make it more \&quot;update-friendly\&quot;\n** wrappers are tagged instead of \&quot;search-list\&quot; tiddlers\n\nV 0.0.1 - 2019.02.19\n\n* Initial release\n* Add \&quot;Field Search\&quot; tab to search results\n* Basic configuration options\n&quot;
+            &quot;text&quot;: &quot;V 0.4.1 - 2021-03-28\n\n* add match counter into field-search dropdown\n\nV 0.3.0 - 2021-03-06\n\n* \&quot;+system\&quot; is more visible if selected\n** shows a \&quot;pointer cursor\&quot; now\n* show field-names in \&quot;all Fields\&quot; tab\n* complete redesign\n\nV 0.2.4 - 2020-12-25\n\n* update license\n\nV 0.2.3 - 2020.01.19\n\n* Update license link/text\n\nV 0.2.2 - 2019.02.27\n\n* add \&quot;include system tiddlers\&quot; option per tab\n* work with a single template instead of duplicated code\n* Adjust minimum TW version to V5.1.18 because of \&quot;subfilter\&quot; usage\n\nV 0.1.0 - 2019.02.19\n\n* Make it more \&quot;update-friendly\&quot;\n** wrappers are tagged instead of \&quot;search-list\&quot; tiddlers\n\nV 0.0.1 - 2019.02.19\n\n* Initial release\n* Add \&quot;Field Search\&quot; tab to search results\n* Basic configuration options\n&quot;
         },
         &quot;$:/plugins/wikilabs/field-search/icon&quot;: {
             &quot;title&quot;: &quot;$:/plugins/wikilabs/field-search/icon&quot;,
@@ -10201,7 +10206,9 @@ Error message and password prompt
         },
         &quot;$:/plugins/wikilabs/field-search/templates/Results&quot;: {
             &quot;title&quot;: &quot;$:/plugins/wikilabs/field-search/templates/Results&quot;,
-            &quot;text&quot;: &quot;\\define showAll()\n&lt;small&gt;&lt;$checkbox field=\&quot;search-set\&quot; checked={{!!opt-checked}} unchecked={{!!opt-unchecked}} class=\&quot;wltc-show-system\&quot;&gt;+ system&lt;/$checkbox&gt;&lt;/small&gt;\n\\end\n&lt;$tiddler tiddler=&lt;&lt;currentTab&gt;&gt;&gt;\n//Field: ''&lt;&lt;field&gt;&gt;''    &lt;&lt;showAll&gt;&gt;//\n\n&lt;$list filter=\&quot;[subfilter{!!search-set}] +[subfilter&lt;searchTerm&gt;] +[subfilter{!!search-sort}]\&quot; template=\&quot;$:/core/ui/ListItemTemplate\&quot; emptyMessage=\&quot;\&quot;\&quot;&lt;div class=\&quot;tc-menu-list-item tc-small-gap-left\&quot;&gt;n/a&lt;/div&gt;\&quot;\&quot;\&quot;/&gt;\n\n&lt;/$tiddler&gt;&quot;
+            &quot;modified&quot;: &quot;20210328092315108&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;\\define showAll()\n&lt;small&gt;&lt;$checkbox field=\&quot;search-set\&quot; checked={{!!opt-checked}} unchecked={{!!opt-unchecked}} class=\&quot;wltc-show-system\&quot;&gt;+ system&lt;/$checkbox&gt;&lt;/small&gt;\n\\end\n&lt;$tiddler tiddler=&lt;&lt;currentTab&gt;&gt;&gt;\n&lt;$set name=lst filter=\&quot;[subfilter{!!search-set}] +[subfilter&lt;searchTerm&gt;] +[subfilter{!!search-sort}]\&quot;&gt;\n//Field: ''&lt;&lt;field&gt;&gt;'' (&lt;$count filter=\&quot;\&quot;\&quot;[enlist&lt;lst&gt;]\&quot;\&quot;\&quot;/&gt;)   &lt;&lt;showAll&gt;&gt;//\n\n&lt;$list filter=\&quot;[enlist&lt;lst&gt;]\&quot; template=\&quot;$:/core/ui/ListItemTemplate\&quot; emptyMessage=\&quot;\&quot;\&quot;&lt;div class=\&quot;tc-menu-list-item tc-small-gap-left\&quot;&gt;n/a&lt;/div&gt;\&quot;\&quot;\&quot;/&gt;\n&lt;/$set&gt;\n&lt;/$tiddler&gt;&quot;
         },
         &quot;$:/plugins/wikilabs/field-search/templates/WrapperTemplate&quot;: {
             &quot;title&quot;: &quot;$:/plugins/wikilabs/field-search/templates/WrapperTemplate&quot;,

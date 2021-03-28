@@ -137,6 +137,10 @@ Error message and password prompt
 
 <p>This <a class="tc-tiddlylink-external" href="https://tiddlywiki.com" rel="noopener noreferrer" target="_blank">TiddlyWiki</a> contains the following tiddlers:</p><p><ul>
 
+<li>$:/config/EmptyStoryMessage</li>
+
+<li>$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/home</li>
+
 <li>$:/config/ViewToolbarButtons/Visibility/$:/core/ui/Buttons/info</li>
 
 <li>$:/config/wikilabs/PluginLibraryWL/5.1.21</li>
@@ -188,6 +192,8 @@ Error message and password prompt
 <li>Alias</li>
 
 <li>Animation</li>
+
+<li>blue-button-style</li>
 
 <li>bundler</li>
 
@@ -343,6 +349,12 @@ Error message and password prompt
 <!--~~ Ordinary tiddlers ~~-->
 
 <div id="storeArea" style="display:none;">
+<div created="20210328101235171" modified="20210328101250305" tags="" title="$:/config/EmptyStoryMessage" type="text/vnd.tiddlywiki">
+<pre>{{GettingStarted||$:/core/ui/ViewTemplate}}</pre>
+</div>
+<div created="20210328104403009" modified="20210328104403033" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/home" type="text/vnd.tiddlywiki">
+<pre>show</pre>
+</div>
 <div title="$:/config/ViewToolbarButtons/Visibility/$:/core/ui/Buttons/info">
 <pre>show</pre>
 </div>
@@ -783,6 +795,22 @@ This plugin adds the advanced search tiddler to the right sidebar. To do so, the
 <div created="20210324164846906" modified="20210324164854603" title="Animation" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
+<div created="20210328103644530" modified="20210328104019883" tags="$:/tags/Stylesheet" title="blue-button-style" type="text/vnd.tiddlywiki">
+<pre>.wltc-btn-big-blue{
+	display: inline-block;
+	padding: 8px;
+	margin: 4px 8px 4px 8px;
+	background: #b5dafb;
+	color: #ffffff;
+	fill: #ffffff;
+	border: none;
+	border-radius: 2px;
+	font-size: 1.2em;
+	line-height: 1.4em;
+	text-decoration: none;
+}
+</pre>
+</div>
 <div created="20170612083932764" git-repo="https://github.com/wikilabs/plugins/tree/master/wikilabs/bundler" modified="20210324164825986" tags="plugin $:/tags/Link Import Export Tools JSON" title="bundler" type="text/vnd.tiddlywiki" url="https://wikilabs.github.io/editions/bundler">
 <pre>! Bundler Plugin
 
@@ -854,7 +882,7 @@ This plugin adds several new tabs to the search dropdown. The elements, that sho
 <div created="20210324164025462" modified="20210324164033380" title="Formatting" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
-<div created="20190211002748002" modified="20210122184939661" title="GettingStarted" type="text/vnd.tiddlywiki">
+<div created="20190211002748002" modified="20210328103602859" title="GettingStarted" type="text/vnd.tiddlywiki">
 <pre>&lt;style&gt;
 .tc-thumbnail-icon {border:black 1px solid;}
 &lt;/style&gt;
@@ -888,7 +916,7 @@ Import the following link, if you want to install a stable version which is comp
 
 ! Plugin Details
 
-Details can be found at: [[Details]]
+Details can be found at: &lt;$link class=&quot;wltc-btn-big-blue&quot; to=&quot;Details&quot;&gt;Click Details&lt;/$link&gt;
 </pre>
 </div>
 <div created="20210122180642057" modified="20210122184606806" tags="Video" title="How to use the Library Configuration Tiddler" type="text/vnd.tiddlywiki">
