@@ -47,7 +47,7 @@
         "description": "Adds a possibilty to style text content with wikitext syntax",
         "list": "readme license history",
         "dependents": "$:/plugins/wikilabs/pragma-comment",
-        "version": "0.11.3",
+        "version": "0.11.4",
         "plugin-type": "plugin",
         "type": "application/json",
         "readme": "Adds a possibilty to style text content with wikitext syntax\n\nIt's possible to manipulate the rules behaviour with: \n\n`\\rules only ticktext`\n`\\rules excpet ticktext`\n",
