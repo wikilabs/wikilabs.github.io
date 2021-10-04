@@ -1,6 +1,7 @@
 created: 20190318132812383
+description: This saver uses last-modified and if-unmodified-since HTTP header attributes, to detect file inconsistencies, which allows the server to activate server-side file compression
 git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/webdav-lm
-modified: 20210324163918352
+modified: 20211004085139077
 tags: plugin $:/tags/Link WebDav Savers Development Server Tools
 title: webdav-lm
 type: text/vnd.tiddlywiki

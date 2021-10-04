@@ -1,6 +1,7 @@
 created: 20190218120000000
+description: This plugin adds several new tabs to the search dropdown. The elements, that should be used can be configured in the $:/ControlPanel
 git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/field-search
-modified: 20210324164627470
+modified: 20211004083923578
 tags: plugin $:/tags/Link Search Tabs Advanced-Search Tools
 title: field-search
 type: text/vnd.tiddlywiki

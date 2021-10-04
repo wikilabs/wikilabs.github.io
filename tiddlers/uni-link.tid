@@ -1,6 +1,7 @@
 created: 20170622132619091
+description: This plugin add several new options to use the TW "link-syntax" in an extended way. It also adds an "aliasing" system to the wiki
 git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/uni-link
-modified: 20210324164057257
+modified: 20211004085105281
 tags: plugin $:/tags/Link Alias Wikitex-Extensions WikiText Editor UI Filter Formatting Advanced-Search
 title: uni-link
 type: text/vnd.tiddlywiki

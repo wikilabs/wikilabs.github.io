@@ -1,6 +1,7 @@
 created: 20170203104234369
+description: This is an "edition template"
 git-repo: https://github.com/wikilabs/editions/tree/master/edition-template
-modified: 20210324163749897
+modified: 20211004085708251
 tags: edition
 title: edition-template
 type: text/vnd.tiddlywiki

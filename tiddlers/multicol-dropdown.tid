@@ -1,6 +1,7 @@
 created: 20170203102828029
+description: This plugin changes most dropdown dialogs into multi column dialogs, with CSS only
 git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/multicol-dropdown
-modified: 20210324164543165
+modified: 20211004084115828
 tags: plugin $:/tags/Link UI Tags Editor Dropdown Popup CSS
 title: multicol-dropdown
 type: text/vnd.tiddlywiki

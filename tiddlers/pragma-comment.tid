@@ -1,10 +1,15 @@
 created: 20201226173504500
+description: This plugin allows developers to add comments outside of "macro definitions"
 git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/pragma-comment
-modified: 20210324163518764
-tags: plugin $:/tags/Link Development Editor Advanced-Tools WikiText Wikitex-Extensions
+modified: 20211004100230134
+tags: $:/tags/Link Development Editor Advanced-Tools WikiText Wikitex-Extensions DEPRECATED
 title: pragma-comment
 type: text/vnd.tiddlywiki
 url: https://wikilabs.github.io/editions/pragma-comment
+
+! Deprecated
+
+A similar function is part of the TW core since V5.2.0 See: https://tiddlywiki.com/#HTML%20in%20WikiText : ''Pragma Comments''
 
 ! Pragma Comment
 

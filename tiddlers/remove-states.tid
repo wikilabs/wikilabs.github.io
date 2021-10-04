@@ -1,6 +1,7 @@
 created: 20170203102912765
+description: This plugin creates a simple UI, to remove all state tiddlers
 git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/remove-states
-modified: 20210324164057242
+modified: 20211004084801354
 tags: plugin $:/tags/Link UI Tools Development Editor
 title: remove-states
 type: text/vnd.tiddlywiki

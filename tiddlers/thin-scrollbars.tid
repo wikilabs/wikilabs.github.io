@@ -1,6 +1,7 @@
 created: 20170203103021609
+description: This plugin adds a little bit of CSS to create thin scrollbars for FireFox and WebKit-based browsers
 git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/thin-scrollbars
-modified: 20210324164057254
+modified: 20211004085019925
 tags: plugin $:/tags/Link CSS UI Tools
 title: thin-scrollbars
 type: text/vnd.tiddlywiki

@@ -1,6 +1,7 @@
 created: 20191101121318449
+description: This plugin allows you have mouse "click animations"
 git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/trigger
-modified: 20210324163309180
+modified: 20211004085529824
 tags: EXPERIMENTAL Advanced-Tools Development
 title: trigger
 type: text/vnd.tiddlywiki
@@ -12,3 +13,4 @@ If you use the `<$trigger>` widget, with variables defined in the wrong way, it 
 
 So having ''backups'' is extremely important!
 
+This plugin allows you have mouse "click animations"

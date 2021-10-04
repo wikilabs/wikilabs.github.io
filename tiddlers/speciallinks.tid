@@ -1,7 +1,8 @@
 created: 20200225173859549
+description: This plugin adds the possibility to have Camel_Case links, that are otherwise not supported by default wikitext
 git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/speciallinks
-modified: 20210324163518770
-tags: plugin $:/tags/Link Wikitex-Extensions WikiText Editor
+modified: 20211004101003802
+tags: $:/tags/Link Wikitex-Extensions WikiText Editor
 title: speciallinks
 type: text/vnd.tiddlywiki
 url: https://wikilabs.github.io/editions/speciallinks

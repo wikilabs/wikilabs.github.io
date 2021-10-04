@@ -1,0 +1,9 @@
+created: 20211004083711948
+modified: 20211004083734378
+tags: $:/tags/Stylesheet
+title: test-styles
+type: text/vnd.tiddlywiki
+
+.wltc-list-description {
+    margin-top: -1em;
+}

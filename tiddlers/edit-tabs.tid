@@ -1,6 +1,7 @@
 created: 20180328073119156
+description: This plugin adds internal tiddler links to every tab if selected. It allows you to activate "non system" tiddlers directly in edit mode
 git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/edit-tabs
-modified: 20210324164627461
+modified: 20211004083853244
 tags: plugin $:/tags/Link Tabs Development Tools
 title: edit-tabs
 type: text/vnd.tiddlywiki

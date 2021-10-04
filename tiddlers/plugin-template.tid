@@ -1,6 +1,7 @@
 created: 20170314150049582
+description: This is a "plugin template"
 git-repo: https://github.com/wikilabs/editions/tree/master/plugin-template
-modified: 20210324163749910
+modified: 20211004085928106
 tags: edition
 title: plugin-template
 type: text/vnd.tiddlywiki

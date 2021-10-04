@@ -1,6 +1,7 @@
 created: 20170612083932764
+description: This plugin allows you to create "export/import" configurations and save them as a bundle
 git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/bundler
-modified: 20210324164825986
+modified: 20211004083148108
 tags: plugin $:/tags/Link Import Export Tools JSON
 title: bundler
 type: text/vnd.tiddlywiki

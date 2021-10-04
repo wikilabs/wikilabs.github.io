@@ -1,0 +1,23 @@
+created: 20211004081905819
+modified: 20211004095745228
+tags: $:/tags/Macro
+title: linked-list-with-description
+type: text/vnd.tiddlywiki
+
+\define list-links-desc(filter,type:"ul",subtype:"li",class:"",emptyMessage)
+\whitespace trim
+<$type$ class="$class$">
+  <$list filter="$filter$" emptyMessage=<<__emptyMessage__>>>
+    <$subtype$ class="wltc-list">
+      <$link to={{!!title}} class="wltc-list-title">
+        <$transclude field="caption">
+          <$view field="title"/>
+        </$transclude>
+      </$link>
+      <blockquote class="wltc-list-description"><$transclude field="description" mode=block/></blockquote>
+    </$subtype$>
+  </$list>
+</$type$>
+\end
+
+<pre><code><$view /></code></pre>

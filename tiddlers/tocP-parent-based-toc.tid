@@ -1,6 +1,7 @@
 created: 20170203104721932
+description: This plugin creates the same UI as the TW core "Table of Contents" macro, but it uses a different field, to create the outline structure
 git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/tocP
-modified: 20210324164257024
+modified: 20211004085050469
 tags: plugin $:/tags/Link TOC Table-of-Contents Outline Linking Navigation Editor
 title: tocP-parent-based-toc
 type: text/vnd.tiddlywiki

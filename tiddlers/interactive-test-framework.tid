@@ -1,6 +1,7 @@
 created: 20191101121217314
+description: This plugin allows you to create an interactive test framework for advanced developers
 git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/trigger
-modified: 20210324163749902
+modified: 20211004085801686
 tags: edition $:/tags/Link Advanced-Tools Development
 title: interactive-test-framework
 type: text/vnd.tiddlywiki
@@ -8,4 +9,6 @@ url: https://wikilabs.github.io/editions/trigger
 
 ! Trigger Plugin
 
-This plugin allows you to create an interactive test framework for advanced developers
+This plugin allows you to create an interactive test framework for advanced developers. 
+
+''Warning'': It can brick your wiki if used wrong!

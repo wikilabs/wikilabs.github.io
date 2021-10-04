@@ -1,6 +1,7 @@
 created: 20170203102703314
+description: This plugin adds the advanced search tiddler to the right sidebar. To do so, the caption text is replaced by icons.
 git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/advanced-search-plus
-modified: 20210324163213673
+modified: 20211004095804979
 tags: plugin $:/tags/Link Search Tools Development
 title: advanced-search-plus
 type: text/vnd.tiddlywiki
@@ -8,7 +9,7 @@ url: https://wikilabs.github.io/editions/advanced-search-plus
 
 ! Advanced Search Plugin
 
-This plugin adds the advanced search tiddler to the right sidebar. To do so, the caption text is replaced by icons only.
+This plugin adds the advanced search tiddler to the right sidebar. To do so, the caption text is replaced by icons.
 
 <p><span class="tc-big-gap"><svg class="wlc-image-standard-search tc-image-button" fill="#666" height="22pt" viewBox="0 0 128 128" width="22pt">
 	<g fill-rule="evenodd">

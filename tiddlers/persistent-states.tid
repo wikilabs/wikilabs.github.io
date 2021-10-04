@@ -1,8 +1,8 @@
 created: 20170203102859229
-url: n/a
+description: TODO - change it !
 git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/persistent-states
-modified: 20170314151154134
-tags: plugin
+modified: 20211004084908325
+tags: EXPERIMENTAL
 title: persistent-states
 type: text/vnd.tiddlywiki
-
+url: n/a

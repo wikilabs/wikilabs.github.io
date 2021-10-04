@@ -1,5 +1,5 @@
 created: 20190211002748002
-modified: 20210328103602859
+modified: 20211004091456060
 title: GettingStarted
 type: text/vnd.tiddlywiki
 
@@ -9,13 +9,11 @@ type: text/vnd.tiddlywiki
 
 ! Welcome
 
-Welcome at [[WikiLabs|wikilabs.github.io]] .. This is pmario playground with some ramblings about TiddlyWiki.
-
-It basically is a "jump off" page to various ~TiddlyWiki ''editions'', that show my ''themes'' and ''plugins''.
+Welcome at [[WikiLabs|wikilabs.github.io]] ... It basically is a "jump off" page to various ~TiddlyWiki ''editions'', that show my ''themes'' and ''plugins''.
 
 ! Library Configuration 
 
-!! Latest
+!! Latest Library Link
 
 ''Drag / Import the following link into your wiki, to import the configuration tiddler!''
 
@@ -28,12 +26,15 @@ It basically is a "jump off" page to various ~TiddlyWiki ''editions'', that show
 {{VideoThumbnail - Use the Library Configuration}}
 </div>
 
-!! Compatible with TW 5.1.21
+! Plugin Details
+
+Details can be found at: <$link class="wltc-btn-big-blue" to="Details">Click Details</$link>
+
+----
+
+Compatible with TW 5.1.21
 
 Import the following link, if you want to install a stable version which is compatible with ~TiddlyWiki version <= 5.1.21!!
 
 [[WikiLabs Plugin Configuration|$:/config/wikilabs/PluginLibraryWL/5.1.21]]
 
-! Plugin Details
-
-Details can be found at: <$link class="wltc-btn-big-blue" to="Details">Click Details</$link>

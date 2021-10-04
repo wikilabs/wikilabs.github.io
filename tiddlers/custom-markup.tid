@@ -1,6 +1,7 @@
 created: 20201226173051333
+description: This plugin can be used to apply new wikitext formatting to content. It allows you to improve the writing speed
 git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/custom-markup
-modified: 20210324163518758
+modified: 20211004085353849
 tags: Wikitex-Extensions Editor Advanced-Tools EXPERIMENTAL WikiText
 title: custom-markup
 type: text/vnd.tiddlywiki
@@ -8,6 +9,6 @@ url: https://wikilabs.github.io/editions/custom-markup
 
 ! Custom Markup Plugin
 
-This plugin allows you to improve the writing speed. It can be used to apply new wikitext formatting to content, that is imported (copy / pasted) from other sites.
+This plugin can be used to apply new wikitext formatting to content, that is imported (copy / pasted) from other sites. It allows you to improve the writing speed and it improves plain text readability.
 
 This is a "power-user tool"!
