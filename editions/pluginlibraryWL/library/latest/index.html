@@ -1,0 +1,483 @@
+<!doctype html><!-- IMPORTANT! This template overwrites tiddlywiki pluginlibrary template. So we will have a specific descripton! --><html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="application-name" content="Wikilabs Plugin Library" />
+<meta name="application-version" content="v0.0.0" />
+<meta name="copyright" content="Copyright 2020 Mario Pietsch" />
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<title>Plugin Library</title>
+<script>
+var assetList = [
+    {
+        "title": "$:/plugins/wikilabs/advanced-search-plus",
+        "name": "Advance Search Plus",
+        "description": "Adds some powerfull search tools",
+        "author": "Mario Pietsch",
+        "core-version": ">=5.1.15",
+        "version": "0.2.0",
+        "list": "readme license history",
+        "plugin-type": "plugin",
+        "dependents": "",
+        "type": "application/json",
+        "readme": "* Adds the \"Advanced Search\" tab also to the right sidebar\n* Replaces the default search option with an icon\n* Adds a \"+\" button to the advanced search function\n** Allows to pin existing search settings to a new tab\n\n----\n\n''Important'': This plugin modifies several core templates\n\n<$list filter=\"[[$:/plugins/wikilabs/advanced-search-plus]plugintiddlers[]prefix[$:/core/]] $:/AdvancedSearch $:/tags/AdvancedSearch\"><$link to=<<currentTiddler>>><<currentTiddler>><br></$link></$list>",
+        "requires-reload": "no"
+    },
+    {
+        "title": "$:/plugins/wikilabs/bundler",
+        "name": "Bundler",
+        "description": "Simple UI to create tiddler bundles",
+        "author": "pmario",
+        "core-version": ">=5.2.0",
+        "version": "0.4.0",
+        "list": "readme license history",
+        "plugin-type": "plugin",
+        "dependents": "",
+        "type": "application/json",
+        "readme": "! ~ReadMe\n\n* Documentation and more can be found at: https://wikilabs.github.io/editions/bundler\n* The position of the \"Bundles\" tab can be selected in the $:/ControlPanel : Bundles tab\n* There are 2 version of bundles\n** Bundle lists\n** Filtered Bundles ... which have to be activated by the user\n* The filter examples can be live tested, clicking on the number besides the \"export button\"\n* The Bundler can bundle itself and other plugins into a bundle :-).\n* You can create several \"selections\". Those combinations are persistently stored for reuse. \n* Bundle lists can be built up, over time. Just as the TW evolves. \n* The \"Enable Import Bundle\" option lets you collect / log imported tiddlers and create a new bundle, for future use.\n* This plugin only works with TW >= 5.1.18 since we use the \"subfilter\" operator which has been added in 5.1.18\n* It's easy to add the bundle configuration to the bundle itself eg: \n** If the bundle is named: `tagged-test.bundle`, the filter can look like this: `[tag[test]] tagged-test.bundle`\n* Have a closer look at the ~$:/ControlPanel: Bundles tab for more [[settings|$:/plugins/wikilabs/bundler/ui/ControlPanel/bundler-config]]. \n\n---\n\n''Important:'' This plugin modifies a core module and templates\n\n<$list filter=\"[[$:/plugins/wikilabs/bundler]plugintiddlers[]prefix[$:/core/]] \"><$link to=<<currentTiddler>>><<currentTiddler>><br></$link></$list>",
+        "requires-reload": "yes"
+    },
+    {
+        "title": "$:/plugins/wikilabs/click-effect",
+        "name": "Click Effect",
+        "description": "A simple mouse-button click effect",
+        "author": "pmario",
+        "core-version": ">=5.1.22",
+        "version": "0.2.0",
+        "list": "readme license history",
+        "plugin-type": "plugin",
+        "dependents": "",
+        "type": "application/json",
+        "readme": "! Basics\n\nThis plugin shows a little \"click animation\" if the left mouse button is released\n\n! Settings\n\nTh current setting is: ''{{$:/config/clickEffect}}''\n\n| Setting | Description |h\n|<$radio field=\"text\" tiddler=\"$:/config/clickEffect\" value=\"clickEffect\"> Click Effect</$radio> |A little click animation is shown at the cursor position |\n|<$radio field=\"text\" tiddler=\"$:/config/clickEffect\" value=\"pulse\"> Element Pulse</$radio> |The html-element, that is clicked is highlighted |\n|<$radio field=\"text\" tiddler=\"$:/config/clickEffect\" value=\"no\"> Off</$radio> |No click-animaiton is shown|\n\n----\n\n''Important'': This plugin modifies several core modules\n\n<$list filter=\"[[$:/plugins/wikilabs/click-effect]plugintiddlers[]prefix[$:/core/]]\"><$link to=<<currentTiddler>>><<currentTiddler>><br></$link></$list>",
+        "requires-reload": "yes"
+    },
+    {
+        "title": "$:/plugins/wikilabs/presentation-test",
+        "name": "Presentation Test",
+        "description": "A plugin to test subtypes",
+        "author": "Mario Pietsch",
+        "core-version": ">=5.2.0",
+        "version": "0.0.1",
+        "list": "readme license history",
+        "plugin-type": "content",
+        "plugin-subtype": "Presentation",
+        "dependents": "",
+        "type": "application/json",
+        "requires-reload": "no"
+    },
+    {
+        "title": "$:/plugins/wikilabs/custom-markup",
+        "name": "Custom Markup",
+        "description": "Adds a possibilty to style text content with wikitext syntax",
+        "list": "readme license history",
+        "dependents": "$:/plugins/wikilabs/pragma-comment",
+        "version": "0.20.0",
+        "plugin-type": "plugin",
+        "type": "application/json",
+        "readme": "Adds a possibilty to style text content with wikitext syntax\n\nIt's possible to manipulate the rules behaviour with: \n\n`\\rules only ticktext`\n`\\rules excpet ticktext`\n",
+        "requires-reload": "yes"
+    },
+    {
+        "title": "$:/plugins/wikilabs/edit-tabs",
+        "name": "Edit Tabs",
+        "description": "Internal link- or edit-buttons are added to tabs if selected",
+        "author": "Mario Pietsch",
+        "core-version": ">=5.1.15",
+        "version": "2.0.1",
+        "list": "readme history license",
+        "plugin-type": "plugin",
+        "dependents": "",
+        "type": "application/json",
+        "readme": "This plugin adds a little link icon to every tab.\n\n''Important:'' This plugin changes the core tabs macro.\n\n! Link-to-Tabs Settings\n\n{{$:/core/ui/ControlPanel/Settings/edit-tabs}}",
+        "requires-reload": "yes"
+    },
+    {
+        "title": "$:/plugins/wikilabs/field-search",
+        "name": "Field Search",
+        "description": "New tabs are added to search results",
+        "author": "Mario Pietsch",
+        "core-version": ">=5.1.18",
+        "version": "0.4.1",
+        "list": "readme license history",
+        "plugin-type": "plugin",
+        "dependents": "",
+        "type": "application/json",
+        "readme": "This plugin adds a \"Field Search\" tab to the search results\n\n{{$:/plugins/wikilabs/field-search/CP/Settings/field-search}}\n\n!! This plugin replaces the following system modules\n\n<$list filter=\"[[$:/plugins/wikilabs/field-search]plugintiddlers[]prefix[$:/core/]]\"><$link to=<<currentTiddler>>><<currentTiddler>><br></$link></$list>",
+        "requires-reload": "no"
+    },
+    {
+        "title": "$:/plugins/wikilabs/info-session",
+        "name": "Info Session",
+        "description": "Info button, with session persistent open/closed status",
+        "author": "Mario Pietsch",
+        "core-version": ">=5.1.6",
+        "version": "0.1.5",
+        "list": "readme license history",
+        "plugin-type": "plugin",
+        "dependents": "",
+        "type": "application/json",
+        "readme": "! Deprecated\n\nA similar function is part of the TW core since v5.1.14 see: [[ControlPanel : Settings|https://tiddlywiki.com/#%24%3A%2Fcore%2Fui%2FControlPanel%2FSettings%2FInfoPanelMode]]\n\n! Description\n\n* This plugin provides a tiddler info button, with a persistent open/close status ''for one browser session''.\n* The status is saved in a system \"$:/state/popup\" variable. \n** This means, if you reload the TW, the status is gone, sice they are not stored by default!\n\n''Important:''\n\n* This plugin changes the core tiddler: $:/core/ui/Buttons/info\n\n----\n\nIf you want persistent state variables, you need to ''add'' the \"persistent-states\" plugin ''and'' modify the ~ViewTemplate. The ''slant-01 theme\" provides this functionality.\n",
+        "requires-reload": "no"
+    },
+    {
+        "title": "$:/plugins/wikilabs/info-tagmap",
+        "name": "Info TagMap",
+        "description": "Adds a Tag-Map tab to the tiddler info section",
+        "author": "Mario Pietsch",
+        "core-version": ">=5.1.0",
+        "version": "0.1.3",
+        "list": "readme license history",
+        "plugin-type": "plugin",
+        "dependents": "",
+        "type": "application/json",
+        "readme": "This plugin adds a new tab to the tiddler info section. It's a multi column list of all tiddler tags plus all tagged tiddlers.\n\nThis plugin doesn't change any core templates.\n\nThe code below can be copied into the tag tiddlers.\n\n```\nAll tiddlers tagged: {{!!title}}\n\n<<list-links filter:\"[tag{!!title}]\">>\n```",
+        "requires-reload": "no"
+    },
+    {
+        "title": "$:/plugins/wikilabs/keyvalues",
+        "name": "Key Values",
+        "description": "improve data-tiddler handling",
+        "author": "pmario",
+        "core-version": ">=5.1.14",
+        "version": "2.1.0",
+        "list": "readme license history",
+        "plugin-type": "plugin",
+        "dependents": "",
+        "type": "application/json",
+        "readme": "! ''keyvalues'' Operator\n\nThe \"keyvalues\" operator only works with DataTiddlers. Non data-tiddlers will be ignored!\n\nThe <<.op keyvalues>> operator uses an extended syntax that permits multiple fields and flags to be passed:\n\n```\n[keyvalues:<field list>:<separator>:<flag>[<operand>]]\n```\n\n* ''field list'': an ordered, comma delimited list. Either `key`, `value` or both\n** defaults to `key,value` if blank\n* ''separator'': a separator string used to combine the output string\n** defaults to `: ` = `<colon><space>` if blank <small>(new since V2.1.0)</small>\n** If a space is needed, use: `&nbsp;`\n** If a colon `:` is needed, use: `&#58;`\n* ''flag'': `usekey`, `usevalue` or `useboth`\n** (defaults to `usekey` if blank)\n** only 1 flag is allowed. The first one will be used\n* ''operand'': filter operand\n\nThe following example lists both the <<.field key>> and the <<.field value>>. It uses the string <<.op -xx->> as a separator between key and value. It uses the regexp operand: <<.op digit-pattern>> to filter by the <<.field key>> \n\n```\n<$set name=\"digit-pattern\" value=\"[0][3-9]:\">\n[keyvalues:key,value:-xx-:usekey<digit-pattern>]\n```\n\nThe available flags are:\n\n* ''usekey'' - the <<.field key>> will be used to filter the output. The `<operand>` contains a regexp filter\n* ''usevalue'' - the <<.field value>> will be used to filter the output. The `<operand>` contains a regexp filter\n* ''useboth'' - the <<.field key>>, the <<.field seperator>> and <<.field value>> will be used to filter the output. The `<operand>` contains a regexp filter",
+        "requires-reload": "yes"
+    },
+    {
+        "title": "$:/plugins/wikilabs/link-to-tabs",
+        "name": "Link to Tabs",
+        "description": "Internal links are added to tabs if selected",
+        "author": "Mario Pietsch",
+        "core-version": ">=5.1.15",
+        "version": "2.0.1",
+        "list": "readme license history",
+        "plugin-type": "plugin",
+        "dependents": "",
+        "type": "application/json",
+        "readme": "This plugin adds a little link icon to every tab.\n\n''Important:'' This plugin changes the core tabs macro.\n\n! Link-to-Tabs Settings\n\n{{$:/core/ui/ControlPanel/Settings/link-to-tabs}}",
+        "requires-reload": "no"
+    },
+    {
+        "title": "$:/plugins/wikilabs/markdown-it",
+        "description": "Markdown parser (Commonmark compatible)",
+        "name": "Markdown It",
+        "author": "pmario",
+        "core-version": ">=5.0.0",
+        "version": "9.1.1",
+        "list": "readme usage license",
+        "plugin-type": "plugin",
+        "dependents": "",
+        "type": "application/json",
+        "readme": "The plugin version mirrors the markdown-it library version!\n\nThis is a WikiLabs plugin for parsing Markdown text, based on the [[markdown-it|https://markdown-it.github.io/]] project.\n\nIt is completely self-contained, and doesn't need an Internet connection in order to work. It works both in the browser and under Node.js.\n\n[[Source code can be found here!|https://github.com/wikilabs/plugins/tree/master/wikilabs]]\n",
+        "requires-reload": "yes"
+    },
+    {
+        "title": "$:/plugins/wikilabs/multicol-dropdown",
+        "name": "Multi Column Tag Dropdown",
+        "description": "contains flex-box CSS only",
+        "author": "Mario Pietsch",
+        "core-version": ">=5.1.0",
+        "version": "1.0.1",
+        "list": "readme license history",
+        "plugin-type": "plugin",
+        "dependents": "",
+        "type": "application/json",
+        "readme": "! Overview\n\n* This plugin changes most dropdown dialogs into multi column dialogs, with CSS only.\n* This plugin is handy, if you have eg: ''a lot of tags''\n\n! Important\n\nThis plugin does ''not'' change any core templates!",
+        "requires-reload": "no"
+    },
+    {
+        "title": "$:/plugins/wikilabs/new-tiddler-from-search",
+        "name": "New Tiddler from Search",
+        "description": "Extends the search interface",
+        "author": "Mario Pietsch",
+        "core-version": ">=5.1.6",
+        "version": "1.0.1",
+        "list": "readme license history",
+        "plugin-type": "plugin",
+        "dependents": "",
+        "type": "application/json",
+        "readme": "This plugin provides a minimal \"new Tiddler\" interface, if a search doesn't return any results. There are 2 buttons.\n\n* {{$:/core/images/cancel-button}} .. Clear the temporary template tiddler\n* {{$:/core/images/done-button}} .. Save the tiddler\n\n''Important'': This plugin overwrites core template tiddlers:\n\n* $:/core/ui/DefaultSearchResultList\n",
+        "requires-reload": "no"
+    },
+    {
+        "title": "$:/plugins/wikilabs/persistent-states",
+        "description": "Makes all state tiddlers persistent",
+        "name": "Persistent States",
+        "author": "Mario Pietsch",
+        "core-version": ">=5.1.0",
+        "version": "1.0.2",
+        "plugin-type": "plugin",
+        "list": "license readme history",
+        "dependents": "",
+        "type": "application/json",
+        "readme": "! Overview\n\nThis plugin saves all $:/state/ tiddlers and creates a simple UI, to remove them manually.\n\n! Important\n\nThis plugin in meant to be used for single-file wikis. It does ''not'' work in a \"multi user\" environment, since it will overwrite other users states if they are synchronized. \n\nThis plugin changes the following core tiddlers:\n\n* $:/config/SyncFilter\n* $:/config/SaverFilter\n\n! Simple UI\n\n[[$:/plugins/wikilabs/ui/persistent-states]]\n\n{{$:/plugins/wikilabs/ui/persistent-states}}\n",
+        "requires-reload": "no"
+    },
+    {
+        "title": "$:/plugins/wikilabs/pragma-comment",
+        "name": "Pragma Comment",
+        "description": "Add possibility to add 'pragma comments'",
+        "author": "Mario Pietsch",
+        "core-version": ">=5.1.15",
+        "version": "0.1.1",
+        "list": "readme license history",
+        "plugin-type": "plugin",
+        "dependents": "",
+        "type": "application/json",
+        "readme": "! Deprecated\n\nA similar function is part of the TW core since V5.2.0 See: https://tiddlywiki.com/#HTML%20in%20WikiText : Pragma Comments\n\n! Pragma Comment\n\nThe following lines will not create a parse-tree element and it will not interrupt the \"pragma parser\". So comments can be placed outside of macro definitions, which is much faster during macro execution.\n\n```\n\\\\ comment comes here till the end of the line\n\\\\ comments like this are fast since they are ignored and the result is cached!\n\n\\define test()\n\\\\ This comment is as slow as the next line\n<!-- HTML comment -->\n\\end\n\n\\\\ The whole definition is deactivated. .... Works well for a few lines of code!\n\\\\define test()\n\\\\end\n\n\\\\ if you have big junks of code, it's easier to rename the macro eg: testXXXX() as shown below!\n\\define testXXXX()\nx\nx\nx\n\\end\n```\n\n\n",
+        "requires-reload": "yes"
+    },
+    {
+        "title": "$:/plugins/wikilabs/remove-states",
+        "name": "Remove States",
+        "description": "Remove all state tiddlers. Simple UI",
+        "author": "Mario Pietsch",
+        "core-version": ">=5.1.6",
+        "version": "0.1.3",
+        "deprecated": "0.1.1",
+        "list": "readme license",
+        "plugin-type": "plugin",
+        "dependents": "",
+        "type": "application/json",
+        "readme": "! Overview\n\nThis plugin creates a simple UI, to remove all state tiddlers.\n\n! Simple UI\n\n[[$:/plugins/wikilabs/ui/remove-states]]\n\n{{$:/plugins/wikilabs/ui/remove-states}}\n",
+        "requires-reload": "no"
+    },
+    {
+        "title": "$:/plugins/wikilabs/space-space-newline",
+        "name": "Space Space Newline",
+        "description": "Adds a new rule to create hard linebreaks",
+        "list": "readme license history",
+        "version": "0.1.1",
+        "plugin-type": "plugin",
+        "dependents": "",
+        "type": "application/json",
+        "readme": "Adds a wikitext rule to create hard linebreaks with `<space><space><newLine>` or `<space><space><backslash>`\n\n```\nThere are 2 spaces and 1 linebreak at the end of this line  \nSo we should see 2 lines\n```\n\n>There are 2 spaces and 1 linebreak at the end of this line  \nSo we should see 2 lines\n\n---\n\n```\nThere are 2 spaces and a backslash at the end of this line  \\\nSo we should see 2 lines\n```\n\n>There are 2 spaces and a backslash at the end of this line  \\\nSo we should see 2 lines\n\n---\n\n```\nIf you want to have a visible backslash at the end of this line \\  \nYou need to add 2 spaces at the end of the line\n```\n\n>If you want to have a visible backslash at the end of this line \\  \nYou need to add 2 spaces after the backslash\n\n\nIt's possible to manipulate the rules behaviour with:\n\n`\\rules only ssnl`  \n`\\rules excpet ssnl`\n",
+        "requires-reload": "yes"
+    },
+    {
+        "title": "$:/plugins/wikilabs/speciallinks",
+        "name": "Speciallinks",
+        "description": "Camel_Case wikilinks are possible",
+        "core-version": ">=5.1.13",
+        "version": "0.0.2",
+        "list": "readme license history",
+        "plugin-type": "plugin",
+        "dependents": "",
+        "type": "application/json",
+        "readme": "Allow Camel_Case links\n",
+        "requires-reload": "yes"
+    },
+    {
+        "title": "$:/plugins/wikilabs/thin-scrollbars",
+        "name": "Thin Scrollbars",
+        "description": "A bit of CSS to modify default scrollbars",
+        "author": "Mario Pietsch",
+        "core-version": ">=5.1.15",
+        "version": "0.1.0",
+        "list": "readme license history",
+        "plugin-type": "plugin",
+        "dependents": "",
+        "type": "application/json",
+        "readme": "This plugin adds a little bit of CSS that creates small scrollbars for ~FireFox and ~WebKit based browsers\n",
+        "requires-reload": "no"
+    },
+    {
+        "title": "$:/plugins/wikilabs/tocP",
+        "name": "tocP",
+        "description": "Parent Based - Table of Contents",
+        "author": "Mario Pietsch",
+        "core-version": ">=5.1.13",
+        "version": "0.1.2",
+        "list": "readme license history",
+        "plugin-type": "plugin",
+        "dependents": "",
+        "type": "application/json",
+        "readme": "This plugin contains several \"Table of Content\" macros, that have the same parameters as the core toc macro. The main difference is, that it doesn't use tags to create the TOC scructure. It uses a \"parent\" field in so called \"child - tiddlers\".\n\n''Detailed Documentation''\n\nMore details about this plugin can be found at: https://wikilabs.github.io/editions/tocP\nMore plugins, themes and editions can be found at: https://wikilabs.github.io/\n\n''Important''\n\nThese macros are intended to be \"drop in replacement\" of the core macros. ... They have the exact same parameter names. Instead of \"parent\" it still uses \"tag\" as the first parameter. \n\n''Usage''\n\n```\n<div class=\"tocp tc-table-of-contents\">\n<<tocP root>>\n</div>\n\n<div class=\"tocp tc-table-of-contents\">\n<<tocP-expandable root>>\n</div>\n\n<div class=\"tocp tc-table-of-contents\">\n<<tocP-selective-expandable root field:\"any-name\">>\n</div>\n\n<div class=\"tc-table-of-contents\">\n<<tocP-tabbed-internal-nav root>>\n</div>\n\n<div class=\"tc-table-of-contents\">\n<<tocP-tabbed-external-nav root>>\n</div>\n\n```\n\n''Simple Configuration''\n\n* Enable / Disable the inline \"New Child\" button\n** {{$:/plugins/wikilabs/tocP/toggle-new-child-button}}\n\n''Known Problems''\n\n* The \"tabbed\" versions don't show the \"New Child\" buttons\n* Color customisation isn't possible atm",
+        "requires-reload": "no"
+    },
+    {
+        "title": "$:/plugins/wikilabs/trigger",
+        "name": "Trigger",
+        "description": "Activate actions, whenever the widget is shown",
+        "author": "pmario",
+        "core-version": ">=5.1.14",
+        "version": "0.1.1",
+        "list": "readme license history",
+        "plugin-type": "plugin",
+        "dependents": "",
+        "type": "application/json",
+        "readme": "\n* see trigger-test-edition\n",
+        "requires-reload": "yes"
+    },
+    {
+        "title": "$:/plugins/wikilabs/uni-link",
+        "description": "Enhances the prettylink-parser",
+        "name": "Uni-Link",
+        "author": "Mario Pietsch",
+        "core-version": ">=5.1.22",
+        "version": "2.1.0",
+        "plugin-type": "plugin",
+        "list": "readme history license",
+        "dependents": "",
+        "type": "application/json",
+        "readme": "\\define createExampleTiddlers()\n<$button>\n<$action-sendmessage $message=\"tm-new-tiddler\"  title=\"tiddler-with-caption\"  caption=\"Short Caption\"/>\n<$action-sendmessage $message=\"tm-new-tiddler\"  title=\"tiddler-with-subtitle\"  subtitle=\"Tiddler With Subtitle Only Defined\"/>\n<$action-sendmessage $message=\"tm-new-tiddler\"  title=\"tiddler-with-subtitle-and-caption\"  subtitle=\"Tiddler With Subtitle And Caption - using subtitle\" caption=\"capt.ion\"/>\n<$action-sendmessage $message=\"tm-new-tiddler\"  title=\"tiddler-with-alias\"  aliases=\"alias\" caption=\"alias-caption\" subtitle=\"alias-subtitle\" my-field=\"alias my-field\"/>\n<$action-sendmessage $message=\"tm-new-tiddler\"  title=\"test-links\" text={{$:/plugins/wikilabs/uni-link/backlinks-template!!text}}/>\n<$action-sendmessage $message=\"tm-new-tiddler\"  title=\"This is a Test\" text=\"This tiddler is used as an example for [[uni-link-search]]\"/>\nCreate \"uni-link\" example tiddlers!\n</$button>\n\\end\n\\define deleteExampleTiddlers()\n<$button>\n<$action-deletetiddler $tiddler=\"tiddler-with-caption\"/>\n<$action-deletetiddler $tiddler=\"tiddler-with-subtitle\"/>\n<$action-deletetiddler $tiddler=\"tiddler-with-subtitle-and-caption\"/>\n<$action-deletetiddler $tiddler=\"tiddler-with-alias\"/>\n<$action-deletetiddler $tiddler=\"test-links\"/>\n<$action-deletetiddler $tiddler=\"This is a Test\"/>\nDelete example tiddlers!\n</$button>\n\\end\n\n! Important\n\nThis plugin overwrites the core tiddler: $:/core/ui/TiddlerInfo/References\n\n''This uni-link version is compatible with ~TiddlyWiki >= V5.1.22''\n\nIf you need to use it with TW <= V5.1.21 you'll need to use an older version, which is available at: https://wikilabs.github.io/#GettingStarted\n\n! Video\n\n* See: https://wikilabs.github.io/editions/uni-link/#GettingStarted\n\n! Uni-link\n<<<\n* A new wikitext parsing rule, that calls the global [[\"uni-link\" macro|$:/plugins/wikilabs/uni-link/uni-link-macro]], instead of referencing the tiddler name. \n\n* It substitues the following tiddler fields: ''subtitle'', ''caption'' and ''title''. The $:/ControlPanel contains a new tab, that lets you define the behaviour of the uni-link macro. Default is ''title''. So there is no difference between the default setting of the plugin and the default behaviour in unmodified ~TiddlyWiki.\n<<<\n\n! Uni-link Search\n<<<\n`[[case insensitive title|??]]` will do a ''literal,  case-insensitive'' title search. It  will return ''the first'' tiddler it finds. \n\n''Examples'':\n\n|`[[This is a Test|??]]`|[[this is a test|??]]|\n|`[[doesn't exist|??]]`|[[doesn't exist|??]]|\n\n''Warning''\n\n* uni-link V2.1.0 does ''not'' contain a \"relink plugin\" addOn!\n* So if you change the tiddler name, those links won't be changed!\n<<<\n\n! Alias\n<<<\n* Alias Link Syntax\n** `[[anything|?]]` ... link to the tiddler that contains the alias: `anything`\n** `[[anything|?t]]` ... link to alias anything, but display the tiddler ''title''\n** `[[anything|?c]]` ... link to alias anything, but display the tiddler ''caption''\n** `[[anything|?s]]` ... link to alias anything, but display the tiddler ''subtitle''\n** `[[anything|?my-field]]` ... link to alias anything, but display the tiddler-field named ''my-field''\n** If a field doesn't exist, it shows the \"alias-text\" as used with `[[anything|?]]`\n** using [[aka-makros|$:/plugins/wikilabs/uni-link/aka-macros]] for tiddler alias handling\n\n* Alias Backlinks\n** open the tiddler (i)nfo area: References\n\n* Filter Operators:\n** `is[alias]` ... extends the core `is` operator see: [[https://tiddlywiki.com/#is Operator]]\n** `all[aliases]` ... extends the core `all` operator see: [ext[https://tiddlywiki.com/#all Operator]]\n** `[aliasbacklinks[]]` ... shows a list of all tiddlers that contain alias links\n** `[[?]aliasbacklinks[]sort[title]]` ... shows a list of tiddlers that contain undefined alias links\n\n* Right-Sidebar: More tab: [[Aliases|$:/plugins/wikilabs/uni-link/ui/MoreSideBar/Aliases]]\n** [[Sorted by Alias|$:/plugins/wikilabs/uni-link/ui/MoreSideBar/Aliases/byAlias]]\n** [[Sorted by Tiddler Title|$:/plugins/wikilabs/uni-link/ui/MoreSideBar/Aliases/byTitle]]\n** [[Undefined Aliases|$:/plugins/wikilabs/uni-link/ui/MoreSideBar/Aliases/undefined]]\n\n* uni-link $:/ControlPanel setting\n\n* [[uni-fields|$:/plugins/wikilabs/uni-link/uni-fields.js]] widget, that allows us to assign CSS classes based on tiddler fields existence.\n<<<\n\n! Installation\n<<<\n* You can drag & drop import this link: $:/plugins/wikilabs/uni-link<br>\n<<<\n\n! Link Styling\n<<<\n* Uni-links are styled like this: $:/plugins/wikilabs/uni-link/styles\n<<<\n\n! Examples\n<<<\nYou can use the following buttons to create example tiddlers!\n\n<<createExampleTiddlers>> -- <<deleteExampleTiddlers>>\n<<<",
+        "requires-reload": "yes"
+    },
+    {
+        "title": "$:/plugins/wikilabs/webdav-lm",
+        "name": "WegDav lm",
+        "description": "WebDav PUT saver - takes precedence",
+        "author": "Mario Pietsch",
+        "core-version": ">=5.1.14",
+        "version": "0.1.2",
+        "list": "readme history license",
+        "plugin-type": "plugin",
+        "dependents": "",
+        "type": "application/json",
+        "readme": "''Important:'' This plugin takes precedence over the core webDav PUT saver!\n\nThis saver uses `last-modified` and `if-unmodified-since` HTTP header attributes, to detect file inconsistencies,\nwhich allows the server to activate server-side file compression. \n\nThe core PUT saver uses etags, which don't work, if server-side file compression is active.\n",
+        "requires-reload": "yes"
+    },
+    {
+        "title": "$:/plugins/wikilabs/tm-open-story",
+        "name": "Open Story",
+        "description": "Open several story tiddlers",
+        "author": "pmario",
+        "core-version": ">=5.1.14",
+        "version": "0.2.0-beta",
+        "dependents": "$:/plugins/wikilabs/xenlist",
+        "list": "readme license history",
+        "plugin-type": "plugin",
+        "type": "application/json",
+        "readme": "* TODO\n\n! Example\n\n```\n<$button message=\"tm-open-story\" param=\"Story/NewX\" >open story</$button>\n```",
+        "requires-reload": "yes"
+    },
+    {
+        "title": "$:/plugins/wikilabs/xenlist",
+        "name": "xenlist",
+        "description": "New enlist operator that understands comments and filter syntax",
+        "author": "pmario",
+        "core-version": ">=5.1.14",
+        "version": "0.0.1-experimental",
+        "list": "readme license history",
+        "plugin-type": "plugin",
+        "dependents": "",
+        "type": "application/json",
+        "readme": "* TODO\n\n! Example\n\n```\nTODO\n```",
+        "requires-reload": "yes"
+    },
+    {
+        "title": "$:/themes/wikilabs/slant-01",
+        "name": "Slant 01",
+        "author": "Mario Pietsch",
+        "core-version": ">=5.1.10",
+        "version": "0.3.0",
+        "plugin-type": "theme",
+        "description": "slant-01 - an opinionated theme",
+        "dependents": "$:/themes/tiddlywiki/snowwhite $:/plugins/wikilabs/info-session $:/plugins/wikilabs/info-tagmap $:/plugins/wikilabs/multicol-dropdown",
+        "list": "license readme history",
+        "type": "application/json",
+        "readme": "! Overview\n\nThis is an opinonated theme, used by pmario.\n\n!!! License\n\nCC-BY-NC-SA - {{$:/themes/wikilabs/slant-01/license}}",
+        "requires-reload": "no"
+    }
+];
+
+<!-- libraryserver.js MUST be used from /tiddlywiki/ otherwise we may loose latest changes !! -->
+<!-- wikilabs/pluginlibrary doesn't contain the code!! -->
+/*\
+title: $:/plugins/tiddlywiki/pluginlibrary/libraryserver.js
+type: application/javascript
+module-type: library
+
+A simple HTTP-over-window.postMessage implementation of a standard TiddlyWeb-compatible server. It uses real HTTP to load the individual tiddler JSON files.
+
+\*/
+(function(){
+
+/*jslint node: true, browser: true */
+/*global $tw: false */
+"use strict";
+
+// Listen for window messages
+window.addEventListener("message",function listener(event){
+	console.log("plugin library: Received message from",event.origin);
+	console.log("plugin library: Message content",event.data);
+	switch(event.data.verb) {
+		case "GET":
+			if(event.data.url === "recipes/library/tiddlers.json") {
+				// Route for recipes/library/tiddlers.json
+				event.source.postMessage({
+					verb: "GET-RESPONSE",
+					status: "200",
+					cookies: event.data.cookies,
+					url: event.data.url,
+					type: "application/json",
+					body: JSON.stringify(assetList,null,4)
+				},"*");
+			} else if(event.data.url.indexOf("recipes/library/tiddlers/") === 0) {
+				var url = "recipes/library/tiddlers/" + encodeURIComponent(removePrefix(event.data.url,"recipes/library/tiddlers/"));
+				// Route for recipes/library/tiddlers/<uri-encoded-tiddler-title>.json
+				httpGet(url,function(err,responseText) {
+					if(err) {
+						event.source.postMessage({
+							verb: "GET-RESPONSE",
+							status: "404",
+							cookies: event.data.cookies,
+							url: event.data.url,
+							type: "text/plain",
+							body: "Not found"
+						},"*");
+					} else {
+						event.source.postMessage({
+							verb: "GET-RESPONSE",
+							status: "200",
+							cookies: event.data.cookies,
+							url: event.data.url,
+							type: "application/json",
+							body: responseText
+						},"*");
+					}
+				});
+			} else {
+				event.source.postMessage({
+					verb: "GET-RESPONSE",
+					status: "404",
+					cookies: event.data.cookies,
+					url: event.data.url,
+					type: "text/plain",
+					body: "Not found"
+				},"*");
+			}
+			break;
+	}
+},false);
+
+// Helper to remove string prefixes
+function removePrefix(string,prefix) {
+	if(string.indexOf(prefix) === 0) {
+		return string.substr(prefix.length);
+	} else {
+		return string;
+	}
+}
+
+// Helper for HTTP GET
+function httpGet(url,callback) {
+	var http = new XMLHttpRequest();
+	http.open("GET",url,true);
+	http.onreadystatechange = function() {
+		if(http.readyState == 4 && http.status == 200) {
+			callback(null,http.responseText);
+		}
+	};
+	http.send();
+}
+
+})();
+
+</script>
+</head>
+<body><h1>HelloThere</h1><p>This is the WikiLabs plugin library for TiddlyWiki. It is not intended to be opened directly in the browser.</p><p>See <a href="https://wikilabs.github.io/" target="_blank">https://wikilabs.github.io/</a> for details of how to install plugins.</p></body>
+</html>
