@@ -51,12 +51,26 @@ var assetList = [
         "requires-reload": "yes"
     },
     {
+        "title": "$:/plugins/wikilabs/presentation-test",
+        "name": "Presentation Test",
+        "description": "A plugin to test subtypes",
+        "author": "Mario Pietsch",
+        "core-version": ">=5.2.0",
+        "version": "0.0.1",
+        "list": "readme license history",
+        "plugin-type": "content",
+        "plugin-subtype": "Presentation",
+        "dependents": "",
+        "type": "application/json",
+        "requires-reload": "no"
+    },
+    {
         "title": "$:/plugins/wikilabs/custom-markup",
         "name": "Custom Markup",
         "description": "Adds a possibilty to style text content with wikitext syntax",
         "list": "readme license history",
         "dependents": "$:/plugins/wikilabs/pragma-comment",
-        "version": "0.11.4",
+        "version": "0.20.0",
         "plugin-type": "plugin",
         "type": "application/json",
         "readme": "Adds a possibilty to style text content with wikitext syntax\n\nIt's possible to manipulate the rules behaviour with: \n\n`\\rules only ticktext`\n`\\rules excpet ticktext`\n",
@@ -143,7 +157,7 @@ var assetList = [
         "plugin-type": "plugin",
         "dependents": "",
         "type": "application/json",
-        "readme": "This plugin adds a little link icon to every tab.\n\n''Important:'' This plugin changes the core tabs macro.\n\n! Lint-to-Tabs Settings\n\n{{$:/core/ui/ControlPanel/Settings/link-to-tabs}}",
+        "readme": "This plugin adds a little link icon to every tab.\n\n''Important:'' This plugin changes the core tabs macro.\n\n! Link-to-Tabs Settings\n\n{{$:/core/ui/ControlPanel/Settings/link-to-tabs}}",
         "requires-reload": "no"
     },
     {
@@ -194,12 +208,12 @@ var assetList = [
         "name": "Persistent States",
         "author": "Mario Pietsch",
         "core-version": ">=5.1.0",
-        "version": "1.0.1",
+        "version": "1.0.2",
         "plugin-type": "plugin",
         "list": "license readme history",
         "dependents": "",
         "type": "application/json",
-        "readme": "! Important\n\nWORK IN PROGRESS -> DOESN'T WORK ATM !!!!!\n\n! Overview\n\nThis plugin saves all $:/state/ tiddlers and creates a simple UI, to remove them manually.\n\n! Simple UI\n\n[[$:/plugins/wikilabs/ui/persistent-states]]\n\n{{$:/plugins/wikilabs/ui/persistent-states}}\n",
+        "readme": "! Overview\n\nThis plugin saves all $:/state/ tiddlers and creates a simple UI, to remove them manually.\n\n! Important\n\nThis plugin in meant to be used for single-file wikis. It does ''not'' work in a \"multi user\" environment, since it will overwrite other users states if they are synchronized. \n\nThis plugin changes the following core tiddlers:\n\n* $:/config/SyncFilter\n* $:/config/SaverFilter\n\n! Simple UI\n\n[[$:/plugins/wikilabs/ui/persistent-states]]\n\n{{$:/plugins/wikilabs/ui/persistent-states}}\n",
         "requires-reload": "no"
     },
     {

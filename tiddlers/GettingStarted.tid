@@ -1,5 +1,5 @@
 created: 20190211002748002
-modified: 20211004091456060
+modified: 20211006111309618
 title: GettingStarted
 type: text/vnd.tiddlywiki
 
@@ -28,13 +28,24 @@ Welcome at [[WikiLabs|wikilabs.github.io]] ... It basically is a "jump off" page
 
 ! Plugin Details
 
-Details can be found at: <$link class="wltc-btn-big-blue" to="Details">Click Details</$link>
+Details can be found at: <$link class="wltc-btn-big-blue" to="Details">Show Details</$link>
 
 ----
 
-Compatible with TW 5.1.21
+<details><summary>OLD -- Compatible with TW 5.1.23</summary>
+<p>
+Import the following link, if you want to install a stable version which is compatible with ~TiddlyWiki version 5.1.22 and 5.1.23!!
+</p>
+<p>
+[[WikiLabs Plugin Configuration 5.1.23|$:/config/wikilabs/PluginLibraryWL/5.1.23]]
+</p>
+</details>
 
+<details><summary>OLD -- Compatible with TW 5.1.21</summary>
+<p>
 Import the following link, if you want to install a stable version which is compatible with ~TiddlyWiki version <= 5.1.21!!
-
-[[WikiLabs Plugin Configuration|$:/config/wikilabs/PluginLibraryWL/5.1.21]]
-
+</p>
+<p>
+[[WikiLabs Plugin Configuration <= 5.1.21|$:/config/wikilabs/PluginLibraryWL/5.1.21]]
+</p>
+</details>
