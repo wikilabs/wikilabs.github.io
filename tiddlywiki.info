@@ -11,6 +11,7 @@
 		"wikilabs/new-tiddler-from-search",
 		"wikilabs/uni-link",
 		"wikilabs/field-search",
+		"wikilabs/field-visibility",
 		"wikilabs/advanced-search-plus"
 	],
 	"themes": [
