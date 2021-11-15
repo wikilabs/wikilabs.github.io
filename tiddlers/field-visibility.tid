@@ -1,8 +1,8 @@
 created: 20211112131351465
 description: This plugin adds a toggle button to the "fields tab" in the tiddler info area, which can be seen in tiddler view mode
 git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/field-visibility
-modified: 20211112142854121
-tags: $:/tags/Link Tabs Tools Fields EXPERIMENTAL
+modified: 20211115202707431
+tags: $:/tags/Link Tools Fields EXPERIMENTAL
 title: field-visibility
 type: text/vnd.tiddlywiki
 url: https://wikilabs.github.io/editions/field-visibility
