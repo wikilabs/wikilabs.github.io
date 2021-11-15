@@ -70,7 +70,7 @@ var assetList = [
         "description": "Adds a possibilty to style text content with wikitext syntax",
         "list": "readme license history",
         "dependents": "$:/plugins/wikilabs/pragma-comment",
-        "version": "0.21.3",
+        "version": "0.22.0",
         "plugin-type": "plugin",
         "type": "application/json",
         "readme": "Adds a possibilty to style text content with wikitext syntax\n\nIt's possible to manipulate the rules behaviour with: \n\n`\\rules only ticktext`\n`\\rules excpet ticktext`\n",
@@ -91,6 +91,20 @@ var assetList = [
         "requires-reload": "yes"
     },
     {
+        "title": "$:/plugins/wikilabs/field-editor",
+        "name": "Multiline Field Editor",
+        "description": "Side by side multiline field editor",
+        "author": "Mario Pietsch",
+        "core-version": ">=5.1.15",
+        "version": "0.0.1",
+        "list": "readme license history",
+        "dependents": "$:/plugins/wikilabs/field-visibility",
+        "plugin-type": "plugin",
+        "type": "application/json",
+        "readme": "\\define createFieldSwitcherElement()\n<$action-createtiddler $basetitle=\"$:/config/wikilabs/field/<your field name comes here>\" $template=\"$:/config/wikilabs/field/text\" tags=\"$:/tags/wikilabs/fieldswitcher\" description=\"Add a short description text here and replace the icon below\" icon=\"{{$:/core/images/spiral}}\" $overwrite=\"yes\" text=\"yourFieldName\"/>\n<$action-sendmessage $message=\"tm-edit-tiddler\" $param=\"$:/config/wikilabs/field/<your field name comes here>\"/>\n\\end\n\n!! About\n\nThis plugin adds a field selector above the text editor and a new button that allows you to edit different fields in multiline edit mode side by side\n\n!! Video\n\nTODO\n\n!! Create a new Field Switcher Element\n\nTo create a new field-switcher button click the button below and follow the instructions.\n\n<$button actions=<<createFieldSwitcherElement>> >\nCreate a new Field Switcher Element\n</$button>\n\n!! Toggle Field label\n\nBy default a label is shown, when the tiddler shows a filed different to the \"text\" field.\n\n<$checkbox tiddler=\"$:/config/wikilabs/show-field-label\" field=text checked=\"yes\" unchecked=\"no\" default=\"yes\"> Show Field Label</$checkbox>\n\n!!! ''Imporant''\n\n* If you use an icon it has to be covered in double curly braces eg: `{{$:/core/images/globe}}`.\n* Icons can be found at the [[Image Gallery Examples|https://tiddlywiki.com/#Icon%20Gallery:%5B%5BIcon%20Gallery%5D%5D%20%5B%5BLanguageGallery%20Example%5D%5D]]\n* [[\"TW Icons\" by morosanuae|https://tiddlywiki.com/#%22TW%20Icons%22%20by%20morosanuae]]\n\n!! Existing Field Switcher Elements\n\n<<list-links \"[all[shadows+tiddlers]tag[$:/tags/wikilabs/fieldswitcher]]\">>\n\n!! Dependencies\n\nThis plugin depends on the: [[Field Visibility Plugin|https://wikilabs.github.io/editions/field-visibility]]\n\n!! Modified Core Tiddles\n\nThis plugin changes the following core tiddlers:\n\n* $:/core/ui/Buttons/info\n* $:/core/ui/EditTemplate\n* $:/core/ui/EditTemplate/body\n* $:/core/ui/EditTemplate/body/editor\n* $:/core/ui/EditTemplate/body/preview/output\n* $:/core/ui/EditTemplate/fields\n* $:/core/ui/ViewTemplate\n* $:/core/ui/ViewTemplate/body\n* $:/core/ui/ViewTemplate/subtitle\n\nThe full list of tiddlers in the plugin can be found at: [[$:/plugins/wikilabs/field-editor]] '': contents'' tab.",
+        "requires-reload": "no"
+    },
+    {
         "title": "$:/plugins/wikilabs/field-search",
         "name": "Field Search",
         "description": "New tabs are added to search results",
@@ -102,6 +116,20 @@ var assetList = [
         "dependents": "",
         "type": "application/json",
         "readme": "This plugin adds a \"Field Search\" tab to the search results\n\n{{$:/plugins/wikilabs/field-search/CP/Settings/field-search}}\n\n!! This plugin replaces the following system modules\n\n<$list filter=\"[[$:/plugins/wikilabs/field-search]plugintiddlers[]prefix[$:/core/]]\"><$link to=<<currentTiddler>>><<currentTiddler>><br></$link></$list>",
+        "requires-reload": "no"
+    },
+    {
+        "title": "$:/plugins/wikilabs/field-visibility",
+        "name": "Toggle Field Visibility",
+        "description": "Change the field visibility in the tiddler info area fields tab",
+        "author": "Mario Pietsch",
+        "core-version": ">=5.1.15",
+        "version": "0.0.1",
+        "list": "readme license history",
+        "plugin-type": "plugin",
+        "dependents": "",
+        "type": "application/json",
+        "readme": "\\define showInfo()\n<$action-setfield $tiddler=\"$:/state/popup/tiddler-info-471453735\" text=\"yes\" />\n\\end\n\nThis plugin adds a toggle button to the Fields tab in the tiddler info area, which can be seen in tiddler view mode.\n\nIf you need the tiddler info button in edit mode you will need to install the: \"Tiddler Info in Edit Mode\" plugin.\n\n<$button actions=<<showInfo>> to=\"test-field-visibility\" >\nClick this button to show the tiddler info area\n</$button>\n\n''Important:'' This plugin changes the following core tiddlers\n\n* $:/core/ui/TiddlerInfo/Fields\n* $:/core/ui/TiddlerFieldTemplate\n",
         "requires-reload": "no"
     },
     {
