@@ -1,5 +1,5 @@
 created: 20190211002748002
-modified: 20211006111309618
+modified: 20220628120513491
 title: GettingStarted
 type: text/vnd.tiddlywiki
 
@@ -10,6 +10,8 @@ type: text/vnd.tiddlywiki
 ! Welcome
 
 Welcome at [[WikiLabs|wikilabs.github.io]] ... It basically is a "jump off" page to various ~TiddlyWiki ''editions'', that show my ''themes'' and ''plugins''.
+
+Development repositories can be found at GitHub
 
 ! Library Configuration 
 
