@@ -1,0 +1,14 @@
+created: 20220830111939991
+description: This plugin implements preview elements to the [[$:/PaletteManager|https://wikilabs.github.io/editions/palette-manager]], to make is easier to see how colour changes effect the UI. It is intended [[to get feedback at Talk-TiddlyWiki|https://talk.tiddlywiki.org/t/palette-manager-test-version/4434/8]]
+git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/palette-manager
+modified: 20220830112909210
+tags: EXPERIMENTAL $:/tags/Link Palette-Manager Colour
+title: palette-manager
+type: text/vnd.tiddlywiki
+url: https://wikilabs.github.io/editions/palette-manager
+
+! Palette Manager
+
+{{!!description}}
+
+It should be a "quality of live" improvement ;)
