@@ -222,6 +222,20 @@
         "requires-reload": "no"
     },
     {
+        "title": "$:/plugins/wikilabs/palette-manager",
+        "description": " - to be included into the TW core",
+        "name": "Palette Manager - Preview",
+        "author": "Mario Pietsch",
+        "core-version": ">=5.1.14",
+        "version": "0.2.0",
+        "plugin-type": "plugin",
+        "list": "license readme history",
+        "dependents": "",
+        "type": "application/json",
+        "readme": "! License\n\n!! Be aware of the license, which will be changed \n\n[[$:/plugins/wikilabs/palette-manager/license]]\n\n!! Video\n\nYoutube will start collecting user-info, if you play the video!\n\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube-nocookie.com/embed/20mQwPuMv6w\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>\n\n\n!! Feedback\n\nFeedback will be welcome at: [[to get feedback at Talk-TiddlyWiki|https://talk.tiddlywiki.org/t/palette-manager-feature-complete-preview/5095]]\n\n! Overview\n\nThis plugin is an ''preview'' plugin, that should be implemented into the TW core in the future.\n\n* You can open it using the [[$:/PaletteManager]] ... where the previews look a bit different as if you open it with the \n* $:/ControlPanel --> Appearence --> Palette -> <kbd>show editor</kbd> button\n\n! Important\n\nThis plugin ''at the moment'' overwrites or adds the following system tiddlers:\n\n|Shadow Tiddler |Reason to change it atm |h\n|$:/PaletteManager |This is needed to get the new UI as shown in the image below |\n|$:/PaletteManager/preview |contains the whole preview code, which is `\\import`ed to $:/PaletteManager |\n|$:/core/macros/colour-picker-resolved |This macro is used by the $:/PaletteManager to show resolved colours|\n|$:/_tw5.com-styles |This is needed to test the \"Big Download Button\" settings |\n|$:/themes/tiddlywiki/vanilla/base |Changes here are needed so that some colour settings take effect, which isn't the case with the default setting in the core at the moment |\n\nThe full list of plugin tiddlers can be seen at: $:/plugins/wikilabs/palette-manager -> content tab\n",
+        "requires-reload": "yes"
+    },
+    {
         "title": "$:/plugins/wikilabs/persistent-states",
         "description": "Makes all state tiddlers persistent",
         "name": "Persistent States",
@@ -337,7 +351,7 @@
         "name": "Uni-Link",
         "author": "Mario Pietsch",
         "core-version": ">=5.1.22",
-        "version": "2.2.0",
+        "version": "2.3.0",
         "plugin-type": "plugin",
         "list": "readme history license",
         "dependents": "",
