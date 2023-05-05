@@ -1,0 +1,12 @@
+created: 20230505100258343
+description: This plugin adds a new editor toolbar button, that allows you to trim whitespace from a selected text area
+git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/whitespace-trim
+modified: 20230505100443537
+tags: $:/tags/Link Tools Editor plugin
+title: whitespace-trim
+type: text/vnd.tiddlywiki
+url: https://wikilabs.github.io/editions/whitespace-trim
+
+! Whitespave Trim (Editor toolbar button)
+
+This plugin adds a new editor toolbar button, that allows you to trim whitespace from a selected text area
