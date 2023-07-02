@@ -1,8 +1,8 @@
 created: 20170203102859229
-description: TODO - change it !
+description: This plugin saves all $:/state/ tiddlers and creates a simple UI, to remove them manually
 git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/persistent-states
-modified: 20211004084908325
+modified: 20230702102932156
 tags: EXPERIMENTAL
 title: persistent-states
 type: text/vnd.tiddlywiki
-url: n/a
+url: https://wikilabs.github.io/editions/persistent-states

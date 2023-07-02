@@ -1,8 +1,8 @@
 created: 20170203102751368
 description: This plugin provides a tiddler info button, with a persistent open/close status for one browser session
 git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/info-session
-modified: 20220327181802127
-tags: $:/tags/Link UI Tabs Info-Section Navigation
+modified: 20230702102039640
+tags: $:/tags/Link UI Tabs Info-Section Navigation DEPRECATED
 title: info-session
 type: text/vnd.tiddlywiki
 url: https://wikilabs.github.io/editions/info-session

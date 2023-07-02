@@ -1,5 +1,5 @@
 created: 20190211002748002
-modified: 20220628120513491
+modified: 20230702102716563
 title: GettingStarted
 type: text/vnd.tiddlywiki
 
@@ -30,11 +30,20 @@ Development repositories can be found at GitHub
 
 ! Plugin Details
 
-Details can be found at: <$link class="wltc-btn-big-blue" to="Details">Show Details</$link>
+Details can be found at: <$link class="wltc-btn-big-blue" to="Details">Show Editions, Themes and Plugins</$link>
 
 ----
 
-<details><summary>OLD -- Compatible with TW 5.1.23</summary>
+<details><summary>OLD -- Compatible with TW v5.2.7 and down</summary>
+<p>
+Import the following link, if you want to install a stable version which is compatible with ~TiddlyWiki version v5.2.7 down to v5.1.23
+</p>
+<p>
+[[WikiLabs Plugin Configuration 5.2.7|$:/config/wikilabs/PluginLibraryWL/5.2.7]]
+</p>
+</details>
+
+<details><summary>OLD -- Compatible with TW v5.1.23 and down</summary>
 <p>
 Import the following link, if you want to install a stable version which is compatible with ~TiddlyWiki version 5.1.22 and 5.1.23!!
 </p>
@@ -43,7 +52,7 @@ Import the following link, if you want to install a stable version which is comp
 </p>
 </details>
 
-<details><summary>OLD -- Compatible with TW 5.1.21</summary>
+<details><summary>OLD -- Compatible with TW v5.1.21 and down</summary>
 <p>
 Import the following link, if you want to install a stable version which is compatible with ~TiddlyWiki version <= 5.1.21!!
 </p>

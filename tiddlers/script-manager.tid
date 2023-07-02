@@ -1,7 +1,7 @@
 created: 20171215212502872
 description: This edition is very handy to collect links to different topics
 git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/script-manager
-modified: 20211004090004655
+modified: 20230702102323837
 tags: edition $:/tags/Link HowTo WikiText Development
 title: script-manager
 type: text/vnd.tiddlywiki
@@ -9,5 +9,7 @@ url: https://wikilabs.github.io/editions/script-manager
 
 ! Script Manager Edition
 
-This edition was mainly created to support a video series, that show, how the edition was created: Step by Step
+This edition was mainly created to support a video series, that shows, how the edition was created: ''Step by Step''
+
+I do use a sightly "pimped" version as my day to day link and idea manager. 
 
