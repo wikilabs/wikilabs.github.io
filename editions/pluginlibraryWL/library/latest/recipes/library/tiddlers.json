@@ -185,7 +185,7 @@
         "description": "Internal links are added to tabs if selected",
         "author": "Mario Pietsch",
         "core-version": ">=5.1.15",
-        "version": "2.2.0",
+        "version": "2.3.0",
         "list": "readme license history",
         "plugin-type": "plugin",
         "dependents": "",
@@ -342,6 +342,20 @@
         "dependents": "",
         "type": "application/json",
         "readme": "This plugin contains several \"Table of Content\" macros, that have the same parameters as the core toc macro. The main difference is, that it doesn't use tags to create the TOC scructure. It uses a \"parent\" field in so called \"child - tiddlers\".\n\n''Detailed Documentation''\n\nMore details about this plugin can be found at: https://wikilabs.github.io/editions/tocP\nMore plugins, themes and editions can be found at: https://wikilabs.github.io/\n\n''Important''\n\nThese macros are intended to be \"drop in replacement\" of the core macros. ... They have the exact same parameter names. Instead of \"parent\" it still uses \"tag\" as the first parameter. \n\n''Usage''\n\n```\n<div class=\"tocp tc-table-of-contents\">\n<<tocP root>>\n</div>\n\n<div class=\"tocp tc-table-of-contents\">\n<<tocP-expandable root>>\n</div>\n\n<div class=\"tocp tc-table-of-contents\">\n<<tocP-selective-expandable root field:\"any-name\">>\n</div>\n\n<div class=\"tc-table-of-contents\">\n<<tocP-tabbed-internal-nav root>>\n</div>\n\n<div class=\"tc-table-of-contents\">\n<<tocP-tabbed-external-nav root>>\n</div>\n\n<div class=\"tc-table-of-contents\">\n<<tocP-selective-expandable root field:\"asdf\">>\n</div>\n\n```\n\n''For Streams .. WIP''\n\n```\n<div class=\"tocp tc-table-of-contents\">\n<$set name=\"tv-wikilinks\" value=\"no\">\n<<tocP \"Streams 0.2 improvements\" viewField:\"text\" sort:\"[sortby{!!stream-list}]\">>\n</div>\n```\n\n''streamTextTemplate'': is just a `<$transclude mode=block/>`\n''viewField'': usually needs to be `text` if a template is used\n\n```\n<div class=\"tocp tc-table-of-contents\">\n<$set name=\"tv-wikilinks\" value=\"no\">\n<<tocP \"Streams 0.2 improvements\" viewField:\"text\" sort:\"[sortby{!!stream-list}]\" viewFieldTemplate:\"streamTextTemplate\">>\n</$set>\n</div>\n```\n\n''Simple Configuration''\n\n* Enable / Disable the inline \"New Child\" button\n** {{$:/plugins/wikilabs/tocP/toggle-new-child-button}}\n\n''Known Problems''\n\n* The \"tabbed\" versions don't show the \"New Child\" buttons\n* Color customisation isn't possible atm",
+        "requires-reload": "no"
+    },
+    {
+        "title": "$:/plugins/wikilabs/trails",
+        "name": "Trails",
+        "description": "Show a breadcrumbs trail to visualize the context",
+        "author": "Mario Pietsch",
+        "core-version": ">=5.2.0",
+        "version": "0.9.0",
+        "list": "readme config license history",
+        "plugin-type": "plugin",
+        "dependents": "",
+        "type": "application/json",
+        "readme": "This plugin allows you to use 3 different responsive trail configurations\n\n!! trail CSS Options\n\nIf the user changes the global font-size and / or line-height in the theme to higher values, it will be needed to adjust the breadcrumb settings accordingly. The following parameters can be used to dynamically calculate the \"arrow shape\". For small screens the graphical arrow shape is replaced by plain text.\n\n* $:/config/wl/trails/height ... Defines the line-height used for the trail arrow elements. Defaults to: 22\n* $:/config/wl/trails/fontSize ... Defines the default CSS font-size setting. Defaults to: 15\n* $:/config/wl/trails/paddingBottom ... Can be used to increase the bottom padding of the arrows. Defaults to: 3\n* $:/config/wl/trails/paddingTop ... Can be used to change the top padding of the arrows. Defaults to: 3\n* $:/config/wl/trails/showArrows ... If set to \"yes\" the trail \"arrows\" are shown. Any other value shows the \"plain text\" version, independent of the screen width. Defaults to: yes\n\n!! Global Mode Setting\n\n    $:/config/wl/trails/filterMode ... defines the default \"mode\" the trail macro uses for the \"filter syntax\" related documentation \n\n!! Usage\n\n```\n<$macrocall $name=\"trail\" stop=\"Filters\" mode={{$:/config/wl/trails/filterMode}}/>\n```\n\n!! Settings\n\n{{$:/plugins/wikilabs/trails/config}}\n\n\n!! Important\n\n''This plugin modifies a core module and templates''\n\n<ul><$list filter=\"[[$:/plugins/wikilabs/trail]plugintiddlers[]prefix[$:/core/]]\" emptyMessage=\"none\"><li><$link to=<<currentTiddler>>><<currentTiddler>><br></$link></li></$list></ul>",
         "requires-reload": "no"
     },
     {

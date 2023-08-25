@@ -1,0 +1,12 @@
+created: 20230825081033089
+description: Breadcrumbs & Trails -- Visualize your Context Structure
+git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/trails
+modified: 20230825081350554
+tags: plugin $:/tags/Link TOC Table-of-Contents Outline Linking Navigation Editor Breadcrumbs Trails
+title: trails
+type: text/vnd.tiddlywiki
+url: https://wikilabs.github.io/editions/trails
+
+! trails -- Breadcrumbs & Trails -- Visualize your Context
+
+Breadcrumbs and Trails are used as a navigational aid in user interfaces and on web pages. It allows users to keep track and maintain awareness of their locations within programs, documents, or websites.
