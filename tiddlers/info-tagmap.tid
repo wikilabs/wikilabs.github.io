@@ -1,5 +1,7 @@
 created: 20170203102805644
 description: This plugin adds a "tag map" to the tiddler info area
+forum: TODO
+git-issues: https://github.com/wikilabs/plugins/issues
 git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/info-tagmap
 modified: 20211004084002885
 tags: plugin $:/tags/Link Info-Section Tags Tagging

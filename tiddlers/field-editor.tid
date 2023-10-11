@@ -1,5 +1,7 @@
 created: 20211115202510904
 description: This plugin adds a field selector above the text editor and a new button that allows you to edit different fields in multiline edit mode side by side
+forum: https://talk.tiddlywiki.org/t/intro-multiline-field-editor-plugin/1580
+git-issues: https://github.com/wikilabs/plugins/issues
 git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/field-editor
 modified: 20220330171911441
 tags: $:/tags/Link Tools Fields Editor plugin

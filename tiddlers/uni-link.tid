@@ -1,5 +1,7 @@
 created: 20170622132619091
 description: This plugin add several new options to use the TW "link-syntax" in an extended way. It also adds an "aliasing" system to the wiki
+forum: TODO
+git-issues: https://github.com/wikilabs/plugins/issues
 git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/uni-link
 modified: 20211004085105281
 tags: plugin $:/tags/Link Alias Wikitex-Extensions WikiText Editor UI Filter Formatting Advanced-Search

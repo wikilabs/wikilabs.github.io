@@ -1,5 +1,7 @@
 created: 20171215212502872
 description: This edition is very handy to collect links to different topics
+forum: TODO
+git-issues: https://github.com/wikilabs/plugins/issues
 git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/script-manager
 modified: 20230702102323837
 tags: edition $:/tags/Link HowTo WikiText Development

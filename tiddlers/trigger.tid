@@ -1,5 +1,7 @@
 created: 20191101121318449
 description: This plugin allows you have mouse "click animations"
+forum: TODO
+git-issues: https://github.com/wikilabs/plugins/issues
 git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/trigger
 modified: 20220422105947294
 tags: EXPERIMENTAL Advanced-Tools Development $:/tags/Link

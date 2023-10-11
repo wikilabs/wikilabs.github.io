@@ -1,5 +1,7 @@
 created: 20170612083932764
 description: This plugin allows you to create "export/import" configurations and save them as a bundle
+forum: https://talk.tiddlywiki.org/t/intro-bundler-plugin-allows-you-to-create-export-import-configurations-and-save-them-as-a-bundle/5958
+git-issues: https://github.com/wikilabs/plugins/issues
 git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/bundler
 modified: 20211004083148108
 tags: plugin $:/tags/Link Import Export Tools JSON

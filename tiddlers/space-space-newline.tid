@@ -1,5 +1,7 @@
 created: 20201226173536908
 description: This plugin adds the possibility to add hard linebreaks into prose wikitext
+forum: TODO
+git-issues: https://github.com/wikilabs/plugins/issues
 git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/space-space-newline
 modified: 20211004084930280
 tags: plugin $:/tags/Link WikiText Editor Wikitex-Extensions

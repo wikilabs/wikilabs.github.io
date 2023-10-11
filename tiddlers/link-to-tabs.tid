@@ -1,5 +1,7 @@
 created: 20170203103021609
 description: This plugin adds internal tiddler links to every tab if selected
+forum: TODO
+git-issues: https://github.com/wikilabs/plugins/issues
 git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/link-to-tabs
 modified: 20220422105744855
 tags: plugin Tabs UI Development $:/tags/Link

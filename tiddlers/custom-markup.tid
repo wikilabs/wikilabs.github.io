@@ -1,5 +1,7 @@
 created: 20201226173051333
 description: This plugin can be used to apply new wikitext formatting to content. It allows you to improve the writing speed
+forum: https://talk.tiddlywiki.org/t/intro-the-custom-markup-plugin-beta/1219
+git-issues: https://github.com/wikilabs/plugins/issues
 git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/custom-markup
 modified: 20220422110032407
 tags: Wikitex-Extensions Editor Advanced-Tools EXPERIMENTAL WikiText $:/tags/Link

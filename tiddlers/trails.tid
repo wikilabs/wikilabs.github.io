@@ -1,5 +1,7 @@
 created: 20230825081033089
 description: Breadcrumbs & Trails -- Visualize your Context Structure
+forum: TODO
+git-issues: https://github.com/wikilabs/plugins/issues
 git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/trails
 modified: 20230825081350554
 tags: plugin $:/tags/Link TOC Table-of-Contents Outline Linking Navigation Editor Breadcrumbs Trails

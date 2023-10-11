@@ -1,5 +1,7 @@
 created: 20201226173619022
 description: This plugin will allow you to create / save / reload "story river" configurations.
+forum: TODO
+git-issues: https://github.com/wikilabs/plugins/issues
 git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/wltm-open-story
 modified: 20211004085607794
 tags: EXPERIMENTAL Advanced-Tools Search Story-River Story Import Export

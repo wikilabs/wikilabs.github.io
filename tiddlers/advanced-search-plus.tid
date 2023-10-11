@@ -1,5 +1,7 @@
 created: 20170203102703314
 description: This plugin adds the advanced search tiddler to the right sidebar. To do so, the caption text is replaced by icons.
+forum: https://talk.tiddlywiki.org/t/intro-advanced-search-plus-asp-for-advanced-users-and-developers/5875
+git-issues: https://github.com/wikilabs/plugins/issues
 git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/advanced-search-plus
 modified: 20230113132056458
 tags: plugin $:/tags/Link Search Tools Development

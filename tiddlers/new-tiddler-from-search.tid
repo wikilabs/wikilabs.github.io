@@ -1,5 +1,7 @@
 created: 20170203102848440
 description: This plugin adds a "New Tiddler" template, into the default search input element, that uses the "search term" as title
+forum: TODO
+git-issues: https://github.com/wikilabs/plugins/issues
 git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/new-tiddler-from-search
 modified: 20211004084133271
 tags: plugin $:/tags/Link Search Navigation Dropdown Popup Tiddler-Creation

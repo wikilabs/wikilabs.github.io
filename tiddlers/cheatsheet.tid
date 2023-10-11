@@ -1,7 +1,9 @@
 created: 20230501144550483
 description: This plugin adds an editor and a page toolbar button F1 that opens a cheatsheet popup
+forum: https://talk.tiddlywiki.org/t/intro-tiddlywiki-wikitext-cheatsheet/6926
+git-issues: https://github.com/wikilabs/plugins/issues
 git-repo: https://github.com/wikilabs/editions/tree/master/cheatsheet
-modified: 20231003133341281
+modified: 20231007113508800
 tags: plugin $:/tags/Link Documentation Cheatsheet
 title: cheatsheet
 type: text/vnd.tiddlywiki
@@ -9,4 +11,4 @@ url: https://wikilabs.github.io/editions/cheatsheet
 
 ! Wikitext Cheatsheet
 
-This plugin adds an editor and a page toolbar help button F1 that opens a cheatsheet popup, which gives you an overview about all TW wikitext rules.
+This plugin adds an editor and a page toolbar help button <kbd>F1</kbd> that opens a cheatsheet popup, which gives you an overview about all TW wikitext rules and a lot more ...

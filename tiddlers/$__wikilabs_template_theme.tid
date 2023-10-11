@@ -7,8 +7,15 @@ type: text/vnd.tiddlywiki
 <$list filter="[all[current]regexp:tags[plugin|edition|theme|EXPERIMENTAL]]">
 
 ! Demo
-see: {{!!url}}
 
-! Repository 
-see: {{!!git-repo}}
+* see: {{!!url}}
+
+! Feedback
+
+* Forum: {{!!forum}}
+* GitHub: {{!!git-issues}}
+
+! Repository
+
+* Source Code: {{!!git-repo}}
 </$list>

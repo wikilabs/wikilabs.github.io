@@ -1,5 +1,7 @@
 created: 20190218120000000
 description: This plugin adds several new tabs to the search dropdown. The elements, that should be used can be configured in the $:/ControlPanel
+forum: TODO
+git-issues: https://github.com/wikilabs/plugins/issues
 git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/field-search
 modified: 20211004083923578
 tags: plugin $:/tags/Link Search Tabs Advanced-Search Tools

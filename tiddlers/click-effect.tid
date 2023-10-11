@@ -1,5 +1,7 @@
 created: 20201226173139104
 description: This plugin starts a little animation if the left mouse button is released
+forum: TODO
+git-issues: https://github.com/wikilabs/plugins/issues
 git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/click-effect
 modified: 20211004083402788
 tags: plugin $:/tags/Link Animation Presentation

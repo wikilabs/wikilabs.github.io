@@ -1,5 +1,7 @@
 created: 20201226173504500
 description: This plugin allows developers to add comments outside of "macro definitions"
+forum: TODO
+git-issues: https://github.com/wikilabs/plugins/issues
 git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/pragma-comment
 modified: 20230702101911625
 tags: $:/tags/Link Development Editor Advanced-Tools WikiText Wikitex-Extensions DEPRECATED
