@@ -10,7 +10,8 @@
 		"wikilabs/uni-link",
 		"wikilabs/field-search",
 		"wikilabs/field-visibility",
-		"wikilabs/advanced-search-plus"
+		"wikilabs/cheatsheet",
+		"wikilabs/field-visibility"
 	],
 	"themes": [
 		"tiddlywiki/vanilla",
