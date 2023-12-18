@@ -1,5 +1,5 @@
 created: 20190211002748002
-modified: 20231003102435128
+modified: 20231218155012524
 title: GettingStarted
 type: text/vnd.tiddlywiki
 
@@ -36,6 +36,15 @@ A short info video about how to use the "~WikiLabs Plugin Configuration" link sh
 Details can be found at: <$link class="wltc-btn-big-blue" to="Details">Show Editions, Themes and Plugins</$link>
 
 ----
+
+<details><summary>OLD -- Compatible with TW v5.3.1 and down</summary>
+<p>
+Import the following link, if you want to install a stable version which is compatible with ~TiddlyWiki version v5.3.1 down to v5.2.7
+</p>
+<p>
+[[WikiLabs Plugin Configuration 5.3.1|$:/config/wikilabs/PluginLibraryWL/5.3.1]]
+</p>
+</details>
 
 <details><summary>OLD -- Compatible with TW v5.2.7 and down</summary>
 <p>
