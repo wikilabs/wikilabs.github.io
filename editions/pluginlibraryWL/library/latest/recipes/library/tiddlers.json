@@ -184,13 +184,13 @@
         "name": "Link to Tabs",
         "description": "Internal links are added to tabs if selected",
         "author": "Mario Pietsch",
-        "core-version": ">=5.2.0",
-        "version": "2.4.0",
-        "list": "readme license history",
+        "core-version": ">=5.3.3",
+        "version": "3.0.0",
+        "list": "readme settings license history",
         "plugin-type": "plugin",
         "dependents": "",
         "type": "application/json",
-        "readme": "This plugin adds a little link icon to every tab.\n\n! Link-to-Tabs Settings\n\n{{$:/core/ui/ControlPanel/Settings/link-to-tabs}}\n\n''Important:'' This plugin modifies a core module and templates\n\n<ul><$list filter=\"[[$:/plugins/wikilabs/link-to-tabs]plugintiddlers[]prefix[$:/core/]] \"><li><$link to=<<currentTiddler>>><<currentTiddler>><br></$link></li></$list></ul>",
+        "readme": "This plugin adds a little link icon to every tab.\n\n!! Settings\n\n* Have a closer look at the \"settings-tab\" here or\n* Open the ''$:/ControlPanel -> Settings -> WikiLabs'' tab\n\n''Important:'' This plugin modifies a core module and templates\n\n<ul><$list filter=\"[[$:/plugins/wikilabs/link-to-tabs]plugintiddlers[]prefix[$:/core/]] \"><li><$link to=<<currentTiddler>>><<currentTiddler>><br></$link></li></$list></ul>",
         "requires-reload": "no"
     },
     {

@@ -3,11 +3,15 @@ description: This plugin adds internal tiddler links to every tab if selected. I
 forum: TODO
 git-issues: https://github.com/wikilabs/plugins/issues
 git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/edit-tabs
-modified: 20211004083853244
-tags: plugin $:/tags/Link Tabs Development Tools
+modified: 20231229163546296
+tags: $:/tags/Link Tabs Development Tools DEPRECATED
 title: edit-tabs
 type: text/vnd.tiddlywiki
 url: https://wikilabs.github.io/editions/edit-tabs
+
+! Deprecated
+
+''Use [[link-to-tabs]] instead''
 
 ! Edit Tabs Plugin
 
