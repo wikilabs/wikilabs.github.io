@@ -1,0 +1,14 @@
+created: 20240825145420723
+description: This plugin listens to browser or OS light/dark theme changes
+forum: TODO
+git-issues: https://github.com/wikilabs/plugins/issues
+git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/palette-watch
+modified: 20240825145657263
+tags: plugin UI $:/tags/Link palette theme
+title: palette-watch
+type: text/vnd.tiddlywiki
+url: https://wikilabs.github.io/editions/palette-switcher
+
+! Palette watch
+
+This plugin adds a new watch-event to the wiki, that allows you do dynamically change the palette, if the browser or OS theme changes between "light" and "dark".

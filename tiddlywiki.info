@@ -11,7 +11,8 @@
 		"wikilabs/field-search",
 		"wikilabs/field-visibility",
 		"wikilabs/cheatsheet",
-		"wikilabs/field-visibility"
+		"wikilabs/field-visibility",
+		"wikilabs/palette-switcher"
 	],
 	"themes": [
 		"tiddlywiki/vanilla",
