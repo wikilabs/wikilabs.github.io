@@ -146,6 +146,8 @@ Error message and password prompt
 
 <p>This <a class="tc-tiddlylink-external" href="https://tiddlywiki.com" rel="noopener noreferrer" target="_blank">TiddlyWiki</a> contains the following tiddlers:</p><p><ul>
 
+<li>_/startup/light-dark/detection</li>
+
 <li>$:/config/EmptyStoryMessage</li>
 
 <li>$:/config/OriginalTiddlerPaths</li>
@@ -197,8 +199,9 @@ Error message and password prompt
 </noscript>
 <!--~~ Ordinary tiddlers ~~-->
 <script class="tiddlywiki-tiddler-store" type="application/json">[
+{"title":"_/startup/light-dark/detection","caption":"Detect browser or OS setting on startup","code-body":"yes","created":"20240825200932225","modified":"20240825200932225","tags":"$:/tags/StartupAction/Browser","type":"text/vnd.tiddlywiki","text":"\u003C$reveal type=\"match\" stateTitle=\"$:/config/palette/enable-light-dark-detection\" text=\"yes\">\n\t\u003C$let default={{{ [{$:/info/darkmode}match[yes]then[$:/config/palette/default-dark]else[$:/config/palette/default-light]] }}}>\n\t\t\u003C$action-setfield $tiddler=\"$:/palette\" text={{{ [\u003Cdefault>get[text]] }}}/>\n\t\u003C/$let>\n\u003C/$reveal>"},
 {"title":"$:/config/EmptyStoryMessage","text":"{{GettingStarted||$:/core/ui/ViewTemplate}}"},
-{"title":"$:/config/OriginalTiddlerPaths","type":"application/json","text":"{\"$:/config/PageControlButtons/Visibility/$:/plugins/wikilabs/palette-switcher/ui/sidebar/dark-light-toggle\":\"$__config_PageControlButtons_Visibility_$__plugins_wikilabs_palette-switcher_ui_sidebar_dark-light-toggle.tid\",\"$:/config/palette/default-dark\":\"$__config_palette_default-dark.tid\",\"$:/config/palette/default-light\":\"$__config_palette_default-light.tid\",\"$:/StoryList\":\"$__StoryList.tid\",\"GettingStarted\":\"GettingStarted.tid\",\"License\":\"License.tid\",\"$:/config/EmptyStoryMessage\":\"system/$__config_EmptyStoryMessage.tid\",\"$:/config/palette/enable-light-dark-detection\":\"system/$__config_palette_enable-light-dark-detection.tid\",\"$:/SiteSubtitle\":\"system/$__SiteSubtitle.tid\",\"$:/SiteTitle\":\"system/$__SiteTitle.tid\",\"$:/themes/tiddlywiki/vanilla/options/sidebarlayout\":\"system/$__themes_tiddlywiki_vanilla_options_sidebarlayout.tid\"}"},
+{"title":"$:/config/OriginalTiddlerPaths","type":"application/json","text":"{\"$:/config/PageControlButtons/Visibility/$:/plugins/wikilabs/palette-switcher/ui/sidebar/dark-light-toggle\":\"$__config_PageControlButtons_Visibility_$__plugins_wikilabs_palette-switcher_ui_sidebar_dark-light-toggle.tid\",\"$:/config/palette/default-dark\":\"$__config_palette_default-dark.tid\",\"$:/config/palette/default-light\":\"$__config_palette_default-light.tid\",\"$:/StoryList\":\"$__StoryList.tid\",\"GettingStarted\":\"GettingStarted.tid\",\"License\":\"License.tid\",\"$:/config/EmptyStoryMessage\":\"system/$__config_EmptyStoryMessage.tid\",\"$:/config/palette/enable-light-dark-detection\":\"system/$__config_palette_enable-light-dark-detection.tid\",\"$:/SiteSubtitle\":\"system/$__SiteSubtitle.tid\",\"$:/SiteTitle\":\"system/$__SiteTitle.tid\",\"$:/themes/tiddlywiki/vanilla/options/sidebarlayout\":\"system/$__themes_tiddlywiki_vanilla_options_sidebarlayout.tid\",\"_/startup/light-dark/detection\":\"__startup_light-dark_detection.tid\"}"},
 {"title":"$:/config/PageControlButtons/Visibility/$:/plugins/wikilabs/palette-switcher/ui/sidebar/dark-light-toggle","created":"20240825122907757","modified":"20240825122942247","type":"text/vnd.tiddlywiki","text":"show"},
 {"title":"$:/config/palette/default-dark","caption":"{{$:/language/ControlPanel/Palette/Config/DefaultDark/Caption}}","created":"20240824185518297","modified":"20240824185523754","type":"text/vnd.tiddlywiki","text":"$:/palettes/GruvboxDark"},
 {"title":"$:/config/palette/default-light","caption":"{{$:/language/ControlPanel/Palette/Config/DefaultLight/Caption}}","created":"20240824185512745","modified":"20240824185515536","type":"text/vnd.tiddlywiki","text":"$:/palettes/Vanilla"},
