@@ -1,0 +1,20 @@
+created: 20260326220604071
+description: This plugin allows you to assign a UUIDv7 to the c7 field and a ULID-like value to a c32 field
+forum: 
+git-issues: https://github.com/wikilabs/plugins/issues
+git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/uuid7
+modified: 20260326221241650
+tags: Advanced-Tools EXPERIMENTAL $:/tags/Link UUIDv7
+title: uuidv7
+type: text/vnd.tiddlywiki
+url: https://wikilabs.github.io/editions/uuid7
+
+! UUID v7 Plugin
+
+''This is for experiments only. It's not sure, that all functions are kept in the plugin''
+
+With this plugin, if you create a new tiddler
+
+* Open the fields editor — notice the c32 field with a value like 01KMNH-72WK-FM8S1A277T55-S8DK
+* The c32 badge at the bottom-right shows the value with its check symbol
+* The phrase badge at the bottom-left shows its mnemonic encoding
