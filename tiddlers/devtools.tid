@@ -1,0 +1,14 @@
+created: 20260331223756681
+description: Hover tooltips, context menu, variable inspector, source viewer. Useful for any TiddlyWiki developers
+forum: TODO
+git-issues: https://github.com/wikilabs/plugins/issues
+git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/devtools
+modified: 20260331224010218
+tags: plugin $:/tags/Link
+title: devtools
+type: text/vnd.tiddlywiki
+url: https://wikilabs.github.io/editions/devtools
+
+! Developer Tools Plugin
+
+Hover tooltips, context menu, variable inspector, source viewer. Useful for any TiddlyWiki developers.
