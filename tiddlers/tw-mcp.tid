@@ -1,0 +1,14 @@
+created: 20260404141725864
+description: Connects AI assistants to TiddlyWiki via the Model Context Protocol
+forum: TODO
+git-issues: https://github.com/wikilabs/plugins/issues
+git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/tw-mcp
+modified: 20260404143102143
+tags: plugin $:/tags/Link Development mcp llm
+title: tw-mcp
+type: text/vnd.tiddlywiki
+url: https://wikilabs.github.io/editions/tw-mcp
+
+! MCP Server Plugin
+
+The TW MCP plugin turns any TiddlyWiki into an AI-accessible knowledge base. It lets Claude, Gemini, and other AI assistants read, search, render, and edit your wiki through a standardised protocol. With built-in safety features, proxy mode for multi-client access, and hashline edits for token-efficient conflict-free editing, it bridges the gap between personal wikis and AI workflows.
