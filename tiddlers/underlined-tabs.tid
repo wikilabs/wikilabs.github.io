@@ -1,0 +1,14 @@
+created: 20260515074657284
+description: Segmented-control style underlined tabs
+forum: TODO
+git-issues: https://github.com/wikilabs/plugins/issues
+git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/underlined-tabs
+modified: 20260515075133098
+tags: plugin UI $:/tags/Link theme Tabs
+title: underlined-tabs
+type: text/vnd.tiddlywiki
+url: https://wikilabs.github.io/
+
+! Underlined Tabs
+
+A theme that restyles the core `.tc-tab-buttons` markup as flat tab buttons over the page background, with the selected tab marked by a 2-pixel coloured underline.

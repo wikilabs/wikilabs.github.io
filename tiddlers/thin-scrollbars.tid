@@ -3,11 +3,15 @@ description: This plugin adds a little bit of CSS to create thin scrollbars for 
 forum: TODO
 git-issues: https://github.com/wikilabs/plugins/issues
 git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/thin-scrollbars
-modified: 20211004085019925
-tags: plugin $:/tags/Link CSS UI Tools
+modified: 20260515072957669
+tags: $:/tags/Link CSS UI Tools DEPRECATED
 title: thin-scrollbars
 type: text/vnd.tiddlywiki
 url: https://wikilabs.github.io/editions/thin-scrollbars
+
+! Deprecated
+
+All major browsers have thin scrollbars now.
 
 ! Thin Scrollbars Plugin
 
