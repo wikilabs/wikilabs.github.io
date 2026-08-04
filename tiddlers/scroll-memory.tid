@@ -1,0 +1,14 @@
+created: 20260804164235308
+description: Scroll position memory and click landmarks for long tiddlers
+forum: TODO
+git-issues: https://github.com/wikilabs/plugins/issues
+git-repo: https://github.com/wikilabs/plugins/tree/master/wikilabs/scroll-memory
+modified: 20260804164935314
+tags: plugin $:/tags/Link Navigation Scrolling Reading Editing
+title: scroll-memory
+type: text/vnd.tiddlywiki
+url: https://wikilabs.github.io/editions/scroll-memory
+
+! Scroll Memory -- never lose your place
+
+Long tiddlers cost you your place: you follow a link, come back, and have to hunt for the sentence you left. Scroll Memory remembers how deep you were reading, and records a landmark whenever you follow a link out of a long tiddler. A floating button returns you to the exact view you had, with the clicked link blinking to mark the spot. Closing a tiddler that a link opened brings you back automatically, and while you are editing a toggle steps between your open drafts and the last landmark, so you can read a source and write about it side by side.
